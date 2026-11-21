@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 데이터와 결과: 저장소에 올리지 않는다 (수집 이미지 · DNA 결과 재배포 금지)
+data/
+outputs/
+*.zip
+*.npz
+*.npy
+*.tmp
+
+# 모델 가중치 · 체크포인트
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# 사람마다 다른 경로 설정 (configs/paths.yaml만 공유한다)
+paths_local.yaml
+paths_colab.yaml
+
+# 비밀값 · 개인 설정
+.env
+.claude/settings.local.json
+
+# 편집기 · OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
