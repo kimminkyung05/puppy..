@@ -133,12 +133,17 @@ def run(backbone: str, repeat: int, split: str, pool: str, use_l2: bool,
     feat_root = paths["outputs"]["features_root"]
     ids_tr, Xtr, itr = load_features(feat_root, backbone, train_subset, pool)
     ids_ev, Xev, iev = load_features(feat_root, backbone, eval_subset, pool)
+    have = None
     if eval_kind == "purebred":
         ids_tr, Xtr, itr, ids_ev, Xev, iev = select_purebred(
             ids_tr, Xtr, itr, ids_ev, Xev, iev, val_split, split, strict=(train_subset == "train"))
     elif split != "all":
+        have = sorted(iev["split"].astype(str).unique())
         keep = (iev["split"] == split).to_numpy()
         ids_ev, Xev, iev = ids_ev[keep], Xev[keep], iev[keep].reset_index(drop=True)
+    if len(Xev) == 0:   # 빈 예측 파일이 저장되면 --skip-existing 이 그 실행을 끝난 것으로 본다
+        raise ValueError(f"평가할 사진이 0장: {backbone}/{eval_subset} 에 split='{split}' 인 행이 없음"
+                         + (f" (인덱스에 있는 split 값: {have})" if have is not None else ""))
 
     if use_l2:
         Xtr, Xev = l2norm(Xtr), l2norm(Xev)
@@ -234,7 +239,7 @@ def main():
         try:
             info = run(args.backbone, r, args.split, args.pool, args.l2, args.frac, args.eval_subset, paths,
                        args.train_subset, args.eval_kind, args.val_split)
-        except Exception as e:  # 실패한 실행도 로그에 남긴다
+        except BaseException as e:  # 실패한 실행도 로그에 남긴다 (중단 = KeyboardInterrupt 포함)
             log_run(logs_root, {"run": name, "status": f"failed: {e!r}",
                                 "seconds": round(time.time() - t0, 1), **common})
             raise

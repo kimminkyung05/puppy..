@@ -177,6 +177,9 @@ def main():
         if not_mixed:
             notes.append(f"정답에 없는 개 {len(not_mixed)}마리 제외")
         merged = merge_to_breeds(pred.set_index("dog_id")[classes], c2b)
+        n_few = int(((merged[merged.index.isin(list(orig))] > 0).sum(axis=1) < TOPK).sum())
+        if n_few:   # FCLS 는 대부분의 품종에 0 을 준다. 채점 규칙은 그대로 두고 몇 마리인지만 보인다
+            notes.append(f"예측 비율이 0보다 큰 품종이 {TOPK}개 미만인 개 {n_few}마리(상위 {TOPK}의 남는 자리는 이름순 품종이 채움)")
         cfg = f"{m['bb']}{'+L2' if m['l2'] else ''}{'+mean' if m['pool'] else ''}{' [점검]' if m['kind'] == 'CHECK' else ''}"
         per_dog[(cfg, int(m["r"]))] = {"orig": captured(merged, orig), "norm": captured(merged, norm)}
         info.append((p.name, len(dogs_all), len(classes), "; ".join(notes)))

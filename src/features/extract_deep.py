@@ -61,6 +61,33 @@ def build_items(args, paths):
     return index["image_id"].tolist(), loaders, index
 
 
+def check_done_shards(out_dir, done: set[int], image_ids: list[str], shard_size: int) -> None:
+    """이미 저장된 샤드가 지금 뽑으려는 사진 목록과 맞는지 본다. 맞지 않으면 멈춘다 (지우거나 덮어쓰지 않는다).
+
+    이어서 뽑기는 샤드 번호만 보고 건너뛴다. 그래서 인덱스가 바뀌었는데(사진 추가 · 삭제, 샤드를 넘나드는 순서 변경,
+    제외 클래스 변경) 옛 샤드가 남아 있으면 일부 사진의 특징이 빠진 채로 "완료"가 된다.
+    샤드 안에서 순서만 바뀐 것은 괜찮다 (읽을 때 image_id 로 맞춘다).
+    같은 image_id 로 사진 내용만 바뀐 경우는 여기서 알 수 없다. 그때는 --save-as 로 새 이름에 뽑는다.
+    """
+    n_shards = (len(image_ids) + shard_size - 1) // shard_size
+    bad = []
+    for s in sorted(done):
+        if s >= n_shards:
+            bad.append(f"shard_{s:03d}: 지금 목록({len(image_ids)}장, 샤드 {n_shards}개)에는 없는 번호")
+            continue
+        with np.load(out_dir / f"shard_{s:03d}.npz") as z:
+            old = sorted(z["image_id"].tolist())
+        now = sorted(image_ids[s * shard_size:(s + 1) * shard_size])
+        if old != now:
+            bad.append(f"shard_{s:03d}: 저장된 사진 {len(old)}장이 지금 목록의 {len(now)}장과 다름 "
+                       f"(겹치는 것 {len(set(old) & set(now))}장)")
+    if bad:
+        raise ValueError(
+            f"{out_dir} 의 샤드가 지금 사진 목록과 맞지 않음:\n    " + "\n    ".join(bad)
+            + "\n  인덱스나 제외 클래스 설정이 바뀐 것으로 보인다. --save-as 로 새 이름에 뽑거나, "
+              "옛 샤드가 필요 없는 것을 확인한 뒤 그 폴더를 비우고 다시 실행한다.")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backbone", required=True, choices=["clip", "dinov2", "dinov3", "dummy"])
@@ -82,7 +109,6 @@ def main():
         save_name += f"_limit{args.limit}"
     out_dir = subset_dir(paths["outputs"]["features_root"], args.backbone, save_name)
     out_dir.mkdir(parents=True, exist_ok=True)
-    index.to_csv(out_dir / "index.csv", index=False)
 
     S = ex["shard_size"]
     n_shards = (len(image_ids) + S - 1) // S
@@ -90,6 +116,8 @@ def main():
     t0, n_done = time.time(), 0
     status = "ok"
     try:
+        check_done_shards(out_dir, skip, image_ids, S)      # 맞지 않으면 index.csv 를 건드리기 전에 멈춘다
+        index.to_csv(out_dir / "index.csv", index=False)
         for s in range(n_shards):
             if s in skip:
                 continue
@@ -103,7 +131,7 @@ def main():
                 mean_all.append(m)
             save_shard(out_dir, s, image_ids[lo:hi], np.concatenate(cls_all), np.concatenate(mean_all))
             n_done += hi - lo
-    except Exception as e:  # 실패한 실행도 로그에 남긴다
+    except BaseException as e:  # 실패한 실행도 로그에 남긴다 (중단 = KeyboardInterrupt 도 "ok"로 남지 않게)
         status = f"failed: {e!r}"
         raise
     finally:

@@ -52,6 +52,9 @@ def check_model(name: str, bcfg: dict, device: str) -> None:
         print(f"[불러옴] {name}: {hf_id}")
         print(f"    모델 {type(bb.model).__name__}, 이미지 처리기 {type(bb.processor).__name__}, dtype {bb.dtype}")
         print(f"    입력 {tuple(pv.shape)} → 출력 차원: cls {cls.shape[1]}, mean {mean.shape[1]}")
+        p = bb.processor   # 가운데 자르기를 하면 가로로 긴 사진은 양 끝이 잘린다. 추출기마다 다르므로 값을 그대로 보인다
+        print("    전처리: " + ", ".join(f"{k}={getattr(p, k, '(없음)')}"
+                                        for k in ("do_resize", "size", "do_center_crop", "crop_size")))
         print(f"    config.num_register_tokens = {getattr(cfg, 'num_register_tokens', '(config에 없음)')}"
               f" → 코드가 건너뛰는 레지스터 토큰 수 n_reg = {bb.n_reg}")
         try:
