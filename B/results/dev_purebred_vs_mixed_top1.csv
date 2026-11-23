@@ -1,0 +1,7 @@
+﻿model_name,purebred_top1,purebred_split,top1_hits,dev_scorable_dogs,dev_total_dogs,coverage,mixed_dev_top1,mixed_dev_top1_ci95_low,mixed_dev_top1_ci95_high
+clip,0.619,val_dev_half,5,19,20,0.95,0.263158,0.118062,0.48792
+clip_l2,0.617,val_dev_half,5,19,20,0.95,0.263158,0.118062,0.48792
+dinov2,0.808,val_dev_half,5,19,20,0.95,0.263158,0.118062,0.48792
+dinov2_l2,0.808,val_dev_half,5,19,20,0.95,0.263158,0.118062,0.48792
+dinov3,0.822,val_dev_half,3,19,20,0.95,0.157895,0.0552037,0.375659
+dinov3_l2,0.823,val_dev_half,3,19,20,0.95,0.157895,0.0552037,0.375659

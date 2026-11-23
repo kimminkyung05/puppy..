@@ -1,0 +1,7 @@
+﻿model_name,split,images,top1_accuracy,top1_rep_min,top1_rep_max,top1_ci95_wilson_low,top1_ci95_wilson_high,top5_accuracy,repeats_averaged
+clip,val_dev_half,2540,0.619,0.618,0.625,0.599844,0.637592,0.823,3
+clip_l2,val_dev_half,2540,0.617,0.613,0.622,0.59786,0.635645,0.822,3
+dinov2,val_dev_half,2540,0.808,0.806,0.809,0.792092,0.822726,0.936,3
+dinov2_l2,val_dev_half,2540,0.808,0.805,0.809,0.792092,0.822726,0.936,3
+dinov3,val_dev_half,2540,0.822,0.821,0.824,0.80669,0.836432,0.946,3
+dinov3_l2,val_dev_half,2540,0.823,0.821,0.826,0.807502,0.837192,0.947,3

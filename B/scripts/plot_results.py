@@ -1,13 +1,14 @@
 """B 결과 그림: 평균점 섞기(FCLS)의 dev 임시 채점 결과를 보고서용 그림으로 만든다.
 
 입력 (집계값만. 개별 개의 DNA 값은 없다)
-  results/b_dev_summary.csv         provisional_score_uf.py · provisional_score_purebred.py 출력의 집계 표
-  results/b_purebred_confusions.csv 순종 평가에서 가장 자주 헷갈린 클래스 쌍 (dinov3+L2, 반복 3회 합)
+  results/raw_dev_scores.csv        provisional_score_uf.py · provisional_score_purebred.py 출력의 집계 표
+  results/purebred_confusions.csv   순종 평가에서 가장 자주 헷갈린 클래스 쌍 (dinov3+L2, 반복 3회 합)
 
 출력 (figures/)
-  b_top1_purebred_vs_mixed.png  순종 val dev Top-1 · Top-5 와 믹스견 UF dev Top-1. 오차 막대는 Wilson 95% 구간
-  b_captured_share.png          믹스견 포착 혈통 비율 (예측 상위 3품종의 실제 DNA 비율 합), 찍기 · 상한 기준선
-  b_purebred_confusions.png     순종에서 자주 헷갈린 클래스 쌍
+  dev_purebred_vs_mixed_top1.png  순종 val dev Top-1 · Top-5 와 믹스견 UF dev Top-1. 오차 막대는 Wilson 95% 구간
+  dev_captured_share.png          믹스견 포착 혈통 비율 (예측 상위 3품종의 실제 DNA 비율 합), 찍기 · 상한 기준선
+  purebred_confusions.png         순종
+  dev_top1_a_vs_b.png             A 분류기와 B 평균점 섞기 비교 (A/results 가 있을 때)에서 자주 헷갈린 클래스 쌍
 
 모두 임시 채점(A 의 eval.py 이전) 값이고 dev 만 쓴다. 믹스견은 19~20마리라 구간이 넓다.
 
@@ -165,20 +166,86 @@ def fig_confusions(conf: pd.DataFrame, out: Path) -> None:
     plt.close(fig)
 
 
+def fig_vs_a(df: pd.DataFrame, a_dir: Path, l2: bool, out: Path) -> bool:
+    """A 분류기와 B 평균점 섞기를 같은 평가 대상에서 비교. A 결과 파일이 없으면 건너뛴다."""
+    a_dev, a_val = a_dir / "dev_top1_model_summary.csv", a_dir / "model_summary.csv"
+    if not (a_dev.exists() and a_val.exists()):
+        print(f"[건너뜀] A 결과 없음: {a_dir}")
+        return False
+    ad = pd.read_csv(a_dev, encoding="utf-8-sig").set_index("model_name")
+    av = pd.read_csv(a_val, encoding="utf-8-sig").set_index("model_name")
+    names = BACKBONES + ["sift"]
+    mixed, pure = pick(df, "mixed_top1", l2), pick(df, "purebred_top1", l2)
+    method_color = {"A": "#6250d6", "B": "#eda100"}     # 방법 두 개: 추출기 색과 겹치지 않는 슬롯
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 4.8))
+    fig.patch.set_facecolor(SURFACE)
+    x, w = np.arange(len(names)), 0.38
+
+    def draw(ax, vals, cis, labels, ymax, ylabel):
+        style(ax, ymax, ylabel)
+        for k, (m, off) in enumerate((("A", -w / 2), ("B", w / 2))):
+            v, ci, lab = vals[m], cis[m], labels[m]
+            ok = ~np.isnan(v)
+            ax.bar(x[ok] + off, v[ok], width=w, color=method_color[m], edgecolor=SURFACE, linewidth=2,
+                   label={"A": "A: classifier", "B": "B: prototype mixing (FCLS)"}[m])
+            ax.errorbar(x[ok] + off, v[ok], yerr=[v[ok] - ci[ok, 0], ci[ok, 1] - v[ok]], fmt="none",
+                        ecolor=INK, elinewidth=1.1, capsize=4)
+            for xi, t, s, good in zip(x + off, ci[:, 1], lab, ok):
+                ax.text(xi, (t if good else 0) + ymax * 0.015, s if good else "n/a", ha="center",
+                        va="bottom", color=INK if good else INK2, fontsize=8.5)
+        ax.set_xticks(x, names)
+        ax.legend(frameon=False, loc="upper right", fontsize=9)
+
+    # 믹스견 dev: 같은 20마리, 같은 채점 가능 19마리
+    n_a = ad.loc[names, "scorable_dogs"].to_numpy()
+    hit_a = np.round(ad.loc[names, "top1_accuracy_mean"].to_numpy() * n_a)
+    hit_b = np.array([mixed.loc[b, "hit"] if b in mixed.index else np.nan for b in names], dtype=float)
+    n_b = np.array([mixed.loc[b, "n"] if b in mixed.index else np.nan for b in names], dtype=float)
+    vals = {"A": 100 * hit_a / n_a, "B": 100 * hit_b / n_b}
+    cis = {"A": np.array([wilson(h, n) for h, n in zip(hit_a, n_a)]) * 100,
+           "B": np.array([wilson(h, n) if n == n else (np.nan, np.nan) for h, n in zip(hit_b, n_b)]) * 100}
+    labels = {"A": [f"{v:.1f}%\n{int(h)}/{int(n)}" for v, h, n in zip(vals["A"], hit_a, n_a)],
+              "B": [f"{v:.1f}%\n{int(h)}/{int(n)}" if n == n else "" for v, h, n in zip(vals["B"], hit_b, n_b)]}
+    draw(a1, vals, cis, labels, 75, "Top-1 accuracy (%)")
+    a1.set_title("Mixed-breed UF dev (same 19 scorable dogs)", color=INK, fontsize=11)
+
+    # 순종: A 는 val 전체 5,080장, B 는 val dev 절반 2,540장 (같은 사진 집합이 아니다)
+    va = 100 * av.loc[names, "validation_accuracy_mean"].to_numpy()
+    vb = np.array([100 * pure.loc[b, "value"] if b in pure.index else np.nan for b in names])
+    cis = {"A": np.array([wilson(round(v / 100 * 5080), 5080) for v in va]) * 100,
+           "B": np.array([wilson(round(v / 100 * 2540), 2540) if v == v else (np.nan, np.nan) for v in vb]) * 100}
+    labels = {"A": [f"{v:.1f}%" for v in va], "B": [f"{v:.1f}%" if v == v else "" for v in vb]}
+    draw(a2, {"A": va, "B": vb}, cis, labels, 110, "Top-1 accuracy (%)")
+    a2.set_title("Purebred Tsinghua val (A: all 5,080 / B: dev half 2,540)", color=INK, fontsize=11)
+
+    fig.suptitle(f"RQ1 by extractor: classifier (A) vs prototype mixing (B{', L2' if l2 else ''})",
+                 color=INK, fontsize=13)
+    fig.text(0.5, 0.005, "Error bars: Wilson 95% interval. B has no SIFT run yet (n/a). Purebred panels use "
+             "different image sets, compare within method only. Provisional dev scoring.",
+             ha="center", color=INK2, fontsize=8.5)
+    fig.tight_layout(rect=(0, 0.03, 1, 0.95))
+    fig.savefig(out, dpi=200, facecolor=SURFACE)
+    plt.close(fig)
+    return True
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--l2", action="store_true", help="L2 정규화한 설정으로 그린다 (기본: L2 없음)")
     ap.add_argument("--out", default=str(ROOT / "figures"))
+    ap.add_argument("--a-results", default=str(ROOT.parent / "A" / "results"),
+                    help="A 의 results 폴더 (A 와 B 비교 그림용. 없으면 건너뜀)")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
-    df = pd.read_csv(ROOT / "results" / "b_dev_summary.csv")
-    conf = pd.read_csv(ROOT / "results" / "b_purebred_confusions.csv")
+    df = pd.read_csv(ROOT / "results" / "raw_dev_scores.csv")
+    conf = pd.read_csv(ROOT / "results" / "purebred_confusions.csv")
     suffix = "_l2" if args.l2 else ""
-    fig_top1(df, args.l2, out / f"b_top1_purebred_vs_mixed{suffix}.png")
-    fig_captured(df, args.l2, out / f"b_captured_share{suffix}.png")
-    fig_confusions(conf, out / "b_purebred_confusions.png")
-    for p in sorted(out.glob("b_*.png")):
+    fig_top1(df, args.l2, out / f"dev_purebred_vs_mixed_top1{suffix}.png")
+    fig_captured(df, args.l2, out / f"dev_captured_share{suffix}.png")
+    fig_confusions(conf, out / "purebred_confusions.png")
+    fig_vs_a(df, Path(args.a_results), args.l2, out / f"dev_top1_a_vs_b{suffix}.png")
+    for p in sorted(out.glob("*.png")):
         print(p)
 
 
