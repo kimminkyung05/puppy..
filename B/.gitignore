@@ -1,0 +1,7 @@
+# 수집 이미지 · DNA 결과 · 실행 결과는 올리지 않는다
+uf_dogs/
+data/
+outputs/
+*.npz
+*.npz.tmp
+__pycache__/

@@ -1,0 +1,12 @@
+numpy
+scipy
+pandas
+pillow
+pyyaml
+tqdm
+torch
+transformers>=4.56   # DINOv3 지원 버전은 설치 전에 확인
+scikit-learn
+matplotlib
+gradio
+opencv-contrib-python  # C의 SIFT

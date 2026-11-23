@@ -1,0 +1,16 @@
+# 특징 추출기 설정. Hugging Face 모델 ID는 받기 전에 모델 페이지에서 다시 확인한다.
+clip:
+  hf_id: openai/clip-vit-base-patch16
+  kind: clip
+dinov2:
+  hf_id: facebook/dinov2-base
+  kind: dino
+dinov3:
+  hf_id: facebook/dinov3-vitb16-pretrain-lvd1689m   # 접근 승인 필요(gated). ID 확인 필요
+  kind: dino
+
+extract:
+  batch_size: 128      # T4에서 1,000장으로 먼저 재 보고 조정
+  num_workers: 2       # Colab CPU 코어 수에 맞춤
+  shard_size: 5000     # 5,000장 단위 저장
+  fp16: true
