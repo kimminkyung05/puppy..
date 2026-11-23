@@ -39,6 +39,9 @@ dog-mix-cv/
 │   │   └── eval.py            # [A] 채점 (약속만)
 │   └── demo/
 │       └── app.py             # [B] 가계도형 Gradio 데모 (D11–14)
+├── scripts/                   # [B] UF 초안 평가셋 준비, 임시 채점
+│   ├── provisional_score_uf.py        #   믹스견 Top-1 · Coverage (dev)
+│   └── provisional_score_purebred.py  #   순종 Top-1 · Top-5 (val dev 절반)
 ├── notebooks/
 │   └── B_colab_run.ipynb      # [B] Colab 실행 전용 (로직 없음)
 └── tests/
@@ -93,6 +96,32 @@ flowchart LR
 - **품종 공간:** 예측은 Tsinghua 클래스 공간으로 내고, DNA 품종으로 합치는 일은 `eval.py`가 `breed_map.csv`로 한다.
 - **실행 이름:** `RQ-추출기-방법-시드` (예: `RQ1-dinov3-proto-r1`, `RQ1-dinov3-mix-s1`)
 
+## 평가 기준
+
+A의 평가 기준 문서(`EVALUATION_POLICY.md`)를 따른다. 순종과 믹스견은 다른 표로 보고하고 한 숫자로 합치지 않는다.
+
+| | 순종견 | 믹스견 |
+|---|---|---|
+| 데이터 | Tsinghua validation | UF 평가셋 (dev 20마리, hold 80마리) |
+| 지표 | Top-1, 필요 시 Top-5 | Top-1, Coverage, 정답 / 평가 가능 / 전체 |
+| 채점 단위 | 사진 1장 | 개 1마리 (얼굴 · 전신 확률 평균) |
+| 대표값 | 반복 3회의 확률을 평균한 뒤 채점 | 같음. 반복별 최소~최대도 기록 |
+
+믹스견 Top-1 규칙:
+
+- DNA에 기록된 품종(최대 4개)만 부분 정답으로 쓰고 합을 100으로 보정하지 않는다.
+- 정답은 기록된 비율이 가장 큰 품종이다. 동률이면 그중 하나를 맞혀도 정답이다.
+- 매핑은 정확 + 유사를 인정한다(기준 문서의 dev 19/20과 일치). 한 품종에 여러 클래스가 연결되면 그중 하나를 맞히면 정답이고, 클래스 확률을 합친 뒤 1위를 뽑지는 않는다.
+- 1위 품종이 전부 Tsinghua 범위 밖인 개는 Top-1 분모에서 뺀다. Coverage = 평가 가능한 개 수 / 전체 개 수.
+- hold는 모든 설정을 고정한 뒤 마지막에 한 번만 채점한다.
+
+B에 적용할 때:
+
+- 평균점 섞기에는 학습 seed가 없어서 부분 표본 r1 · r2 · r3을 반복 3회로 쓴다.
+- D8 전에는 UF dev와 val dev 절반(2,540장)만 쓴다. hold와 val test 절반은 쓰지 않는다.
+- B의 채점 스크립트는 평균점 섞기 예측만 읽는 임시 채점이다. 정식 채점은 A의 `eval.py`가 한다.
+- 포착 혈통 비율은 보고서 지표로 따로 출력한다. 이 표의 coverage는 개마다의 DNA 비율 합으로, 위의 Coverage와 다른 값이다.
+
 ## B 실행 순서 (Colab)
 
 `notebooks/B_colab_run.ipynb`를 위에서부터 실행한다(Drive 연결, 데이터 복사·해제, 경로 설정, 점검, 추출, 평균점 섞기). 노트북이 실행하는 명령은 아래와 같다.
@@ -122,7 +151,27 @@ for b in dinov3 dinov2 clip sift; do
   python -m src.rq1.prototype_fcls --backbone $b --repeats 1 2 3 --split dev --skip-existing --l2
 done
 
-# 4. D의 변형 이미지 특징 (변형별 인덱스 csv를 받아서)
+# 4. UF dev 평가 (믹스견 Top-1 · Coverage). DRIVE_DIR 은 팀 폴더 경로
+#    dna_UF.csv 는 Drive 에 복사하지 않고 /content 에만 둔다 (노트북 셀 10-1 이 만든다)
+UF=$DRIVE_DIR/evalset
+for b in dinov3 dinov2 clip; do
+  python -m src.features.extract_deep --backbone $b --subset eval \
+      --eval-index "$UF/eval_index_UF_panels.csv" --save-as eval_uf_panels
+  python -m src.rq1.prototype_fcls --backbone $b --repeats 1 2 3 --split dev --eval-subset eval_uf_panels --skip-existing
+  python -m src.rq1.prototype_fcls --backbone $b --repeats 1 2 3 --split dev --eval-subset eval_uf_panels --skip-existing --l2
+done
+python scripts/provisional_score_uf.py --uf-dir "$UF/uf_draft" --dna /content/uf_private/dna_UF.csv
+#    참고값(정확 매핑만, 한 품종 고정 기준선)까지 보려면 --reference
+
+# 5. 순종 평가 (val dev 절반, Top-1 · Top-5)
+python scripts/make_val_split.py
+for b in dinov3 dinov2 clip; do
+  python -m src.rq1.prototype_fcls --backbone $b --eval-kind purebred --repeats 1 2 3 --split dev --skip-existing
+  python -m src.rq1.prototype_fcls --backbone $b --eval-kind purebred --repeats 1 2 3 --split dev --skip-existing --l2
+done
+python scripts/provisional_score_purebred.py --uf-dir "$UF/uf_draft"
+
+# 6. D의 변형 이미지 특징 (변형별 인덱스 csv를 받아서)
 python -m src.features.extract_deep --backbone dinov3 --subset eval \
     --eval-index /content/drive/MyDrive/cv_dog/evalset/eval_gray_index.csv --save-as eval_gray
 ```

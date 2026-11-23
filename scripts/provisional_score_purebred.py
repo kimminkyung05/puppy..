@@ -11,8 +11,14 @@
 지표 (사진마다 계산해 평균)
   정답 비율   정답 클래스(품종)에 준 비율
   Top-1       비율이 가장 큰 클래스(품종)가 정답인 사진의 비율
+  Top-5       정답이 상위 5개에 든 사진의 비율. 비율 0 인 정답은 세지 않는다 (FCLS 는 0 이 많다).
+              동률이면 클래스 순서가 앞선 쪽을 위로 본다.
   퍼짐        1 − 정답 비율 (정답이 아닌 곳으로 새어 나간 비율)
   유효 품종 수  exp(엔트로피). 한 품종에 다 주면 1, 고르게 n 개에 주면 n
+
+대표값은 반복(r1~r3)의 확률을 평균한 뒤 계산한 값이고, 반복별 값의 평균 · 최소 · 최대를 함께 낸다.
+
+맨 위 표가 EVALUATION_POLICY.md 9절의 Top-1 · Top-5 다(클래스 그대로, dev 절반). 나머지는 참고 상세다.
 
 두 가지 기준
   (a) Tsinghua 클래스 그대로
@@ -38,7 +44,7 @@ from src.common.config import load_yaml  # noqa: E402
 BANNER = "임시 채점, 순종 보조 평가(정답은 사진으로 붙인 품종 라벨이며 DNA가 아님)"
 NAME_RE = re.compile(r"^pred_(?P<kind>RQ1|CHECK)-(?P<ev>val[^-]*)-(?P<bb>clip|dinov2|dinov3|sift|dummy)"
                      r"-proto-r(?P<r>\d+)(?P<l2>-l2)?(?P<pool>-mean)?(?P<tr>-tr_.+)?\.csv$")
-METRICS = ["정답 비율", "Top-1", "퍼짐", "유효 품종 수"]
+METRICS = ["정답 비율", "Top-1", "Top-5", "퍼짐", "유효 품종 수"]
 
 
 def class_to_breed(map_csv: Path, allowed: set[str]) -> dict[str, str]:
@@ -58,8 +64,11 @@ def class_to_breed(map_csv: Path, allowed: set[str]) -> dict[str, str]:
 def metrics(W: np.ndarray, true: np.ndarray) -> dict:
     """W: (N, K) 행 합 1, true: (N,) 정답 열 번호 → 사진별 값."""
     p_true = W[np.arange(len(W)), true]
+    earlier = np.arange(W.shape[1]) < true[:, None]
+    rank = (W > p_true[:, None]).sum(axis=1) + ((W == p_true[:, None]) & earlier).sum(axis=1)
     logw = np.log(np.clip(W, 1e-12, None))
     return {"정답 비율": p_true, "Top-1": (W.argmax(axis=1) == true).astype(float),
+            "Top-5": ((rank < 5) & (p_true > 0)).astype(float),
             "퍼짐": 1 - p_true, "유효 품종 수": np.exp(-(W * logw).sum(axis=1))}
 
 
@@ -97,6 +106,7 @@ def main():
     res = collections.defaultdict(dict)      # 설정 → 반복 → {기준: {지표: 평균}}
     detail = collections.defaultdict(lambda: {"cls_hit": collections.defaultdict(list),
                                               "pairs": collections.Counter(), "n": 0})
+    probs = collections.defaultdict(list)    # 설정 → 반복별 (사진 × 클래스 확률, 정답 라벨)
     print(f"\n예측 파일 {len(runs)}개")
     for p, m in runs:
         df = pd.read_csv(p)
@@ -110,6 +120,9 @@ def main():
         if set(df["split"]) != {"dev"}:
             notes.append(f"split 이 dev 가 아닌 행 있음: {sorted(set(df['split']))}")
         df = df[known & (df["split"] == "dev")].reset_index(drop=True)
+        if df.empty:
+            print(f"  {p.name}: 채점할 dev 행이 없어 건너뜀")
+            continue
         W = df[classes].to_numpy(dtype=float)
         W = W / W.sum(axis=1, keepdims=True)
         true_a = np.array([classes.index(x) for x in df["label"]])
@@ -124,6 +137,7 @@ def main():
         res[cfg][int(m["r"])] = {"a": {k: float(v.mean()) for k, v in ma.items()},
                                  "b": {k: float(v.mean()) for k, v in mb.items()},
                                  "n": len(W), "k": len(classes), "kb": len(breeds)}
+        probs[cfg].append((pd.DataFrame(W, index=df["image_id"], columns=classes), df["label"].to_numpy()))
         d = detail[cfg]
         top = W.argmax(axis=1)
         for t, h in zip(true_a, ma["Top-1"]):
@@ -134,29 +148,57 @@ def main():
         d["n"] += 1
         print(f"  {p.name}: 사진 {len(W)}, 클래스 {len(classes)}" + (f"  ← {'; '.join(notes)}" if notes else ""))
 
+    if not res:
+        print("\ndev 행이 있는 예측 파일이 없음")
+        return
     cfgs = sorted(res)
+    ens = {}        # 설정 → 기준 → 지표. 확률을 평균한 뒤 계산
+    for cfg in cfgs:
+        first, labels = probs[cfg][0]
+        for f, _ in probs[cfg][1:]:
+            if set(f.index) != set(first.index) or list(f.columns) != list(first.columns):
+                raise SystemExit(f"{cfg}: 반복마다 사진 목록이나 클래스 순서가 달라 확률을 평균할 수 없음")
+        W = np.mean([f.loc[first.index].to_numpy() for f, _ in probs[cfg]], axis=0)
+        classes = list(first.columns)
+        breeds = sorted({c2b.get(c, c) for c in classes})
+        col = np.array([breeds.index(c2b.get(c, c)) for c in classes])
+        Wb = np.zeros((len(W), len(breeds)))
+        np.add.at(Wb, (slice(None), col), W)
+        true = np.array([classes.index(x) for x in labels])
+        ens[cfg] = {"a": {k: float(v.mean()) for k, v in metrics(W, true).items()},
+                    "b": {k: float(v.mean()) for k, v in metrics(Wb, col[true]).items()}}
+    n_img = next(iter(res[cfgs[0]].values()))["n"]
+    print(f"\n[순종견 Top-1 · Top-5]  val dev 사진 {n_img}장 | 확률 평균 뒤 채점, 괄호는 반복별 최소~최대")
+    print(f"  {'설정':<16}{'Top-1':>28}{'Top-5':>28}")
+    for cfg in cfgs:
+        cells = []
+        for name in ("Top-1", "Top-5"):
+            v = [100 * r["a"][name] for r in res[cfg].values()]
+            cells.append(f"{100 * ens[cfg]['a'][name]:.1f}% ({min(v):.1f}~{max(v):.1f}%)")
+        note = "" if sorted(res[cfg]) == [1, 2, 3] else "  ← 반복 부족, 대표값으로 쓰지 않음"
+        print(f"  {cfg:<16}" + "".join(f"{c:>28}" for c in cells) + note)
+
     for basis, label in (("a", "(a) Tsinghua 클래스 그대로"), ("b", "(b) 매핑 초안으로 DNA 품종에 묶은 뒤")):
         any_run = next(iter(res[cfgs[0]].values()))
         k = any_run["k"] if basis == "a" else any_run["kb"]
         print(f"\n[{label}]  사진 {any_run['n']}장, 품종 {k}개, 무작위 기준 Top-1 = {1 / k:.3f}")
-        print(f"  {'설정':<16}{'반복':>4}" + "".join(f"{name + ' 평균(최소~최대)':>26}" for name in METRICS))
+        print(f"  {'설정':<16}{'반복':>4}" + "".join(f"{name + ' 대표 / 평균(최소~최대)':>34}" for name in METRICS))
         for cfg in cfgs:
             reps = sorted(res[cfg])
             cells = []
             for name in METRICS:
                 v = [res[cfg][r][basis][name] for r in reps]
-                cells.append(f"{np.mean(v):.3f} ({min(v):.3f}~{max(v):.3f})")
-            print(f"  {cfg:<16}{len(reps):>4}" + "".join(f"{c:>30}" for c in cells))
+                cells.append(f"{ens[cfg][basis][name]:.3f} / {np.mean(v):.3f} ({min(v):.3f}~{max(v):.3f})")
+            note = "" if reps == [1, 2, 3] else f"  ← 반복 {reps}뿐, 대표값으로 쓰지 않음"
+            print(f"  {cfg:<16}{len(reps):>4}" + "".join(f"{c:>38}" for c in cells) + note)
         for with_l2 in [c for c in cfgs if "+L2" in c and c.replace("+L2", "") in cfgs]:
             base = with_l2.replace("+L2", "")
-            d1 = np.mean([res[with_l2][r][basis]["Top-1"] for r in res[with_l2]]) - \
-                np.mean([res[base][r][basis]["Top-1"] for r in res[base]])
-            d2 = np.mean([res[with_l2][r][basis]["정답 비율"] for r in res[with_l2]]) - \
-                np.mean([res[base][r][basis]["정답 비율"] for r in res[base]])
+            d1 = ens[with_l2][basis]["Top-1"] - ens[base][basis]["Top-1"]
+            d2 = ens[with_l2][basis]["정답 비율"] - ens[base][basis]["정답 비율"]
             print(f"  L2 비교 {base}: L2 있음 − 없음 = Top-1 {d1:+.3f}, 정답 비율 {d2:+.3f}")
 
     if args.detail != "none":
-        best = max(cfgs, key=lambda c: np.mean([res[c][r]["a"]["Top-1"] for r in res[c]]))
+        best = max(cfgs, key=lambda c: ens[c]["a"]["Top-1"])
         for cfg in (cfgs if args.detail == "all" else [best]):
             d = detail[cfg]
             print(f"\n[상세: {cfg}" + (" = (a) Top-1 이 가장 높은 설정" if args.detail == "best" else "")

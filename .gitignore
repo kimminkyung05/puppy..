@@ -12,6 +12,8 @@ outputs/
 *.npz
 *.npy
 *.tmp
+# A의 평가 기준 원본: 개별 DNA와 일치하는 예시 · 개 ID가 있어 올리지 않는다
+EVALUATION_POLICY.md
 
 # 모델 가중치 · 체크포인트
 *.pt

@@ -6,6 +6,7 @@
   preds/dev/pred_*.csv          Tsinghua 클래스 공간 예측 (dog_id, split, <클래스들>)
   truth_UF.csv                  build_uf_truth.py 가 만든 정답 비율 (믹스견만)
   breed_map_UF_draft.csv        품종 표기 → 학습 클래스 매핑 초안
+  dna_UF.csv                    Top-1 정답용 (uf-dir, 없으면 그 윗폴더. 둘 다 없으면 Top-1 표만 건너뛴다)
   features/{backbone}/train/index.csv   학습셋 label (찍기 기준용. 없으면 찍기 줄을 비운다)
 
 계산
@@ -16,13 +17,24 @@
        (b) 재정규화 비율: 매핑된 품종 안에서 합 1 로 다시 나눈 비율. 매핑된 품종이 없는 개는 뺀다.
   3. 찍기: 학습셋 클래스 빈도를 모든 개에 똑같이 낸 예측을 같은 방식으로 채점한다.
   4. 상한: 실제 비율이 큰 3품종을 그대로 맞혔을 때의 값.
-  5. 반복(r1~r3)은 평균 · 최소 · 최대를 낸다. 비교(찍기 대비, L2 유무)는 개 단위 짝 차이의 평균 ± 2 표준오차로 보고,
+  5. 대표값은 반복(r1~r3)의 확률을 평균한 뒤 채점한 값이다. 반복별 점수의 평균 · 최소 · 최대도 낸다. 비교(찍기 대비, L2 유무)는 개 단위 짝 차이의 평균 ± 2 표준오차로 보고,
      구간이 0 을 포함하면 "판단 불가"라고 적는다. 개가 20마리뿐이라 대부분 방향만 볼 수 있다.
+     비교에는 대표값을 쓴다.
+  6. 믹스견 Top-1 (EVALUATION_POLICY.md 3~7절, 9절). 맨 위에 보인다
+       - 정답: DNA 에 적힌 비율이 가장 큰 품종(동률이면 모두)에 매핑된 클래스의 합집합. 하나를 맞히면 정답.
+       - 예측: 클래스를 품종으로 합치지 않고 가장 큰 클래스. 동률이면 공용 클래스 순서에서 앞선 것.
+       - 1위 품종이 전부 범위 밖이면 분모에서 빼고 Coverage(평가 가능 / 전체)를 낸다.
+         아래 포착 혈통 비율 표의 "coverage 0.5 이상"(개마다의 DNA 비율 합)과 다른 값이다.
+       - 매핑은 정확 + 유사. --with-similar 는 Top-1 표에 영향을 주지 않는다.
+       - --reference: 기준 문서에 없는 참고값(정확 매핑만, 한 품종 고정 기준선)도 보인다.
+     포착 혈통 비율(1~5)은 기준 문서에는 없는 보고서 지표라 Top-1 뒤에 따로 보인다.
+       - 개별 개의 DNA 가 노트북 출력에 남지 않게 마릿수만 보인다.
+  split 이 dev 가 아닌 행은 파일에 있어도 채점하지 않는다.
 
 사용 (프로젝트 루트에서. DOGMIX_PATHS 로 경로 설정을 고른다)
   python scripts/provisional_score_uf.py --uf-dir data/evalset_uf
   python scripts/provisional_score_uf.py --uf-dir {DRIVE_DIR}/evalset/uf_draft --eval-subset eval_uf_panels
-  옵션: --with-similar (status=유사 도 정답 품종으로 본다), --include-check (CHECK- 점검 실행도 채점)
+  옵션: --with-similar (포착 혈통 비율에서 유사도 정답), --dna, --reference, --include-check (CHECK- 점검 실행도 채점)
 """
 import argparse
 import re
@@ -40,6 +52,7 @@ EXACT, SIMILAR = "정확", "유사"
 NAME_RE = re.compile(r"^pred_(?P<kind>RQ1|CHECK)-(?:(?P<ev>.+)-)?(?P<bb>clip|dinov2|dinov3|sift|dummy)"
                      r"-proto-r(?P<r>\d+)(?P<l2>-l2)?(?P<pool>-mean)?(?P<tr>-tr_.+)?\.csv$")
 TOPK = 3
+REPEATS = [1, 2, 3]
 
 
 def split_classes(s) -> list[str]:
@@ -95,6 +108,74 @@ def ceiling(truth: dict, dogs) -> pd.Series:
     return pd.Series({d: sum(sorted(truth[d].values(), reverse=True)[:TOPK]) for d in dogs}, dtype=float)
 
 
+def mean_prob(frames: list[pd.DataFrame], cfg: str) -> pd.DataFrame:
+    """반복들의 확률 평균. 개나 클래스가 반복마다 다르면 멈춘다."""
+    first = frames[0]
+    for f in frames[1:]:
+        if set(f.index) != set(first.index) or list(f.columns) != list(first.columns):
+            raise SystemExit(f"{cfg}: 반복마다 개 목록이나 클래스 순서가 달라 확률을 평균할 수 없음")
+    return sum(f.loc[first.index] for f in frames) / len(frames)
+
+
+def top1_answers(dna: pd.DataFrame, bmap: pd.DataFrame, allowed: set[str], classes, dogs) -> dict[str, set[str]]:
+    """개 → Top-1 정답 클래스 집합. 빈 집합이면 채점 대상이 아니다."""
+    m = {r["breed_raw"]: (r["status"], split_classes(r["tsinghua_classes"])) for _, r in bmap.iterrows()}
+    out = {}
+    for d in dogs:
+        g = dna[(dna["dog_id"] == d) & dna["pct"].notna()]
+        if g.empty:
+            raise SystemExit(f"DNA 표에 {d} 의 비율이 없음")
+        pct = g["pct"].astype(float)
+        ans = set()
+        for breed in g.loc[pct == pct.max(), "breed_raw"]:
+            if breed not in m:
+                raise SystemExit(f"매핑 표에 없는 품종 표기: {breed}")
+            status, names = m[breed]
+            if status in allowed:
+                ans.update(c for c in names if c in classes)
+        out[d] = ans
+    return out
+
+
+def top1_score(prob: pd.DataFrame, answers: dict[str, set[str]]) -> tuple[int, int]:
+    """(정답 수, 채점한 개 수). 열 순서가 공용 클래스 순서라 동률이면 앞선 클래스가 뽑힌다."""
+    top = prob.idxmax(axis=1)
+    use = [d for d in prob.index if answers[d]]
+    return sum(top[d] in answers[d] for d in use), len(use)
+
+
+def print_top1(probs: dict, ens: dict, dna: pd.DataFrame, bmap: pd.DataFrame, freq, reference: bool) -> None:
+    def pct(hit, n):
+        return f"{100 * hit / n:.1f}%" if n else "-"
+
+    tables = [("믹스견 Top-1", {EXACT, SIMILAR})]
+    if reference:
+        tables.append(("참고(기준 문서 밖): 정확 매핑만", {EXACT}))
+    for title, allowed in tables:
+        print(f"\n[{title}]  정답: DNA 1위 품종(동률이면 그중 하나) | 매핑 {' + '.join(s for s in (EXACT, SIMILAR) if s in allowed)}")
+        print(f"  {'설정':<16}{'Top-1(확률 평균)':>18}{'반복별 최소~최대':>20}{'Coverage':>16}{'정답/평가 가능/전체':>20}")
+        baselines = {}
+        for cfg, prob in ens.items():
+            classes = list(prob.columns)
+            answers = top1_answers(dna, bmap, allowed, set(classes), prob.index)
+            hit, n = top1_score(prob, answers)
+            reps = sorted(r for c, r in probs if c == cfg)
+            each = [top1_score(probs[(cfg, r)], answers)[0] for r in reps]
+            note = "" if reps == REPEATS else f"  ← 반복 {reps}뿐, 대표값으로 쓰지 않음"
+            print(f"  {cfg:<16}{f'{pct(hit, n)} ({hit}/{n})':>22}{pct(min(each), n) + '~' + pct(max(each), n):>26}"
+                  f"{f'{pct(n, len(prob))} ({n}/{len(prob)})':>20}{f'{hit}/{n}/{len(prob)}':>16}{note}")
+            if not reference or not n:
+                continue
+            best_hit, best = max(((sum(c in a for a in answers.values()), c) for c in classes), key=lambda x: x[0])
+            baselines[f"dev 최빈 고정({best}): {pct(best_hit, n)} ({best_hit}/{n})"] = None
+            if freq is not None:
+                common = freq.reindex(classes).fillna(0).idxmax()
+                k = sum(common in a for a in answers.values())
+                baselines[f"학습셋 최빈 고정({common}): {pct(k, n)} ({k}/{n})"] = None
+        for line in baselines:
+            print(f"  참고 기준선 {line}")
+
+
 def paired(a: pd.Series, b: pd.Series) -> tuple[float, float, str]:
     """개 단위 짝 차이 a - b 의 (평균, 2 표준오차, 판단)."""
     d = (a - b).dropna()
@@ -115,6 +196,8 @@ def main():
     ap.add_argument("--eval-subset", default="eval_uf_panels", help="이 평가 subset 의 실행만 채점한다")
     ap.add_argument("--with-similar", action="store_true", help="status=유사 인 매핑도 정답 품종으로 본다")
     ap.add_argument("--include-check", action="store_true", help="CHECK- (형식 점검) 실행도 채점한다")
+    ap.add_argument("--dna", default=None, help="Top-1 정답용 dna_UF.csv. 기본: uf-dir, 없으면 그 윗폴더")
+    ap.add_argument("--reference", action="store_true", help="기준 문서 밖 참고값(정확 매핑만, 고정 기준선)도 보인다")
     ap.add_argument("--min-coverage", type=float, default=0.5)
     args = ap.parse_args()
 
@@ -128,7 +211,7 @@ def main():
     print(BANNER)
     print("=" * 78)
     print(f"예측: {preds_dir} | 평가 subset: {args.eval_subset} | 정답: {uf / 'truth_UF.csv'}")
-    print(f"정답 품종으로 보는 매핑: {' + '.join(sorted(allowed))}")
+    print(f"포착 혈통 비율에서 정답 품종으로 보는 매핑: {' + '.join(sorted(allowed))}")
 
     c2b = breed_of_class(uf / "breed_map_UF_draft.csv", allowed)
     orig, norm, cov = load_truth(uf / "truth_UF.csv", args.with_similar)
@@ -159,12 +242,20 @@ def main():
         print(f"찍기 기준: 계산 불가 ({feat_root}/*/train/index.csv 없음)")
 
     per_dog = {}        # (설정 이름, 반복) → {"orig": Series, "norm": Series}
+    probs = {}          # (설정 이름, 반복) → 믹스견 × 클래스 확률
     info, chance = [], {}
     for p, m in runs:
         pred = pd.read_csv(p)
         classes = [c for c in pred.columns if c not in ("dog_id", "split")]
         row_sum = pred[classes].sum(axis=1)
         notes = []
+        other = pred["split"] != args.split
+        if other.any():     # hold 나 test 가 섞인 파일이어도 점수를 내지 않는다
+            notes.append(f"split 이 {args.split} 가 아닌 {int(other.sum())}행 제외")
+            pred, row_sum = pred[~other], row_sum[~other]
+        if pred.empty:
+            info.append((p.name, 0, len(classes), "; ".join(notes)))
+            continue
         if len(classes) != 127:
             notes.append(f"클래스 {len(classes)}개(127 아님)")
         if not np.allclose(row_sum, 1, atol=1e-6):
@@ -181,6 +272,8 @@ def main():
         if n_few:   # FCLS 는 대부분의 품종에 0 을 준다. 채점 규칙은 그대로 두고 몇 마리인지만 보인다
             notes.append(f"예측 비율이 0보다 큰 품종이 {TOPK}개 미만인 개 {n_few}마리(상위 {TOPK}의 남는 자리는 이름순 품종이 채움)")
         cfg = f"{m['bb']}{'+L2' if m['l2'] else ''}{'+mean' if m['pool'] else ''}{' [점검]' if m['kind'] == 'CHECK' else ''}"
+        by_dog = pred.set_index("dog_id")[classes]
+        probs[(cfg, int(m["r"]))] = by_dog[by_dog.index.isin(list(orig))]
         per_dog[(cfg, int(m["r"]))] = {"orig": captured(merged, orig), "norm": captured(merged, norm)}
         info.append((p.name, len(dogs_all), len(classes), "; ".join(notes)))
         if freq is not None and cfg not in chance:
@@ -193,12 +286,27 @@ def main():
     for name, n_dogs, n_cls, note in info:
         print(f"  {name}: 개 {n_dogs}, 클래스 {n_cls}" + (f"  ← {note}" if note else ""))
 
+    if not per_dog:
+        print(f"\n{args.split} 행이 있는 예측 파일이 없음")
+        return
     cfgs = sorted({k[0] for k in per_dog})
+    ens = {c: mean_prob([probs[k] for k in sorted(probs) if k[0] == c], c) for c in cfgs}
+
+    dna_files = [Path(args.dna)] if args.dna else [uf / "dna_UF.csv", uf.parent / "dna_UF.csv"]
+    dna_csv = next((f for f in dna_files if f.exists()), None)
+    if args.dna and dna_csv is None:
+        raise SystemExit(f"DNA 표가 없음: {args.dna}")
+    if dna_csv:
+        print_top1(probs, ens, pd.read_csv(dna_csv, encoding="utf-8-sig"),
+                   pd.read_csv(uf / "breed_map_UF_draft.csv", encoding="utf-8-sig"), freq, args.reference)
+    else:
+        print(f"\n[믹스견 Top-1] 건너뜀: dna_UF.csv 가 없음 ({', '.join(map(str, dna_files))})")
     dogs = sorted(set().union(*[set(v["orig"].index) for v in per_dog.values()]))
     subsets = [(f"dev 전체 {len(dogs)}마리", dogs),
                (f"coverage {args.min_coverage} 이상", [d for d in dogs if cov.get(d, 0) >= args.min_coverage])]
     kinds = [("orig", "(a) 원래 비율"), ("norm", "(b) 학습 품종 안에서 재정규화한 비율")]
 
+    print("\n---- 아래는 포착 혈통 비율 (보고서 지표, EVALUATION_POLICY.md 밖) ----")
     for sub_name, sub in subsets:
         for kind, kind_name in kinds:
             truth = orig if kind == "orig" else norm
@@ -209,12 +317,12 @@ def main():
                 continue
             ceil = float(ceiling(truth, use).mean())
             print(f"  상한(실제 상위 {TOPK}품종을 다 맞힘): {ceil:.3f}")
-            print(f"  {'설정':<16}{'반복':>5}{'평균':>8}{'최소':>8}{'최대':>8}{'찍기':>8}{'찍기와 차이 ± 2SE':>22}  판단")
+            print(f"  {'설정':<16}{'반복':>5}{'대표':>8}{'평균':>8}{'최소':>8}{'최대':>8}{'찍기':>8}{'찍기와 차이 ± 2SE':>22}  판단")
             avg = {}
             for cfg in cfgs:
                 reps = sorted(r for c, r in per_dog if c == cfg)
                 run_means = [float(per_dog[(cfg, r)][kind].reindex(use).mean()) for r in reps]
-                avg[cfg] = pd.concat([per_dog[(cfg, r)][kind].reindex(use) for r in reps], axis=1).mean(axis=1)
+                avg[cfg] = captured(merge_to_breeds(ens[cfg], c2b), truth).reindex(use)
                 if cfg in chance:
                     ch = chance[cfg][kind].reindex(use)
                     d, se2, verdict = paired(avg[cfg], ch)
@@ -222,7 +330,9 @@ def main():
                     tail = f"{ch.mean():>8.3f}{d:>+13.3f} ± {se2:.3f}  {verdict}"
                 else:
                     tail = f"{'-':>8}{'-':>22}  찍기 기준 없음"
-                print(f"  {cfg:<16}{len(reps):>5}{np.mean(run_means):>8.3f}{min(run_means):>8.3f}{max(run_means):>8.3f}{tail}")
+                if reps != REPEATS:
+                    tail += f"  ← 반복 {reps}뿐, 대표값으로 쓰지 않음"
+                print(f"  {cfg:<16}{len(reps):>5}{avg[cfg].mean():>8.3f}{np.mean(run_means):>8.3f}{min(run_means):>8.3f}{max(run_means):>8.3f}{tail}")
             pairs = [(c, c.replace("+L2", "")) for c in cfgs if "+L2" in c and c.replace("+L2", "") in cfgs]
             for with_l2, without in pairs:
                 d, se2, verdict = paired(avg[with_l2], avg[without])
