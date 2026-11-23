@@ -96,7 +96,7 @@ python scripts/run_d_experiment.py
 
 - B: CLIP·DINOv2·DINOv3 특징 추출 코드와 최종 원본/변형 특징 자산
 - C: SIFT 코드북·추출 코드와 최종 SIFT 특징 자산
-- A: 최종 분류기 체크포인트, eval.py, 최종 breed_map.csv와 truth_UF.csv 확인
+- A: truth_UF.csv와 최종 breed_map.csv는 수령·개발 평가에 사용; 최종 분류기 checkpoint와 eval.py 버전은 최종 실행 전에 확인 필요
 - SAM3를 실제로 실행하려면 SAM3 설치·체크포인트·프롬프트/박스 처리 코드가 별도로 필요
 
 ## 저장소에 올리지 않는 파일
