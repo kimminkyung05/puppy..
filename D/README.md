@@ -54,21 +54,31 @@ extra_drop = (original - transformed) - (original - control)
 
 ```text
 D/
-├─ configs/
-│  ├─ conditions.csv
-│  └─ paths.example.yaml
-├─ docs/
-│  └─ EXPERIMENT_STATUS.md
+├─ README.md
 ├─ notebooks/
 │  └─ D_RQ2_Colab.ipynb
-├─ results/
-│  ├─ breed_group_summary_dev.csv
-│  ├─ condition_matrix_validation_dev.csv
-│  └─ condition_summary_dev.csv
 ├─ scripts/
 │  ├─ build_d_notebook.py
-│  └─ run_d_experiment.py
-└─ README.md
+│  ├─ prepare_d_inputs.py
+│  ├─ run_d_experiment.py
+│  ├─ validate_condition_matrix.py
+│  └─ summarize_extra_drop.py
+├─ configs/
+│  ├─ conditions.csv
+│  ├─ conditions.yaml
+│  ├─ breed_groups.csv
+│  └─ paths.example.yaml
+├─ docs/
+│  ├─ EXPERIMENT_POLICY.md
+│  ├─ ASSET_REQUIREMENTS.md
+│  ├─ D_STATUS.md
+│  └─ EXPERIMENT_STATUS.md
+└─ results/
+   ├─ condition_summary_dev.csv
+   ├─ condition_matrix_validation_dev.csv
+   ├─ breed_group_summary_dev.csv
+   └─ plots/
+       └─ README.md
 ```
 
 ## 실행
