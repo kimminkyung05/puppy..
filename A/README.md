@@ -1,72 +1,113 @@
-# Dog Ancestry Estimation — Part A Classifier Baseline
+# A 담당: RQ1 순종 분류기 기준선 · 공용 평가 절차
 
-This directory contains the code and aggregate results for Part A of the mixed-dog ancestry project.
+혼합 시각 범주의 구성 비율 추정(믹스견 사진 → DNA 혈통 비율) 팀 프로젝트에서
+A 담당이 만든 코드와 요약 결과를 정리한 폴더이다.
 
-## Task
+현재 코드는 동결된 특징 벡터 위에 127클래스 선형 softmax 분류기를 학습하고,
+순종견과 믹스견을 서로 다른 데이터셋에서 별도로 평가한다.
 
-Frozen image features are used to train a single linear softmax classifier over 127 Tsinghua Dogs classes. Purebred validation and mixed-dog Top-1 performance are reported separately.
+## 1. 실험 구성
 
-## Feature extractors
-
-| Extractor | Input feature | Dimension |
+| 특징 추출기 | 분류기 입력 | 차원 |
 |---|---|---:|
-| CLIP | CLS token | 512 |
-| DINOv2 | CLS token | 768 |
-| DINOv3 | CLS token | 768 |
-| SIFT | BoVW histogram | 512 |
+| CLIP ViT-B/16 | CLS 특징 | 512 |
+| DINOv2 ViT-B/14 | CLS 특징 | 768 |
+| DINOv3 ViT-B/16 | CLS 특징 | 768 |
+| SIFT + BoVW | 시각 단어 히스토그램 | 512 |
 
-All input features are normalized row-wise with L2 normalization. Each classifier is trained with seeds 1, 2, and 3.
+- 모든 입력 특징은 사진별 L2 정규화를 적용한다.
+- 특징마다 seed 1, 2, 3으로 선형 분류기를 학습한다.
+- 전체 학습 횟수는 `특징 4종 × seed 3개 = 12회`이다.
+- 모델 출력 클래스는 Tsinghua Dogs 127개이다.
 
-## Main results
+## 2. 현재 평가 기준
 
-### Purebred validation
+### 순종견
 
-| Feature | Top-1 accuracy |
+- Tsinghua Dogs validation에서 Top-1 정확도를 계산한다.
+
+### 믹스견
+
+- 순종견 결과와 합치지 않고 UF 평가셋에서 별도로 계산한다.
+- face와 body 사진의 확률을 개체 단위로 평균한다.
+- seed 1·2·3의 확률을 평균해 대표 결과를 만든다.
+- DNA 공동 1위 품종 중 매핑 가능한 클래스 하나를 맞히면 정답으로 처리한다.
+- 공동 1위가 모두 127클래스 범위 밖인 개체만 제외하고 coverage를 함께 보고한다.
+- dev에서 기준을 고정한 후 hold를 한 번만 평가했다.
+
+현재 리뷰용 평가는 `Top-1 + coverage` 기준이다. 최종 태스크를 분류로 유지할지
+혈통 비율 추정으로 확장할지는 팀 회의에서 결정한다. 비율 추정으로 결정되면
+기존 분류기 확률을 이용해 포착 혈통 비율@3 등의 지표를 추가해야 한다.
+
+## 3. 주요 결과
+
+### 순종견 validation
+
+| 특징 | 평균 Top-1 정확도 |
 |---|---:|
 | DINOv3 | 87.94% |
 | DINOv2 | 85.63% |
 | CLIP | 72.45% |
 | SIFT | 9.53% |
 
-### Mixed-dog holdout
+### 믹스견 holdout
 
-The holdout was evaluated once under the frozen policy. Seventy-one of 80 dogs were scorable (coverage: 88.75%).
+총 80마리 중 71마리가 평가 가능했으며 coverage는 88.75%이다.
 
-| Feature | Hits / scorable | Top-1 accuracy |
+| 특징 | 정답 / 평가 가능 | Top-1 정확도 |
 |---|---:|---:|
 | CLIP | 10/71 | 14.1% |
 | DINOv3 | 9/71 | 12.7% |
 | DINOv2 | 8/71 | 11.3% |
 | SIFT | 1/71 | 1.4% |
 
-The confidence intervals of the three deep features overlap substantially; the numerical ordering should not be interpreted as a statistically established ranking.
+딥 특징 3종의 신뢰구간이 크게 겹치므로 수치상 순서를 통계적으로 확정된
+성능 순위로 해석하지 않는다.
 
-## Repository structure
+## 4. 폴더 구조
 
 ```text
-configs/    frozen class order, mapping, split, and preprocessing notes
-notebooks/  Colab quick-start notebook
-scripts/    training, export, summary, and locked evaluation scripts
-src/        reusable evaluation entry point
-results/    aggregate CSV results
-figures/    result plots
-docs/       evaluation policy and final holdout report
-data/       data availability notes only
+A/
+├─ configs/     클래스 순서, 최종 매핑, 분할, 전처리 설명
+├─ data/        데이터 파일을 저장소에서 제외한 이유와 준비 방법
+├─ docs/        평가 기준, hold 평가 결과, 재평가 방지 기록
+├─ figures/     validation·dev·hold 결과 그래프
+├─ notebooks/   Colab 실행 확인용 노트북
+├─ results/     집계된 결과 CSV와 hold 실행 기록
+├─ scripts/     학습·내보내기·집계·dev/hold 평가 코드
+├─ src/         특징 → 분류기 → 개체 단위 평가 실행 코드
+├─ requirements.txt
+└─ README.md
 ```
 
-## Current evaluation scope
+## 5. 실행 환경
 
-The committed evaluator implements the classification formulation agreed for
-the current review: purebred and mixed-dog experiments are reported separately,
-and mixed-dog performance uses Top-1 accuracy plus coverage. The team is still
-deciding whether the final task will remain classification or become ancestry
-proportion estimation. If the latter is selected, captured ancestry at Top-3
-and any additional distribution metrics must be added before final reporting.
+```bash
+pip install -r requirements.txt
+```
 
-## Data availability
+학습 및 평가 스크립트는 원본 사진이 아니라 B·C가 공유한 사전 추출 특징과
+평가 메타데이터를 입력으로 받는다. 자세한 인자는 각 스크립트의
+`--help`에서 확인할 수 있다.
 
-Raw Tsinghua Dogs images, Reddit/UF images, DNA screenshots, precomputed features, ZIP archives, and local checkpoints are intentionally excluded. See `data/README.md`.
+Colab에서 간단한 실행 확인을 하려면
+`notebooks/A_COLAB_QUICKSTART.ipynb`를 업로드하고 셀을 위에서부터 실행한다.
 
-## Reproduction notes
+## 6. 데이터 및 체크포인트
 
-The scripts expect precomputed feature files and the evaluation metadata described in the project documentation. The one-time holdout marker and final aggregate outputs are included, but the holdout evaluation should not be rerun or used to tune the model.
+다음 파일은 용량·저작권·개인정보 및 저장소 관리 문제로 GitHub에 포함하지 않는다.
+
+- Tsinghua Dogs 원본 이미지와 annotation
+- UF/Reddit 원본 이미지와 DNA 원본 자료
+- 사전 추출 특징 파일(`.npy`, `.npz`, 특징 ZIP)
+- 로컬 학습 체크포인트와 D 전달용 ZIP
+
+분류기 체크포인트 12개와 D 전달용 실행 패키지는 팀 공유 드라이브에서 관리한다.
+공개 저장소에는 재현에 필요한 코드, 설정, 요약 결과만 올린다.
+
+## 7. 재현 시 주의 사항
+
+- 새 특징은 학습 때와 동일한 추출기·crop·전처리를 사용해야 한다.
+- 특징 배열의 행 순서는 대응하는 index CSV와 같아야 한다.
+- 최종 hold 결과를 보고 설정을 변경하거나 hold를 반복 평가하지 않는다.
+- 현재 결과는 분류 기준이며, 비율 추정 지표는 팀 결정 후 추가한다.
