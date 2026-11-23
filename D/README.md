@@ -52,6 +52,7 @@ extra_drop = (original - transformed) - (original - control)
 
 ## 디렉터리
 
+```text
 D/
 ├─ configs/
 │  ├─ conditions.csv
@@ -68,13 +69,16 @@ D/
 │  ├─ build_d_notebook.py
 │  └─ run_d_experiment.py
 └─ README.md
+```
 
 ## 실행
 
 Colab에서 팀 공유 Drive를 마운트한 뒤 개인 경로 설정을 확인하고 실행합니다.
 
+```bash
 pip install -r ../B/requirements.txt
 python scripts/run_d_experiment.py
+```
 
 노트북과 스크립트는 데이터·체크포인트·특징 자산의 실제 위치를 자동으로 알 수 없습니다. 실행 전에 configs/paths.example.yaml을 복사해 환경에 맞는 경로를 설정해야 합니다.
 
