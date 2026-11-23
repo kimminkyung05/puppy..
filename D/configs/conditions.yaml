@@ -1,0 +1,54 @@
+version: 1
+split: dev
+conditions:
+  - name: original
+    kind: baseline
+    paired_control: null
+  - name: area_head
+    kind: region
+    paired_control: control_area_head
+  - name: area_body
+    kind: region
+    paired_control: control_area_body
+  - name: area_background
+    kind: region
+    paired_control: control_area_background
+  - name: blur_01
+    kind: blur
+    paired_control: control_blur_01
+  - name: blur_03
+    kind: blur
+    paired_control: control_blur_03
+  - name: blur_06
+    kind: blur
+    paired_control: control_blur_06
+  - name: blur_12
+    kind: blur
+    paired_control: control_blur_12
+  - name: gray
+    kind: color
+    paired_control: control_gray
+  - name: control_area_head
+    kind: control
+    paired_control: area_head
+  - name: control_area_body
+    kind: control
+    paired_control: area_body
+  - name: control_area_background
+    kind: control
+    paired_control: area_background
+  - name: control_blur_01
+    kind: control
+    paired_control: blur_01
+  - name: control_blur_03
+    kind: control
+    paired_control: blur_03
+  - name: control_blur_06
+    kind: control
+    paired_control: blur_06
+  - name: control_blur_12
+    kind: control
+    paired_control: blur_12
+  - name: control_gray
+    kind: control
+    paired_control: gray
