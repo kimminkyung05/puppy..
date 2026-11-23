@@ -41,7 +41,10 @@ B/
 │   ├── draft_uf_breed_map.py   #   DNA 품종 → Tsinghua 클래스 매핑 초안
 │   ├── make_val_split.py       #   순종 보조 평가용 val dev/test 분할
 │   ├── provisional_score_uf.py       # 믹스견 임시 채점
-│   └── provisional_score_purebred.py # 순종 임시 채점
+│   ├── provisional_score_purebred.py # 순종 임시 채점
+│   └── plot_b_results.py       #   결과 그림 (results/ 집계값 → figures/)
+├── results/                    # dev 임시 채점 집계값과 해설 (README.md). 개별 DNA 값 없음
+├── figures/                    # 보고서용 그림
 ├── tests/                      # 모델 다운로드 없이 도는 toy 점검
 └── notebooks/B_colab_run.ipynb # Colab T4 실행 노트북 (환경 준비 · 실행 · 결과 확인만)
 ```

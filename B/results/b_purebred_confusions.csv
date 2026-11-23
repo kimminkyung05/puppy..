@@ -1,0 +1,11 @@
+true_class,predicted_class,count,same_breed_in_b
+collie,Shetland_sheepdog,46,0
+toy_poodle,teddy,36,1
+English_foxhound,Walker_hound,22,0
+miniature_poodle,teddy,21,1
+toy_terrier,Doberman,18,0
+Black_sable,German_shepherd,18,0
+toy_terrier,miniature_pinscher,15,0
+Pembroke,Cardigan,14,0
+Irish_wolfhound,Scottish_deerhound,14,0
+Cane_Carso,Fila Braziliero,14,0
