@@ -1,0 +1,4 @@
+﻿model_name,A_mapping_policy,B_reference_mapping_inferred,A_captured_orig,B_captured_orig,A_minus_B_orig,A_captured_norm,B_captured_norm,A_minus_B_norm
+clip,exact,exact,0.204785,0.217,-0.012215000000000004,0.3579569764339184,0.378,-0.02004302356608162
+dinov2,exact,exact,0.254785,0.205,0.049784999999999996,0.44073286242398224,0.334,0.10673286242398222
+dinov3,exact,exact,0.154785,0.13,0.024785,0.2578361061680038,0.222,0.035836106168003784
