@@ -2,7 +2,8 @@
 
 | 담당 | 필요한 자산 | 상태 |
 | --- | --- | --- |
-| A | 최종 분류기 checkpoint, `eval.py`, `truth_UF.csv`, 최종 `breed_map.csv` | 공유 Drive에서 확인 필요 |
+| A | 최종 breed_map.csv, truth_UF.csv | 수령·개발 평가에 사용 |
+| A | 최종 분류기 checkpoint, eval.py | 최종 실행 전 버전 확인 필요 |
 | B | CLIP·DINOv2·DINOv3 추출기와 원본·변형 특징 | 변형 자산 추가 필요 |
 | C | SIFT 추출 코드, BoVW 코드북, 변형 특징 | 원본 기준선 일부 확보 |
 | SAM 담당 | SAM3 설치·checkpoint·실제 마스크 | 미확보 |
