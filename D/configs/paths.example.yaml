@@ -1,0 +1,9 @@
+# 개인 환경용 예시. 실제 사진·DNA·Drive 경로는 커밋하지 않는다.
+project_root: /content/drive/MyDrive/your_private_project
+input_root: ${project_root}/d_input
+output_root: ${input_root}/D_outputs
+classifier_root: ${input_root}/A_checkpoints
+metadata: ${input_root}/mixdog_metadata.csv
+dna_long: ${input_root}/dna_long.csv
+breed_map: ${input_root}/breed_map.csv
+feature_cache: ${output_root}/feature_cache
