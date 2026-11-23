@@ -1,0 +1,12 @@
+{
+  "executed_at_asia_seoul": "2026-11-23T02:29:34.069950+09:00",
+  "confirmation": "FINAL_HOLD_ONCE",
+  "policy": {
+    "hold_scored_once": true,
+    "partial_labels_not_renormalized": true,
+    "co_dominant_tie": "any mapped co-dominant class is correct",
+    "all_dominant_breeds_unmapped": "excluded and reported in coverage",
+    "face_body": "probability mean per dog",
+    "seeds": "probability mean across seeds 1, 2, 3"
+  }
+}
