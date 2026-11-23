@@ -1,7 +1,39 @@
-# 수집 이미지 · DNA 결과 · 실행 결과는 올리지 않는다
-uf_dogs/
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 데이터와 결과: 저장소에 올리지 않는다 (수집 이미지 · DNA 결과 재배포 금지)
 data/
 outputs/
+*.zip
 *.npz
-*.npz.tmp
-__pycache__/
+*.npy
+*.tmp
+# A의 평가 기준 원본: 개별 DNA와 일치하는 예시 · 개 ID가 있어 올리지 않는다
+EVALUATION_POLICY.md
+
+# 모델 가중치 · 체크포인트
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# 사람마다 다른 경로 설정 (configs/paths.yaml만 공유한다)
+paths_local.yaml
+paths_colab.yaml
+
+# 비밀값 · 개인 설정
+.env
+.claude/settings.local.json
+
+# 편집기 · OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# UF 공개 페이지에서 받은 사진 (download_uf_dogs.py 기본 출력)
+uf_dogs/
