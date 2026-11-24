@@ -1,0 +1,14 @@
+﻿space,mapping,picks,truth,metric,n,human,chance,ceiling,diff_vs_chance,two_se,judgement,hits,coverage
+model,exact,breeds,orig,captured@3,20,0.1798,0.0879,0.5412,0.0919,0.1109,판단 불가,,
+model,exact,breeds,norm,captured@3,20,0.3126,0.1682,0.9696,0.1445,0.2014,판단 불가,,
+model,exact,as_given,orig,captured@3,20,0.1798,0.0879,0.5412,0.0919,0.1109,판단 불가,,
+model,exact,as_given,norm,captured@3,20,0.3126,0.1682,0.9696,0.1445,0.2014,판단 불가,,
+model,exact,first_breed,dominant,top1,18,0.3333,,,,,,6.0,0.9
+model,exact+similar,breeds,orig,captured@3,20,0.1798,0.0879,0.5659,0.0919,0.1109,판단 불가,,
+model,exact+similar,breeds,norm,captured@3,20,0.3126,0.1627,0.9696,0.1499,0.198,판단 불가,,
+model,exact+similar,as_given,orig,captured@3,20,0.1798,0.0879,0.5659,0.0919,0.1109,판단 불가,,
+model,exact+similar,as_given,norm,captured@3,20,0.3126,0.1627,0.9696,0.1499,0.198,판단 불가,,
+model,exact+similar,first_breed,dominant,top1,19,0.3158,,,,,,6.0,0.95
+dna_name,none,breeds,orig,captured@3,20,0.2085,,0.7379,,,,,
+dna_name,none,as_given,orig,captured@3,20,0.2085,,0.7379,,,,,
+dna_name,none,first_breed,dominant,top1,20,0.3,,,,,,6.0,

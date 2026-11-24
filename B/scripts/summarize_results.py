@@ -3,6 +3,9 @@
 raw_dev_scores.csv 는 Colab 노트북의 채점 셀 출력(provisional_score_uf.py, provisional_score_purebred.py)을
 옮겨 적은 집계값이다. 개별 개의 DNA 값은 없다.
 
+results/dev_scores_final.csv (provisional_score_uf.py --summary-csv, METRICS_FINAL.md 기준 = 정확 매핑)가 있으면
+먼저 raw_dev_scores.csv 의 믹스견 행(mixed_top1, captured_*, overlap_*)을 그 값으로 바꿔 쓴다. 순종 행은 그대로 둔다.
+
 출력 (results/)
   model_summary.csv                 순종 Tsinghua val dev 절반 Top-1 · Top-5 (A 의 model_summary.csv 대응)
   dev_top1_model_summary.csv        믹스견 UF dev Top-1 + coverage + Wilson 95% 구간 (A 의 hold 요약과 같은 열)
@@ -37,7 +40,37 @@ def model_name(cfg: str) -> str:
     return cfg.replace("+L2", "_l2")
 
 
+JUDGE = {"찍기보다 높음": "above_chance", "찍기보다 낮음": "below_chance"}
+
+
+def sync_mixed_from_final() -> None:
+    """dev_scores_final.csv(정확 매핑) → raw_dev_scores.csv 의 믹스견 행."""
+    fin_path = RES / "dev_scores_final.csv"
+    if not fin_path.exists():
+        print(f"[그대로] {fin_path.name} 없음: raw_dev_scores.csv 의 믹스견 행을 바꾸지 않음")
+        return
+    fin = pd.read_csv(fin_path, encoding="utf-8-sig")
+    fin = fin[fin["mapping"] == "정확"]
+    rows = []
+    for _, r in fin.iterrows():
+        if r["metric"] == "top1":
+            rows.append({"section": "mixed_top1", "config": r["config"], "value": r["value"], "rep_min": r["rep_min"],
+                         "rep_max": r["rep_max"], "hit": r["hits"], "n": r["n"]})
+            continue
+        sub = "all20" if str(r["subset"]).startswith("dev") else "cov05"
+        rows.append({"section": f"{r['metric']}_{sub}_{r['truth']}", "config": r["config"], "value": r["value"],
+                     "rep_min": r["rep_min"], "rep_max": r["rep_max"], "n": r["n"], "chance": r["chance"],
+                     "ceiling": r["ceiling"], "diff_vs_chance": r["diff_vs_chance"], "two_se": r["two_se"],
+                     "judgement": JUDGE.get(r["judgement"], "unclear")})
+    raw = pd.read_csv(RES / "raw_dev_scores.csv")
+    keep = raw[raw["section"].str.startswith("purebred")]
+    new = pd.concat([pd.DataFrame(rows), keep], ignore_index=True)[raw.columns]
+    new.to_csv(RES / "raw_dev_scores.csv", index=False, float_format="%.6g")
+    print(f"raw_dev_scores.csv 믹스견 행 {len(rows)}개를 {fin_path.name}(정확 매핑)으로 갱신")
+
+
 def main():
+    sync_mixed_from_final()
     raw = pd.read_csv(RES / "raw_dev_scores.csv")
     sec = {s: g.set_index("config") for s, g in raw.groupby("section")}
     cfgs = list(sec["mixed_top1"].index)

@@ -104,7 +104,8 @@ def fig_top1(df: pd.DataFrame, l2: bool, out: Path) -> None:
     fig.suptitle(f"Prototype mixing (FCLS{' + L2' if l2 else ''}): Top-1 reported separately",
                  color=INK, fontsize=13)
     fig.text(0.5, 0.005, "Error bars: Wilson 95% interval. Dotted line: chance Top-1 (1/127). "
-             "Provisional dev scoring (before A's eval.py).", ha="center", color=INK2, fontsize=8.5)
+             "Mixed-breed Top-1 uses exact mapping (METRICS_FINAL). Provisional dev scoring.",
+             ha="center", color=INK2, fontsize=8.5)
     fig.tight_layout(rect=(0, 0.03, 1, 0.95))
     fig.savefig(out, dpi=200, facecolor=SURFACE)
     plt.close(fig)
@@ -166,13 +167,14 @@ def fig_confusions(conf: pd.DataFrame, out: Path) -> None:
     plt.close(fig)
 
 
-def fig_vs_a(df: pd.DataFrame, a_dir: Path, l2: bool, out: Path) -> bool:
-    """A 분류기와 B 평균점 섞기를 같은 평가 대상에서 비교. A 결과 파일이 없으면 건너뛴다."""
-    a_dev, a_val = a_dir / "dev_top1_model_summary.csv", a_dir / "model_summary.csv"
-    if not (a_dev.exists() and a_val.exists()):
-        print(f"[건너뜀] A 결과 없음: {a_dir}")
+def fig_vs_a(df: pd.DataFrame, a_dir: Path, a_exact: Path, l2: bool, out: Path) -> bool:
+    """A 분류기와 B 평균점 섞기를 같은 평가 대상에서 비교. A 결과 파일이 없으면 건너뛴다.
+    믹스견 Top-1 은 METRICS_FINAL.md 기준(정확 매핑)인 A 의 dev_ratio_metrics_exact.csv 를 쓴다."""
+    a_val = a_dir / "model_summary.csv"
+    if not (a_exact.exists() and a_val.exists()):
+        print(f"[건너뜀] A 결과 없음: {a_exact} / {a_val}")
         return False
-    ad = pd.read_csv(a_dev, encoding="utf-8-sig").set_index("model_name")
+    ad = pd.read_csv(a_exact, encoding="utf-8-sig").set_index("model_name")
     av = pd.read_csv(a_val, encoding="utf-8-sig").set_index("model_name")
     names = BACKBONES + ["sift"]
     mixed, pure = pick(df, "mixed_top1", l2), pick(df, "purebred_top1", l2)
@@ -196,9 +198,9 @@ def fig_vs_a(df: pd.DataFrame, a_dir: Path, l2: bool, out: Path) -> bool:
         ax.set_xticks(x, names)
         ax.legend(frameon=False, loc="upper right", fontsize=9)
 
-    # 믹스견 dev: 같은 20마리, 같은 채점 가능 19마리
-    n_a = ad.loc[names, "scorable_dogs"].to_numpy()
-    hit_a = np.round(ad.loc[names, "top1_accuracy_mean"].to_numpy() * n_a)
+    # 믹스견 dev: 같은 20마리, 정확 매핑으로 채점 가능한 같은 개
+    n_a = ad.loc[names, "top1_scorable"].to_numpy(dtype=float)
+    hit_a = ad.loc[names, "top1_hits"].to_numpy(dtype=float)
     hit_b = np.array([mixed.loc[b, "hit"] if b in mixed.index else np.nan for b in names], dtype=float)
     n_b = np.array([mixed.loc[b, "n"] if b in mixed.index else np.nan for b in names], dtype=float)
     vals = {"A": 100 * hit_a / n_a, "B": 100 * hit_b / n_b}
@@ -207,7 +209,7 @@ def fig_vs_a(df: pd.DataFrame, a_dir: Path, l2: bool, out: Path) -> bool:
     labels = {"A": [f"{v:.1f}%\n{int(h)}/{int(n)}" for v, h, n in zip(vals["A"], hit_a, n_a)],
               "B": [f"{v:.1f}%\n{int(h)}/{int(n)}" if n == n else "" for v, h, n in zip(vals["B"], hit_b, n_b)]}
     draw(a1, vals, cis, labels, 75, "Top-1 accuracy (%)")
-    a1.set_title("Mixed-breed UF dev (same 19 scorable dogs)", color=INK, fontsize=11)
+    a1.set_title(f"Mixed-breed UF dev (same {int(n_a[0])} scorable dogs, exact map)", color=INK, fontsize=11)
 
     # 순종: A 는 val 전체 5,080장, B 는 val dev 절반 2,540장 (같은 사진 집합이 아니다)
     va = 100 * av.loc[names, "validation_accuracy_mean"].to_numpy()
@@ -234,7 +236,9 @@ def main():
     ap.add_argument("--l2", action="store_true", help="L2 정규화한 설정으로 그린다 (기본: L2 없음)")
     ap.add_argument("--out", default=str(ROOT / "figures"))
     ap.add_argument("--a-results", default=str(ROOT.parent / "A" / "results"),
-                    help="A 의 results 폴더 (A 와 B 비교 그림용. 없으면 건너뜀)")
+                    help="A 의 results 폴더 (순종 val Top-1 용. 없으면 건너뜀)")
+    ap.add_argument("--a-exact", default=str(ROOT.parent / "A" / "A" / "results" / "dev_ratio_metrics_exact.csv"),
+                    help="A 의 정확 매핑 dev 지표 (믹스견 Top-1 용)")
     args = ap.parse_args()
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -244,7 +248,7 @@ def main():
     fig_top1(df, args.l2, out / f"dev_purebred_vs_mixed_top1{suffix}.png")
     fig_captured(df, args.l2, out / f"dev_captured_share{suffix}.png")
     fig_confusions(conf, out / "purebred_confusions.png")
-    fig_vs_a(df, Path(args.a_results), args.l2, out / f"dev_top1_a_vs_b{suffix}.png")
+    fig_vs_a(df, Path(args.a_results), Path(args.a_exact), args.l2, out / f"dev_top1_a_vs_b{suffix}.png")
     for p in sorted(out.glob("*.png")):
         print(p)
 

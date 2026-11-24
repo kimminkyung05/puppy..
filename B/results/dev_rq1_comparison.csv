@@ -1,0 +1,13 @@
+﻿method,backbone,captured_orig,captured_norm,overlap_norm,top1,top1_hits,top1_n,coverage,note
+A_classifier,clip,0.2048,0.358,0.0949,0.2778,5.0,18.0,0.9,
+B_fcls,clip,0.2173,0.3777,0.1674,0.2778,5.0,18.0,0.9,
+A_classifier,dinov2,0.2548,0.4407,0.198,0.2778,5.0,18.0,0.9,
+B_fcls,dinov2,0.2048,0.334,0.1829,0.2778,5.0,18.0,0.9,
+A_classifier,dinov3,0.1548,0.2578,0.1425,0.2222,4.0,18.0,0.9,
+B_fcls,dinov3,0.1298,0.2222,0.1363,0.1667,3.0,18.0,0.9,
+A_classifier,sift,0.0173,0.0429,0.0227,0.0,0.0,18.0,0.9,
+B_fcls,sift,,,,,,,,SIFT 특징 미수령 (C)
+C_mix,all,,,,,,,,UF 개 단위 예측 없음 (C)
+human_UF_survey,-,0.1798,0.3126,,0.3333,6.0,18.0,0.9,UF Top Responses 앞 3품종 (비율 없어 겹침 없음)
+chance,-,0.0879,0.1682,0.0469,,,,,학습셋 클래스 빈도
+ceiling,-,0.5412,0.9696,1.0,,,,,정확 매핑
