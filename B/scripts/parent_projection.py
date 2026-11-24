@@ -15,7 +15,9 @@
 하위 명령:
   extract  부모 품종 학습 사진(클래스당 최대 N장)과 대상 개 패널 사진의 특징을 뽑는다 (로컬 CPU용).
            Colab에 전체 학습셋 특징이 있으면 이 단계 없이 plot 에 --train-subset train 을 쓴다.
-  plot     그림(png)과 좌표 요약 csv 를 만든다.
+  plot     그림(png), 좌표 요약 csv, 그림용 데이터(*_plotdata.json)를 만든다.
+  redraw   *_plotdata.json 만 읽어 그림을 다시 그린다. 특징 파일 없이 로컬에서 디자인만 고칠 때 쓴다.
+           python scripts/parent_projection.py redraw --plot-data ../outputs/figures_colab/..._plotdata.json
 
 개별 개의 DNA 비율이 그림에 들어가므로 출력은 저장소(B/) 밖에 둔다. 기본 출력: features_root 옆 figures_local/.
 
@@ -143,12 +145,16 @@ def fcls_two_parent_share(preds_dir: Path | None, backbone: str, eval_subset_tag
     return P
 
 
-def cmd_plot(args, paths, dogs):
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-    from matplotlib import font_manager
+INK, INK2, GRID = "#0b0b0b", "#52514e", "#e6e5e0"
+C_MAJOR, C_MINOR, C_PRED = "#2a78d6", "#eb6834", "#6250d6"
 
+
+def nice(name: str) -> str:
+    return name.replace("_", " ")
+
+
+def setup_fonts(plt):
+    from matplotlib import font_manager
     nanum = Path("/usr/share/fonts/truetype/nanum/NanumGothic.ttf")     # Colab: apt-get install fonts-nanum
     if nanum.exists():
         font_manager.fontManager.addfont(str(nanum))
@@ -156,94 +162,194 @@ def cmd_plot(args, paths, dogs):
         if any(f == x.name for x in font_manager.fontManager.ttflist):
             plt.rcParams["font.family"] = f
             break
-    plt.rcParams["axes.unicode_minus"] = False
+    plt.rcParams.update({"axes.unicode_minus": False, "axes.edgecolor": INK2, "axes.linewidth": 0.8,
+                         "xtick.color": INK2, "ytick.color": INK2, "xtick.labelsize": 8, "ytick.labelsize": 8})
 
+
+def compute(args, paths, dogs):
+    """패널마다 그릴 좌표와 요약 행을 계산한다 (그리기와 분리)."""
     froot = paths["outputs"]["features_root"]
-    out_dir = Path(args.out_dir) if args.out_dir else Path(froot).parent / "figures_local"
-    out_dir.mkdir(parents=True, exist_ok=True)
     preds_dir = Path(args.preds_dir) if args.preds_dir else None
-
-    n, m = len(dogs), len(args.backbones)
-    fig, axes = plt.subplots(n, m, figsize=(4.2 * m, 3.0 * n + 0.8), squeeze=False)
-    recs = []
-    for j, b in enumerate(args.backbones):
+    rng = np.random.default_rng(0)
+    cells, recs = {}, []
+    for b in args.backbones:
         _, Xtr, itr = load_features(froot, b, args.train_subset, args.pool)
-        ids_ev, Xev, iev = load_features(froot, b, args.eval_subset, args.pool)
+        _, Xev, iev = load_features(froot, b, args.eval_subset, args.pool)
         P = fcls_two_parent_share(preds_dir, b, args.pred_tag)
         lab = itr["label"].to_numpy()
-        for i, r in enumerate(dogs.itertuples()):
-            ax = axes[i, j]
+        for r in dogs.itertuples():
             A, B = Xtr[lab == r.major], Xtr[lab == r.minor]
-            pa, pb = A.mean(0), B.mean(0)
+            pa, pb = A.mean(0), B.mean(0)                     # 평균점은 해당 클래스 전체로
             sel = (iev["dog_id"] == r.dog_id).to_numpy()
             panels = iev.loc[sel, "image_id"].str.rsplit("_", n=1).str[-1].tolist()
             Xd = Xev[sel]
-            Xm = Xd.mean(0, keepdims=True)
             tA, dA = line_coords(A, pa, pb)
             tB, dB = line_coords(B, pa, pb)
             tp, dp = line_coords(Xd, pa, pb)
-            tm, dm = line_coords(Xm, pa, pb)
+            tm, dm = line_coords(Xd.mean(0, keepdims=True), pa, pb)
+            iA = rng.choice(len(A), size=min(len(A), args.max_points), replace=False)
+            iB = rng.choice(len(B), size=min(len(B), args.max_points), replace=False)
             t_star = r.p_minor / (r.p_major + r.p_minor)
-
-            ax.scatter(tA, dA, s=7, c="#4C72B0", alpha=0.35, lw=0, label=f"주 부모 순종 사진")
-            ax.scatter(tB, dB, s=7, c="#DD8452", alpha=0.35, lw=0, label=f"부 부모 순종 사진")
-            ax.plot([0, 1], [0, 0], c="k", lw=1.2)
-            ax.scatter([0, 1], [0, 0], marker="s", s=40, c=["#4C72B0", "#DD8452"], edgecolor="k", zorder=5)
-            ax.axvline(t_star, c="green", ls="--", lw=1.2, label="DNA 비율 (두 부모만, t*)")
-            mk = {"face": "^", "body": "v"}
-            for k, pnl in enumerate(panels):
-                ax.scatter(tp[k], dp[k], marker=mk.get(pnl, "o"), s=55, c="#C44E52", edgecolor="k",
-                           zorder=6, label="믹스견 사진 (▲얼굴 ▼몸)" if k == 0 else None)
-            ax.scatter(tm, dm, marker="*", s=180, c="#C44E52", edgecolor="k", zorder=7, label="믹스견 두 사진 평균")
-            t_pred = np.nan
+            share, t_pred = None, np.nan
             if P is not None and r.dog_id in P.index:
-                wa, wb = P.loc[r.dog_id, r.major], P.loc[r.dog_id, r.minor]
-                if wa + wb > 0:
-                    t_pred = wb / (wa + wb)
-                    ax.axvline(t_pred, c="purple", ls=":", lw=1.4, label="B 예측 (두 부모 몫만 다시 나눔)")
-                ax.text(0.98, 0.97, f"B 예측 두 부모 몫 합 {wa + wb:.2f}", transform=ax.transAxes,
-                        ha="right", va="top", fontsize=7.5, color="purple")
-            ax.set_xlim(-0.6, 1.6)
-            ax.set_ylim(0, max(np.percentile(np.r_[dA, dB], 99), dp.max(), dm.max()) * 1.1)
-            if i == 0:
-                ax.set_title(LABEL.get(b, b), fontsize=12)
-            if j == 0:
-                ax.set_ylabel(f"{r.dog_id}\n{r.major} {r.p_major:g}%\n+ {r.minor} {r.p_minor:g}%\n"
-                              f"(그 밖 최대 {r.p_third:g}%)\n\n선분에서 거리", fontsize=8.5)
-            if i == n - 1:
-                ax.set_xlabel("두 평균점 잇는 선 위 위치 t  (0 = 주 부모, 1 = 부 부모)", fontsize=8.5)
+                wa, wb = float(P.loc[r.dog_id, r.major]), float(P.loc[r.dog_id, r.minor])
+                share = wa + wb
+                if share > 0:
+                    t_pred = wb / share
+            cells[(b, r.dog_id)] = dict(tA=tA[iA], dA=dA[iA], tB=tB[iB], dB=dB[iB], tp=tp, dp=dp, panels=panels,
+                                        tm=float(tm[0]), dm=float(dm[0]), t_star=t_star, t_pred=t_pred, share=share)
             recs.append({"backbone": b, "dog_id": r.dog_id, "major": r.major, "minor": r.minor,
                          "t_star": round(t_star, 3), "t_mean": round(float(tm[0]), 3),
                          **{f"t_{p}": round(float(v), 3) for p, v in zip(panels, tp)},
                          "d_mean": round(float(dm[0]), 3),
                          "d_purebred_median": round(float(np.median(np.r_[dA, dB])), 3),
                          "t_pred_B": round(float(t_pred), 3) if not np.isnan(t_pred) else None,
+                         "B_share_two_parents": round(share, 3) if share is not None else None,
                          "n_major": len(A), "n_minor": len(B)})
+    return cells, pd.DataFrame(recs)
 
-    h, l = axes[0, 0].get_legend_handles_labels()
-    for ax in axes.flat:
-        for hh, ll in zip(*ax.get_legend_handles_labels()):
-            if ll not in l:
-                h.append(hh)
-                l.append(ll)
-    top = 1 - 1.1 / fig.get_figheight()          # 제목 + 범례 두 줄 자리 (인치 기준)
-    fig.suptitle(f"믹스견 특징은 두 부모 평균점 사이 어디에 놓이나 (dev, {args.pool} 특징, "
-                 f"평균점 = {args.train_subset})", y=1 - 0.15 / fig.get_figheight(), fontsize=11)
-    fig.legend(h, l, loc="upper center", bbox_to_anchor=(0.5, 1 - 0.4 / fig.get_figheight()),
-               ncol=3, fontsize=8.5, frameon=False)
-    fig.tight_layout(rect=(0, 0, 1, top))
+
+def draw(args, dogs, cells, png: Path):
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
+    setup_fonts(plt)
+
+    n, m = len(dogs), len(args.backbones)
+    ymax = 1.08 * max(max(np.percentile(np.r_[c["dA"], c["dB"]], 99), c["dp"].max()) for c in cells.values())
+    LEFT = 2.75                                            # 왼쪽 개 설명 칸 + 세로축 제목 (인치)
+    W, H = LEFT + 3.1 * m + 0.2, 2.0 + 2.15 * n
+    fig, axes = plt.subplots(n, m, figsize=(W, H), sharex=True, sharey=True, squeeze=False)
+    fig.subplots_adjust(left=LEFT / W, right=1 - 0.2 / W, top=1 - 1.75 / H, bottom=0.62 / H,
+                        wspace=0.08, hspace=0.18)
+    mk = {"face": "^", "body": "v"}
+    for j, b in enumerate(args.backbones):
+        axes[0, j].set_title(LABEL.get(b, b), fontsize=11, fontweight="bold", color=INK, pad=6)
+        for i, r in enumerate(dogs.itertuples()):
+            ax, c = axes[i, j], cells[(b, r.dog_id)]
+            ax.grid(axis="y", color=GRID, lw=0.6)
+            ax.set_axisbelow(True)
+            for side in ("top", "right"):
+                ax.spines[side].set_visible(False)
+            ax.scatter(c["tA"], c["dA"], s=5, c=C_MAJOR, alpha=0.28, lw=0, rasterized=True)
+            ax.scatter(c["tB"], c["dB"], s=5, c=C_MINOR, alpha=0.28, lw=0, rasterized=True)
+            ax.plot([0, 1], [0, 0], c=INK2, lw=1.4, solid_capstyle="round", clip_on=False, zorder=3)
+            ax.scatter([0, 1], [0, 0], s=46, c=[C_MAJOR, C_MINOR], edgecolor="white", lw=1.5,
+                       clip_on=False, zorder=4)
+            ax.axvline(c["t_star"], color=INK2, ls=(0, (4, 3)), lw=1.0, zorder=2)
+            if not np.isnan(c["t_pred"]):
+                ax.axvline(c["t_pred"], color=C_PRED, ls=(0, (1, 2)), lw=1.6, zorder=2)
+            for k, pnl in enumerate(c["panels"]):
+                ax.plot([c["tm"], c["tp"][k]], [c["dm"], c["dp"][k]], c=INK2, lw=0.7, zorder=5)
+                ax.scatter(c["tp"][k], c["dp"][k], marker=mk.get(pnl, "o"), s=26, facecolor="white",
+                           edgecolor=INK, lw=1.0, zorder=6)
+            ax.scatter(c["tm"], c["dm"], marker="D", s=40, c=INK, edgecolor="white", lw=1.2, zorder=7)
+            if c["share"] is not None:
+                ax.text(0.985, 0.04, f"B가 두 부모에 준 몫 {c['share']:.2f}", transform=ax.transAxes,
+                        ha="right", va="bottom", fontsize=7, color=INK2,
+                        bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="none", alpha=0.85), zorder=8)
+            if j == 0:
+                pos = ax.get_position()
+                yc = pos.y0 + pos.height * 0.62
+                fig.text(0.2 / W, yc, r.dog_id, ha="left", va="bottom", fontsize=10.5, fontweight="bold", color=INK)
+                fig.text(0.2 / W, yc - 0.06 / H,
+                         f"{nice(r.major)} {r.p_major:g}%\n+ {nice(r.minor)} {r.p_minor:g}%\n기타 품종 최대 {r.p_third:g}%",
+                         ha="left", va="top", fontsize=8, color=INK2, linespacing=1.4)
+    ax0 = axes[0, 0]
+    ax0.set_xlim(-0.45, 1.45)
+    ax0.set_ylim(0, ymax)
+    ax0.set_xticks([0, 0.5, 1])
+    fig.supxlabel("두 부모 평균점을 잇는 선 위의 위치   (0 = 주 부모 평균점, 1 = 부 부모 평균점)",
+                  fontsize=9, color=INK2, y=0.12 / H)
+    fig.text((LEFT - 0.5) / W, (0.62 / H + 1 - 1.75 / H) / 2, "선에서 떨어진 거리   (두 평균점 사이 거리 = 1)", rotation=90,
+             ha="center", va="center", fontsize=9, color=INK2)
+    fig.text(0.2 / W, 1 - 0.22 / H, "믹스견 특징은 두 부모 품종 평균점 사이 어디에 놓이나",
+             fontsize=13, fontweight="bold", color=INK, va="top")
+    fig.text(0.2 / W, 1 - 0.58 / H,
+             f"dev {n}마리 (DNA 상위 두 품종이 정확 매핑, 합 ≥ {args.min_top2:g}%) · {args.pool} 특징\n"
+             f"평균점은 학습셋({args.train_subset})의 해당 품종 전체로 계산 · 순종 점은 품종당 최대 {args.max_points}장만 표시",
+             fontsize=8.5, color=INK2, va="top", linespacing=1.5)
+    # 범례는 열 우선으로 채워진다: 1행 = 순종 두 종류 + 기준선 두 개, 2행 = 믹스견 표시 세 개
+    handles = [
+        Line2D([], [], ls="", marker="o", ms=5, mfc=C_MAJOR, mec="none", alpha=0.6, label="주 부모 순종 사진"),
+        Line2D([], [], ls="", marker="D", ms=6, mfc=INK, mec="white", label="믹스견 (두 사진 평균)"),
+        Line2D([], [], ls="", marker="o", ms=5, mfc=C_MINOR, mec="none", alpha=0.6, label="부 부모 순종 사진"),
+        Line2D([], [], ls="", marker="^", ms=6, mfc="white", mec=INK, label="얼굴 사진"),
+        Line2D([], [], color=INK2, ls=(0, (4, 3)), lw=1.0, label="DNA 비율 위치 (두 부모만)"),
+        Line2D([], [], ls="", marker="v", ms=6, mfc="white", mec=INK, label="몸 사진"),
+        Line2D([], [], color=C_PRED, ls=(0, (1, 2)), lw=1.6, label="B 예측 위치 (두 부모 몫만)"),
+    ]
+    fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.2 / W - 0.006, 1 - 1.08 / H), ncol=4,
+               fontsize=8, frameon=False, handletextpad=0.4, columnspacing=1.3)
+    fig.savefig(png, dpi=200, facecolor="white")
+    plt.close(fig)
+
+
+def cmd_plot(args, paths, dogs):
+    froot = paths["outputs"]["features_root"]
+    out_dir = Path(args.out_dir) if args.out_dir else Path(froot).parent / "figures_local"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    cells, table = compute(args, paths, dogs)
     tag = f"{args.train_subset}_{args.eval_subset}_{args.pool}"
     png = out_dir / f"dev_parent_projection_{tag}.png"
-    fig.savefig(png, dpi=160, bbox_inches="tight")
     csv = out_dir / f"dev_parent_projection_{tag}.csv"
-    pd.DataFrame(recs).to_csv(csv, index=False)
-    print(pd.DataFrame(recs).drop(columns=["major", "minor"]).to_string(index=False))
-    print(f"[저장] {png}\n[저장] {csv}")
+    data = out_dir / f"dev_parent_projection_{tag}_plotdata.json"
+    draw(args, dogs, cells, png)
+    table.to_csv(csv, index=False)
+    save_plot_data(data, args, dogs, cells)
+    print(table.drop(columns=["major", "minor"]).to_string(index=False))
+    print(f"[저장] {png}\n[저장] {csv}\n[저장] {data}  (redraw 로 특징 없이 다시 그릴 때 쓴다)")
+
+
+# ---------------------------------------------------------------- 그림용 데이터 (특징 없이 다시 그리기)
+META_KEYS = ["backbones", "train_subset", "eval_subset", "pool", "min_top2", "max_points"]
+
+
+def save_plot_data(path: Path, args, dogs, cells):
+    """그림에 쓴 좌표만 json 으로 남긴다. 개별 DNA 비율이 들어 있으므로 그림과 같은 곳(저장소 밖)에 둔다."""
+    import json
+
+    def conv(v):
+        if isinstance(v, np.ndarray):
+            return [round(float(x), 5) for x in v]
+        if isinstance(v, float) and np.isnan(v):
+            return None
+        return v
+
+    out = {"meta": {k: getattr(args, k) for k in META_KEYS},
+           "dogs": dogs.to_dict("records"),
+           "cells": [{"backbone": b, "dog_id": d, **{k: conv(v) for k, v in c.items()}}
+                     for (b, d), c in cells.items()]}
+    path.write_text(json.dumps(out, ensure_ascii=False), encoding="utf-8")
+
+
+def cmd_redraw(args):
+    """plot 이 남긴 *_plotdata.json 만 읽어 다시 그린다 (특징 · 예측 · DNA 파일 불필요)."""
+    import json
+    src = Path(args.plot_data)
+    d = json.loads(src.read_text(encoding="utf-8"))
+    meta = argparse.Namespace(**d["meta"])
+    dogs = pd.DataFrame(d["dogs"])
+    cells = {}
+    for c in d["cells"]:
+        c = dict(c)
+        key = (c.pop("backbone"), c.pop("dog_id"))
+        for k in ("tA", "dA", "tB", "dB", "tp", "dp"):
+            c[k] = np.asarray(c[k], dtype=float)
+        c["t_pred"] = np.nan if c["t_pred"] is None else c["t_pred"]
+        cells[key] = c
+    out_dir = Path(args.out_dir) if args.out_dir else src.parent
+    out_dir.mkdir(parents=True, exist_ok=True)
+    png = out_dir / src.name.replace("_plotdata.json", ".png")
+    draw(meta, dogs, cells, png)
+    print(f"[저장] {png}")
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["select", "extract", "plot"])
+    ap.add_argument("cmd", choices=["select", "extract", "plot", "redraw"])
+    ap.add_argument("--plot-data", default=None, help="redraw: plot 이 남긴 *_plotdata.json")
     ap.add_argument("--backbones", nargs="+", default=BACKBONES)
     ap.add_argument("--dna", default=str(UF / "dna_UF.csv"))
     ap.add_argument("--breed-map", default=str(UF / "breed_map_UF_draft.csv"))
@@ -256,8 +362,15 @@ def main():
     ap.add_argument("--preds-dir", default=None, help="B 예측 csv 폴더 (있으면 B 예측 위치도 표시)")
     ap.add_argument("--pred-tag", default="eval_uf_panels", help="예측 파일 이름의 평가 subset 부분")
     ap.add_argument("--out-dir", default=None)
+    ap.add_argument("--max-points", type=int, default=150,
+                    help="plot: 품종당 표시할 순종 사진 수 (평균점 계산에는 전체를 쓴다)")
     args = ap.parse_args()
 
+    if args.cmd == "redraw":
+        if not args.plot_data:
+            raise SystemExit("redraw 에는 --plot-data 가 필요하다")
+        cmd_redraw(args)
+        return
     paths = load_yaml("paths")
     dogs = select_dogs(Path(args.dna), Path(args.breed_map), Path(args.eval_index), args.min_top2)
     print(f"대상 개 {len(dogs)}마리 (dev, 상위 두 품종 정확 매핑, 합 >= {args.min_top2:g}%)")
