@@ -70,10 +70,11 @@ def load_runs(pred_dir: Path):
 
 
 class Scorer:
-    def __init__(self, uf_dir: Path, classes, dogs):
+    def __init__(self, uf_dir: Path, classes, dogs, dna_csv: Path | None = None):
+        """dna_csv: Top-1 정답용 dna_UF.csv. 기본은 uf_dir 안 (Colab 은 /content/uf_private 에 따로 둔다)"""
         self.c2b = P.breed_of_class(uf_dir / "breed_map_UF_draft.csv", {P.EXACT})
         self.orig, self.norm, _ = P.load_truth(uf_dir / "truth_UF.csv", False)
-        dna = pd.read_csv(uf_dir / "dna_UF.csv", encoding="utf-8-sig")
+        dna = pd.read_csv(dna_csv or uf_dir / "dna_UF.csv", encoding="utf-8-sig")
         bmap = pd.read_csv(uf_dir / "breed_map_UF_draft.csv", encoding="utf-8-sig")
         self.dogs = [d for d in dogs if d in self.orig]
         self.use_norm = [d for d in self.dogs if self.norm[d]]
