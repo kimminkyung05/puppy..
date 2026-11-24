@@ -1,10 +1,9 @@
 """보고서 4장 그림 (집계값만 쓴다. 개체별 DNA 값이나 UF 사진은 쓰지 않는다).
 
 그림 1  실험 흐름도 (데이터 없음, 상자와 화살표만)
-그림 3  dev 포착 혈통 비율 (원래 비율): 분류기(A) · 평균점 섞기(B) · 섞기 학습(C), 찍기 · 상한 · UF 설문 응답 기준선
+그림 2  dev 포착 혈통 비율 (원래 비율): 분류기(A) · 평균점 섞기(B) · 섞기 학습(C), 찍기 · 상한 · UF 설문 응답 기준선
         입력: results/dev_rq1_comparison.csv  (compare_rq1_dev.py 출력)
-그림 2  분류기(A)의 Top-1: (a) 순종 val, (b) 믹스견 test(hold, Wilson 95% 구간)
-        입력: ../A/results/final_purebred_vs_mixed_top1.csv
+hold 결과는 그리지 않는다 (A/A/ 최종 정리본 기준 hold 는 아직 결과에 넣지 않음. 설정 고정 후 한 번만 채점)
 
 색: 분류기 #2a78d6, 평균점 섞기 #eb6834 (dataviz 기본 팔레트 1·2번, validate_palette.js 통과), 섞기 학습 #1b9e77
 사용 (B/ 안에서): python scripts/report_figures.py [--out ../report/figures]
@@ -70,35 +69,7 @@ def fig_dev_captured(out: Path):
     ax.legend(handles=[Patch(color=c, label=lab) for _, c, lab in methods],
               frameon=False, loc="upper right", ncol=3, fontsize=8)
     fig.tight_layout()
-    fig.savefig(out / "fig3_dev_captured_share.png")
-    plt.close(fig)
-
-
-def fig_top1(out: Path):
-    df = pd.read_csv(ROOT.parent / "A" / "results" / "final_purebred_vs_mixed_top1.csv").set_index("model_name")
-    names = [n for _, n in EXTRACTORS]; keys = [k for k, _ in EXTRACTORS]
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 3.0), sharey=False)
-
-    ax = axes[0]
-    v = df.loc[keys, "purebred_top1_mean"].to_numpy()
-    bars = ax.bar(names, v, 0.55, color=C_CLF)
-    bar_labels(ax, bars, v)
-    ax.set_ylim(0, 1.0); ax.set_ylabel("Top-1")
-    ax.set_title("(a) 순종 val (5,080장)", fontsize=9, color=INK, loc="left")
-
-    ax = axes[1]
-    v = df.loc[keys, "mixed_hold_top1"].to_numpy()
-    lo = v - df.loc[keys, "mixed_hold_top1_ci95_low"].to_numpy()
-    hi = df.loc[keys, "mixed_hold_top1_ci95_high"].to_numpy() - v
-    bars = ax.bar(names, v, 0.55, color=C_CLF)
-    ax.errorbar(np.arange(len(keys)), v, yerr=[lo, hi], fmt="none", ecolor=INK, elinewidth=0.8, capsize=3)
-    for b, val, h in zip(bars, v, hi):
-        ax.text(b.get_x() + b.get_width() / 2 + 0.2, val + 0.004, f"{val:.3f}", ha="left", va="bottom", fontsize=7, color=INK)
-    n = int(df["hold_scorable_dogs"].iloc[0])
-    ax.set_ylim(0, 0.4)
-    ax.set_title(f"(b) 믹스견 test ({n}마리, 95% CI)", fontsize=9, color=INK, loc="left")
-    fig.tight_layout()
-    fig.savefig(out / "fig2_classifier_top1.png")
+    fig.savefig(out / "fig2_dev_captured_share.png")
     plt.close(fig)
 
 
@@ -143,7 +114,6 @@ def main():
     setup()
     fig_pipeline(out)
     fig_dev_captured(out)
-    fig_top1(out)
     print(f"저장: {out}")
 
 

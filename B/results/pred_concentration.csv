@@ -1,0 +1,13 @@
+﻿method,backbone,dogs,max_prob_mean,effective_breeds,distinct_top1,most_common_top1,most_common_top1_dogs
+A_classifier,sift,20,0.0744,81.4139,8,Pomeranian,9
+A_classifier,clip,20,0.0975,66.9109,11,American_Staffordshire_terrier,5
+A_classifier,dinov2,20,0.3387,20.1352,11,American_Staffordshire_terrier,5
+A_classifier,dinov3,20,0.2747,25.8572,12,American_Staffordshire_terrier,3
+B_fcls,sift,20,0.4208,3.4734,3,Japanese_Spitzes,9
+B_fcls,clip,20,0.2905,8.1364,9,Staffordshire_bullterrier,5
+B_fcls,dinov2,20,0.3843,7.0288,14,American_Staffordshire_terrier,4
+B_fcls,dinov3,20,0.3666,7.5388,14,Rhodesian_ridgeback,3
+C_mix,sift,20,0.2083,5.6981,17,French_bulldog,2
+C_mix,clip,20,0.4835,6.4998,12,Fila Braziliero,5
+C_mix,dinov2,20,0.5287,6.6703,11,Staffordshire_bullterrier,5
+C_mix,dinov3,20,0.551,8.1214,12,Staffordshire_bullterrier,6

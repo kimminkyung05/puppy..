@@ -1,0 +1,5 @@
+﻿backbone,reference,train_images,eval_dev_images,zero_frac_train,zero_frac_eval,cos_to_train_mean_train,cos_to_train_mean_eval,max_proto_cos_train,max_proto_cos_eval
+sift,train_parents_n100 (같은 사진),800,40,0.5515,0.797,0.7951,0.3977,0.8076,0.4049
+clip,train_parents_n100 (같은 사진),800,40,0.0,0.0,0.8642,0.8638,0.9009,0.8683
+dinov2,train_parents_n100 (같은 사진),800,40,0.0,0.0,0.3197,0.2942,0.6866,0.412
+sift,train 전체 (127클래스),61592,40,0.6041,0.797,0.75,0.3991,0.7782,0.4167

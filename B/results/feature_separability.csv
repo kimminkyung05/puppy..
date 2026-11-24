@@ -1,0 +1,5 @@
+﻿backbone,image_set,images,classes,proto_cos_mean,proto_cos_min,eta2_between_over_total,within_over_between,nearest_proto_acc_insample,own_beats_other_protos,nnls_true_share,nnls_breeds_over_1pct,chance_top1
+sift,train_parents_n100 (같은 사진),800,8,0.9842,0.963,0.0274,35.5065,0.4388,0.4388,0.4007,2.3112,0.125
+clip,train_parents_n100 (같은 사진),800,8,0.9122,0.8583,0.2455,3.0734,0.8712,0.8712,0.7344,2.525,0.125
+dinov2,train_parents_n100 (같은 사진),800,8,0.1099,-0.0949,0.4083,1.4493,0.9262,0.9262,0.7897,3.2575,0.125
+sift,train 전체 (127클래스),61592,127,0.9733,0.6433,0.0393,24.4477,0.1067,0.1066,0.0988,3.6445,0.0079

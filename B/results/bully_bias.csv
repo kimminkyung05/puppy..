@@ -1,0 +1,13 @@
+﻿method,backbone,dogs,dogs_with_bully_dna_exact,dogs_with_bully_dna_broad,top1_bully_dogs,top1_bully_and_dna_exact,top1_bully_and_dna_broad,pred_bully_prob_mean,true_bully_share_mean
+A_classifier,sift,20,9,9,0,0,0,0.0147,0.175
+A_classifier,clip,20,9,9,6,6,6,0.1192,0.175
+A_classifier,dinov2,20,9,9,8,8,8,0.2361,0.175
+A_classifier,dinov3,20,9,9,6,5,5,0.1878,0.175
+B_fcls,sift,20,9,9,0,0,0,0.0,0.175
+B_fcls,clip,20,9,9,6,6,6,0.2452,0.175
+B_fcls,dinov2,20,9,9,6,6,6,0.2231,0.175
+B_fcls,dinov3,20,9,9,3,3,3,0.153,0.175
+C_mix,sift,20,9,9,0,0,0,0.0167,0.175
+C_mix,clip,20,9,9,3,3,3,0.1507,0.175
+C_mix,dinov2,20,9,9,5,5,5,0.2309,0.175
+C_mix,dinov3,20,9,9,6,6,6,0.2693,0.175
