@@ -49,4 +49,4 @@ python scripts/provisional_score_uf.py --uf-dir "{DRIVE_DIR}/evalset/uf_draft" -
 
 - 기본이 정확 매핑이다. `--with-similar`는 유사 매핑까지 넣은 참고 채점, `--reference`는 반대 매핑 Top-1과 고정 기준선 참고값을 함께 보인다.
 - 출력에는 집계값만 나온다(개별 개의 DNA 값은 출력하지 않는다). 개별 DNA 표는 `/content`에만 둔다.
-- 사람 기준선: `scripts/score_human_uf.py`, A · B · 사람 비교표: `scripts/compare_rq1_dev.py`.
+- 사람 기준선: `scripts/score_human_uf.py`, A · B · C · 사람 비교표: `scripts/collect_rq1_preds.py`(세 담당 예측을 공용 형식으로 모음) → `scripts/compare_rq1_dev.py`.

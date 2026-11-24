@@ -1,0 +1,17 @@
+﻿method,backbone,images,top1,rep_min,rep_max
+A_classifier,clip,2540,0.7228,0.722,0.724
+A_classifier,dinov2,2540,0.8596,0.8583,0.8606
+A_classifier,dinov3,2540,0.8794,0.878,0.8803
+A_classifier,sift,2540,0.0908,0.089,0.0921
+B_fcls,clip,2540,0.619,0.618,0.625
+B_fcls,dinov2,2540,0.808,0.806,0.809
+B_fcls,dinov3,2540,0.822,0.821,0.824
+B_fcls,sift,2540,0.0713,0.0681,0.0701
+C_mix,clip,2540,0.7525,0.7516,0.7539
+C_mix,dinov2,2540,0.8391,0.8354,0.8453
+C_mix,dinov3,2540,0.8564,0.852,0.8594
+C_mix,sift,2540,0.0774,0.0756,0.0783
+C_single_label_control,clip,2540,0.7709,0.765,0.7752
+C_single_label_control,dinov2,2540,0.8424,0.8402,0.8445
+C_single_label_control,dinov3,2540,0.8698,0.8677,0.8717
+C_single_label_control,sift,2540,0.0736,0.0717,0.0768

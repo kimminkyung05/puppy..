@@ -67,7 +67,7 @@ B는 팀이 함께 쓰는 CLIP · DINOv2 · DINOv3 특징을 추출하고, 그 �
 - L2 정규화는 결과를 거의 바꾸지 않았다(순종 Top-1 ±0.2%p 이내, 믹스견 Top-1 동일).
 
 개체 수가 적어 신뢰구간이 크게 겹치므로 수치상 순서를 성능 순위로 해석하지 않는다.
-자세한 표와 해설은 `docs/DEV_RESULTS.md`, A 분류기와의 비교 해석은 `docs/A_VS_B_INTERPRETATION.md`에 있다.
+자세한 표와 해설은 `docs/DEV_RESULTS.md`, A 분류기 · C 섞기 학습과의 비교 해석은 `docs/A_VS_B_INTERPRETATION.md`에 있다.
 
 ## 4. 폴더 구조
 
