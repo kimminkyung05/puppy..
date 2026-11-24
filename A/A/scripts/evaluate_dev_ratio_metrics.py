@@ -340,7 +340,7 @@ def main() -> int:
     parser.add_argument(
         "--mapping-policy",
         choices=["exact", "exact_similar"],
-        default="exact_similar",
+        default="exact",
         help="Which breed-map statuses count as mappable",
     )
     args = parser.parse_args()
