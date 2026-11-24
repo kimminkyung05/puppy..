@@ -13,16 +13,16 @@
 
 점검: 열 이름 · 순서가 모든 파일에서 같은지, 행 합이 1인지, 개 목록이 같은지. 다르면 멈춘다.
 
-로컬 폴더 배치 (모두 루트 outputs/, git 밖)
-  outputs/preds_A/      A 가 Drive A_Work/preds 로 준 것 그대로 (RQ1-{bb}-clf-s{n}/ 12개)
-  outputs/preds_drive/  B 의 Drive preds 복사본 (CLIP · DINOv2 · DINOv3, Colab 실행)
-  outputs/preds/        B 의 로컬 실행 결과 (SIFT: scripts/import_sift_from_c.py 로 C 특징을 옮긴 뒤 로컬 CPU 실행)
-  outputs/preds_C/      C 가 준 pred_eval_uf-*.csv 그대로 (12개)
-  outputs/preds_rq1/    이 스크립트의 출력 (공용 형식, dev 만). 채점은 여기서만 읽는다
+로컬 폴더 배치 (모두 루트 outputs/rq1_preds/, git 밖)
+  A/          A 가 Drive A_Work/preds 로 준 것 그대로 (RQ1-{bb}-clf-s{n}/ 12개)
+  B/dev/      B 예측 원본: Drive preds/dev 복사본(CLIP · DINOv2 · DINOv3, Colab) + 로컬 SIFT 실행 결과
+              (SIFT: scripts/import_sift_from_c.py 로 C 특징을 옮긴 뒤 로컬 CPU 실행, outputs/preds/dev 에서 복사)
+  C/          C 가 준 pred_eval_uf-*.csv 그대로 (12개)
+  merged/     이 스크립트의 출력 (공용 형식, dev 만). 채점은 여기서만 읽는다
 
 사용 (B/ 안에서)
-  python scripts/collect_rq1_preds.py --a-dir ../outputs/preds_A \
-      --b-dir ../outputs/preds_drive/dev ../outputs/preds/dev --c-dir ../outputs/preds_C --out ../outputs/preds_rq1
+  python scripts/collect_rq1_preds.py --a-dir ../outputs/rq1_preds/A --b-dir ../outputs/rq1_preds/B/dev \
+      --c-dir ../outputs/rq1_preds/C --out ../outputs/rq1_preds/merged
 """
 import argparse
 from pathlib import Path

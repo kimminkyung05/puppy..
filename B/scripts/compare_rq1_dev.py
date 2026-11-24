@@ -21,9 +21,9 @@
   figures/dev_rq1_with_human.png
 
 사용 (B/ 안에서)
-  python scripts/compare_rq1_dev.py --preds ../outputs/preds_rq1 --uf-dir ../data/evalset_uf \
-      --train-index ../outputs/features_drive/clip/train/index.csv --a-dir ../outputs/preds_A \
-      --val-split ../data/evalset/val_split_seed1.csv --b-val-dir ../outputs/preds/dev
+  python scripts/compare_rq1_dev.py --preds ../outputs/rq1_preds/merged --uf-dir ../data/evalset_uf \
+      --train-index ../outputs/features_drive/clip/train/index.csv --a-dir ../outputs/rq1_preds/A \
+      --val-split ../data/evalset/val_split_seed1.csv --b-val-dir ../outputs/rq1_preds/B/dev
 """
 import argparse
 import sys
