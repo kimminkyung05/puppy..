@@ -1,0 +1,910 @@
+image_id,dog_id,seed,extractor,pred_class,pred_score,top5_classes
+UF001,UF001,1,clip,Pekinese,1.859845,Pekinese;papillon;Chihuahua;Chinese_Crested_Dog;golden_retriever
+UF002,UF002,1,clip,Labrador_retriever,2.5272264,Labrador_retriever;flat_coated_retriever;Cane_Carso;Great_Dane;Staffordshire_bullterrier
+UF003,UF003,1,clip,Labrador_retriever,2.1881363,Labrador_retriever;miniature_pinscher;Rhodesian_ridgeback;whippet;Fila Braziliero
+UF004,UF004,1,clip,Pekinese,1.5272576,Pekinese;briard;cairn;Tibetan_terrier;affenpinscher
+UF005,UF005,1,clip,Walker_hound,1.9975287,Walker_hound;American_Staffordshire_terrier;bluetick;Staffordshire_bullterrier;Great_Dane
+UF006,UF006,1,clip,beagle,2.8784168,beagle;Walker_hound;English_foxhound;bluetick;basset
+UF007,UF007,1,clip,Labrador_retriever,2.0624225,Labrador_retriever;flat_coated_retriever;Cane_Carso;Staffordshire_bullterrier;Fila Braziliero
+UF008,UF008,1,clip,Great_Dane,1.7109941,Great_Dane;Fila Braziliero;American_Staffordshire_terrier;whippet;Italian_greyhound
+UF009,UF009,1,clip,whippet,1.8385216,whippet;Fila Braziliero;American_Staffordshire_terrier;Staffordshire_bullterrier;Ibizan_hound
+UF010,UF010,1,clip,Pekinese,1.4640203,Pekinese;Chinese_Crested_Dog;papillon;Norwich_terrier;Norwegian_elkhound
+UF011,UF011,1,clip,Chihuahua,2.1459508,Chihuahua;miniature_pinscher;French_bulldog;Border_collie;toy_terrier
+UF012,UF012,1,clip,miniature_pinscher,1.698391,miniature_pinscher;Labrador_retriever;Rhodesian_ridgeback;beagle;redbone
+UF013,UF013,1,clip,Cane_Carso,1.9284298,Cane_Carso;Staffordshire_bullterrier;Mexican_hairless;Labrador_retriever;Fila Braziliero
+UF014,UF014,1,clip,papillon,1.8326674,papillon;Pekinese;Australian_Shepherd;Chinese_Crested_Dog;Chihuahua
+UF015,UF015,1,clip,Siberian_husky,3.96996,Siberian_husky;malamute;Norwegian_elkhound;Eskimo_dog;Australian_Shepherd
+UF016,UF016,1,clip,American_Staffordshire_terrier,3.5365436,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;Chinese_Crested_Dog
+UF017,UF017,1,clip,Labrador_retriever,1.9863,Labrador_retriever;American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso
+UF018,UF018,1,clip,bluetick,2.1796925,bluetick;Walker_hound;beagle;miniature_pinscher;kelpie
+UF020,UF020,1,clip,beagle,1.36473,beagle;papillon;Chihuahua;miniature_pinscher;Pekinese
+UF022,UF022,1,clip,Fila Braziliero,1.9428867,Fila Braziliero;beagle;American_Staffordshire_terrier;Walker_hound;Staffordshire_bullterrier
+UF023,UF023,1,clip,American_Staffordshire_terrier,2.595074,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;whippet
+UF024,UF024,1,clip,Labrador_retriever,1.7343712,Labrador_retriever;miniature_pinscher;Chihuahua;flat_coated_retriever;Staffordshire_bullterrier
+UF025,UF025,1,clip,whippet,2.2488995,whippet;Ibizan_hound;borzoi;Scottish_deerhound;Chinese_Crested_Dog
+UF026,UF026,1,clip,malinois,1.623006,malinois;Black_sable;kelpie;German_shepherd;miniature_pinscher
+UF028,UF028,1,clip,beagle,2.5179212,beagle;Walker_hound;Appenzeller;Greater_Swiss_Mountain_dog;EntleBucher
+UF029,UF029,1,clip,Rhodesian_ridgeback,1.7722735,Rhodesian_ridgeback;Italian_greyhound;Mexican_hairless;Fila Braziliero;vizsla
+UF030,UF030,1,clip,American_Staffordshire_terrier,3.4131768,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;beagle
+UF031,UF031,1,clip,Chinese_Crested_Dog,1.4960303,Chinese_Crested_Dog;papillon;Rottweiler;Black_sable;kelpie
+UF033,UF033,1,clip,Cane_Carso,2.5356824,Cane_Carso;Mexican_hairless;Fila Braziliero;Great_Dane;Staffordshire_bullterrier
+UF035,UF035,1,clip,miniature_pinscher,1.7560257,miniature_pinscher;kelpie;toy_terrier;Rottweiler;EntleBucher
+UF036,UF036,1,clip,Staffordshire_bullterrier,1.7138858,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Great_Dane;Fila Braziliero
+UF037,UF037,1,clip,American_Staffordshire_terrier,2.3214767,American_Staffordshire_terrier;Fila Braziliero;Staffordshire_bullterrier;Great_Dane;whippet
+UF038,UF038,1,clip,Fila Braziliero,1.977799,Fila Braziliero;American_Staffordshire_terrier;Staffordshire_bullterrier;Cane_Carso;Rhodesian_ridgeback
+UF039,UF039,1,clip,Fila Braziliero,2.3113356,Fila Braziliero;American_Staffordshire_terrier;Great_Dane;Staffordshire_bullterrier;whippet
+UF040,UF040,1,clip,toy_poodle,1.7313519,toy_poodle;teddy;Dandie_Dinmont;miniature_poodle;cocker_spaniel
+UF041,UF041,1,clip,Labrador_retriever,2.076818,Labrador_retriever;Chihuahua;beagle;Walker_hound;miniature_pinscher
+UF042,UF042,1,clip,American_Staffordshire_terrier,3.6171806,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;French_bulldog
+UF043,UF043,1,clip,Chinese_Crested_Dog,2.049273,Chinese_Crested_Dog;golden_retriever;Pekinese;papillon;Fila Braziliero
+UF044,UF044,1,clip,Labrador_retriever,2.388551,Labrador_retriever;Cane_Carso;Fila Braziliero;Great_Dane;flat_coated_retriever
+UF046,UF046,1,clip,Chinese_Crested_Dog,1.5738641,Chinese_Crested_Dog;Scottish_deerhound;affenpinscher;papillon;Pekinese
+UF047,UF047,1,clip,Staffordshire_bullterrier,1.2101102,Staffordshire_bullterrier;bluetick;American_Staffordshire_terrier;kelpie;Fila Braziliero
+UF048,UF048,1,clip,toy_terrier,1.6444056,toy_terrier;Australian_terrier;miniature_pinscher;Chihuahua;Yorkshire_terrier
+UF049,UF049,1,clip,Cardigan,2.5622427,Cardigan;Pembroke;papillon;Chihuahua;kelpie
+UF051,UF051,1,clip,Walker_hound,2.327942,Walker_hound;beagle;English_foxhound;Labrador_retriever;Fila Braziliero
+UF052,UF052,1,clip,bluetick,1.2640779,bluetick;Walker_hound;Norwegian_elkhound;Siberian_husky;Ibizan_hound
+UF053,UF053,1,clip,Walker_hound,1.3408927,Walker_hound;beagle;American_Staffordshire_terrier;Rhodesian_ridgeback;English_foxhound
+UF054,UF054,1,clip,American_Staffordshire_terrier,2.4886847,American_Staffordshire_terrier;Fila Braziliero;Staffordshire_bullterrier;Chinese_Crested_Dog;Cane_Carso
+UF055,UF055,1,clip,miniature_pinscher,2.2463837,miniature_pinscher;Chinese_Crested_Dog;Staffordshire_bullterrier;Chihuahua;Rottweiler
+UF057,UF057,1,clip,Labrador_retriever,1.834182,Labrador_retriever;Walker_hound;borzoi;Ibizan_hound;kuvasz
+UF058,UF058,1,clip,American_Staffordshire_terrier,2.4887445,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;boxer;Cane_Carso
+UF059,UF059,1,clip,Staffordshire_bullterrier,2.2189567,Staffordshire_bullterrier;American_Staffordshire_terrier;whippet;Great_Dane;Italian_greyhound
+UF060,UF060,1,clip,beagle,2.139842,beagle;English_foxhound;Walker_hound;basset;bluetick
+UF061,UF061,1,clip,Great_Dane,2.3511722,Great_Dane;whippet;Italian_greyhound;Cane_Carso;Fila Braziliero
+UF062,UF062,1,clip,Cane_Carso,2.0648599,Cane_Carso;Staffordshire_bullterrier;kelpie;American_Staffordshire_terrier;Mexican_hairless
+UF063,UF063,1,clip,Fila Braziliero,1.7387109,Fila Braziliero;Rhodesian_ridgeback;English_foxhound;basenji;Walker_hound
+UF064,UF064,1,clip,miniature_pinscher,2.2748911,miniature_pinscher;Chihuahua;kelpie;toy_terrier;Mexican_hairless
+UF065,UF065,1,clip,Black_sable,1.8817513,Black_sable;Norwegian_elkhound;malinois;Leonberg;Scottish_deerhound
+UF066,UF066,1,clip,Labrador_retriever,2.3336024,Labrador_retriever;flat_coated_retriever;Great_Dane;Staffordshire_bullterrier;German_short_haired_pointer
+UF067,UF067,1,clip,Chihuahua,2.1149817,Chihuahua;Ibizan_hound;miniature_pinscher;toy_terrier;Chinese_Crested_Dog
+UF068,UF068,1,clip,American_Staffordshire_terrier,2.0810564,American_Staffordshire_terrier;malinois;Staffordshire_bullterrier;Fila Braziliero;German_shepherd
+UF069,UF069,1,clip,Labrador_retriever,2.3608954,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;golden_retriever;standard_poodle
+UF071,UF071,1,clip,toy_terrier,1.0547446,toy_terrier;Labrador_retriever;Fila Braziliero;Staffordshire_bullterrier;affenpinscher
+UF072,UF072,1,clip,Rhodesian_ridgeback,1.8143263,Rhodesian_ridgeback;Fila Braziliero;miniature_pinscher;redbone;vizsla
+UF073,UF073,1,clip,American_Staffordshire_terrier,1.5856664,American_Staffordshire_terrier;Rhodesian_ridgeback;basenji;Staffordshire_bullterrier;miniature_pinscher
+UF074,UF074,1,clip,Walker_hound,1.9408407,Walker_hound;beagle;English_foxhound;Fila Braziliero;bluetick
+UF076,UF076,1,clip,redbone,1.8812687,redbone;Rhodesian_ridgeback;vizsla;bloodhound;miniature_pinscher
+UF077,UF077,1,clip,miniature_pinscher,1.9619398,miniature_pinscher;Appenzeller;kelpie;Rottweiler;Chihuahua
+UF079,UF079,1,clip,Walker_hound,1.8652,Walker_hound;beagle;English_foxhound;American_Staffordshire_terrier;Ibizan_hound
+UF081,UF081,1,clip,Pekinese,1.3016443,Pekinese;Irish_wolfhound;Leonberg;Scottish_deerhound;papillon
+UF082,UF082,1,clip,Chinese_Crested_Dog,1.3790902,Chinese_Crested_Dog;Border_collie;Australian_Shepherd;kelpie;Siberian_husky
+UF083,UF083,1,clip,Fila Braziliero,1.1032423,Fila Braziliero;kelpie;Black_sable;Chinese_Crested_Dog;American_Staffordshire_terrier
+UF084,UF084,1,clip,Labrador_retriever,1.8803592,Labrador_retriever;Fila Braziliero;German_short_haired_pointer;Chesapeake_Bay_retriever;vizsla
+UF085,UF085,1,clip,kelpie,1.4971138,kelpie;Norwegian_elkhound;schipperke;Siberian_husky;German_shepherd
+UF088,UF088,1,clip,American_Staffordshire_terrier,2.1294148,American_Staffordshire_terrier;Staffordshire_bullterrier;Chinese_Crested_Dog;Fila Braziliero;Cane_Carso
+UF089,UF089,1,clip,Staffordshire_bullterrier,2.4322045,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Fila Braziliero;Labrador_retriever
+UF089_2,UF089_2,1,clip,Labrador_retriever,1.1307764,Labrador_retriever;beagle;Chihuahua;Pekinese;Fila Braziliero
+UF092,UF092,1,clip,Labrador_retriever,1.1307764,Labrador_retriever;beagle;Chihuahua;Pekinese;Fila Braziliero
+UF093,UF093,1,clip,Chinese_Crested_Dog,1.460453,Chinese_Crested_Dog;papillon;Pekinese;Border_collie;affenpinscher
+UF094,UF094,1,clip,Rhodesian_ridgeback,1.6908631,Rhodesian_ridgeback;Ibizan_hound;Fila Braziliero;redbone;vizsla
+UF095,UF095,1,clip,American_Staffordshire_terrier,2.4198854,American_Staffordshire_terrier;Staffordshire_bullterrier;kelpie;malinois;miniature_pinscher
+UF096,UF096,1,clip,miniature_pinscher,2.4341674,miniature_pinscher;Chihuahua;Labrador_retriever;American_Staffordshire_terrier;French_bulldog
+UF097,UF097,1,clip,Staffordshire_bullterrier,3.0571487,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Fila Braziliero;miniature_pinscher
+UF098,UF098,1,clip,Chinese_Crested_Dog,1.547999,Chinese_Crested_Dog;Fila Braziliero;Great_Dane;bluetick;Mexican_hairless
+UF099,UF099,1,clip,Chinese_Crested_Dog,2.274959,Chinese_Crested_Dog;Chihuahua;miniature_pinscher;Staffordshire_bullterrier;American_Staffordshire_terrier
+UF100,UF100,1,clip,miniature_pinscher,2.06098,miniature_pinscher;Walker_hound;Chihuahua;beagle;Labrador_retriever
+UF101,UF101,1,clip,miniature_pinscher,1.3576983,miniature_pinscher;Walker_hound;Rhodesian_ridgeback;kelpie;EntleBucher
+UF102,UF102,1,clip,Border_collie,2.710734,Border_collie;papillon;Labrador_retriever;Australian_Shepherd;flat_coated_retriever
+UF103,UF103,1,clip,Walker_hound,1.6139065,Walker_hound;Rhodesian_ridgeback;redbone;Fila Braziliero;vizsla
+UF104,UF104,1,clip,bluetick,2.9014492,bluetick;German_short_haired_pointer;Labrador_retriever;Fila Braziliero;English_setter
+UF106,UF106,1,clip,miniature_pinscher,1.2885485,miniature_pinscher;Rottweiler;Appenzeller;Black_sable;Labrador_retriever
+UF107,UF107,1,clip,beagle,2.4420345,beagle;Walker_hound;English_foxhound;Brittany_spaniel;bluetick
+UF108,UF108,1,clip,Ibizan_hound,1.7007977,Ibizan_hound;Labrador_retriever;beagle;basenji;Chihuahua
+UF109,UF109,1,clip,Chinese_Crested_Dog,2.0378628,Chinese_Crested_Dog;papillon;Pekinese;borzoi;Border_collie
+UF110,UF110,1,clip,Labrador_retriever,1.7025785,Labrador_retriever;miniature_pinscher;Walker_hound;Fila Braziliero;beagle
+UF111,UF111,1,clip,Chinese_Crested_Dog,1.8466264,Chinese_Crested_Dog;Chihuahua;Pekinese;Fila Braziliero;French_bulldog
+UF112,UF112,1,clip,Walker_hound,2.2342033,Walker_hound;English_foxhound;beagle;basset;bluetick
+UF114,UF114,1,clip,kelpie,1.908021,kelpie;Siberian_husky;Norwegian_elkhound;Black_sable;German_shepherd
+UF115,UF115,1,clip,Labrador_retriever,1.7255294,Labrador_retriever;golden_retriever;malinois;Black_sable;German_shepherd
+UF116,UF116,1,clip,miniature_pinscher,1.9826543,miniature_pinscher;Shiba_Dog;Chihuahua;Labrador_retriever;kelpie
+UF117,UF117,1,clip,whippet,2.9867692,whippet;Mexican_hairless;Italian_greyhound;Ibizan_hound;Chinese_Crested_Dog
+UF119,UF119,1,clip,papillon,2.0253017,papillon;Chihuahua;Pekinese;golden_retriever;Chinese_Crested_Dog
+UF001,UF001,2,clip,Pekinese,1.887936,Pekinese;papillon;Chihuahua;Chinese_Crested_Dog;golden_retriever
+UF002,UF002,2,clip,Labrador_retriever,2.5718825,Labrador_retriever;flat_coated_retriever;Great_Dane;Staffordshire_bullterrier;Cane_Carso
+UF003,UF003,2,clip,Labrador_retriever,2.1962328,Labrador_retriever;miniature_pinscher;Rhodesian_ridgeback;whippet;Fila Braziliero
+UF004,UF004,2,clip,Pekinese,1.5207402,Pekinese;briard;affenpinscher;Shih_Tzu;cairn
+UF005,UF005,2,clip,Walker_hound,1.8906701,Walker_hound;American_Staffordshire_terrier;bluetick;Staffordshire_bullterrier;Great_Dane
+UF006,UF006,2,clip,beagle,2.9041111,beagle;Walker_hound;English_foxhound;bluetick;basset
+UF007,UF007,2,clip,Labrador_retriever,2.0735226,Labrador_retriever;Staffordshire_bullterrier;flat_coated_retriever;Cane_Carso;Fila Braziliero
+UF008,UF008,2,clip,Great_Dane,1.7776499,Great_Dane;American_Staffordshire_terrier;whippet;Fila Braziliero;Staffordshire_bullterrier
+UF009,UF009,2,clip,whippet,1.8737798,whippet;Fila Braziliero;American_Staffordshire_terrier;Staffordshire_bullterrier;Ibizan_hound
+UF010,UF010,2,clip,Pekinese,1.4691565,Pekinese;Chinese_Crested_Dog;papillon;Norwich_terrier;German_shepherd
+UF011,UF011,2,clip,Chihuahua,2.0329647,Chihuahua;miniature_pinscher;French_bulldog;Border_collie;kelpie
+UF012,UF012,2,clip,miniature_pinscher,1.6676636,miniature_pinscher;Labrador_retriever;Rhodesian_ridgeback;beagle;redbone
+UF013,UF013,2,clip,Cane_Carso,1.7983321,Cane_Carso;Staffordshire_bullterrier;Mexican_hairless;Labrador_retriever;Fila Braziliero
+UF014,UF014,2,clip,papillon,1.8321823,papillon;Pekinese;Australian_Shepherd;Chinese_Crested_Dog;Shetland_sheepdog
+UF015,UF015,2,clip,Siberian_husky,3.9227626,Siberian_husky;malamute;Norwegian_elkhound;Eskimo_dog;Australian_Shepherd
+UF016,UF016,2,clip,American_Staffordshire_terrier,3.664071,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;Chinese_Crested_Dog
+UF017,UF017,2,clip,American_Staffordshire_terrier,2.1018817,American_Staffordshire_terrier;Labrador_retriever;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso
+UF018,UF018,2,clip,bluetick,2.1266274,bluetick;Walker_hound;beagle;kelpie;miniature_pinscher
+UF020,UF020,2,clip,beagle,1.3957479,beagle;papillon;Chihuahua;miniature_pinscher;Pekinese
+UF022,UF022,2,clip,Fila Braziliero,1.9306844,Fila Braziliero;beagle;American_Staffordshire_terrier;Walker_hound;Staffordshire_bullterrier
+UF023,UF023,2,clip,American_Staffordshire_terrier,2.7402265,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;whippet;Cane_Carso
+UF024,UF024,2,clip,Labrador_retriever,1.7508734,Labrador_retriever;miniature_pinscher;Chihuahua;flat_coated_retriever;Staffordshire_bullterrier
+UF025,UF025,2,clip,whippet,2.2198966,whippet;Ibizan_hound;borzoi;Scottish_deerhound;Italian_greyhound
+UF026,UF026,2,clip,malinois,1.6044296,malinois;Black_sable;kelpie;German_shepherd;Staffordshire_bullterrier
+UF028,UF028,2,clip,beagle,2.5758598,beagle;Walker_hound;Appenzeller;Greater_Swiss_Mountain_dog;EntleBucher
+UF029,UF029,2,clip,Rhodesian_ridgeback,1.8088381,Rhodesian_ridgeback;Mexican_hairless;Italian_greyhound;Fila Braziliero;vizsla
+UF030,UF030,2,clip,American_Staffordshire_terrier,3.567111,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;beagle;French_bulldog
+UF031,UF031,2,clip,Chinese_Crested_Dog,1.4908009,Chinese_Crested_Dog;Rottweiler;Black_sable;papillon;German_shepherd
+UF033,UF033,2,clip,Cane_Carso,2.4416077,Cane_Carso;Mexican_hairless;Fila Braziliero;Great_Dane;Staffordshire_bullterrier
+UF035,UF035,2,clip,miniature_pinscher,1.7235657,miniature_pinscher;kelpie;toy_terrier;EntleBucher;Rottweiler
+UF036,UF036,2,clip,Staffordshire_bullterrier,1.7771393,Staffordshire_bullterrier;American_Staffordshire_terrier;Great_Dane;Cane_Carso;Fila Braziliero
+UF037,UF037,2,clip,American_Staffordshire_terrier,2.459871,American_Staffordshire_terrier;Fila Braziliero;Staffordshire_bullterrier;Great_Dane;whippet
+UF038,UF038,2,clip,Fila Braziliero,1.9529577,Fila Braziliero;American_Staffordshire_terrier;Staffordshire_bullterrier;Cane_Carso;Rhodesian_ridgeback
+UF039,UF039,2,clip,Fila Braziliero,2.304311,Fila Braziliero;American_Staffordshire_terrier;Great_Dane;Staffordshire_bullterrier;whippet
+UF040,UF040,2,clip,toy_poodle,1.7414731,toy_poodle;teddy;Dandie_Dinmont;Yorkshire_terrier;miniature_poodle
+UF041,UF041,2,clip,Labrador_retriever,2.1173613,Labrador_retriever;beagle;Chihuahua;Walker_hound;English_foxhound
+UF042,UF042,2,clip,American_Staffordshire_terrier,3.7258303,American_Staffordshire_terrier;Staffordshire_bullterrier;Cane_Carso;Fila Braziliero;French_bulldog
+UF043,UF043,2,clip,Chinese_Crested_Dog,2.0148652,Chinese_Crested_Dog;Pekinese;golden_retriever;papillon;Fila Braziliero
+UF044,UF044,2,clip,Labrador_retriever,2.4460962,Labrador_retriever;Fila Braziliero;Cane_Carso;Great_Dane;German_short_haired_pointer
+UF046,UF046,2,clip,Chinese_Crested_Dog,1.5959586,Chinese_Crested_Dog;Scottish_deerhound;affenpinscher;Pekinese;papillon
+UF047,UF047,2,clip,Staffordshire_bullterrier,1.2956191,Staffordshire_bullterrier;American_Staffordshire_terrier;bluetick;kelpie;Fila Braziliero
+UF048,UF048,2,clip,toy_terrier,1.5986749,toy_terrier;Australian_terrier;miniature_pinscher;Yorkshire_terrier;Chihuahua
+UF049,UF049,2,clip,Cardigan,2.6493819,Cardigan;Pembroke;papillon;Chihuahua;kelpie
+UF051,UF051,2,clip,beagle,2.3364375,beagle;Walker_hound;English_foxhound;Labrador_retriever;Fila Braziliero
+UF052,UF052,2,clip,bluetick,1.2029492,bluetick;Walker_hound;Norwegian_elkhound;Siberian_husky;Ibizan_hound
+UF053,UF053,2,clip,beagle,1.3839233,beagle;Walker_hound;American_Staffordshire_terrier;English_foxhound;basenji
+UF054,UF054,2,clip,American_Staffordshire_terrier,2.590294,American_Staffordshire_terrier;Fila Braziliero;Staffordshire_bullterrier;Chinese_Crested_Dog;Cane_Carso
+UF055,UF055,2,clip,miniature_pinscher,2.1957867,miniature_pinscher;Staffordshire_bullterrier;Chinese_Crested_Dog;Rottweiler;Mexican_hairless
+UF057,UF057,2,clip,Labrador_retriever,1.8832257,Labrador_retriever;Walker_hound;borzoi;Great_Pyrenees;Ibizan_hound
+UF058,UF058,2,clip,American_Staffordshire_terrier,2.6173637,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;boxer;Cane_Carso
+UF059,UF059,2,clip,Staffordshire_bullterrier,2.276434,Staffordshire_bullterrier;American_Staffordshire_terrier;whippet;Great_Dane;Italian_greyhound
+UF060,UF060,2,clip,beagle,2.1311426,beagle;English_foxhound;Walker_hound;basset;bluetick
+UF061,UF061,2,clip,Great_Dane,2.4806073,Great_Dane;whippet;Italian_greyhound;Cane_Carso;Fila Braziliero
+UF062,UF062,2,clip,Cane_Carso,2.002411,Cane_Carso;Staffordshire_bullterrier;kelpie;Mexican_hairless;American_Staffordshire_terrier
+UF063,UF063,2,clip,Fila Braziliero,1.7531459,Fila Braziliero;basenji;English_foxhound;beagle;Walker_hound
+UF064,UF064,2,clip,miniature_pinscher,2.2669199,miniature_pinscher;kelpie;Chihuahua;toy_terrier;Mexican_hairless
+UF065,UF065,2,clip,Black_sable,1.9403093,Black_sable;Norwegian_elkhound;malinois;Leonberg;Scottish_deerhound
+UF066,UF066,2,clip,Labrador_retriever,2.371877,Labrador_retriever;Great_Dane;flat_coated_retriever;Staffordshire_bullterrier;German_short_haired_pointer
+UF067,UF067,2,clip,Chihuahua,1.9690317,Chihuahua;Ibizan_hound;Mexican_hairless;toy_terrier;miniature_pinscher
+UF068,UF068,2,clip,American_Staffordshire_terrier,2.208073,American_Staffordshire_terrier;Staffordshire_bullterrier;malinois;Fila Braziliero;German_shepherd
+UF069,UF069,2,clip,Labrador_retriever,2.4069417,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;golden_retriever;standard_poodle
+UF071,UF071,2,clip,toy_terrier,1.0010757,toy_terrier;Labrador_retriever;Fila Braziliero;affenpinscher;Staffordshire_bullterrier
+UF072,UF072,2,clip,Rhodesian_ridgeback,1.732642,Rhodesian_ridgeback;Fila Braziliero;miniature_pinscher;redbone;vizsla
+UF073,UF073,2,clip,American_Staffordshire_terrier,1.6868559,American_Staffordshire_terrier;Rhodesian_ridgeback;Staffordshire_bullterrier;basenji;miniature_pinscher
+UF074,UF074,2,clip,beagle,1.9779139,beagle;Walker_hound;English_foxhound;Fila Braziliero;Chinese_Crested_Dog
+UF076,UF076,2,clip,redbone,1.9380631,redbone;Rhodesian_ridgeback;vizsla;bloodhound;miniature_pinscher
+UF077,UF077,2,clip,miniature_pinscher,1.9634486,miniature_pinscher;Appenzeller;kelpie;Rottweiler;EntleBucher
+UF079,UF079,2,clip,Walker_hound,1.8317126,Walker_hound;beagle;English_foxhound;American_Staffordshire_terrier;basenji
+UF081,UF081,2,clip,Pekinese,1.2562894,Pekinese;Irish_wolfhound;Scottish_deerhound;Leonberg;papillon
+UF082,UF082,2,clip,Chinese_Crested_Dog,1.3896284,Chinese_Crested_Dog;Border_collie;Australian_Shepherd;kelpie;Siberian_husky
+UF083,UF083,2,clip,kelpie,1.0598952,kelpie;Fila Braziliero;Black_sable;American_Staffordshire_terrier;Chinese_Crested_Dog
+UF084,UF084,2,clip,Labrador_retriever,1.9325309,Labrador_retriever;Fila Braziliero;vizsla;German_short_haired_pointer;redbone
+UF085,UF085,2,clip,kelpie,1.4950734,kelpie;Norwegian_elkhound;schipperke;German_shepherd;Siberian_husky
+UF088,UF088,2,clip,American_Staffordshire_terrier,2.2854223,American_Staffordshire_terrier;Staffordshire_bullterrier;Chinese_Crested_Dog;Fila Braziliero;Cane_Carso
+UF089,UF089,2,clip,Staffordshire_bullterrier,2.505983,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Fila Braziliero
+UF089_2,UF089_2,2,clip,Labrador_retriever,1.1574495,Labrador_retriever;beagle;Chihuahua;Pekinese;Fila Braziliero
+UF092,UF092,2,clip,Labrador_retriever,1.1574495,Labrador_retriever;beagle;Chihuahua;Pekinese;Fila Braziliero
+UF093,UF093,2,clip,Chinese_Crested_Dog,1.4662837,Chinese_Crested_Dog;papillon;Pekinese;Border_collie;affenpinscher
+UF094,UF094,2,clip,Rhodesian_ridgeback,1.6556371,Rhodesian_ridgeback;Fila Braziliero;Ibizan_hound;redbone;Great_Dane
+UF095,UF095,2,clip,American_Staffordshire_terrier,2.4952624,American_Staffordshire_terrier;Staffordshire_bullterrier;kelpie;malinois;Fila Braziliero
+UF096,UF096,2,clip,miniature_pinscher,2.3983521,miniature_pinscher;Chihuahua;Labrador_retriever;American_Staffordshire_terrier;French_bulldog
+UF097,UF097,2,clip,Staffordshire_bullterrier,3.1063902,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Fila Braziliero;Labrador_retriever
+UF098,UF098,2,clip,Chinese_Crested_Dog,1.4907982,Chinese_Crested_Dog;Fila Braziliero;Great_Dane;Mexican_hairless;bluetick
+UF099,UF099,2,clip,Chinese_Crested_Dog,2.2649114,Chinese_Crested_Dog;Chihuahua;American_Staffordshire_terrier;Staffordshire_bullterrier;miniature_pinscher
+UF100,UF100,2,clip,miniature_pinscher,2.0466013,miniature_pinscher;beagle;Walker_hound;Labrador_retriever;Chihuahua
+UF101,UF101,2,clip,American_Staffordshire_terrier,1.3031181,American_Staffordshire_terrier;miniature_pinscher;EntleBucher;kelpie;Walker_hound
+UF102,UF102,2,clip,Border_collie,2.7499847,Border_collie;Labrador_retriever;papillon;Australian_Shepherd;flat_coated_retriever
+UF103,UF103,2,clip,redbone,1.5949394,redbone;Walker_hound;Rhodesian_ridgeback;Fila Braziliero;Labrador_retriever
+UF104,UF104,2,clip,bluetick,2.8390756,bluetick;German_short_haired_pointer;Labrador_retriever;English_setter;Fila Braziliero
+UF106,UF106,2,clip,Rottweiler,1.3012109,Rottweiler;miniature_pinscher;Labrador_retriever;Appenzeller;Black_sable
+UF107,UF107,2,clip,beagle,2.4889405,beagle;Walker_hound;English_foxhound;Brittany_spaniel;basset
+UF108,UF108,2,clip,Ibizan_hound,1.7735636,Ibizan_hound;Labrador_retriever;beagle;basenji;Chihuahua
+UF109,UF109,2,clip,Chinese_Crested_Dog,2.006233,Chinese_Crested_Dog;papillon;Pekinese;borzoi;Border_collie
+UF110,UF110,2,clip,Labrador_retriever,1.7127975,Labrador_retriever;miniature_pinscher;beagle;American_Staffordshire_terrier;Walker_hound
+UF111,UF111,2,clip,Chinese_Crested_Dog,1.8221204,Chinese_Crested_Dog;Pekinese;French_bulldog;Fila Braziliero;pug
+UF112,UF112,2,clip,English_foxhound,2.1676702,English_foxhound;Walker_hound;beagle;basset;bluetick
+UF114,UF114,2,clip,kelpie,1.9919649,kelpie;Siberian_husky;Norwegian_elkhound;Black_sable;German_shepherd
+UF115,UF115,2,clip,Labrador_retriever,1.7215474,Labrador_retriever;golden_retriever;malinois;Black_sable;German_shepherd
+UF116,UF116,2,clip,miniature_pinscher,1.9635423,miniature_pinscher;Shiba_Dog;Chihuahua;kelpie;Labrador_retriever
+UF117,UF117,2,clip,whippet,2.957473,whippet;Mexican_hairless;Ibizan_hound;Italian_greyhound;Chinese_Crested_Dog
+UF119,UF119,2,clip,papillon,2.029007,papillon;Chihuahua;Pekinese;golden_retriever;beagle
+UF001,UF001,3,clip,Pekinese,1.8461407,Pekinese;papillon;Chinese_Crested_Dog;Chihuahua;golden_retriever
+UF002,UF002,3,clip,Labrador_retriever,2.5367112,Labrador_retriever;flat_coated_retriever;Staffordshire_bullterrier;Cane_Carso;Great_Dane
+UF003,UF003,3,clip,Labrador_retriever,2.216035,Labrador_retriever;miniature_pinscher;Rhodesian_ridgeback;whippet;Fila Braziliero
+UF004,UF004,3,clip,Pekinese,1.5193455,Pekinese;briard;affenpinscher;cairn;Shih_Tzu
+UF005,UF005,3,clip,Walker_hound,1.8870138,Walker_hound;American_Staffordshire_terrier;bluetick;Staffordshire_bullterrier;Great_Dane
+UF006,UF006,3,clip,beagle,2.9186962,beagle;Walker_hound;English_foxhound;bluetick;basset
+UF007,UF007,3,clip,Labrador_retriever,2.120444,Labrador_retriever;flat_coated_retriever;Staffordshire_bullterrier;Cane_Carso;Fila Braziliero
+UF008,UF008,3,clip,Great_Dane,1.7096628,Great_Dane;Fila Braziliero;whippet;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF009,UF009,3,clip,whippet,1.8682219,whippet;Fila Braziliero;Staffordshire_bullterrier;Ibizan_hound;American_Staffordshire_terrier
+UF010,UF010,3,clip,Chinese_Crested_Dog,1.4392542,Chinese_Crested_Dog;Pekinese;papillon;Norwich_terrier;German_shepherd
+UF011,UF011,3,clip,Chihuahua,2.0034287,Chihuahua;miniature_pinscher;French_bulldog;Border_collie;kelpie
+UF012,UF012,3,clip,miniature_pinscher,1.7550766,miniature_pinscher;Labrador_retriever;Rhodesian_ridgeback;beagle;redbone
+UF013,UF013,3,clip,Cane_Carso,1.8105356,Cane_Carso;Staffordshire_bullterrier;Labrador_retriever;Fila Braziliero;Mexican_hairless
+UF014,UF014,3,clip,papillon,1.8301977,papillon;Pekinese;Australian_Shepherd;Chinese_Crested_Dog;golden_retriever
+UF015,UF015,3,clip,Siberian_husky,3.9440436,Siberian_husky;malamute;Norwegian_elkhound;Eskimo_dog;Australian_Shepherd
+UF016,UF016,3,clip,American_Staffordshire_terrier,3.5243862,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;Chinese_Crested_Dog
+UF017,UF017,3,clip,Labrador_retriever,1.9726635,Labrador_retriever;American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso
+UF018,UF018,3,clip,bluetick,2.2525928,bluetick;Walker_hound;miniature_pinscher;kelpie;beagle
+UF020,UF020,3,clip,beagle,1.346484,beagle;papillon;miniature_pinscher;Chihuahua;Fila Braziliero
+UF022,UF022,3,clip,Fila Braziliero,1.9905765,Fila Braziliero;beagle;American_Staffordshire_terrier;Staffordshire_bullterrier;Walker_hound
+UF023,UF023,3,clip,American_Staffordshire_terrier,2.601155,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;whippet
+UF024,UF024,3,clip,Labrador_retriever,1.7438854,Labrador_retriever;miniature_pinscher;Chihuahua;flat_coated_retriever;Staffordshire_bullterrier
+UF025,UF025,3,clip,whippet,2.2755105,whippet;Ibizan_hound;borzoi;Chinese_Crested_Dog;Scottish_deerhound
+UF026,UF026,3,clip,Black_sable,1.5647149,Black_sable;malinois;kelpie;German_shepherd;Staffordshire_bullterrier
+UF028,UF028,3,clip,beagle,2.4781058,beagle;Walker_hound;Appenzeller;EntleBucher;Greater_Swiss_Mountain_dog
+UF029,UF029,3,clip,Rhodesian_ridgeback,1.8449962,Rhodesian_ridgeback;Mexican_hairless;Italian_greyhound;Fila Braziliero;vizsla
+UF030,UF030,3,clip,American_Staffordshire_terrier,3.3607223,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;beagle;French_bulldog
+UF031,UF031,3,clip,Chinese_Crested_Dog,1.5128137,Chinese_Crested_Dog;Black_sable;papillon;Rottweiler;German_shepherd
+UF033,UF033,3,clip,Cane_Carso,2.4681044,Cane_Carso;Mexican_hairless;Fila Braziliero;Great_Dane;Staffordshire_bullterrier
+UF035,UF035,3,clip,miniature_pinscher,1.8158246,miniature_pinscher;kelpie;toy_terrier;Doberman;EntleBucher
+UF036,UF036,3,clip,Staffordshire_bullterrier,1.8123024,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Great_Dane;Fila Braziliero
+UF037,UF037,3,clip,American_Staffordshire_terrier,2.3348694,American_Staffordshire_terrier;Fila Braziliero;Staffordshire_bullterrier;Great_Dane;whippet
+UF038,UF038,3,clip,Fila Braziliero,1.9241848,Fila Braziliero;American_Staffordshire_terrier;Staffordshire_bullterrier;Rhodesian_ridgeback;Cane_Carso
+UF039,UF039,3,clip,Fila Braziliero,2.2335017,Fila Braziliero;American_Staffordshire_terrier;Staffordshire_bullterrier;Great_Dane;whippet
+UF040,UF040,3,clip,toy_poodle,1.725525,toy_poodle;teddy;Dandie_Dinmont;Yorkshire_terrier;cocker_spaniel
+UF041,UF041,3,clip,Labrador_retriever,2.1487694,Labrador_retriever;beagle;Chihuahua;Walker_hound;English_foxhound
+UF042,UF042,3,clip,American_Staffordshire_terrier,3.5931754,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso;French_bulldog
+UF043,UF043,3,clip,Chinese_Crested_Dog,2.0902424,Chinese_Crested_Dog;golden_retriever;Pekinese;papillon;Fila Braziliero
+UF044,UF044,3,clip,Labrador_retriever,2.4488835,Labrador_retriever;Fila Braziliero;Cane_Carso;Great_Dane;German_short_haired_pointer
+UF046,UF046,3,clip,Chinese_Crested_Dog,1.6424664,Chinese_Crested_Dog;affenpinscher;Scottish_deerhound;papillon;Pekinese
+UF047,UF047,3,clip,Staffordshire_bullterrier,1.293527,Staffordshire_bullterrier;bluetick;American_Staffordshire_terrier;kelpie;Fila Braziliero
+UF048,UF048,3,clip,toy_terrier,1.6223996,toy_terrier;Australian_terrier;miniature_pinscher;Yorkshire_terrier;Chihuahua
+UF049,UF049,3,clip,Cardigan,2.5710485,Cardigan;Pembroke;papillon;Chihuahua;kelpie
+UF051,UF051,3,clip,beagle,2.357468,beagle;Walker_hound;English_foxhound;Labrador_retriever;Fila Braziliero
+UF052,UF052,3,clip,bluetick,1.2628164,bluetick;Walker_hound;Ibizan_hound;Siberian_husky;Norwegian_elkhound
+UF053,UF053,3,clip,beagle,1.3783237,beagle;Walker_hound;American_Staffordshire_terrier;English_foxhound;basenji
+UF054,UF054,3,clip,American_Staffordshire_terrier,2.4654799,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Chinese_Crested_Dog;Cane_Carso
+UF055,UF055,3,clip,miniature_pinscher,2.2876763,miniature_pinscher;Staffordshire_bullterrier;Chinese_Crested_Dog;Fila Braziliero;Rottweiler
+UF057,UF057,3,clip,Labrador_retriever,1.8919629,Labrador_retriever;Walker_hound;Ibizan_hound;Chinese_Crested_Dog;golden_retriever
+UF058,UF058,3,clip,American_Staffordshire_terrier,2.4748619,American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;boxer;Cane_Carso
+UF059,UF059,3,clip,Staffordshire_bullterrier,2.257305,Staffordshire_bullterrier;American_Staffordshire_terrier;whippet;Italian_greyhound;Great_Dane
+UF060,UF060,3,clip,beagle,2.176181,beagle;English_foxhound;Walker_hound;basset;bluetick
+UF061,UF061,3,clip,Great_Dane,2.3815007,Great_Dane;whippet;Italian_greyhound;Cane_Carso;Fila Braziliero
+UF062,UF062,3,clip,Cane_Carso,2.028545,Cane_Carso;Staffordshire_bullterrier;kelpie;schipperke;American_Staffordshire_terrier
+UF063,UF063,3,clip,Fila Braziliero,1.705689,Fila Braziliero;beagle;English_foxhound;Rhodesian_ridgeback;basenji
+UF064,UF064,3,clip,miniature_pinscher,2.3423855,miniature_pinscher;kelpie;Chihuahua;toy_terrier;Mexican_hairless
+UF065,UF065,3,clip,Black_sable,1.9059098,Black_sable;Norwegian_elkhound;Leonberg;malinois;German_shepherd
+UF066,UF066,3,clip,Labrador_retriever,2.3701735,Labrador_retriever;flat_coated_retriever;Great_Dane;Staffordshire_bullterrier;German_short_haired_pointer
+UF067,UF067,3,clip,Chihuahua,1.9627523,Chihuahua;Ibizan_hound;Chinese_Crested_Dog;miniature_pinscher;toy_terrier
+UF068,UF068,3,clip,American_Staffordshire_terrier,2.129513,American_Staffordshire_terrier;Staffordshire_bullterrier;malinois;Fila Braziliero;German_shepherd
+UF069,UF069,3,clip,Labrador_retriever,2.4685097,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;golden_retriever;German_short_haired_pointer
+UF071,UF071,3,clip,Labrador_retriever,1.1004627,Labrador_retriever;toy_terrier;Fila Braziliero;schipperke;affenpinscher
+UF072,UF072,3,clip,Rhodesian_ridgeback,1.7698622,Rhodesian_ridgeback;miniature_pinscher;Fila Braziliero;redbone;vizsla
+UF073,UF073,3,clip,Rhodesian_ridgeback,1.6237739,Rhodesian_ridgeback;American_Staffordshire_terrier;Staffordshire_bullterrier;basenji;miniature_pinscher
+UF074,UF074,3,clip,beagle,1.9825665,beagle;Walker_hound;English_foxhound;Fila Braziliero;Chinese_Crested_Dog
+UF076,UF076,3,clip,redbone,1.981959,redbone;Rhodesian_ridgeback;vizsla;bloodhound;miniature_pinscher
+UF077,UF077,3,clip,miniature_pinscher,2.0661006,miniature_pinscher;Appenzeller;kelpie;EntleBucher;Rottweiler
+UF079,UF079,3,clip,Walker_hound,1.8194284,Walker_hound;beagle;English_foxhound;American_Staffordshire_terrier;Ibizan_hound
+UF081,UF081,3,clip,Pekinese,1.2422222,Pekinese;Irish_wolfhound;Leonberg;papillon;Scottish_deerhound
+UF082,UF082,3,clip,Border_collie,1.4459733,Border_collie;Chinese_Crested_Dog;Australian_Shepherd;kelpie;Siberian_husky
+UF083,UF083,3,clip,Fila Braziliero,1.1235137,Fila Braziliero;kelpie;Black_sable;Chinese_Crested_Dog;Staffordshire_bullterrier
+UF084,UF084,3,clip,Labrador_retriever,1.9373893,Labrador_retriever;Fila Braziliero;German_short_haired_pointer;redbone;Weimaraner
+UF085,UF085,3,clip,kelpie,1.4994446,kelpie;schipperke;Norwegian_elkhound;Siberian_husky;German_shepherd
+UF088,UF088,3,clip,American_Staffordshire_terrier,2.1266968,American_Staffordshire_terrier;Staffordshire_bullterrier;Chinese_Crested_Dog;Fila Braziliero;Cane_Carso
+UF089,UF089,3,clip,Staffordshire_bullterrier,2.4802337,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Fila Braziliero
+UF089_2,UF089_2,3,clip,Labrador_retriever,1.2263144,Labrador_retriever;beagle;Chihuahua;Pekinese;Fila Braziliero
+UF092,UF092,3,clip,Labrador_retriever,1.2263144,Labrador_retriever;beagle;Chihuahua;Pekinese;Fila Braziliero
+UF093,UF093,3,clip,Chinese_Crested_Dog,1.4828997,Chinese_Crested_Dog;papillon;Pekinese;Border_collie;affenpinscher
+UF094,UF094,3,clip,Rhodesian_ridgeback,1.6296269,Rhodesian_ridgeback;Ibizan_hound;Fila Braziliero;redbone;vizsla
+UF095,UF095,3,clip,American_Staffordshire_terrier,2.4310462,American_Staffordshire_terrier;Staffordshire_bullterrier;kelpie;miniature_pinscher;Fila Braziliero
+UF096,UF096,3,clip,miniature_pinscher,2.4476838,miniature_pinscher;Chihuahua;Labrador_retriever;Staffordshire_bullterrier;American_Staffordshire_terrier
+UF097,UF097,3,clip,Staffordshire_bullterrier,3.159164,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Fila Braziliero;miniature_pinscher
+UF098,UF098,3,clip,Chinese_Crested_Dog,1.5827817,Chinese_Crested_Dog;Fila Braziliero;Great_Dane;bluetick;Mexican_hairless
+UF099,UF099,3,clip,Chinese_Crested_Dog,2.2978897,Chinese_Crested_Dog;Chihuahua;Staffordshire_bullterrier;miniature_pinscher;American_Staffordshire_terrier
+UF100,UF100,3,clip,miniature_pinscher,2.1375792,miniature_pinscher;beagle;Walker_hound;Labrador_retriever;Chihuahua
+UF101,UF101,3,clip,miniature_pinscher,1.3882221,miniature_pinscher;Walker_hound;kelpie;EntleBucher;Rhodesian_ridgeback
+UF102,UF102,3,clip,Border_collie,2.74688,Border_collie;Labrador_retriever;papillon;Australian_Shepherd;flat_coated_retriever
+UF103,UF103,3,clip,Walker_hound,1.6340734,Walker_hound;redbone;Rhodesian_ridgeback;Fila Braziliero;bluetick
+UF104,UF104,3,clip,bluetick,2.965005,bluetick;German_short_haired_pointer;Labrador_retriever;Fila Braziliero;English_setter
+UF106,UF106,3,clip,miniature_pinscher,1.2933625,miniature_pinscher;Rottweiler;Black_sable;Appenzeller;Labrador_retriever
+UF107,UF107,3,clip,beagle,2.4973195,beagle;Walker_hound;English_foxhound;Brittany_spaniel;basset
+UF108,UF108,3,clip,Ibizan_hound,1.7999736,Ibizan_hound;Labrador_retriever;beagle;basenji;Chihuahua
+UF109,UF109,3,clip,Chinese_Crested_Dog,2.078072,Chinese_Crested_Dog;papillon;Pekinese;borzoi;Border_collie
+UF110,UF110,3,clip,Labrador_retriever,1.7077032,Labrador_retriever;miniature_pinscher;beagle;Fila Braziliero;Walker_hound
+UF111,UF111,3,clip,Chinese_Crested_Dog,1.8628203,Chinese_Crested_Dog;Pekinese;Fila Braziliero;French_bulldog;Chihuahua
+UF112,UF112,3,clip,English_foxhound,2.2135398,English_foxhound;Walker_hound;beagle;basset;bluetick
+UF114,UF114,3,clip,kelpie,1.9962863,kelpie;Siberian_husky;Norwegian_elkhound;Black_sable;German_shepherd
+UF115,UF115,3,clip,Labrador_retriever,1.7464584,Labrador_retriever;golden_retriever;malinois;Black_sable;German_shepherd
+UF116,UF116,3,clip,miniature_pinscher,2.0541112,miniature_pinscher;Shiba_Dog;Chihuahua;kelpie;Labrador_retriever
+UF117,UF117,3,clip,whippet,2.9523914,whippet;Mexican_hairless;Ibizan_hound;Italian_greyhound;Chinese_Crested_Dog
+UF119,UF119,3,clip,papillon,2.040427,papillon;Chihuahua;Pekinese;golden_retriever;Chinese_Crested_Dog
+UF001,UF001,1,dinov2,papillon,3.939644,papillon;Pekinese;golden_retriever;Australian_Shepherd;collie
+UF002,UF002,1,dinov2,Labrador_retriever,6.5002303,Labrador_retriever;Staffordshire_bullterrier;Cane_Carso;schipperke;miniature_pinscher
+UF003,UF003,1,dinov2,miniature_pinscher,4.157531,miniature_pinscher;Rhodesian_ridgeback;malinois;Staffordshire_bullterrier;Brabancon_griffo
+UF004,UF004,1,dinov2,briard,5.5767865,briard;cairn;Tibetan_terrier;Lhasa;soft_coated_wheaten_terrier
+UF005,UF005,1,dinov2,bluetick,3.7529461,bluetick;German_short_haired_pointer;whippet;Staffordshire_bullterrier;American_Staffordshire_terrier
+UF006,UF006,1,dinov2,Walker_hound,5.035257,Walker_hound;English_foxhound;Brittany_spaniel;German_short_haired_pointer;beagle
+UF007,UF007,1,dinov2,Labrador_retriever,4.612642,Labrador_retriever;Staffordshire_bullterrier;Cane_Carso;schipperke;American_Staffordshire_terrier
+UF008,UF008,1,dinov2,Fila Braziliero,4.8032904,Fila Braziliero;boxer;whippet;Staffordshire_bullterrier;Rhodesian_ridgeback
+UF009,UF009,1,dinov2,boxer,5.2029614,boxer;whippet;American_Staffordshire_terrier;Staffordshire_bullterrier;Italian_greyhound
+UF010,UF010,1,dinov2,Leonberg,3.9950616,Leonberg;keeshond;Pomeranian;German_shepherd;papillon
+UF011,UF011,1,dinov2,kelpie,4.4041195,kelpie;toy_terrier;Boston_bull;schipperke;Chihuahua
+UF012,UF012,1,dinov2,redbone,4.7250147,redbone;miniature_pinscher;Brabancon_griffo;Rhodesian_ridgeback;malinois
+UF013,UF013,1,dinov2,Staffordshire_bullterrier,3.9301295,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Great_Dane
+UF014,UF014,1,dinov2,Australian_Shepherd,4.912281,Australian_Shepherd;golden_retriever;Border_collie;Leonberg;collie
+UF015,UF015,1,dinov2,Siberian_husky,7.5032496,Siberian_husky;Eskimo_dog;Norwegian_elkhound;malamute;Shiba_Dog
+UF016,UF016,1,dinov2,American_Staffordshire_terrier,6.4406714,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;whippet;Great_Dane
+UF017,UF017,1,dinov2,Great_Dane,4.1014657,Great_Dane;American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Cane_Carso
+UF018,UF018,1,dinov2,bluetick,5.8478637,bluetick;German_short_haired_pointer;Walker_hound;English_foxhound;Border_terrier
+UF020,UF020,1,dinov2,redbone,3.172748,redbone;Border_terrier;beagle;Brabancon_griffo;English_foxhound
+UF022,UF022,1,dinov2,Fila Braziliero,4.2668777,Fila Braziliero;whippet;Great_Dane;boxer;redbone
+UF023,UF023,1,dinov2,American_Staffordshire_terrier,5.836502,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;whippet;Great_Dane
+UF024,UF024,1,dinov2,Labrador_retriever,5.798777,Labrador_retriever;flat_coated_retriever;schipperke;curly_coated_retriever;German_short_haired_pointer
+UF025,UF025,1,dinov2,Irish_terrier,4.19802,Irish_terrier;wire_haired_fox_terrier;Italian_greyhound;Lakeland_terrier;Irish_wolfhound
+UF026,UF026,1,dinov2,basenji,3.4150865,basenji;malinois;Mexican_hairless;Norwegian_elkhound;Staffordshire_bullterrier
+UF028,UF028,1,dinov2,Walker_hound,4.69813,Walker_hound;English_foxhound;beagle;boxer;Greater_Swiss_Mountain_dog
+UF029,UF029,1,dinov2,Italian_greyhound,4.7939734,Italian_greyhound;Mexican_hairless;American_Staffordshire_terrier;Chinese_Crested_Dog;Staffordshire_bullterrier
+UF030,UF030,1,dinov2,American_Staffordshire_terrier,5.408333,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;French_bulldog;bull_mastiff
+UF031,UF031,1,dinov2,EntleBucher,3.6704533,EntleBucher;black_and_tan_coonhound;Gordon_setter;Rottweiler;Bernese_mountain_dog
+UF033,UF033,1,dinov2,Italian_greyhound,4.842338,Italian_greyhound;whippet;Great_Dane;Boston_bull;Ibizan_hound
+UF035,UF035,1,dinov2,miniature_pinscher,4.33807,miniature_pinscher;kelpie;EntleBucher;Appenzeller;Rottweiler
+UF036,UF036,1,dinov2,German_short_haired_pointer,4.2772465,German_short_haired_pointer;American_Staffordshire_terrier;Great_Dane;Staffordshire_bullterrier;Cane_Carso
+UF037,UF037,1,dinov2,boxer,4.490003,boxer;Fila Braziliero;Great_Dane;Rhodesian_ridgeback;American_Staffordshire_terrier
+UF038,UF038,1,dinov2,Brabancon_griffo,3.6599634,Brabancon_griffo;miniature_pinscher;vizsla;redbone;Rhodesian_ridgeback
+UF039,UF039,1,dinov2,Staffordshire_bullterrier,4.677159,Staffordshire_bullterrier;boxer;American_Staffordshire_terrier;Fila Braziliero;Great_Dane
+UF040,UF040,1,dinov2,soft_coated_wheaten_terrier,6.052409,soft_coated_wheaten_terrier;Dandie_Dinmont;Lhasa;Lakeland_terrier;otterhound
+UF041,UF041,1,dinov2,Labrador_retriever,4.1959376,Labrador_retriever;redbone;dingo;Chihuahua;Chesapeake_Bay_retriever
+UF042,UF042,1,dinov2,American_Staffordshire_terrier,5.0095887,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;English_foxhound;whippet
+UF043,UF043,1,dinov2,Labrador_retriever,4.489832,Labrador_retriever;golden_retriever;redbone;Chesapeake_Bay_retriever;Brabancon_griffo
+UF044,UF044,1,dinov2,Great_Dane,4.865461,Great_Dane;Labrador_retriever;Cane_Carso;German_short_haired_pointer;flat_coated_retriever
+UF046,UF046,1,dinov2,Scottish_deerhound,5.9172397,Scottish_deerhound;Irish_wolfhound;affenpinscher;cairn;keeshond
+UF047,UF047,1,dinov2,miniature_pinscher,4.005951,miniature_pinscher;Staffordshire_bullterrier;American_Staffordshire_terrier;Rhodesian_ridgeback;Italian_greyhound
+UF048,UF048,1,dinov2,Airedale,3.7726338,Airedale;Australian_terrier;otterhound;Norwich_terrier;Black_sable
+UF049,UF049,1,dinov2,Cardigan,5.436867,Cardigan;Pembroke;Norwich_terrier;kelpie;German_shepherd
+UF051,UF051,1,dinov2,Labrador_retriever,4.0459094,Labrador_retriever;English_foxhound;Walker_hound;beagle;Chesapeake_Bay_retriever
+UF052,UF052,1,dinov2,bluetick,6.034061,bluetick;German_short_haired_pointer;English_setter;Brittany_spaniel;Chihuahua
+UF053,UF053,1,dinov2,English_foxhound,3.5092342,English_foxhound;basenji;boxer;American_Staffordshire_terrier;Walker_hound
+UF054,UF054,1,dinov2,American_Staffordshire_terrier,5.735314,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;Great_Dane;Rhodesian_ridgeback
+UF055,UF055,1,dinov2,Doberman,5.86206,Doberman;Rottweiler;miniature_pinscher;kelpie;black_and_tan_coonhound
+UF057,UF057,1,dinov2,Labrador_retriever,4.596842,Labrador_retriever;kuvasz;whippet;Staffordshire_bullterrier;Great_Pyrenees
+UF058,UF058,1,dinov2,Rhodesian_ridgeback,5.706952,Rhodesian_ridgeback;boxer;American_Staffordshire_terrier;Staffordshire_bullterrier;Great_Dane
+UF059,UF059,1,dinov2,Fila Braziliero,4.7624764,Fila Braziliero;Staffordshire_bullterrier;American_Staffordshire_terrier;whippet;Cane_Carso
+UF060,UF060,1,dinov2,beagle,6.811543,beagle;English_foxhound;basset;Walker_hound;Cardigan
+UF061,UF061,1,dinov2,Great_Dane,4.9230533,Great_Dane;Doberman;Mexican_hairless;Cane_Carso;Italian_greyhound
+UF062,UF062,1,dinov2,schipperke,4.4150963,schipperke;kelpie;Staffordshire_bullterrier;miniature_pinscher;Cane_Carso
+UF063,UF063,1,dinov2,Rhodesian_ridgeback,4.41815,Rhodesian_ridgeback;redbone;vizsla;English_foxhound;Staffordshire_bullterrier
+UF064,UF064,1,dinov2,miniature_pinscher,4.0183873,miniature_pinscher;beagle;Chihuahua;Australian_terrier;Black_sable
+UF065,UF065,1,dinov2,malinois,3.2518525,malinois;Fila Braziliero;Cane_Carso;Staffordshire_bullterrier;Brabancon_griffo
+UF066,UF066,1,dinov2,Labrador_retriever,4.0777345,Labrador_retriever;German_short_haired_pointer;black_and_tan_coonhound;flat_coated_retriever;Great_Dane
+UF067,UF067,1,dinov2,Boston_bull,3.8689508,Boston_bull;whippet;toy_terrier;basenji;Ibizan_hound
+UF068,UF068,1,dinov2,Rhodesian_ridgeback,3.5336406,Rhodesian_ridgeback;bull_mastiff;American_Staffordshire_terrier;Staffordshire_bullterrier;malinois
+UF069,UF069,1,dinov2,Labrador_retriever,5.891228,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;schipperke;kelpie
+UF071,UF071,1,dinov2,schipperke,2.807488,schipperke;Labrador_retriever;Cane_Carso;Staffordshire_bullterrier;flat_coated_retriever
+UF072,UF072,1,dinov2,boxer,4.922685,boxer;Rhodesian_ridgeback;American_Staffordshire_terrier;Staffordshire_bullterrier;basenji
+UF073,UF073,1,dinov2,Rhodesian_ridgeback,5.3522005,Rhodesian_ridgeback;Staffordshire_bullterrier;American_Staffordshire_terrier;miniature_pinscher;boxer
+UF074,UF074,1,dinov2,English_foxhound,4.7251444,English_foxhound;Walker_hound;beagle;boxer;Great_Dane
+UF076,UF076,1,dinov2,redbone,6.1338053,redbone;Brabancon_griffo;Rhodesian_ridgeback;miniature_pinscher;vizsla
+UF077,UF077,1,dinov2,black_and_tan_coonhound,5.7105856,black_and_tan_coonhound;EntleBucher;Rottweiler;miniature_pinscher;kelpie
+UF079,UF079,1,dinov2,basenji,4.220239,basenji;American_Staffordshire_terrier;boxer;English_foxhound;Staffordshire_bullterrier
+UF081,UF081,1,dinov2,Border_terrier,4.3923182,Border_terrier;Irish_wolfhound;cairn;Scottish_deerhound;Pekinese
+UF082,UF082,1,dinov2,Walker_hound,3.061523,Walker_hound;English_foxhound;bluetick;English_springer;toy_terrier
+UF083,UF083,1,dinov2,English_foxhound,3.417263,English_foxhound;Airedale;miniature_pinscher;Staffordshire_bullterrier;Border_terrier
+UF084,UF084,1,dinov2,German_short_haired_pointer,3.429242,German_short_haired_pointer;Chesapeake_Bay_retriever;redbone;vizsla;Great_Dane
+UF085,UF085,1,dinov2,kelpie,4.0224643,kelpie;German_shepherd;Black_sable;schipperke;Tibetan_mastiff
+UF088,UF088,1,dinov2,American_Staffordshire_terrier,5.0455017,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Great_Dane;whippet
+UF089,UF089,1,dinov2,Staffordshire_bullterrier,7.2690244,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Rottweiler
+UF089_2,UF089_2,1,dinov2,English_foxhound,2.6948323,English_foxhound;Labrador_retriever;Walker_hound;beagle;Great_Pyrenees
+UF092,UF092,1,dinov2,English_foxhound,2.6948323,English_foxhound;Labrador_retriever;Walker_hound;beagle;Great_Pyrenees
+UF093,UF093,1,dinov2,English_setter,5.2504497,English_setter;English_springer;bluetick;German_short_haired_pointer;Brittany_spaniel
+UF094,UF094,1,dinov2,redbone,4.050285,redbone;Italian_greyhound;Rhodesian_ridgeback;miniature_pinscher;vizsla
+UF095,UF095,1,dinov2,Staffordshire_bullterrier,5.4178915,Staffordshire_bullterrier;miniature_pinscher;American_Staffordshire_terrier;basenji;Rhodesian_ridgeback
+UF096,UF096,1,dinov2,miniature_pinscher,4.427944,miniature_pinscher;basenji;Mexican_hairless;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF097,UF097,1,dinov2,Staffordshire_bullterrier,7.14416,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Great_Dane;boxer
+UF098,UF098,1,dinov2,Staffordshire_bullterrier,3.3283322,Staffordshire_bullterrier;English_foxhound;Walker_hound;beagle;miniature_pinscher
+UF099,UF099,1,dinov2,Walker_hound,3.0245707,Walker_hound;English_foxhound;Chihuahua;toy_terrier;Brittany_spaniel
+UF100,UF100,1,dinov2,redbone,4.502737,redbone;Rhodesian_ridgeback;miniature_pinscher;Brabancon_griffo;Labrador_retriever
+UF101,UF101,1,dinov2,miniature_pinscher,4.0898557,miniature_pinscher;English_foxhound;redbone;Airedale;Australian_terrier
+UF102,UF102,1,dinov2,flat_coated_retriever,5.685961,flat_coated_retriever;Border_collie;Newfoundland;English_springer;groenendael
+UF103,UF103,1,dinov2,redbone,4.420305,redbone;Rhodesian_ridgeback;bloodhound;English_foxhound;Walker_hound
+UF104,UF104,1,dinov2,German_short_haired_pointer,7.2871757,German_short_haired_pointer;bluetick;English_setter;Scottish_deerhound;Walker_hound
+UF106,UF106,1,dinov2,Rottweiler,5.0646586,Rottweiler;kelpie;EntleBucher;black_and_tan_coonhound;Appenzeller
+UF107,UF107,1,dinov2,English_foxhound,4.222315,English_foxhound;Walker_hound;beagle;German_short_haired_pointer;American_Staffordshire_terrier
+UF108,UF108,1,dinov2,Walker_hound,3.2880368,Walker_hound;toy_terrier;English_foxhound;Chihuahua;Staffordshire_bullterrier
+UF109,UF109,1,dinov2,papillon,3.4596927,papillon;Brittany_spaniel;English_foxhound;Chihuahua;basenji
+UF110,UF110,1,dinov2,Rhodesian_ridgeback,6.963908,Rhodesian_ridgeback;redbone;boxer;vizsla;English_foxhound
+UF111,UF111,1,dinov2,Chihuahua,4.347918,Chihuahua;Staffordshire_bullterrier;French_bulldog;beagle;toy_terrier
+UF112,UF112,1,dinov2,Walker_hound,4.7422323,Walker_hound;English_foxhound;Brittany_spaniel;German_short_haired_pointer;Ibizan_hound
+UF114,UF114,1,dinov2,kelpie,3.4458282,kelpie;toy_terrier;dingo;basenji;Black_sable
+UF115,UF115,1,dinov2,Brabancon_griffo,4.9523487,Brabancon_griffo;malinois;redbone;Rhodesian_ridgeback;Border_terrier
+UF116,UF116,1,dinov2,basenji,3.3849318,basenji;miniature_pinscher;Rhodesian_ridgeback;Staffordshire_bullterrier;French_bulldog
+UF117,UF117,1,dinov2,Great_Dane,3.7720382,Great_Dane;whippet;Italian_greyhound;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF119,UF119,1,dinov2,Pekinese,4.147273,Pekinese;papillon;golden_retriever;Chihuahua;Border_terrier
+UF001,UF001,2,dinov2,Pekinese,3.8378732,Pekinese;papillon;golden_retriever;Australian_Shepherd;collie
+UF002,UF002,2,dinov2,Labrador_retriever,6.3982058,Labrador_retriever;Staffordshire_bullterrier;Cane_Carso;schipperke;miniature_pinscher
+UF003,UF003,2,dinov2,miniature_pinscher,4.1175895,miniature_pinscher;Rhodesian_ridgeback;malinois;Brabancon_griffo;Staffordshire_bullterrier
+UF004,UF004,2,dinov2,briard,5.7156024,briard;cairn;Tibetan_terrier;Lhasa;soft_coated_wheaten_terrier
+UF005,UF005,2,dinov2,bluetick,3.645294,bluetick;German_short_haired_pointer;whippet;Staffordshire_bullterrier;American_Staffordshire_terrier
+UF006,UF006,2,dinov2,Walker_hound,5.126205,Walker_hound;English_foxhound;Brittany_spaniel;German_short_haired_pointer;beagle
+UF007,UF007,2,dinov2,Labrador_retriever,4.595758,Labrador_retriever;Staffordshire_bullterrier;Cane_Carso;schipperke;American_Staffordshire_terrier
+UF008,UF008,2,dinov2,Fila Braziliero,4.796371,Fila Braziliero;Staffordshire_bullterrier;whippet;Rhodesian_ridgeback;boxer
+UF009,UF009,2,dinov2,boxer,5.0741925,boxer;whippet;American_Staffordshire_terrier;Staffordshire_bullterrier;Italian_greyhound
+UF010,UF010,2,dinov2,Leonberg,4.0153084,Leonberg;keeshond;Pomeranian;Pekinese;German_shepherd
+UF011,UF011,2,dinov2,kelpie,4.2558208,kelpie;toy_terrier;Boston_bull;schipperke;Chihuahua
+UF012,UF012,2,dinov2,redbone,4.647807,redbone;Brabancon_griffo;miniature_pinscher;Rhodesian_ridgeback;malinois
+UF013,UF013,2,dinov2,Staffordshire_bullterrier,3.890645,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Great_Dane
+UF014,UF014,2,dinov2,Australian_Shepherd,4.962347,Australian_Shepherd;golden_retriever;Border_collie;Leonberg;collie
+UF015,UF015,2,dinov2,Siberian_husky,7.632092,Siberian_husky;Eskimo_dog;malamute;Norwegian_elkhound;Shiba_Dog
+UF016,UF016,2,dinov2,American_Staffordshire_terrier,6.2198133,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;whippet;Great_Dane
+UF017,UF017,2,dinov2,Great_Dane,3.997097,Great_Dane;Staffordshire_bullterrier;American_Staffordshire_terrier;boxer;Cane_Carso
+UF018,UF018,2,dinov2,bluetick,5.6612773,bluetick;Walker_hound;German_short_haired_pointer;English_foxhound;Border_terrier
+UF020,UF020,2,dinov2,redbone,3.154675,redbone;Border_terrier;beagle;Brabancon_griffo;English_foxhound
+UF022,UF022,2,dinov2,Fila Braziliero,4.371862,Fila Braziliero;whippet;Great_Dane;boxer;Rhodesian_ridgeback
+UF023,UF023,2,dinov2,American_Staffordshire_terrier,5.6185055,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;whippet;Fila Braziliero
+UF024,UF024,2,dinov2,Labrador_retriever,5.7085047,Labrador_retriever;flat_coated_retriever;schipperke;curly_coated_retriever;German_short_haired_pointer
+UF025,UF025,2,dinov2,Irish_terrier,4.151472,Irish_terrier;Italian_greyhound;wire_haired_fox_terrier;Lakeland_terrier;Irish_wolfhound
+UF026,UF026,2,dinov2,basenji,3.3132432,basenji;malinois;Staffordshire_bullterrier;Mexican_hairless;Norwegian_elkhound
+UF028,UF028,2,dinov2,Walker_hound,4.6695733,Walker_hound;English_foxhound;beagle;boxer;bluetick
+UF029,UF029,2,dinov2,Italian_greyhound,4.846497,Italian_greyhound;Mexican_hairless;Chinese_Crested_Dog;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF030,UF030,2,dinov2,American_Staffordshire_terrier,5.130309,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;French_bulldog;bull_mastiff
+UF031,UF031,2,dinov2,black_and_tan_coonhound,3.6175385,black_and_tan_coonhound;EntleBucher;Rottweiler;Gordon_setter;Bernese_mountain_dog
+UF033,UF033,2,dinov2,Italian_greyhound,4.8243446,Italian_greyhound;whippet;Great_Dane;Boston_bull;Ibizan_hound
+UF035,UF035,2,dinov2,kelpie,4.224165,kelpie;miniature_pinscher;EntleBucher;Appenzeller;Rottweiler
+UF036,UF036,2,dinov2,German_short_haired_pointer,4.231471,German_short_haired_pointer;Great_Dane;American_Staffordshire_terrier;Staffordshire_bullterrier;Weimaraner
+UF037,UF037,2,dinov2,boxer,4.2883344,boxer;Fila Braziliero;Rhodesian_ridgeback;Great_Dane;American_Staffordshire_terrier
+UF038,UF038,2,dinov2,Brabancon_griffo,3.9514437,Brabancon_griffo;miniature_pinscher;Rhodesian_ridgeback;vizsla;redbone
+UF039,UF039,2,dinov2,Staffordshire_bullterrier,4.6227574,Staffordshire_bullterrier;American_Staffordshire_terrier;boxer;Fila Braziliero;Great_Dane
+UF040,UF040,2,dinov2,soft_coated_wheaten_terrier,6.1958385,soft_coated_wheaten_terrier;Dandie_Dinmont;Lhasa;Lakeland_terrier;otterhound
+UF041,UF041,2,dinov2,Labrador_retriever,4.197223,Labrador_retriever;redbone;dingo;Chesapeake_Bay_retriever;Chihuahua
+UF042,UF042,2,dinov2,American_Staffordshire_terrier,4.7098637,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;English_foxhound;whippet
+UF043,UF043,2,dinov2,Labrador_retriever,4.485296,Labrador_retriever;golden_retriever;Brabancon_griffo;Chesapeake_Bay_retriever;redbone
+UF044,UF044,2,dinov2,Great_Dane,4.7816105,Great_Dane;Labrador_retriever;Cane_Carso;German_short_haired_pointer;flat_coated_retriever
+UF046,UF046,2,dinov2,Scottish_deerhound,5.8958354,Scottish_deerhound;Irish_wolfhound;affenpinscher;cairn;Bouvier_des_Flandres
+UF047,UF047,2,dinov2,miniature_pinscher,3.9422514,miniature_pinscher;Staffordshire_bullterrier;American_Staffordshire_terrier;Rhodesian_ridgeback;Italian_greyhound
+UF048,UF048,2,dinov2,Airedale,3.865121,Airedale;Australian_terrier;otterhound;Norwich_terrier;German_shepherd
+UF049,UF049,2,dinov2,Cardigan,5.4123616,Cardigan;Pembroke;Norwich_terrier;kelpie;German_shepherd
+UF051,UF051,2,dinov2,English_foxhound,4.1064095,English_foxhound;Labrador_retriever;Walker_hound;beagle;Chesapeake_Bay_retriever
+UF052,UF052,2,dinov2,bluetick,5.8786507,bluetick;German_short_haired_pointer;English_setter;Brittany_spaniel;Border_terrier
+UF053,UF053,2,dinov2,English_foxhound,3.6627085,English_foxhound;boxer;basenji;American_Staffordshire_terrier;Rhodesian_ridgeback
+UF054,UF054,2,dinov2,American_Staffordshire_terrier,5.458997,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;Great_Dane;Rhodesian_ridgeback
+UF055,UF055,2,dinov2,Doberman,5.8436155,Doberman;Rottweiler;miniature_pinscher;kelpie;Chesapeake_Bay_retriever
+UF057,UF057,2,dinov2,Labrador_retriever,4.640071,Labrador_retriever;kuvasz;whippet;Staffordshire_bullterrier;Great_Pyrenees
+UF058,UF058,2,dinov2,Rhodesian_ridgeback,5.7883997,Rhodesian_ridgeback;boxer;American_Staffordshire_terrier;Staffordshire_bullterrier;Great_Dane
+UF059,UF059,2,dinov2,Fila Braziliero,4.9013596,Fila Braziliero;Staffordshire_bullterrier;American_Staffordshire_terrier;whippet;Cane_Carso
+UF060,UF060,2,dinov2,beagle,6.751863,beagle;English_foxhound;basset;Walker_hound;Cardigan
+UF061,UF061,2,dinov2,Great_Dane,4.933114,Great_Dane;Doberman;Mexican_hairless;Italian_greyhound;Cane_Carso
+UF062,UF062,2,dinov2,schipperke,4.4159184,schipperke;kelpie;miniature_pinscher;Staffordshire_bullterrier;Cane_Carso
+UF063,UF063,2,dinov2,Rhodesian_ridgeback,4.652668,Rhodesian_ridgeback;redbone;vizsla;English_foxhound;Staffordshire_bullterrier
+UF064,UF064,2,dinov2,miniature_pinscher,3.9151237,miniature_pinscher;beagle;Australian_terrier;Chihuahua;Black_sable
+UF065,UF065,2,dinov2,malinois,3.2164953,malinois;Fila Braziliero;Brabancon_griffo;Cane_Carso;Staffordshire_bullterrier
+UF066,UF066,2,dinov2,Labrador_retriever,4.0583773,Labrador_retriever;German_short_haired_pointer;black_and_tan_coonhound;Great_Dane;flat_coated_retriever
+UF067,UF067,2,dinov2,whippet,3.7669222,whippet;Boston_bull;toy_terrier;basenji;Ibizan_hound
+UF068,UF068,2,dinov2,Rhodesian_ridgeback,3.7680564,Rhodesian_ridgeback;bull_mastiff;Staffordshire_bullterrier;malinois;Border_terrier
+UF069,UF069,2,dinov2,Labrador_retriever,5.920397,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;schipperke;Chesapeake_Bay_retriever
+UF071,UF071,2,dinov2,schipperke,2.733395,schipperke;Cane_Carso;Labrador_retriever;flat_coated_retriever;Staffordshire_bullterrier
+UF072,UF072,2,dinov2,Rhodesian_ridgeback,5.171512,Rhodesian_ridgeback;boxer;American_Staffordshire_terrier;Staffordshire_bullterrier;Great_Dane
+UF073,UF073,2,dinov2,Rhodesian_ridgeback,5.490552,Rhodesian_ridgeback;Staffordshire_bullterrier;American_Staffordshire_terrier;miniature_pinscher;boxer
+UF074,UF074,2,dinov2,English_foxhound,4.857464,English_foxhound;Walker_hound;beagle;Great_Dane;boxer
+UF076,UF076,2,dinov2,redbone,6.153249,redbone;Rhodesian_ridgeback;Brabancon_griffo;miniature_pinscher;vizsla
+UF077,UF077,2,dinov2,black_and_tan_coonhound,5.631882,black_and_tan_coonhound;EntleBucher;Rottweiler;miniature_pinscher;kelpie
+UF079,UF079,2,dinov2,basenji,4.0621333,basenji;boxer;American_Staffordshire_terrier;English_foxhound;Staffordshire_bullterrier
+UF081,UF081,2,dinov2,Border_terrier,4.4299016,Border_terrier;Irish_wolfhound;cairn;Pekinese;Scottish_deerhound
+UF082,UF082,2,dinov2,Walker_hound,3.1618447,Walker_hound;English_foxhound;bluetick;English_springer;toy_terrier
+UF083,UF083,2,dinov2,English_foxhound,3.3442698,English_foxhound;Airedale;miniature_pinscher;Walker_hound;Staffordshire_bullterrier
+UF084,UF084,2,dinov2,Chesapeake_Bay_retriever,3.6354463,Chesapeake_Bay_retriever;German_short_haired_pointer;vizsla;redbone;Great_Dane
+UF085,UF085,2,dinov2,kelpie,3.94226,kelpie;German_shepherd;Black_sable;schipperke;Tibetan_mastiff
+UF088,UF088,2,dinov2,Staffordshire_bullterrier,4.7631493,Staffordshire_bullterrier;American_Staffordshire_terrier;boxer;Great_Dane;whippet
+UF089,UF089,2,dinov2,Staffordshire_bullterrier,7.1440363,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Rottweiler
+UF089_2,UF089_2,2,dinov2,English_foxhound,2.9207323,English_foxhound;Labrador_retriever;beagle;Walker_hound;Great_Pyrenees
+UF092,UF092,2,dinov2,English_foxhound,2.9207323,English_foxhound;Labrador_retriever;beagle;Walker_hound;Great_Pyrenees
+UF093,UF093,2,dinov2,English_setter,5.0412564,English_setter;English_springer;bluetick;German_short_haired_pointer;Brittany_spaniel
+UF094,UF094,2,dinov2,redbone,4.0885963,redbone;Italian_greyhound;Rhodesian_ridgeback;miniature_pinscher;vizsla
+UF095,UF095,2,dinov2,Staffordshire_bullterrier,5.343484,Staffordshire_bullterrier;miniature_pinscher;American_Staffordshire_terrier;Rhodesian_ridgeback;basenji
+UF096,UF096,2,dinov2,miniature_pinscher,4.5102806,miniature_pinscher;basenji;Rhodesian_ridgeback;Mexican_hairless;Staffordshire_bullterrier
+UF097,UF097,2,dinov2,Staffordshire_bullterrier,7.197729,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Great_Dane;boxer
+UF098,UF098,2,dinov2,Staffordshire_bullterrier,3.2282834,Staffordshire_bullterrier;English_foxhound;Walker_hound;beagle;miniature_pinscher
+UF099,UF099,2,dinov2,English_foxhound,3.1008577,English_foxhound;Walker_hound;Chihuahua;toy_terrier;Staffordshire_bullterrier
+UF100,UF100,2,dinov2,redbone,4.4558616,redbone;Rhodesian_ridgeback;miniature_pinscher;Brabancon_griffo;malinois
+UF101,UF101,2,dinov2,miniature_pinscher,3.9969428,miniature_pinscher;redbone;English_foxhound;Brabancon_griffo;Australian_terrier
+UF102,UF102,2,dinov2,flat_coated_retriever,5.7063775,flat_coated_retriever;Border_collie;Newfoundland;groenendael;English_springer
+UF103,UF103,2,dinov2,redbone,4.4303617,redbone;Rhodesian_ridgeback;English_foxhound;bloodhound;Walker_hound
+UF104,UF104,2,dinov2,bluetick,7.190743,bluetick;German_short_haired_pointer;English_setter;Scottish_deerhound;Walker_hound
+UF106,UF106,2,dinov2,Rottweiler,4.929603,Rottweiler;EntleBucher;black_and_tan_coonhound;kelpie;Appenzeller
+UF107,UF107,2,dinov2,English_foxhound,4.5038657,English_foxhound;beagle;Walker_hound;German_short_haired_pointer;Staffordshire_bullterrier
+UF108,UF108,2,dinov2,Walker_hound,3.2874923,Walker_hound;English_foxhound;toy_terrier;Chihuahua;beagle
+UF109,UF109,2,dinov2,papillon,3.5074816,papillon;Brittany_spaniel;English_foxhound;Chihuahua;borzoi
+UF110,UF110,2,dinov2,Rhodesian_ridgeback,7.1173716,Rhodesian_ridgeback;redbone;boxer;vizsla;English_foxhound
+UF111,UF111,2,dinov2,Chihuahua,4.287345,Chihuahua;Staffordshire_bullterrier;beagle;French_bulldog;toy_terrier
+UF112,UF112,2,dinov2,Walker_hound,4.7015347,Walker_hound;English_foxhound;Brittany_spaniel;German_short_haired_pointer;Ibizan_hound
+UF114,UF114,2,dinov2,kelpie,3.5129824,kelpie;toy_terrier;dingo;basenji;Black_sable
+UF115,UF115,2,dinov2,Brabancon_griffo,5.161469,Brabancon_griffo;malinois;Rhodesian_ridgeback;redbone;Border_terrier
+UF116,UF116,2,dinov2,basenji,3.2299478,basenji;Rhodesian_ridgeback;miniature_pinscher;Staffordshire_bullterrier;French_bulldog
+UF117,UF117,2,dinov2,Great_Dane,3.7919855,Great_Dane;whippet;Italian_greyhound;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF119,UF119,2,dinov2,Pekinese,4.190131,Pekinese;papillon;golden_retriever;Chihuahua;Pembroke
+UF001,UF001,3,dinov2,papillon,3.7248843,papillon;Pekinese;golden_retriever;Australian_Shepherd;collie
+UF002,UF002,3,dinov2,Labrador_retriever,6.5119486,Labrador_retriever;Staffordshire_bullterrier;Cane_Carso;schipperke;miniature_pinscher
+UF003,UF003,3,dinov2,miniature_pinscher,4.107818,miniature_pinscher;Rhodesian_ridgeback;malinois;Staffordshire_bullterrier;Brabancon_griffo
+UF004,UF004,3,dinov2,briard,5.5631404,briard;cairn;Tibetan_terrier;Lhasa;soft_coated_wheaten_terrier
+UF005,UF005,3,dinov2,bluetick,3.686095,bluetick;German_short_haired_pointer;whippet;Staffordshire_bullterrier;Walker_hound
+UF006,UF006,3,dinov2,Walker_hound,5.185213,Walker_hound;English_foxhound;Brittany_spaniel;beagle;German_short_haired_pointer
+UF007,UF007,3,dinov2,Labrador_retriever,4.706472,Labrador_retriever;Staffordshire_bullterrier;Cane_Carso;schipperke;American_Staffordshire_terrier
+UF008,UF008,3,dinov2,Fila Braziliero,4.9312515,Fila Braziliero;Staffordshire_bullterrier;boxer;whippet;Rhodesian_ridgeback
+UF009,UF009,3,dinov2,boxer,5.2342205,boxer;whippet;American_Staffordshire_terrier;Staffordshire_bullterrier;Italian_greyhound
+UF010,UF010,3,dinov2,Leonberg,3.9918678,Leonberg;keeshond;Pomeranian;German_shepherd;Pekinese
+UF011,UF011,3,dinov2,kelpie,4.205769,kelpie;toy_terrier;Boston_bull;schipperke;Chihuahua
+UF012,UF012,3,dinov2,redbone,4.8473773,redbone;miniature_pinscher;Brabancon_griffo;Rhodesian_ridgeback;malinois
+UF013,UF013,3,dinov2,Staffordshire_bullterrier,3.8756845,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Great_Dane
+UF014,UF014,3,dinov2,Australian_Shepherd,4.8840957,Australian_Shepherd;golden_retriever;Border_collie;Leonberg;collie
+UF015,UF015,3,dinov2,Siberian_husky,7.4849253,Siberian_husky;Eskimo_dog;malamute;Norwegian_elkhound;Shiba_Dog
+UF016,UF016,3,dinov2,American_Staffordshire_terrier,6.3587055,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;whippet;Great_Dane
+UF017,UF017,3,dinov2,Staffordshire_bullterrier,4.0335364,Staffordshire_bullterrier;American_Staffordshire_terrier;Great_Dane;boxer;Cane_Carso
+UF018,UF018,3,dinov2,bluetick,5.731042,bluetick;German_short_haired_pointer;Walker_hound;English_foxhound;Border_terrier
+UF020,UF020,3,dinov2,Border_terrier,3.1513202,Border_terrier;redbone;beagle;Brabancon_griffo;English_foxhound
+UF022,UF022,3,dinov2,Fila Braziliero,4.5957155,Fila Braziliero;whippet;Great_Dane;boxer;redbone
+UF023,UF023,3,dinov2,American_Staffordshire_terrier,5.764825,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;whippet;Fila Braziliero
+UF024,UF024,3,dinov2,Labrador_retriever,5.768798,Labrador_retriever;flat_coated_retriever;schipperke;curly_coated_retriever;German_short_haired_pointer
+UF025,UF025,3,dinov2,Irish_terrier,4.239696,Irish_terrier;wire_haired_fox_terrier;Italian_greyhound;Lakeland_terrier;Irish_wolfhound
+UF026,UF026,3,dinov2,basenji,3.2548323,basenji;malinois;Mexican_hairless;Staffordshire_bullterrier;Norwegian_elkhound
+UF028,UF028,3,dinov2,Walker_hound,4.7104096,Walker_hound;English_foxhound;beagle;boxer;bluetick
+UF029,UF029,3,dinov2,Italian_greyhound,4.93414,Italian_greyhound;Mexican_hairless;Chinese_Crested_Dog;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF030,UF030,3,dinov2,American_Staffordshire_terrier,5.287175,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;French_bulldog;Fila Braziliero
+UF031,UF031,3,dinov2,black_and_tan_coonhound,3.7026389,black_and_tan_coonhound;Gordon_setter;EntleBucher;Rottweiler;Bernese_mountain_dog
+UF033,UF033,3,dinov2,Italian_greyhound,4.8212137,Italian_greyhound;whippet;Great_Dane;Boston_bull;Ibizan_hound
+UF035,UF035,3,dinov2,miniature_pinscher,4.3393135,miniature_pinscher;kelpie;Appenzeller;EntleBucher;Chihuahua
+UF036,UF036,3,dinov2,German_short_haired_pointer,4.2392907,German_short_haired_pointer;Great_Dane;American_Staffordshire_terrier;Staffordshire_bullterrier;Weimaraner
+UF037,UF037,3,dinov2,boxer,4.4911995,boxer;Fila Braziliero;Staffordshire_bullterrier;Rhodesian_ridgeback;Great_Dane
+UF038,UF038,3,dinov2,Brabancon_griffo,3.919351,Brabancon_griffo;miniature_pinscher;vizsla;redbone;Rhodesian_ridgeback
+UF039,UF039,3,dinov2,Staffordshire_bullterrier,4.9071703,Staffordshire_bullterrier;boxer;American_Staffordshire_terrier;Fila Braziliero;French_bulldog
+UF040,UF040,3,dinov2,soft_coated_wheaten_terrier,6.1493177,soft_coated_wheaten_terrier;Dandie_Dinmont;Lhasa;Lakeland_terrier;otterhound
+UF041,UF041,3,dinov2,Labrador_retriever,4.209342,Labrador_retriever;redbone;Chihuahua;dingo;Chesapeake_Bay_retriever
+UF042,UF042,3,dinov2,American_Staffordshire_terrier,4.7874537,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;English_foxhound;whippet
+UF043,UF043,3,dinov2,Labrador_retriever,4.5208836,Labrador_retriever;golden_retriever;redbone;Brabancon_griffo;Chesapeake_Bay_retriever
+UF044,UF044,3,dinov2,Great_Dane,4.7281823,Great_Dane;Labrador_retriever;Cane_Carso;German_short_haired_pointer;flat_coated_retriever
+UF046,UF046,3,dinov2,Scottish_deerhound,5.9462967,Scottish_deerhound;Irish_wolfhound;affenpinscher;cairn;keeshond
+UF047,UF047,3,dinov2,miniature_pinscher,4.0146856,miniature_pinscher;Staffordshire_bullterrier;American_Staffordshire_terrier;Rhodesian_ridgeback;Italian_greyhound
+UF048,UF048,3,dinov2,Airedale,3.8317232,Airedale;Australian_terrier;otterhound;Norwich_terrier;German_shepherd
+UF049,UF049,3,dinov2,Cardigan,5.306585,Cardigan;Pembroke;Norwich_terrier;kelpie;Pekinese
+UF051,UF051,3,dinov2,English_foxhound,4.1630745,English_foxhound;Labrador_retriever;Walker_hound;beagle;Chesapeake_Bay_retriever
+UF052,UF052,3,dinov2,bluetick,5.947241,bluetick;German_short_haired_pointer;English_setter;Brittany_spaniel;Border_terrier
+UF053,UF053,3,dinov2,English_foxhound,3.5797746,English_foxhound;basenji;boxer;American_Staffordshire_terrier;redbone
+UF054,UF054,3,dinov2,American_Staffordshire_terrier,5.586376,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;Great_Dane;Rhodesian_ridgeback
+UF055,UF055,3,dinov2,Doberman,5.8495584,Doberman;miniature_pinscher;Rottweiler;kelpie;black_and_tan_coonhound
+UF057,UF057,3,dinov2,Labrador_retriever,4.6745644,Labrador_retriever;kuvasz;whippet;Staffordshire_bullterrier;Great_Pyrenees
+UF058,UF058,3,dinov2,Rhodesian_ridgeback,5.786693,Rhodesian_ridgeback;boxer;Staffordshire_bullterrier;American_Staffordshire_terrier;Great_Dane
+UF059,UF059,3,dinov2,Fila Braziliero,5.057254,Fila Braziliero;Staffordshire_bullterrier;American_Staffordshire_terrier;whippet;boxer
+UF060,UF060,3,dinov2,beagle,6.824654,beagle;English_foxhound;basset;Walker_hound;Cardigan
+UF061,UF061,3,dinov2,Great_Dane,4.867982,Great_Dane;Doberman;Mexican_hairless;giant_schnauzer;Italian_greyhound
+UF062,UF062,3,dinov2,schipperke,4.3138175,schipperke;kelpie;miniature_pinscher;Staffordshire_bullterrier;Cane_Carso
+UF063,UF063,3,dinov2,Rhodesian_ridgeback,4.66224,Rhodesian_ridgeback;redbone;vizsla;English_foxhound;Staffordshire_bullterrier
+UF064,UF064,3,dinov2,miniature_pinscher,4.028648,miniature_pinscher;beagle;Chihuahua;Australian_terrier;English_foxhound
+UF065,UF065,3,dinov2,malinois,3.15643,malinois;Fila Braziliero;Cane_Carso;Staffordshire_bullterrier;Brabancon_griffo
+UF066,UF066,3,dinov2,Labrador_retriever,4.222414,Labrador_retriever;German_short_haired_pointer;black_and_tan_coonhound;flat_coated_retriever;redbone
+UF067,UF067,3,dinov2,toy_terrier,3.8739479,toy_terrier;whippet;Ibizan_hound;Boston_bull;basenji
+UF068,UF068,3,dinov2,Rhodesian_ridgeback,3.5655515,Rhodesian_ridgeback;bull_mastiff;Staffordshire_bullterrier;Border_terrier;malinois
+UF069,UF069,3,dinov2,Labrador_retriever,6.0387783,Labrador_retriever;flat_coated_retriever;schipperke;curly_coated_retriever;kelpie
+UF071,UF071,3,dinov2,schipperke,2.654839,schipperke;Labrador_retriever;Cane_Carso;flat_coated_retriever;Fila Braziliero
+UF072,UF072,3,dinov2,Rhodesian_ridgeback,4.940484,Rhodesian_ridgeback;boxer;American_Staffordshire_terrier;Staffordshire_bullterrier;basenji
+UF073,UF073,3,dinov2,Rhodesian_ridgeback,5.4209685,Rhodesian_ridgeback;Staffordshire_bullterrier;American_Staffordshire_terrier;miniature_pinscher;boxer
+UF074,UF074,3,dinov2,English_foxhound,4.826621,English_foxhound;Walker_hound;beagle;boxer;Great_Dane
+UF076,UF076,3,dinov2,redbone,6.2485313,redbone;Rhodesian_ridgeback;Brabancon_griffo;miniature_pinscher;vizsla
+UF077,UF077,3,dinov2,black_and_tan_coonhound,5.757344,black_and_tan_coonhound;EntleBucher;Rottweiler;miniature_pinscher;kelpie
+UF079,UF079,3,dinov2,basenji,4.199872,basenji;boxer;American_Staffordshire_terrier;English_foxhound;Staffordshire_bullterrier
+UF081,UF081,3,dinov2,Border_terrier,4.5270047,Border_terrier;Irish_wolfhound;cairn;Scottish_deerhound;Pekinese
+UF082,UF082,3,dinov2,Walker_hound,3.1007788,Walker_hound;English_foxhound;bluetick;English_springer;toy_terrier
+UF083,UF083,3,dinov2,English_foxhound,3.419557,English_foxhound;Airedale;miniature_pinscher;Staffordshire_bullterrier;Border_terrier
+UF084,UF084,3,dinov2,Chesapeake_Bay_retriever,3.5085754,Chesapeake_Bay_retriever;German_short_haired_pointer;redbone;vizsla;Great_Dane
+UF085,UF085,3,dinov2,kelpie,3.9342139,kelpie;German_shepherd;Black_sable;schipperke;Tibetan_mastiff
+UF088,UF088,3,dinov2,Staffordshire_bullterrier,4.934027,Staffordshire_bullterrier;American_Staffordshire_terrier;boxer;Great_Dane;whippet
+UF089,UF089,3,dinov2,Staffordshire_bullterrier,7.2092547,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Rottweiler
+UF089_2,UF089_2,3,dinov2,English_foxhound,2.9736605,English_foxhound;Labrador_retriever;beagle;Walker_hound;Great_Pyrenees
+UF092,UF092,3,dinov2,English_foxhound,2.9736605,English_foxhound;Labrador_retriever;beagle;Walker_hound;Great_Pyrenees
+UF093,UF093,3,dinov2,English_setter,5.187092,English_setter;English_springer;bluetick;German_short_haired_pointer;Brittany_spaniel
+UF094,UF094,3,dinov2,redbone,4.0980506,redbone;Italian_greyhound;Rhodesian_ridgeback;miniature_pinscher;vizsla
+UF095,UF095,3,dinov2,Staffordshire_bullterrier,5.602182,Staffordshire_bullterrier;miniature_pinscher;American_Staffordshire_terrier;Rhodesian_ridgeback;basenji
+UF096,UF096,3,dinov2,miniature_pinscher,4.434835,miniature_pinscher;basenji;Mexican_hairless;Staffordshire_bullterrier;Rhodesian_ridgeback
+UF097,UF097,3,dinov2,Staffordshire_bullterrier,7.1779,Staffordshire_bullterrier;American_Staffordshire_terrier;Cane_Carso;Great_Dane;boxer
+UF098,UF098,3,dinov2,Staffordshire_bullterrier,3.4168496,Staffordshire_bullterrier;English_foxhound;Walker_hound;beagle;miniature_pinscher
+UF099,UF099,3,dinov2,Walker_hound,3.121875,Walker_hound;English_foxhound;Chihuahua;Staffordshire_bullterrier;toy_terrier
+UF100,UF100,3,dinov2,redbone,4.5815053,redbone;Rhodesian_ridgeback;miniature_pinscher;Brabancon_griffo;Fila Braziliero
+UF101,UF101,3,dinov2,miniature_pinscher,4.135527,miniature_pinscher;redbone;English_foxhound;Brabancon_griffo;Australian_terrier
+UF102,UF102,3,dinov2,flat_coated_retriever,5.79021,flat_coated_retriever;Border_collie;Newfoundland;groenendael;English_springer
+UF103,UF103,3,dinov2,redbone,4.47799,redbone;Rhodesian_ridgeback;English_foxhound;bloodhound;Walker_hound
+UF104,UF104,3,dinov2,German_short_haired_pointer,7.261771,German_short_haired_pointer;bluetick;English_setter;Scottish_deerhound;Walker_hound
+UF106,UF106,3,dinov2,Rottweiler,4.9418607,Rottweiler;kelpie;EntleBucher;black_and_tan_coonhound;Appenzeller
+UF107,UF107,3,dinov2,English_foxhound,4.4969115,English_foxhound;beagle;Walker_hound;German_short_haired_pointer;Staffordshire_bullterrier
+UF108,UF108,3,dinov2,Walker_hound,3.1376698,Walker_hound;English_foxhound;toy_terrier;Chihuahua;Staffordshire_bullterrier
+UF109,UF109,3,dinov2,papillon,3.4713342,papillon;Brittany_spaniel;English_foxhound;Chihuahua;borzoi
+UF110,UF110,3,dinov2,Rhodesian_ridgeback,7.042816,Rhodesian_ridgeback;redbone;boxer;vizsla;English_foxhound
+UF111,UF111,3,dinov2,Chihuahua,4.372567,Chihuahua;Staffordshire_bullterrier;beagle;French_bulldog;toy_terrier
+UF112,UF112,3,dinov2,Walker_hound,4.8147755,Walker_hound;English_foxhound;Brittany_spaniel;German_short_haired_pointer;Ibizan_hound
+UF114,UF114,3,dinov2,kelpie,3.4286861,kelpie;toy_terrier;dingo;basenji;Black_sable
+UF115,UF115,3,dinov2,Brabancon_griffo,5.0963435,Brabancon_griffo;malinois;redbone;Rhodesian_ridgeback;Border_terrier
+UF116,UF116,3,dinov2,basenji,3.2509527,basenji;Rhodesian_ridgeback;Staffordshire_bullterrier;miniature_pinscher;French_bulldog
+UF117,UF117,3,dinov2,Great_Dane,3.6075587,Great_Dane;whippet;Italian_greyhound;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF119,UF119,3,dinov2,Pekinese,4.2556367,Pekinese;papillon;golden_retriever;Chihuahua;Border_terrier
+UF001,UF001,1,dinov3,golden_retriever,0.5429153442382812,golden_retriever;Pekinese;papillon;Pomeranian;Japanese_Spitzes
+UF002,UF002,1,dinov3,Labrador_retriever,0.3267273008823395,Labrador_retriever;Great_Dane;Cane_Carso;Staffordshire_bullterrier;Fila Braziliero
+UF003,UF003,1,dinov3,Rhodesian_ridgeback,0.4391292929649353,Rhodesian_ridgeback;Labrador_retriever;Black_sable;Irish_terrier;redbone
+UF004,UF004,1,dinov3,briard,0.5541330575942993,briard;cairn;soft_coated_wheaten_terrier;Afghan_hound;bull_mastiff
+UF005,UF005,1,dinov3,bluetick,0.1442865878343582,bluetick;German_short_haired_pointer;Staffordshire_bullterrier;Great_Dane;American_Staffordshire_terrier
+UF006,UF006,1,dinov3,English_foxhound,0.4084416329860687,English_foxhound;beagle;Walker_hound;bluetick;redbone
+UF007,UF007,1,dinov3,Cane_Carso,0.4079880118370056,Cane_Carso;Labrador_retriever;Staffordshire_bullterrier;Great_Dane;American_Staffordshire_terrier
+UF008,UF008,1,dinov3,Staffordshire_bullterrier,0.1690184921026229,Staffordshire_bullterrier;Fila Braziliero;boxer;Great_Dane;American_Staffordshire_terrier
+UF009,UF009,1,dinov3,American_Staffordshire_terrier,0.4596175253391266,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;whippet;Great_Dane
+UF010,UF010,1,dinov3,German_shepherd,0.1150605753064155,German_shepherd;papillon;Shetland_sheepdog;collie;keeshond
+UF011,UF011,1,dinov3,Border_collie,0.2081942111253738,Border_collie;kelpie;basenji;Ibizan_hound;Boston_bull
+UF012,UF012,1,dinov3,Rhodesian_ridgeback,0.2831689715385437,Rhodesian_ridgeback;Labrador_retriever;redbone;miniature_pinscher;Irish_terrier
+UF013,UF013,1,dinov3,Great_Dane,0.1618024557828903,Great_Dane;Ibizan_hound;Border_collie;basenji;Boston_bull
+UF014,UF014,1,dinov3,Australian_Shepherd,0.5227891802787781,Australian_Shepherd;Border_collie;collie;Shetland_sheepdog;Cardigan
+UF015,UF015,1,dinov3,Siberian_husky,0.6082331538200378,Siberian_husky;Eskimo_dog;malamute;Norwegian_elkhound;Shiba_Dog
+UF016,UF016,1,dinov3,American_Staffordshire_terrier,0.2795271873474121,American_Staffordshire_terrier;Staffordshire_bullterrier;Great_Dane;whippet;Cane_Carso
+UF017,UF017,1,dinov3,Labrador_retriever,0.2596822082996368,Labrador_retriever;Great_Dane;Cane_Carso;Fila Braziliero;Staffordshire_bullterrier
+UF018,UF018,1,dinov3,bluetick,0.2193835228681564,bluetick;Black_sable;English_foxhound;German_shepherd;Chihuahua
+UF020,UF020,1,dinov3,Fila Braziliero,0.0804502591490745,Fila Braziliero;Border_terrier;Rhodesian_ridgeback;redbone;bloodhound
+UF022,UF022,1,dinov3,Fila Braziliero,0.3806535005569458,Fila Braziliero;whippet;Staffordshire_bullterrier;malinois;Great_Dane
+UF023,UF023,1,dinov3,American_Staffordshire_terrier,0.4608043134212494,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Cane_Carso;Boston_bull
+UF024,UF024,1,dinov3,Labrador_retriever,0.4937261641025543,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;schipperke;Chesapeake_Bay_retriever
+UF025,UF025,1,dinov3,Irish_terrier,0.1133547723293304,Irish_terrier;wire_haired_fox_terrier;whippet;borzoi;Irish_wolfhound
+UF026,UF026,1,dinov3,malinois,0.3035591244697571,malinois;Black_sable;Fila Braziliero;Cane_Carso;Great_Dane
+UF028,UF028,1,dinov3,Walker_hound,0.1324750930070877,Walker_hound;Greater_Swiss_Mountain_dog;Appenzeller;English_foxhound;toy_terrier
+UF029,UF029,1,dinov3,Italian_greyhound,0.2675561904907226,Italian_greyhound;Staffordshire_bullterrier;Mexican_hairless;miniature_pinscher;Rhodesian_ridgeback
+UF030,UF030,1,dinov3,boxer,0.330973744392395,boxer;American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso
+UF031,UF031,1,dinov3,Rottweiler,0.3112172484397888,Rottweiler;Tibetan_mastiff;Gordon_setter;black_and_tan_coonhound;Doberman
+UF033,UF033,1,dinov3,Border_collie,0.3155357837677002,Border_collie;Great_Dane;whippet;Boston_bull;Ibizan_hound
+UF035,UF035,1,dinov3,Black_sable,0.1703533083200454,Black_sable;Rottweiler;kelpie;German_shepherd;black_and_tan_coonhound
+UF036,UF036,1,dinov3,Staffordshire_bullterrier,0.2566142082214355,Staffordshire_bullterrier;American_Staffordshire_terrier;German_short_haired_pointer;Great_Dane;Chesapeake_Bay_retriever
+UF037,UF037,1,dinov3,Fila Braziliero,0.4012041091918945,Fila Braziliero;boxer;Great_Dane;Cane_Carso;bull_mastiff
+UF038,UF038,1,dinov3,vizsla,0.2359434813261032,vizsla;boxer;Rhodesian_ridgeback;Staffordshire_bullterrier;Chesapeake_Bay_retriever
+UF039,UF039,1,dinov3,Fila Braziliero,0.270278126001358,Fila Braziliero;Great_Dane;English_foxhound;redbone;Rhodesian_ridgeback
+UF040,UF040,1,dinov3,soft_coated_wheaten_terrier,0.4762187302112579,soft_coated_wheaten_terrier;briard;otterhound;giant_schnauzer;Irish_wolfhound
+UF041,UF041,1,dinov3,Labrador_retriever,0.7642770409584045,Labrador_retriever;golden_retriever;Chesapeake_Bay_retriever;Rhodesian_ridgeback;kuvasz
+UF042,UF042,1,dinov3,American_Staffordshire_terrier,0.1768394112586975,American_Staffordshire_terrier;Great_Dane;bull_mastiff;boxer;Saint_Bernard
+UF043,UF043,1,dinov3,golden_retriever,0.2906870543956756,golden_retriever;papillon;Pekinese;Labrador_retriever;chow
+UF044,UF044,1,dinov3,Labrador_retriever,0.4452298581600189,Labrador_retriever;flat_coated_retriever;Great_Dane;Fila Braziliero;curly_coated_retriever
+UF046,UF046,1,dinov3,Scottish_deerhound,0.2718895673751831,Scottish_deerhound;affenpinscher;Irish_wolfhound;Bouvier_des_Flandres;miniature_schnauzer
+UF047,UF047,1,dinov3,Staffordshire_bullterrier,0.2100686132907867,Staffordshire_bullterrier;Chesapeake_Bay_retriever;Great_Dane;American_Staffordshire_terrier;Fila Braziliero
+UF048,UF048,1,dinov3,Airedale,0.0817222595214843,Airedale;miniature_pinscher;Australian_terrier;black_and_tan_coonhound;toy_terrier
+UF049,UF049,1,dinov3,Cardigan,0.3191538453102112,Cardigan;Pembroke;Black_sable;German_shepherd;basenji
+UF051,UF051,1,dinov3,Labrador_retriever,0.4638014435768127,Labrador_retriever;English_foxhound;Great_Dane;kuvasz;Chesapeake_Bay_retriever
+UF052,UF052,1,dinov3,dingo,0.1836594194173813,dingo;basenji;Ibizan_hound;Shiba_Dog;bluetick
+UF053,UF053,1,dinov3,English_foxhound,0.1397686451673507,English_foxhound;beagle;Labrador_retriever;redbone;Walker_hound
+UF054,UF054,1,dinov3,American_Staffordshire_terrier,0.1535733938217163,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;Great_Dane;Rhodesian_ridgeback
+UF055,UF055,1,dinov3,Chesapeake_Bay_retriever,0.171086698770523,Chesapeake_Bay_retriever;Doberman;kelpie;vizsla;Rottweiler
+UF057,UF057,1,dinov3,Labrador_retriever,0.8528914451599121,Labrador_retriever;kuvasz;Great_Pyrenees;Japanese_Spitzes;Chesapeake_Bay_retriever
+UF058,UF058,1,dinov3,American_Staffordshire_terrier,0.2850012183189392,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Great_Dane;bull_mastiff
+UF059,UF059,1,dinov3,Staffordshire_bullterrier,0.4077443778514862,Staffordshire_bullterrier;American_Staffordshire_terrier;Fila Braziliero;boxer;Great_Dane
+UF060,UF060,1,dinov3,beagle,0.6790903210639954,beagle;English_foxhound;Walker_hound;Cardigan;basset
+UF061,UF061,1,dinov3,Labrador_retriever,0.2372229099273681,Labrador_retriever;Great_Dane;black_and_tan_coonhound;vizsla;flat_coated_retriever
+UF062,UF062,1,dinov3,schipperke,0.274009644985199,schipperke;kelpie;Mexican_hairless;basenji;Scotch_terrier
+UF063,UF063,1,dinov3,boxer,0.1566842496395111,boxer;Rhodesian_ridgeback;English_foxhound;American_Staffordshire_terrier;Great_Dane
+UF064,UF064,1,dinov3,Black_sable,0.2523013651371002,Black_sable;German_shepherd;English_foxhound;beagle;dingo
+UF065,UF065,1,dinov3,Fila Braziliero,0.1415280997753143,Fila Braziliero;malinois;Norwegian_elkhound;Black_sable;Leonberg
+UF066,UF066,1,dinov3,Labrador_retriever,0.267301857471466,Labrador_retriever;flat_coated_retriever;black_and_tan_coonhound;redbone;Great_Dane
+UF067,UF067,1,dinov3,Great_Dane,0.1099092811346054,Great_Dane;Boston_bull;Border_collie;Ibizan_hound;Walker_hound
+UF068,UF068,1,dinov3,Rhodesian_ridgeback,0.1330008059740066,Rhodesian_ridgeback;bloodhound;miniature_pinscher;redbone;Black_sable
+UF069,UF069,1,dinov3,Labrador_retriever,0.3145036399364471,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;Great_Dane;schipperke
+UF071,UF071,1,dinov3,schipperke,0.1244472116231918,schipperke;flat_coated_retriever;Staffordshire_bullterrier;Italian_greyhound;Brabancon_griffo
+UF072,UF072,1,dinov3,Rhodesian_ridgeback,0.3629224300384521,Rhodesian_ridgeback;redbone;Great_Dane;boxer;Fila Braziliero
+UF073,UF073,1,dinov3,Rhodesian_ridgeback,0.3203549683094024,Rhodesian_ridgeback;Staffordshire_bullterrier;American_Staffordshire_terrier;basenji;redbone
+UF074,UF074,1,dinov3,English_foxhound,0.2820750474929809,English_foxhound;Walker_hound;Brittany_spaniel;beagle;Great_Dane
+UF076,UF076,1,dinov3,redbone,0.4050619900226593,redbone;Rhodesian_ridgeback;miniature_pinscher;vizsla;Fila Braziliero
+UF077,UF077,1,dinov3,black_and_tan_coonhound,0.4803323149681091,black_and_tan_coonhound;Rottweiler;EntleBucher;miniature_pinscher;Doberman
+UF079,UF079,1,dinov3,basenji,0.2637878358364105,basenji;English_foxhound;Walker_hound;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF081,UF081,1,dinov3,Border_terrier,0.6019630432128906,Border_terrier;cairn;Irish_wolfhound;Pekinese;papillon
+UF082,UF082,1,dinov3,toy_terrier,0.2124000042676925,toy_terrier;kelpie;Ibizan_hound;basenji;Border_collie
+UF083,UF083,1,dinov3,Black_sable,0.2077710181474685,Black_sable;Rhodesian_ridgeback;Fila Braziliero;Airedale;whippet
+UF084,UF084,1,dinov3,Chesapeake_Bay_retriever,0.2664597630500793,Chesapeake_Bay_retriever;German_short_haired_pointer;vizsla;Great_Dane;Weimaraner
+UF085,UF085,1,dinov3,kelpie,0.3196530640125274,kelpie;German_shepherd;Appenzeller;EntleBucher;Greater_Swiss_Mountain_dog
+UF088,UF088,1,dinov3,Staffordshire_bullterrier,0.1884755194187164,Staffordshire_bullterrier;Great_Dane;American_Staffordshire_terrier;Chinese_Crested_Dog;whippet
+UF089,UF089,1,dinov3,Staffordshire_bullterrier,0.6159849762916565,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Fila Braziliero
+UF089_2,UF089,1,dinov3,Labrador_retriever,0.2266170978546142,Labrador_retriever;English_foxhound;kuvasz;beagle;wire_haired_fox_terrier
+UF092,UF092,1,dinov3,Labrador_retriever,0.2266170978546142,Labrador_retriever;English_foxhound;kuvasz;beagle;wire_haired_fox_terrier
+UF093,UF093,1,dinov3,bluetick,0.117107942700386,bluetick;German_short_haired_pointer;English_setter;Brittany_spaniel;Border_collie
+UF094,UF094,1,dinov3,Rhodesian_ridgeback,0.3337041735649109,Rhodesian_ridgeback;redbone;Great_Dane;Italian_greyhound;English_foxhound
+UF095,UF095,1,dinov3,Staffordshire_bullterrier,0.2477918863296508,Staffordshire_bullterrier;American_Staffordshire_terrier;Rhodesian_ridgeback;Great_Dane;boxer
+UF096,UF096,1,dinov3,miniature_pinscher,0.4105172753334045,miniature_pinscher;basenji;Rhodesian_ridgeback;Chihuahua;Ibizan_hound
+UF097,UF097,1,dinov3,Staffordshire_bullterrier,0.3354341387748718,Staffordshire_bullterrier;Great_Dane;Cane_Carso;American_Staffordshire_terrier;Fila Braziliero
+UF098,UF098,1,dinov3,Black_sable,0.0994856804609298,Black_sable;Fila Braziliero;Rhodesian_ridgeback;Great_Dane;Border_terrier
+UF099,UF099,1,dinov3,Labrador_retriever,0.2006309181451797,Labrador_retriever;Chihuahua;Brittany_spaniel;Pekinese;papillon
+UF100,UF100,1,dinov3,Rhodesian_ridgeback,0.2905550301074981,Rhodesian_ridgeback;redbone;Labrador_retriever;Black_sable;Irish_terrier
+UF101,UF101,1,dinov3,English_foxhound,0.1690721809864044,English_foxhound;Rhodesian_ridgeback;redbone;bloodhound;Walker_hound
+UF102,UF102,1,dinov3,flat_coated_retriever,0.2218543589115142,flat_coated_retriever;Border_collie;collie;English_springer;Newfoundland
+UF103,UF103,1,dinov3,Rhodesian_ridgeback,0.31187704205513,Rhodesian_ridgeback;Fila Braziliero;redbone;bloodhound;Great_Dane
+UF104,UF104,1,dinov3,German_short_haired_pointer,0.3988080024719238,German_short_haired_pointer;bluetick;English_setter;Great_Dane;Scottish_deerhound
+UF106,UF106,1,dinov3,black_and_tan_coonhound,0.336936891078949,black_and_tan_coonhound;Rottweiler;EntleBucher;Appenzeller;Black_sable
+UF107,UF107,1,dinov3,English_foxhound,0.2154496759176254,English_foxhound;Labrador_retriever;Walker_hound;beagle;Fila Braziliero
+UF108,UF108,1,dinov3,Fila Braziliero,0.0725814551115036,Fila Braziliero;American_Staffordshire_terrier;Staffordshire_bullterrier;English_foxhound;Great_Dane
+UF109,UF109,1,dinov3,papillon,0.1626698076725006,papillon;basenji;Brittany_spaniel;English_foxhound;Saint_Bernard
+UF110,UF110,1,dinov3,Rhodesian_ridgeback,0.5844470858573914,Rhodesian_ridgeback;redbone;Labrador_retriever;miniature_pinscher;Great_Dane
+UF111,UF111,1,dinov3,Labrador_retriever,0.1648651659488678,Labrador_retriever;Saint_Bernard;beagle;English_foxhound;Fila Braziliero
+UF112,UF112,1,dinov3,vizsla,0.1425951719284057,vizsla;Walker_hound;Brittany_spaniel;English_foxhound;German_short_haired_pointer
+UF114,UF114,1,dinov3,Black_sable,0.1507076025009155,Black_sable;kelpie;German_shepherd;Cardigan;Chihuahua
+UF115,UF115,1,dinov3,Labrador_retriever,0.1900630593299865,Labrador_retriever;Rhodesian_ridgeback;golden_retriever;malinois;Leonberg
+UF116,UF116,1,dinov3,Rhodesian_ridgeback,0.1227476671338081,Rhodesian_ridgeback;dingo;Labrador_retriever;Black_sable;basenji
+UF117,UF117,1,dinov3,Ibizan_hound,0.2245807647705078,Ibizan_hound;Great_Dane;whippet;basenji;Italian_greyhound
+UF119,UF119,1,dinov3,golden_retriever,0.181723341345787,golden_retriever;Pekinese;papillon;Labrador_retriever;Chihuahua
+UF001,UF001,2,dinov3,golden_retriever,0.5230998396873474,golden_retriever;Pekinese;papillon;Pomeranian;Japanese_Spitzes
+UF002,UF002,2,dinov3,Labrador_retriever,0.3481757938861847,Labrador_retriever;Great_Dane;Staffordshire_bullterrier;Cane_Carso;Fila Braziliero
+UF003,UF003,2,dinov3,Rhodesian_ridgeback,0.4417405426502228,Rhodesian_ridgeback;Labrador_retriever;Irish_terrier;Black_sable;redbone
+UF004,UF004,2,dinov3,briard,0.5533539056777954,briard;cairn;soft_coated_wheaten_terrier;bull_mastiff;Afghan_hound
+UF005,UF005,2,dinov3,bluetick,0.133970245718956,bluetick;German_short_haired_pointer;Staffordshire_bullterrier;American_Staffordshire_terrier;Great_Dane
+UF006,UF006,2,dinov3,English_foxhound,0.414214164018631,English_foxhound;beagle;Walker_hound;redbone;bluetick
+UF007,UF007,2,dinov3,Cane_Carso,0.3511359691619873,Cane_Carso;Labrador_retriever;Staffordshire_bullterrier;Great_Dane;American_Staffordshire_terrier
+UF008,UF008,2,dinov3,Staffordshire_bullterrier,0.1700871437788009,Staffordshire_bullterrier;Fila Braziliero;Great_Dane;American_Staffordshire_terrier;boxer
+UF009,UF009,2,dinov3,American_Staffordshire_terrier,0.4295830726623535,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;whippet;Great_Dane
+UF010,UF010,2,dinov3,papillon,0.1007110178470611,papillon;German_shepherd;Shetland_sheepdog;keeshond;collie
+UF011,UF011,2,dinov3,Border_collie,0.2150406539440155,Border_collie;kelpie;basenji;Ibizan_hound;Boston_bull
+UF012,UF012,2,dinov3,Rhodesian_ridgeback,0.2978256642818451,Rhodesian_ridgeback;Labrador_retriever;redbone;miniature_pinscher;Irish_terrier
+UF013,UF013,2,dinov3,Great_Dane,0.1564804017543792,Great_Dane;Ibizan_hound;Border_collie;basenji;Boston_bull
+UF014,UF014,2,dinov3,Australian_Shepherd,0.5456773638725281,Australian_Shepherd;Border_collie;collie;Shetland_sheepdog;Cardigan
+UF015,UF015,2,dinov3,Siberian_husky,0.6668867468833923,Siberian_husky;Eskimo_dog;malamute;Norwegian_elkhound;Shiba_Dog
+UF016,UF016,2,dinov3,Staffordshire_bullterrier,0.2847179472446441,Staffordshire_bullterrier;American_Staffordshire_terrier;Great_Dane;whippet;Fila Braziliero
+UF017,UF017,2,dinov3,Labrador_retriever,0.2663660645484924,Labrador_retriever;Great_Dane;Cane_Carso;Fila Braziliero;Staffordshire_bullterrier
+UF018,UF018,2,dinov3,bluetick,0.191847488284111,bluetick;Black_sable;English_foxhound;German_shepherd;Cardigan
+UF020,UF020,2,dinov3,Fila Braziliero,0.0795661136507988,Fila Braziliero;Rhodesian_ridgeback;Border_terrier;redbone;bloodhound
+UF022,UF022,2,dinov3,Fila Braziliero,0.3857217729091644,Fila Braziliero;whippet;Staffordshire_bullterrier;malinois;Great_Dane
+UF023,UF023,2,dinov3,American_Staffordshire_terrier,0.4447976648807525,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Cane_Carso;Boston_bull
+UF024,UF024,2,dinov3,Labrador_retriever,0.4955078065395355,Labrador_retriever;flat_coated_retriever;schipperke;curly_coated_retriever;Chesapeake_Bay_retriever
+UF025,UF025,2,dinov3,Irish_terrier,0.1273869425058365,Irish_terrier;wire_haired_fox_terrier;Irish_wolfhound;whippet;borzoi
+UF026,UF026,2,dinov3,malinois,0.3483993113040924,malinois;Black_sable;Fila Braziliero;Great_Dane;basenji
+UF028,UF028,2,dinov3,Walker_hound,0.1285652071237564,Walker_hound;Appenzeller;English_foxhound;Greater_Swiss_Mountain_dog;toy_terrier
+UF029,UF029,2,dinov3,Italian_greyhound,0.272704929113388,Italian_greyhound;Staffordshire_bullterrier;Mexican_hairless;miniature_pinscher;Rhodesian_ridgeback
+UF030,UF030,2,dinov3,boxer,0.3449984192848205,boxer;American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Great_Dane
+UF031,UF031,2,dinov3,Rottweiler,0.3087968230247497,Rottweiler;Tibetan_mastiff;Gordon_setter;black_and_tan_coonhound;Doberman
+UF033,UF033,2,dinov3,Border_collie,0.3124074637889862,Border_collie;Great_Dane;whippet;Ibizan_hound;Boston_bull
+UF035,UF035,2,dinov3,Black_sable,0.1691494733095169,Black_sable;Rottweiler;kelpie;German_shepherd;black_and_tan_coonhound
+UF036,UF036,2,dinov3,Staffordshire_bullterrier,0.2325672805309295,Staffordshire_bullterrier;American_Staffordshire_terrier;German_short_haired_pointer;Chesapeake_Bay_retriever;Great_Dane
+UF037,UF037,2,dinov3,Fila Braziliero,0.42022505402565,Fila Braziliero;boxer;Great_Dane;bull_mastiff;Cane_Carso
+UF038,UF038,2,dinov3,vizsla,0.2311683148145675,vizsla;Chesapeake_Bay_retriever;Rhodesian_ridgeback;Staffordshire_bullterrier;boxer
+UF039,UF039,2,dinov3,Fila Braziliero,0.2866290807723999,Fila Braziliero;Great_Dane;English_foxhound;Rhodesian_ridgeback;redbone
+UF040,UF040,2,dinov3,soft_coated_wheaten_terrier,0.4948247075080871,soft_coated_wheaten_terrier;briard;otterhound;giant_schnauzer;Irish_wolfhound
+UF041,UF041,2,dinov3,Labrador_retriever,0.7676355838775635,Labrador_retriever;golden_retriever;kuvasz;Chesapeake_Bay_retriever;Rhodesian_ridgeback
+UF042,UF042,2,dinov3,Great_Dane,0.1662670522928238,Great_Dane;American_Staffordshire_terrier;bull_mastiff;boxer;Saint_Bernard
+UF043,UF043,2,dinov3,golden_retriever,0.2954725921154022,golden_retriever;papillon;Pekinese;Labrador_retriever;chow
+UF044,UF044,2,dinov3,Labrador_retriever,0.4620864689350128,Labrador_retriever;flat_coated_retriever;Great_Dane;Fila Braziliero;Chesapeake_Bay_retriever
+UF046,UF046,2,dinov3,Scottish_deerhound,0.2753928899765014,Scottish_deerhound;affenpinscher;Irish_wolfhound;Bouvier_des_Flandres;miniature_schnauzer
+UF047,UF047,2,dinov3,Staffordshire_bullterrier,0.1772468537092209,Staffordshire_bullterrier;Chesapeake_Bay_retriever;American_Staffordshire_terrier;Fila Braziliero;Great_Dane
+UF048,UF048,2,dinov3,Airedale,0.0905706360936164,Airedale;miniature_pinscher;Australian_terrier;black_and_tan_coonhound;toy_terrier
+UF049,UF049,2,dinov3,Cardigan,0.3312321007251739,Cardigan;Pembroke;Black_sable;German_shepherd;basenji
+UF051,UF051,2,dinov3,Labrador_retriever,0.4638246297836303,Labrador_retriever;English_foxhound;Great_Dane;kuvasz;Chesapeake_Bay_retriever
+UF052,UF052,2,dinov3,dingo,0.1799240559339523,dingo;basenji;Ibizan_hound;Shiba_Dog;kelpie
+UF053,UF053,2,dinov3,English_foxhound,0.1583670526742935,English_foxhound;beagle;Labrador_retriever;redbone;Walker_hound
+UF054,UF054,2,dinov3,American_Staffordshire_terrier,0.1363069862127304,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Great_Dane;Rhodesian_ridgeback
+UF055,UF055,2,dinov3,Chesapeake_Bay_retriever,0.2082672864198684,Chesapeake_Bay_retriever;Doberman;kelpie;vizsla;Rottweiler
+UF057,UF057,2,dinov3,Labrador_retriever,0.8570773005485535,Labrador_retriever;kuvasz;Great_Pyrenees;Japanese_Spitzes;Chesapeake_Bay_retriever
+UF058,UF058,2,dinov3,American_Staffordshire_terrier,0.269758939743042,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Great_Dane;bull_mastiff
+UF059,UF059,2,dinov3,Staffordshire_bullterrier,0.3756638765335083,Staffordshire_bullterrier;American_Staffordshire_terrier;Fila Braziliero;boxer;Great_Dane
+UF060,UF060,2,dinov3,beagle,0.6366885900497437,beagle;English_foxhound;Walker_hound;Cardigan;basset
+UF061,UF061,2,dinov3,Labrador_retriever,0.2437776178121566,Labrador_retriever;black_and_tan_coonhound;Great_Dane;vizsla;flat_coated_retriever
+UF062,UF062,2,dinov3,schipperke,0.2927939593791961,schipperke;kelpie;Mexican_hairless;Scotch_terrier;basenji
+UF063,UF063,2,dinov3,boxer,0.1561070382595062,boxer;Rhodesian_ridgeback;English_foxhound;Great_Dane;American_Staffordshire_terrier
+UF064,UF064,2,dinov3,Black_sable,0.24286450445652,Black_sable;English_foxhound;beagle;German_shepherd;dingo
+UF065,UF065,2,dinov3,Fila Braziliero,0.1454781889915466,Fila Braziliero;malinois;Norwegian_elkhound;Leonberg;Chesapeake_Bay_retriever
+UF066,UF066,2,dinov3,Labrador_retriever,0.2790763080120086,Labrador_retriever;flat_coated_retriever;black_and_tan_coonhound;redbone;German_short_haired_pointer
+UF067,UF067,2,dinov3,Great_Dane,0.11378213763237,Great_Dane;Boston_bull;Border_collie;Walker_hound;Ibizan_hound
+UF068,UF068,2,dinov3,Rhodesian_ridgeback,0.1501005738973617,Rhodesian_ridgeback;bloodhound;miniature_pinscher;redbone;Fila Braziliero
+UF069,UF069,2,dinov3,Labrador_retriever,0.3286033868789673,Labrador_retriever;flat_coated_retriever;curly_coated_retriever;Great_Dane;schipperke
+UF071,UF071,2,dinov3,schipperke,0.1237205862998962,schipperke;flat_coated_retriever;Italian_greyhound;Staffordshire_bullterrier;Brabancon_griffo
+UF072,UF072,2,dinov3,Rhodesian_ridgeback,0.3699623346328735,Rhodesian_ridgeback;redbone;Great_Dane;boxer;Fila Braziliero
+UF073,UF073,2,dinov3,Rhodesian_ridgeback,0.3310212194919586,Rhodesian_ridgeback;Staffordshire_bullterrier;basenji;American_Staffordshire_terrier;redbone
+UF074,UF074,2,dinov3,English_foxhound,0.2783578634262085,English_foxhound;Walker_hound;beagle;Brittany_spaniel;Great_Dane
+UF076,UF076,2,dinov3,redbone,0.3930113911628723,redbone;Rhodesian_ridgeback;miniature_pinscher;vizsla;Brabancon_griffo
+UF077,UF077,2,dinov3,black_and_tan_coonhound,0.4806617498397827,black_and_tan_coonhound;Rottweiler;EntleBucher;miniature_pinscher;Doberman
+UF079,UF079,2,dinov3,basenji,0.2307842373847961,basenji;English_foxhound;Walker_hound;Staffordshire_bullterrier;American_Staffordshire_terrier
+UF081,UF081,2,dinov3,Border_terrier,0.6085411906242371,Border_terrier;cairn;Irish_wolfhound;Norfolk_terrier;Pekinese
+UF082,UF082,2,dinov3,toy_terrier,0.2017117291688919,toy_terrier;kelpie;Ibizan_hound;basenji;Appenzeller
+UF083,UF083,2,dinov3,Black_sable,0.1698364913463592,Black_sable;Airedale;Rhodesian_ridgeback;Fila Braziliero;whippet
+UF084,UF084,2,dinov3,Chesapeake_Bay_retriever,0.306195318698883,Chesapeake_Bay_retriever;German_short_haired_pointer;vizsla;Weimaraner;Great_Dane
+UF085,UF085,2,dinov3,kelpie,0.2956739068031311,kelpie;Appenzeller;German_shepherd;Greater_Swiss_Mountain_dog;EntleBucher
+UF088,UF088,2,dinov3,Staffordshire_bullterrier,0.1987100541591644,Staffordshire_bullterrier;Great_Dane;American_Staffordshire_terrier;Chinese_Crested_Dog;whippet
+UF089,UF089,2,dinov3,Staffordshire_bullterrier,0.5923320651054382,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Fila Braziliero
+UF089_2,UF089,2,dinov3,Labrador_retriever,0.2291240692138672,Labrador_retriever;English_foxhound;kuvasz;beagle;wire_haired_fox_terrier
+UF092,UF092,2,dinov3,Labrador_retriever,0.2291240692138672,Labrador_retriever;English_foxhound;kuvasz;beagle;wire_haired_fox_terrier
+UF093,UF093,2,dinov3,bluetick,0.1189778000116348,bluetick;German_short_haired_pointer;English_setter;Brittany_spaniel;Border_collie
+UF094,UF094,2,dinov3,Rhodesian_ridgeback,0.3482632935047149,Rhodesian_ridgeback;redbone;Great_Dane;Italian_greyhound;English_foxhound
+UF095,UF095,2,dinov3,Staffordshire_bullterrier,0.2321284860372543,Staffordshire_bullterrier;American_Staffordshire_terrier;Rhodesian_ridgeback;Great_Dane;boxer
+UF096,UF096,2,dinov3,miniature_pinscher,0.4054325819015503,miniature_pinscher;basenji;Rhodesian_ridgeback;Chihuahua;Ibizan_hound
+UF097,UF097,2,dinov3,Staffordshire_bullterrier,0.3344931602478027,Staffordshire_bullterrier;Great_Dane;American_Staffordshire_terrier;Cane_Carso;Fila Braziliero
+UF098,UF098,2,dinov3,Fila Braziliero,0.0925225988030433,Fila Braziliero;Black_sable;Rhodesian_ridgeback;Great_Dane;Border_terrier
+UF099,UF099,2,dinov3,Labrador_retriever,0.1918651014566421,Labrador_retriever;Chihuahua;Pekinese;Brittany_spaniel;papillon
+UF100,UF100,2,dinov3,Rhodesian_ridgeback,0.2949092984199524,Rhodesian_ridgeback;redbone;Labrador_retriever;Black_sable;Irish_terrier
+UF101,UF101,2,dinov3,English_foxhound,0.1696996092796325,English_foxhound;Rhodesian_ridgeback;redbone;Walker_hound;bloodhound
+UF102,UF102,2,dinov3,flat_coated_retriever,0.2363961189985275,flat_coated_retriever;Border_collie;collie;English_springer;Newfoundland
+UF103,UF103,2,dinov3,Rhodesian_ridgeback,0.3351374268531799,Rhodesian_ridgeback;Fila Braziliero;bloodhound;redbone;Great_Dane
+UF104,UF104,2,dinov3,German_short_haired_pointer,0.3755903542041778,German_short_haired_pointer;bluetick;English_setter;Great_Dane;Scottish_deerhound
+UF106,UF106,2,dinov3,black_and_tan_coonhound,0.3424731791019439,black_and_tan_coonhound;Rottweiler;EntleBucher;Appenzeller;Black_sable
+UF107,UF107,2,dinov3,English_foxhound,0.2500085234642029,English_foxhound;Labrador_retriever;Walker_hound;beagle;Saint_Bernard
+UF108,UF108,2,dinov3,Staffordshire_bullterrier,0.0736708343029022,Staffordshire_bullterrier;Fila Braziliero;Great_Pyrenees;English_foxhound;Great_Dane
+UF109,UF109,2,dinov3,papillon,0.1740887761116027,papillon;basenji;English_foxhound;Brittany_spaniel;Saint_Bernard
+UF110,UF110,2,dinov3,Rhodesian_ridgeback,0.6031690835952759,Rhodesian_ridgeback;redbone;Labrador_retriever;miniature_pinscher;Great_Dane
+UF111,UF111,2,dinov3,Labrador_retriever,0.1565493196249008,Labrador_retriever;English_foxhound;beagle;Saint_Bernard;Fila Braziliero
+UF112,UF112,2,dinov3,Walker_hound,0.1439477354288101,Walker_hound;vizsla;Brittany_spaniel;English_foxhound;German_short_haired_pointer
+UF114,UF114,2,dinov3,Black_sable,0.1450185328722,Black_sable;kelpie;German_shepherd;Cardigan;Chihuahua
+UF115,UF115,2,dinov3,Labrador_retriever,0.181483656167984,Labrador_retriever;Rhodesian_ridgeback;golden_retriever;malinois;Leonberg
+UF116,UF116,2,dinov3,Rhodesian_ridgeback,0.1232251748442649,Rhodesian_ridgeback;dingo;Labrador_retriever;Shiba_Dog;Black_sable
+UF117,UF117,2,dinov3,Ibizan_hound,0.2343508899211883,Ibizan_hound;Great_Dane;whippet;basenji;Italian_greyhound
+UF119,UF119,2,dinov3,Pekinese,0.1794439256191253,Pekinese;golden_retriever;papillon;Labrador_retriever;Chihuahua
+UF001,UF001,3,dinov3,golden_retriever,0.5384249091148376,golden_retriever;Pekinese;papillon;Pomeranian;Chihuahua
+UF002,UF002,3,dinov3,Labrador_retriever,0.3346351683139801,Labrador_retriever;Great_Dane;Cane_Carso;Staffordshire_bullterrier;flat_coated_retriever
+UF003,UF003,3,dinov3,Rhodesian_ridgeback,0.4193723499774933,Rhodesian_ridgeback;Labrador_retriever;Black_sable;Irish_terrier;redbone
+UF004,UF004,3,dinov3,briard,0.5110116600990295,briard;cairn;soft_coated_wheaten_terrier;Afghan_hound;bull_mastiff
+UF005,UF005,3,dinov3,bluetick,0.1354242861270904,bluetick;German_short_haired_pointer;Staffordshire_bullterrier;American_Staffordshire_terrier;Great_Dane
+UF006,UF006,3,dinov3,English_foxhound,0.4158515334129333,English_foxhound;beagle;Walker_hound;redbone;bluetick
+UF007,UF007,3,dinov3,Cane_Carso,0.3723028004169464,Cane_Carso;Labrador_retriever;Great_Dane;Staffordshire_bullterrier;American_Staffordshire_terrier
+UF008,UF008,3,dinov3,Staffordshire_bullterrier,0.1754616200923919,Staffordshire_bullterrier;Fila Braziliero;Great_Dane;boxer;American_Staffordshire_terrier
+UF009,UF009,3,dinov3,American_Staffordshire_terrier,0.4043080508708954,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;whippet;Great_Dane
+UF010,UF010,3,dinov3,papillon,0.0952022448182106,papillon;German_shepherd;Shetland_sheepdog;collie;keeshond
+UF011,UF011,3,dinov3,Border_collie,0.2169553488492965,Border_collie;kelpie;basenji;Ibizan_hound;Boston_bull
+UF012,UF012,3,dinov3,Rhodesian_ridgeback,0.2813785970211029,Rhodesian_ridgeback;Labrador_retriever;redbone;miniature_pinscher;Irish_terrier
+UF013,UF013,3,dinov3,Great_Dane,0.1516132354736328,Great_Dane;Ibizan_hound;Border_collie;basenji;Boston_bull
+UF014,UF014,3,dinov3,Australian_Shepherd,0.5262700915336609,Australian_Shepherd;Border_collie;collie;Shetland_sheepdog;Cardigan
+UF015,UF015,3,dinov3,Siberian_husky,0.6090821623802185,Siberian_husky;Eskimo_dog;malamute;Norwegian_elkhound;Shiba_Dog
+UF016,UF016,3,dinov3,American_Staffordshire_terrier,0.2943548858165741,American_Staffordshire_terrier;Staffordshire_bullterrier;Great_Dane;whippet;Labrador_retriever
+UF017,UF017,3,dinov3,Labrador_retriever,0.2687902748584747,Labrador_retriever;Great_Dane;Cane_Carso;Fila Braziliero;Staffordshire_bullterrier
+UF018,UF018,3,dinov3,bluetick,0.1879684925079345,bluetick;Black_sable;English_foxhound;German_shepherd;Walker_hound
+UF020,UF020,3,dinov3,Fila Braziliero,0.0775668546557426,Fila Braziliero;Border_terrier;redbone;Rhodesian_ridgeback;bloodhound
+UF022,UF022,3,dinov3,Fila Braziliero,0.4065927267074585,Fila Braziliero;whippet;Staffordshire_bullterrier;malinois;boxer
+UF023,UF023,3,dinov3,American_Staffordshire_terrier,0.4593431949615478,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Cane_Carso;Boston_bull
+UF024,UF024,3,dinov3,Labrador_retriever,0.4755156636238098,Labrador_retriever;flat_coated_retriever;schipperke;curly_coated_retriever;Chesapeake_Bay_retriever
+UF025,UF025,3,dinov3,Irish_terrier,0.127406045794487,Irish_terrier;wire_haired_fox_terrier;whippet;borzoi;Irish_wolfhound
+UF026,UF026,3,dinov3,malinois,0.3122958242893219,malinois;Black_sable;Fila Braziliero;Cane_Carso;Great_Dane
+UF028,UF028,3,dinov3,Walker_hound,0.1248079091310501,Walker_hound;Appenzeller;Greater_Swiss_Mountain_dog;English_foxhound;toy_terrier
+UF029,UF029,3,dinov3,Italian_greyhound,0.2708730101585388,Italian_greyhound;Staffordshire_bullterrier;Mexican_hairless;Fila Braziliero;miniature_pinscher
+UF030,UF030,3,dinov3,boxer,0.3472937941551208,boxer;American_Staffordshire_terrier;Staffordshire_bullterrier;Fila Braziliero;Cane_Carso
+UF031,UF031,3,dinov3,Rottweiler,0.2875398099422455,Rottweiler;Tibetan_mastiff;Gordon_setter;black_and_tan_coonhound;Doberman
+UF033,UF033,3,dinov3,Border_collie,0.3276435136795044,Border_collie;Great_Dane;Ibizan_hound;whippet;American_Staffordshire_terrier
+UF035,UF035,3,dinov3,Black_sable,0.1477551311254501,Black_sable;Rottweiler;kelpie;German_shepherd;black_and_tan_coonhound
+UF036,UF036,3,dinov3,Staffordshire_bullterrier,0.243358626961708,Staffordshire_bullterrier;American_Staffordshire_terrier;German_short_haired_pointer;Chesapeake_Bay_retriever;Great_Dane
+UF037,UF037,3,dinov3,Fila Braziliero,0.3540136516094208,Fila Braziliero;boxer;Great_Dane;Cane_Carso;bull_mastiff
+UF038,UF038,3,dinov3,vizsla,0.2219250053167343,vizsla;boxer;Chesapeake_Bay_retriever;Rhodesian_ridgeback;Staffordshire_bullterrier
+UF039,UF039,3,dinov3,Fila Braziliero,0.2605225145816803,Fila Braziliero;Great_Dane;English_foxhound;redbone;Rhodesian_ridgeback
+UF040,UF040,3,dinov3,soft_coated_wheaten_terrier,0.478159636259079,soft_coated_wheaten_terrier;briard;otterhound;giant_schnauzer;Irish_wolfhound
+UF041,UF041,3,dinov3,Labrador_retriever,0.7501558661460876,Labrador_retriever;golden_retriever;Chesapeake_Bay_retriever;kuvasz;Rhodesian_ridgeback
+UF042,UF042,3,dinov3,American_Staffordshire_terrier,0.1667812764644622,American_Staffordshire_terrier;Great_Dane;bull_mastiff;boxer;Saint_Bernard
+UF043,UF043,3,dinov3,golden_retriever,0.2962057590484619,golden_retriever;papillon;Pekinese;Labrador_retriever;chow
+UF044,UF044,3,dinov3,Labrador_retriever,0.4269208908081054,Labrador_retriever;flat_coated_retriever;Great_Dane;Fila Braziliero;Newfoundland
+UF046,UF046,3,dinov3,Scottish_deerhound,0.2695931494235992,Scottish_deerhound;affenpinscher;Irish_wolfhound;Bouvier_des_Flandres;miniature_schnauzer
+UF047,UF047,3,dinov3,Staffordshire_bullterrier,0.1942315995693206,Staffordshire_bullterrier;Chesapeake_Bay_retriever;Great_Dane;Fila Braziliero;American_Staffordshire_terrier
+UF048,UF048,3,dinov3,Airedale,0.0850696489214897,Airedale;miniature_pinscher;Australian_terrier;black_and_tan_coonhound;toy_terrier
+UF049,UF049,3,dinov3,Cardigan,0.3172965943813324,Cardigan;Pembroke;Black_sable;German_shepherd;basenji
+UF051,UF051,3,dinov3,Labrador_retriever,0.4423849582672119,Labrador_retriever;English_foxhound;Great_Dane;kuvasz;Chesapeake_Bay_retriever
+UF052,UF052,3,dinov3,dingo,0.1797325164079666,dingo;basenji;Ibizan_hound;Shiba_Dog;kelpie
+UF053,UF053,3,dinov3,English_foxhound,0.1371394991874694,English_foxhound;Labrador_retriever;redbone;beagle;Walker_hound
+UF054,UF054,3,dinov3,American_Staffordshire_terrier,0.1487661302089691,American_Staffordshire_terrier;boxer;Staffordshire_bullterrier;Great_Dane;Rhodesian_ridgeback
+UF055,UF055,3,dinov3,Chesapeake_Bay_retriever,0.1905756145715713,Chesapeake_Bay_retriever;Doberman;kelpie;vizsla;Rottweiler
+UF057,UF057,3,dinov3,Labrador_retriever,0.8393469452857971,Labrador_retriever;kuvasz;Great_Pyrenees;Japanese_Spitzes;Chesapeake_Bay_retriever
+UF058,UF058,3,dinov3,American_Staffordshire_terrier,0.2835902273654938,American_Staffordshire_terrier;Staffordshire_bullterrier;boxer;Great_Dane;bull_mastiff
+UF059,UF059,3,dinov3,Staffordshire_bullterrier,0.4148214161396026,Staffordshire_bullterrier;American_Staffordshire_terrier;Fila Braziliero;boxer;Great_Dane
+UF060,UF060,3,dinov3,beagle,0.6194419860839844,beagle;English_foxhound;Walker_hound;Cardigan;basset
+UF061,UF061,3,dinov3,Labrador_retriever,0.2473347336053848,Labrador_retriever;black_and_tan_coonhound;Great_Dane;vizsla;flat_coated_retriever
+UF062,UF062,3,dinov3,schipperke,0.2760719954967499,schipperke;kelpie;Mexican_hairless;basenji;Scotch_terrier
+UF063,UF063,3,dinov3,boxer,0.1574756205081939,boxer;English_foxhound;Rhodesian_ridgeback;American_Staffordshire_terrier;Great_Dane
+UF064,UF064,3,dinov3,Black_sable,0.2391344755887985,Black_sable;German_shepherd;English_foxhound;beagle;dingo
+UF065,UF065,3,dinov3,Fila Braziliero,0.1483899056911468,Fila Braziliero;malinois;Norwegian_elkhound;Black_sable;Chesapeake_Bay_retriever
+UF066,UF066,3,dinov3,Labrador_retriever,0.2645951509475708,Labrador_retriever;flat_coated_retriever;black_and_tan_coonhound;redbone;Great_Dane
+UF067,UF067,3,dinov3,Great_Dane,0.1065279021859169,Great_Dane;Boston_bull;Border_collie;Ibizan_hound;Walker_hound
+UF068,UF068,3,dinov3,Rhodesian_ridgeback,0.1372608393430709,Rhodesian_ridgeback;bloodhound;redbone;miniature_pinscher;Fila Braziliero
+UF069,UF069,3,dinov3,Labrador_retriever,0.3149027824401855,Labrador_retriever;flat_coated_retriever;Great_Dane;curly_coated_retriever;schipperke
+UF071,UF071,3,dinov3,schipperke,0.1067346334457397,schipperke;flat_coated_retriever;Italian_greyhound;Staffordshire_bullterrier;Chihuahua
+UF072,UF072,3,dinov3,Rhodesian_ridgeback,0.3262760937213897,Rhodesian_ridgeback;redbone;Great_Dane;boxer;Fila Braziliero
+UF073,UF073,3,dinov3,Rhodesian_ridgeback,0.3163050413131714,Rhodesian_ridgeback;Staffordshire_bullterrier;basenji;American_Staffordshire_terrier;redbone
+UF074,UF074,3,dinov3,English_foxhound,0.2624727189540863,English_foxhound;Walker_hound;Brittany_spaniel;beagle;Great_Dane
+UF076,UF076,3,dinov3,redbone,0.4600148797035217,redbone;Rhodesian_ridgeback;miniature_pinscher;vizsla;Fila Braziliero
+UF077,UF077,3,dinov3,black_and_tan_coonhound,0.4750974774360657,black_and_tan_coonhound;Rottweiler;EntleBucher;miniature_pinscher;Doberman
+UF079,UF079,3,dinov3,basenji,0.2375252991914749,basenji;English_foxhound;Walker_hound;American_Staffordshire_terrier;Staffordshire_bullterrier
+UF081,UF081,3,dinov3,Border_terrier,0.5898817181587219,Border_terrier;cairn;Irish_wolfhound;papillon;Norfolk_terrier
+UF082,UF082,3,dinov3,toy_terrier,0.2067155539989471,toy_terrier;kelpie;Ibizan_hound;basenji;Border_collie
+UF083,UF083,3,dinov3,Black_sable,0.201003223657608,Black_sable;Fila Braziliero;Rhodesian_ridgeback;Airedale;whippet
+UF084,UF084,3,dinov3,Chesapeake_Bay_retriever,0.3109839856624603,Chesapeake_Bay_retriever;German_short_haired_pointer;vizsla;Great_Dane;Weimaraner
+UF085,UF085,3,dinov3,kelpie,0.3076787292957306,kelpie;Appenzeller;German_shepherd;Greater_Swiss_Mountain_dog;Tibetan_mastiff
+UF088,UF088,3,dinov3,Staffordshire_bullterrier,0.2042156159877777,Staffordshire_bullterrier;Great_Dane;American_Staffordshire_terrier;Chinese_Crested_Dog;whippet
+UF089,UF089,3,dinov3,Staffordshire_bullterrier,0.5873023271560669,Staffordshire_bullterrier;Cane_Carso;American_Staffordshire_terrier;Labrador_retriever;Fila Braziliero
+UF089_2,UF089,3,dinov3,Labrador_retriever,0.2231562137603759,Labrador_retriever;English_foxhound;kuvasz;beagle;wire_haired_fox_terrier
+UF092,UF092,3,dinov3,Labrador_retriever,0.2231562137603759,Labrador_retriever;English_foxhound;kuvasz;beagle;wire_haired_fox_terrier
+UF093,UF093,3,dinov3,German_short_haired_pointer,0.1097664460539817,German_short_haired_pointer;bluetick;English_setter;Brittany_spaniel;Border_collie
+UF094,UF094,3,dinov3,Rhodesian_ridgeback,0.3027677834033966,Rhodesian_ridgeback;redbone;Great_Dane;Italian_greyhound;English_foxhound
+UF095,UF095,3,dinov3,Staffordshire_bullterrier,0.2511654496192932,Staffordshire_bullterrier;American_Staffordshire_terrier;Rhodesian_ridgeback;Great_Dane;boxer
+UF096,UF096,3,dinov3,miniature_pinscher,0.3989095687866211,miniature_pinscher;basenji;Rhodesian_ridgeback;Chihuahua;Ibizan_hound
+UF097,UF097,3,dinov3,Staffordshire_bullterrier,0.3264744281768799,Staffordshire_bullterrier;Great_Dane;Cane_Carso;American_Staffordshire_terrier;Fila Braziliero
+UF098,UF098,3,dinov3,Black_sable,0.0999061614274978,Black_sable;Fila Braziliero;Great_Dane;Border_terrier;Rhodesian_ridgeback
+UF099,UF099,3,dinov3,Labrador_retriever,0.1795828640460968,Labrador_retriever;Chihuahua;Brittany_spaniel;Pekinese;papillon
+UF100,UF100,3,dinov3,Rhodesian_ridgeback,0.2702737748622894,Rhodesian_ridgeback;redbone;Labrador_retriever;Black_sable;Irish_terrier
+UF101,UF101,3,dinov3,English_foxhound,0.1731352508068084,English_foxhound;redbone;Rhodesian_ridgeback;bloodhound;Walker_hound
+UF102,UF102,3,dinov3,flat_coated_retriever,0.2646972835063934,flat_coated_retriever;Border_collie;collie;English_springer;Saluki
+UF103,UF103,3,dinov3,Rhodesian_ridgeback,0.3099981546401977,Rhodesian_ridgeback;redbone;Fila Braziliero;bloodhound;Great_Dane
+UF104,UF104,3,dinov3,German_short_haired_pointer,0.4417330622673034,German_short_haired_pointer;bluetick;English_setter;Great_Dane;Scottish_deerhound
+UF106,UF106,3,dinov3,black_and_tan_coonhound,0.3396650552749634,black_and_tan_coonhound;EntleBucher;Rottweiler;Appenzeller;Black_sable
+UF107,UF107,3,dinov3,English_foxhound,0.2484931200742721,English_foxhound;Labrador_retriever;Walker_hound;beagle;Fila Braziliero
+UF108,UF108,3,dinov3,Staffordshire_bullterrier,0.0720149874687194,Staffordshire_bullterrier;Fila Braziliero;English_foxhound;American_Staffordshire_terrier;Great_Pyrenees
+UF109,UF109,3,dinov3,papillon,0.1812629401683807,papillon;basenji;English_foxhound;Brittany_spaniel;Saint_Bernard
+UF110,UF110,3,dinov3,Rhodesian_ridgeback,0.5730095505714417,Rhodesian_ridgeback;redbone;Labrador_retriever;Great_Dane;miniature_pinscher
+UF111,UF111,3,dinov3,Labrador_retriever,0.1533489227294922,Labrador_retriever;beagle;English_foxhound;Saint_Bernard;Cardigan
+UF112,UF112,3,dinov3,Walker_hound,0.1463823765516281,Walker_hound;vizsla;Brittany_spaniel;English_foxhound;German_short_haired_pointer
+UF114,UF114,3,dinov3,Black_sable,0.1474253088235855,Black_sable;kelpie;German_shepherd;Cardigan;Chihuahua
+UF115,UF115,3,dinov3,Labrador_retriever,0.1751521825790405,Labrador_retriever;Rhodesian_ridgeback;golden_retriever;malinois;German_shepherd
+UF116,UF116,3,dinov3,Rhodesian_ridgeback,0.118890956044197,Rhodesian_ridgeback;dingo;Labrador_retriever;Black_sable;basenji
+UF117,UF117,3,dinov3,Ibizan_hound,0.2171761840581894,Ibizan_hound;Great_Dane;whippet;Italian_greyhound;basenji
+UF119,UF119,3,dinov3,golden_retriever,0.1774573177099228,golden_retriever;Pekinese;papillon;Chihuahua;Labrador_retriever

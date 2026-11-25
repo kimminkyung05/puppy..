@@ -1,0 +1,7 @@
+extractor,seed,condition,n_dogs,top1_accuracy,top5_accuracy
+dinov3,1,panel_face,90,0.022222,0.077778
+dinov3,2,panel_face,90,0.022222,0.066667
+dinov3,3,panel_face,90,0.022222,0.055556
+dinov3,1,panel_body,90,0.022222,0.055556
+dinov3,2,panel_body,90,0.011111,0.033333
+dinov3,3,panel_body,90,0.022222,0.077778

@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "codebook_file": "sift_codebook.npy",
+  "codebook_shape": [
+    512,
+    128
+  ],
+  "control_images": 220,
+  "dogs": 20,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "variant_conditions": [
+    "gray",
+    "blur1",
+    "blur3",
+    "blur6",
+    "blur12"
+  ],
+  "excluded": [
+    "background-only",
+    "selection experiments",
+    "panel_face",
+    "panel_body"
+  ],
+  "detail_rows": 900,
+  "summary_rows": 45,
+  "source": "C_work checkpoint + gpu_run_20261125 matched-control images"
+}

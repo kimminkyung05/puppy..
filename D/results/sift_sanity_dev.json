@@ -1,0 +1,20 @@
+{
+  "split": "dev",
+  "feature_shape": [
+    240,
+    512
+  ],
+  "conditions": [
+    "orig",
+    "gray",
+    "blur1",
+    "blur3",
+    "blur6",
+    "blur12"
+  ],
+  "dev_rows": 240,
+  "dev_dogs": 20,
+  "orig_gray_feature_l2_mean": 0.0,
+  "orig_gray_feature_max_abs": 0.0,
+  "note": "C 파일에는 원본/blur1~4/gray가 있고 area 변형 및 matched controls는 없음; raw_drop만 계산"
+}
