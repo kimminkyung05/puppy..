@@ -1,0 +1,36 @@
+{
+  "output_root": "/content/drive/MyDrive/D_outputs_dev/gpu_run_20261125/dinov3_control_rerun",
+  "manifest_rows": 300,
+  "detail_rows": 900,
+  "condition_summary_rows": 405,
+  "extra_drop_detail_rows": 420,
+  "extra_drop_summary_rows": 189,
+  "conditions": [
+    "blur_01",
+    "blur_03",
+    "blur_06",
+    "blur_12",
+    "control_blur_01",
+    "control_blur_03",
+    "control_blur_06",
+    "control_blur_12",
+    "control_gray",
+    "control_panel_body",
+    "control_panel_face",
+    "gray",
+    "original",
+    "panel_body",
+    "panel_face"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "control_rows": 140,
+  "panel_face_rows": 20,
+  "panel_body_rows": 20,
+  "extra_drop_graph": "/content/drive/MyDrive/D_outputs_dev/gpu_run_20261125/dinov3_control_rerun/dinov3_extra_drop_by_condition.png",
+  "background_only": false,
+  "optional_selection_experiment": false
+}

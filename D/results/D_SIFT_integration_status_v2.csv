@@ -1,0 +1,6 @@
+﻿item,status,rows,evidence,note
+SIFT raw variant scores,complete,54,SIFT_v5_condition_scores.csv,legacy raw bundle: 6 conditions x 3 seeds x 3 metrics
+SIFT grayscale sanity check,complete,240 feature rows,SIFT_gray_sanity_check.csv; sift_sanity_dev.json,orig and gray features identical; status pass
+SIFT area/panel variants,excluded,0,D_RQ2_FINAL_VERIFICATION.json,final SIFT scope is gray + blur controls; panels were not included
+SIFT matched controls,complete,"1,980 score rows",SIFT_CONTROL_VERIFICATION.json; SIFT_control_condition_scores.csv,220 input images x 3 seeds x 3 metrics
+SIFT full extra_drop integration,complete,900 detail / 45 summary,SIFT_extra_drop_detail_dev.csv; SIFT_extra_drop_summary_dev.csv,control-based extra_drop now available

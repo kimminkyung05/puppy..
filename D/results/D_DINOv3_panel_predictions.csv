@@ -1,0 +1,601 @@
+image_id,dog_id,split,panel,source_panel,seed,predicted_class,top5_classes,allowed_model_classes,scorable,top1_hit,top5_hit
+UF001_face,UF001,dev,panel_face,face,1,wire_haired_fox_terrier,wire_haired_fox_terrier;kelpie;Leonberg;Saint_Bernard;Airedale,toy_terrier,true,false,false
+UF004_face,UF004,dev,panel_face,face,1,vizsla,vizsla;Cardigan;bluetick;Pembroke;Black_sable,Border_collie,true,false,false
+UF009_face,UF009,dev,panel_face,face,1,Irish_wolfhound,Irish_wolfhound;kelpie;bluetick;Pembroke;American_Staffordshire_terrier,American_Staffordshire_terrier,true,false,true
+UF013_face,UF013,dev,panel_face,face,1,affenpinscher,affenpinscher;vizsla;toy_poodle;miniature_pinscher;briard,German_shepherd; Staffordshire_bullterrier,true,false,false
+UF016_face,UF016,dev,panel_face,face,1,American_Staffordshire_terrier,American_Staffordshire_terrier;Afghan_hound;Maltese_dog;Norwegian_elkhound;Irish_wolfhound,American_Staffordshire_terrier; Staffordshire_bullterrier,true,true,true
+UF018_face,UF018,dev,panel_face,face,1,Pembroke,Pembroke;Irish_wolfhound;briard;black_and_tan_coonhound;miniature_schnauzer,Labrador_retriever,true,false,false
+UF030_face,UF030,dev,panel_face,face,1,American_Staffordshire_terrier,American_Staffordshire_terrier;Irish_wolfhound;Sussex_spaniel;Maltese_dog;English_springer,American_Staffordshire_terrier; French_bulldog,true,true,true
+UF038_face,UF038,dev,panel_face,face,1,golden_retriever,golden_retriever;Pembroke;Brittany_spaniel;dingo;giant_schnauzer,cocker_spaniel,true,false,false
+UF041_face,UF041,dev,panel_face,face,1,miniature_poodle,miniature_poodle;Airedale;briard;kelpie;Samoyed,Cane_Carso; Labrador_retriever; chow; miniature_pinscher,true,false,false
+UF059_face,UF059,dev,panel_face,face,1,Scotch_terrier,Scotch_terrier;kelpie;EntleBucher;vizsla;Gordon_setter,American_Staffordshire_terrier,true,false,false
+UF061_face,UF061,dev,panel_face,face,1,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Norwegian_elkhound;EntleBucher;Rhodesian_ridgeback;standard_poodle,Doberman,true,false,false
+UF067_face,UF067,dev,panel_face,face,1,EntleBucher,EntleBucher;kelpie;Irish_terrier;Old_English_sheepdog;Blenheim_spaniel,Staffordshire_bullterrier,true,false,false
+UF069_face,UF069,dev,panel_face,face,1,affenpinscher,affenpinscher;Fila Braziliero;papillon;golden_retriever;Airedale,Labrador_retriever,true,false,false
+UF073_face,UF073,dev,panel_face,face,1,Pembroke,Pembroke;Sussex_spaniel;German_shepherd;Scotch_terrier;kelpie,American_Staffordshire_terrier,true,false,false
+UF076_face,UF076,dev,panel_face,face,1,Pembroke,Pembroke;cairn;soft_coated_wheaten_terrier;Dandie_Dinmont;German_shepherd,,false,false,false
+UF077_face,UF077,dev,panel_face,face,1,Leonberg,Leonberg;Airedale;English_springer;toy_poodle;Shetland_sheepdog,basset; golden_retriever,true,false,false
+UF092_face,UF092,dev,panel_face,face,1,American_Staffordshire_terrier,American_Staffordshire_terrier;Chinese_Crested_Dog;miniature_poodle;Pembroke;kelpie,Border_collie,true,false,false
+UF097_face,UF097,dev,panel_face,face,1,kelpie,kelpie;vizsla;EntleBucher;Scotch_terrier;papillon,American_Staffordshire_terrier,true,false,false
+UF103_face,UF103,dev,panel_face,face,1,cairn,cairn;Pembroke;German_shepherd;vizsla;English_springer,Labrador_retriever; Tibetan_mastiff,true,false,false
+UF110_face,UF110,dev,panel_face,face,1,Sussex_spaniel,Sussex_spaniel;Pembroke;German_shepherd;Samoyed;Irish_wolfhound,Staffordshire_bullterrier,true,false,false
+UF002_face,UF002,hold,panel_face,face,1,affenpinscher,affenpinscher;Norwegian_elkhound;German_short_haired_pointer;Irish_wolfhound;Pembroke,,false,false,false
+UF003_face,UF003,hold,panel_face,face,1,Irish_wolfhound,Irish_wolfhound;Norwegian_elkhound;English_springer;EntleBucher;Scotch_terrier,American_Staffordshire_terrier; Dandie_Dinmont; German_shepherd; Lhasa,true,false,false
+UF005_face,UF005,hold,panel_face,face,1,Afghan_hound,Afghan_hound;Irish_wolfhound;Pomeranian;miniature_poodle;black_and_tan_coonhound,Great_Pyrenees; miniature_pinscher,true,false,false
+UF006_face,UF006,hold,panel_face,face,1,Pembroke,Pembroke;cairn;standard_poodle;Rhodesian_ridgeback;Shetland_sheepdog,English_foxhound; Walker_hound; beagle,true,false,false
+UF007_face,UF007,hold,panel_face,face,1,Scotch_terrier,Scotch_terrier;clumber;vizsla;Gordon_setter;kelpie,Boston_bull; Irish_water_spaniel; Siberian_husky,true,false,false
+UF008_face,UF008,hold,panel_face,face,1,Scotch_terrier,Scotch_terrier;Pembroke;Afghan_hound;EntleBucher;Norwegian_elkhound,boxer; malamute,true,false,false
+UF010_face,UF010,hold,panel_face,face,1,vizsla,vizsla;Australian_terrier;toy_poodle;beagle;Shih_Tzu,Japanese_Spitzes,true,false,false
+UF011_face,UF011,hold,panel_face,face,1,Newfoundland,Newfoundland;miniature_poodle;Ibizan_hound;soft_coated_wheaten_terrier;vizsla,American_Staffordshire_terrier,true,false,false
+UF012_face,UF012,hold,panel_face,face,1,Doberman,Doberman;Samoyed;Irish_wolfhound;Sussex_spaniel;miniature_poodle,Labrador_retriever,true,false,false
+UF014_face,UF014,hold,panel_face,face,1,vizsla,vizsla;Maltese_dog;Australian_terrier;wire_haired_fox_terrier;Irish_wolfhound,Australian_Shepherd; Japanese_Spitzes,true,false,false
+UF015_face,UF015,hold,panel_face,face,1,cairn,cairn;Irish_wolfhound;pug;Shih_Tzu;clumber,Siberian_husky,true,false,false
+UF017_face,UF017,hold,panel_face,face,1,Saluki,Saluki;Pembroke;chow;Brabancon_griffo;kelpie,Rottweiler,true,false,false
+UF020_face,UF020,hold,panel_face,face,1,Irish_terrier,Irish_terrier;Fila Braziliero;Doberman;English_springer;Ibizan_hound,Japanese_Spitzes,true,false,false
+UF022_face,UF022,hold,panel_face,face,1,Pembroke,Pembroke;miniature_pinscher;Doberman;Norwegian_elkhound;American_Staffordshire_terrier,chow,true,false,false
+UF023_face,UF023,hold,panel_face,face,1,vizsla,vizsla;Maltese_dog;Norwegian_elkhound;Gordon_setter;Scotch_terrier,American_Staffordshire_terrier; boxer; soft_coated_wheaten_terrier,true,false,false
+UF024_face,UF024,hold,panel_face,face,1,Saluki,Saluki;Old_English_sheepdog;Chinese_Crested_Dog;Irish_setter;kuvasz,Chihuahua,true,false,false
+UF025_face,UF025,hold,panel_face,face,1,Ibizan_hound,Ibizan_hound;Pembroke;standard_poodle;Irish_wolfhound;Blenheim_spaniel,Italian_greyhound,true,false,false
+UF026_face,UF026,hold,panel_face,face,1,English_springer,English_springer;Yorkshire_terrier;Great_Pyrenees;Japanese_Spitzes;cairn,German_shepherd,true,false,false
+UF028_face,UF028,hold,panel_face,face,1,Irish_terrier,Irish_terrier;American_Staffordshire_terrier;English_springer;vizsla;Chinese_Crested_Dog,boxer,true,false,false
+UF029_face,UF029,hold,panel_face,face,1,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Irish_wolfhound;Maltese_dog;miniature_poodle;bluetick,American_Staffordshire_terrier; Staffordshire_bullterrier; basset,true,false,false
+UF031_face,UF031,hold,panel_face,face,1,Australian_terrier,Australian_terrier;Irish_terrier;briard;Walker_hound;dingo,Tibetan_mastiff,true,false,false
+UF033_face,UF033,hold,panel_face,face,1,papillon,papillon;Scotch_terrier;Maltese_dog;Samoyed;cairn,German_shepherd,true,false,false
+UF035_face,UF035,hold,panel_face,face,1,kelpie,kelpie;cairn;Walker_hound;Australian_terrier;Old_English_sheepdog,chow,true,false,false
+UF036_face,UF036,hold,panel_face,face,1,kelpie,kelpie;giant_schnauzer;papillon;Chesapeake_Bay_retriever;golden_retriever,Labrador_retriever; groenendael,true,false,false
+UF037_face,UF037,hold,panel_face,face,1,collie,collie;cairn;vizsla;Old_English_sheepdog;groenendael,bloodhound; boxer,true,false,false
+UF039_face,UF039,hold,panel_face,face,1,vizsla,vizsla;miniature_pinscher;cairn;redbone;Pembroke,English_foxhound; Walker_hound; bull_mastiff,true,false,false
+UF040_face,UF040,hold,panel_face,face,1,basenji,basenji;Old_English_sheepdog;Italian_greyhound;Pembroke;Chesapeake_Bay_retriever,soft_coated_wheaten_terrier,true,false,false
+UF042_face,UF042,hold,panel_face,face,1,American_Staffordshire_terrier,American_Staffordshire_terrier;Pembroke;Black_sable;Afghan_hound;Irish_terrier,Staffordshire_bullterrier,true,false,false
+UF043_face,UF043,hold,panel_face,face,1,Australian_terrier,Australian_terrier;Pembroke;beagle;Doberman;kelpie,Siberian_husky,true,false,false
+UF044_face,UF044,hold,panel_face,face,1,papillon,papillon;Chesapeake_Bay_retriever;bloodhound;affenpinscher;cairn,Labrador_retriever,true,false,false
+UF046_face,UF046,hold,panel_face,face,1,Afghan_hound,Afghan_hound;Pembroke;bloodhound;Chesapeake_Bay_retriever;soft_coated_wheaten_terrier,miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF047_face,UF047,hold,panel_face,face,1,Irish_terrier,Irish_terrier;Scotch_terrier;Gordon_setter;EntleBucher;vizsla,,false,false,false
+UF048_face,UF048,hold,panel_face,face,1,Newfoundland,Newfoundland;Australian_terrier;Boston_bull;Blenheim_spaniel;Saint_Bernard,Pomeranian; Yorkshire_terrier,true,false,false
+UF049_face,UF049,hold,panel_face,face,1,cairn,cairn;toy_poodle;Norwegian_elkhound;Shih_Tzu;vizsla,Pembroke,true,false,false
+UF051_face,UF051,hold,panel_face,face,1,American_Staffordshire_terrier,American_Staffordshire_terrier;Ibizan_hound;basenji;cairn;Samoyed,Irish_water_spaniel; wire_haired_fox_terrier,true,false,false
+UF052_face,UF052,hold,panel_face,face,1,Ibizan_hound,Ibizan_hound;Afghan_hound;Pembroke;Scotch_terrier;German_shepherd,,false,false,false
+UF053_face,UF053,hold,panel_face,face,1,cairn,cairn;Sussex_spaniel;American_Staffordshire_terrier;Scotch_terrier;Gordon_setter,Labrador_retriever; Weimaraner,true,false,false
+UF054_face,UF054,hold,panel_face,face,1,kelpie,kelpie;Samoyed;German_shepherd;American_Staffordshire_terrier;vizsla,,false,false,false
+UF055_face,UF055,hold,panel_face,face,1,briard,briard;EntleBucher;German_shepherd;Old_English_sheepdog;Norwegian_elkhound,Great_Dane; schipperke,true,false,false
+UF057_face,UF057,hold,panel_face,face,1,kelpie,kelpie;Samoyed;Airedale;briard;Irish_terrier,American_Staffordshire_terrier; Siberian_husky,true,false,false
+UF058_face,UF058,hold,panel_face,face,1,kelpie,kelpie;Scotch_terrier;Ibizan_hound;Norwegian_elkhound;Border_collie,EntleBucher; boxer,true,false,false
+UF060_face,UF060,hold,panel_face,face,1,Australian_Shepherd,Australian_Shepherd;cairn;Rhodesian_ridgeback;American_Staffordshire_terrier;Pomeranian,beagle,true,false,false
+UF062_face,UF062,hold,panel_face,face,1,golden_retriever,golden_retriever;Pembroke;kelpie;affenpinscher;English_springer,American_Staffordshire_terrier; Siberian_husky; chow,true,false,false
+UF063_face,UF063,hold,panel_face,face,1,Samoyed,Samoyed;Sussex_spaniel;American_Staffordshire_terrier;Pembroke;miniature_pinscher,,false,false,false
+UF064_face,UF064,hold,panel_face,face,1,Shih_Tzu,Shih_Tzu;Sussex_spaniel;affenpinscher;Newfoundland;Irish_terrier,,false,false,false
+UF065_face,UF065,hold,panel_face,face,1,golden_retriever,golden_retriever;Doberman;miniature_poodle;Fila Braziliero;whippet,redbone,true,false,false
+UF066_face,UF066,hold,panel_face,face,1,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;Chesapeake_Bay_retriever;Scotch_terrier;Rhodesian_ridgeback;standard_poodle,cocker_spaniel,true,false,false
+UF068_face,UF068,hold,panel_face,face,1,Shetland_sheepdog,Shetland_sheepdog;Irish_wolfhound;Pembroke;vizsla;Australian_terrier,American_Staffordshire_terrier; English_foxhound; French_bulldog; Walker_hound,true,false,false
+UF071_face,UF071,hold,panel_face,face,1,Newfoundland,Newfoundland;Cardigan;Chesapeake_Bay_retriever;Irish_terrier;Pembroke,Brittany_spaniel; Chinese_Crested_Dog; miniature_pinscher,true,false,false
+UF072_face,UF072,hold,panel_face,face,1,German_shepherd,German_shepherd;Pembroke;Irish_terrier;briard;English_springer,Saluki,true,false,false
+UF074_face,UF074,hold,panel_face,face,1,Ibizan_hound,Ibizan_hound;cairn;Australian_Shepherd;clumber;American_Staffordshire_terrier,beagle; boxer; toy_terrier,true,false,false
+UF079_face,UF079,hold,panel_face,face,1,American_Staffordshire_terrier,American_Staffordshire_terrier;Irish_terrier;Sussex_spaniel;Pembroke;Samoyed,Doberman,true,false,false
+UF081_face,UF081,hold,panel_face,face,1,Cardigan,Cardigan;miniature_pinscher;Chinese_Crested_Dog;Scotch_terrier;Pembroke,Chihuahua,true,false,false
+UF082_face,UF082,hold,panel_face,face,1,Shih_Tzu,Shih_Tzu;Airedale;vizsla;affenpinscher;papillon,,false,false,false
+UF083_face,UF083,hold,panel_face,face,1,whippet,whippet;German_short_haired_pointer;Pembroke;Irish_wolfhound;Great_Pyrenees,Italian_greyhound; boxer,true,false,false
+UF084_face,UF084,hold,panel_face,face,1,kelpie,kelpie;Chesapeake_Bay_retriever;Labrador_retriever;Dandie_Dinmont;Norwegian_elkhound,Weimaraner,true,false,false
+UF085_face,UF085,hold,panel_face,face,1,Airedale,Airedale;Leonberg;Shih_Tzu;Irish_setter;affenpinscher,,false,false,false
+UF088_face,UF088,hold,panel_face,face,1,kelpie,kelpie;Pembroke;vizsla;Shetland_sheepdog;Irish_wolfhound,Boston_bull,true,false,false
+UF089_face,UF089,hold,panel_face,face,1,affenpinscher,affenpinscher;Brittany_spaniel;kelpie;golden_retriever;vizsla,boxer,true,false,false
+UF093_face,UF093,hold,panel_face,face,1,German_shepherd,German_shepherd;Rhodesian_ridgeback;soft_coated_wheaten_terrier;Irish_terrier;wire_haired_fox_terrier,Weimaraner,true,false,false
+UF094_face,UF094,hold,panel_face,face,1,Pembroke,Pembroke;Irish_terrier;German_shepherd;briard;Shetland_sheepdog,golden_retriever; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF095_face,UF095,hold,panel_face,face,1,vizsla,vizsla;Irish_wolfhound;Scotch_terrier;kelpie;Pembroke,American_Staffordshire_terrier,true,false,false
+UF096_face,UF096,hold,panel_face,face,1,Pembroke,Pembroke;Irish_wolfhound;Doberman;briard;Norwegian_elkhound,American_Staffordshire_terrier,true,false,false
+UF098_face,UF098,hold,panel_face,face,1,Pembroke,Pembroke;golden_retriever;Doberman;Shetland_sheepdog;German_short_haired_pointer,Norwegian_elkhound,true,false,false
+UF099_face,UF099,hold,panel_face,face,1,briard,briard;Samoyed;American_Staffordshire_terrier;Pembroke;basenji,American_Staffordshire_terrier; collie,true,false,true
+UF100_face,UF100,hold,panel_face,face,1,cairn,cairn;Fila Braziliero;miniature_poodle;briard;Airedale,Japanese_Spitzes; Rottweiler,true,false,false
+UF101_face,UF101,hold,panel_face,face,1,cairn,cairn;Doberman;golden_retriever;Walker_hound;vizsla,curly_coated_retriever,true,false,false
+UF102_face,UF102,hold,panel_face,face,1,vizsla,vizsla;soft_coated_wheaten_terrier;wire_haired_fox_terrier;Pembroke;American_Staffordshire_terrier,golden_retriever,true,false,false
+UF104_face,UF104,hold,panel_face,face,1,Pembroke,Pembroke;German_shepherd;soft_coated_wheaten_terrier;Afghan_hound;Pomeranian,Labrador_retriever,true,false,false
+UF106_face,UF106,hold,panel_face,face,1,cairn,cairn;Leonberg;Newfoundland;English_springer;briard,Siberian_husky,true,false,false
+UF107_face,UF107,hold,panel_face,face,1,Samoyed,Samoyed;golden_retriever;Pembroke;Rhodesian_ridgeback;cairn,basset,true,false,false
+UF108_face,UF108,hold,panel_face,face,1,Irish_terrier,Irish_terrier;American_Staffordshire_terrier;German_shepherd;kelpie;Pembroke,American_Staffordshire_terrier; Shetland_sheepdog; Yorkshire_terrier,true,false,true
+UF109_face,UF109,hold,panel_face,face,1,miniature_poodle,miniature_poodle;Irish_terrier;Chinese_Crested_Dog;Fila Braziliero;American_Staffordshire_terrier,boxer,true,false,false
+UF111_face,UF111,hold,panel_face,face,1,kelpie,kelpie;American_Staffordshire_terrier;Samoyed;miniature_poodle;Ibizan_hound,American_Staffordshire_terrier; basset; chow; cocker_spaniel,true,false,true
+UF112_face,UF112,hold,panel_face,face,1,briard,briard;miniature_schnauzer;Samoyed;Pembroke;Irish_setter,German_short_haired_pointer; Labrador_retriever,true,false,false
+UF114_face,UF114,hold,panel_face,face,1,Shih_Tzu,Shih_Tzu;vizsla;malinois;briard;Saluki,chow; miniature_schnauzer,true,false,false
+UF115_face,UF115,hold,panel_face,face,1,vizsla,vizsla;Doberman;Australian_Shepherd;cairn;Fila Braziliero,English_foxhound; Shetland_sheepdog; Walker_hound; chow; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF116_face,UF116,hold,panel_face,face,1,English_springer,English_springer;miniature_poodle;Gordon_setter;Scotch_terrier;Pembroke,Scotch_terrier; chow,true,false,true
+UF117_face,UF117,hold,panel_face,face,1,Pembroke,Pembroke;kelpie;briard;German_shepherd;Irish_wolfhound,,false,false,false
+UF119_face,UF119,hold,panel_face,face,1,miniature_poodle,miniature_poodle;Saluki;Doberman;Great_Dane;wire_haired_fox_terrier,cocker_spaniel; groenendael,true,false,false
+UF001_body,UF001,dev,panel_body,body,1,Leonberg,Leonberg;Lhasa;vizsla;English_springer;English_foxhound,toy_terrier,true,false,false
+UF004_body,UF004,dev,panel_body,body,1,American_Staffordshire_terrier,American_Staffordshire_terrier;wire_haired_fox_terrier;Welsh_springer_spaniel;kuvasz;Ibizan_hound,Border_collie,true,false,false
+UF009_body,UF009,dev,panel_body,body,1,vizsla,vizsla;Great_Pyrenees;malinois;giant_schnauzer;Norwegian_elkhound,American_Staffordshire_terrier,true,false,false
+UF013_body,UF013,dev,panel_body,body,1,groenendael,groenendael;Rottweiler;Ibizan_hound;Chesapeake_Bay_retriever;black_and_tan_coonhound,German_shepherd; Staffordshire_bullterrier,true,false,false
+UF016_body,UF016,dev,panel_body,body,1,Norwegian_elkhound,Norwegian_elkhound;Maltese_dog;malamute;giant_schnauzer;American_Staffordshire_terrier,American_Staffordshire_terrier; Staffordshire_bullterrier,true,false,true
+UF018_body,UF018,dev,panel_body,body,1,Walker_hound,Walker_hound;Italian_greyhound;Maltese_dog;Norwegian_elkhound;black_and_tan_coonhound,Labrador_retriever,true,false,false
+UF030_body,UF030,dev,panel_body,body,1,Chinese_Crested_Dog,Chinese_Crested_Dog;Bichon_Frise;American_Staffordshire_terrier;Sussex_spaniel;Walker_hound,American_Staffordshire_terrier; French_bulldog,true,false,true
+UF038_body,UF038,dev,panel_body,body,1,Old_English_sheepdog,Old_English_sheepdog;giant_schnauzer;golden_retriever;Chesapeake_Bay_retriever;Ibizan_hound,cocker_spaniel,true,false,false
+UF041_body,UF041,dev,panel_body,body,1,silky_terrier,silky_terrier;Norwegian_elkhound;Ibizan_hound;Saluki;Chesapeake_Bay_retriever,Cane_Carso; Labrador_retriever; chow; miniature_pinscher,true,false,false
+UF059_body,UF059,dev,panel_body,body,1,Great_Pyrenees,Great_Pyrenees;giant_schnauzer;vizsla;redbone;whippet,American_Staffordshire_terrier,true,false,false
+UF061_body,UF061,dev,panel_body,body,1,silky_terrier,silky_terrier;Norwegian_elkhound;Chesapeake_Bay_retriever;Rottweiler;soft_coated_wheaten_terrier,Doberman,true,false,false
+UF067_body,UF067,dev,panel_body,body,1,whippet,whippet;vizsla;French_bulldog;giant_schnauzer;toy_terrier,Staffordshire_bullterrier,true,false,false
+UF069_body,UF069,dev,panel_body,body,1,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;silky_terrier;Chesapeake_Bay_retriever;Saluki;Ibizan_hound,Labrador_retriever,true,false,false
+UF073_body,UF073,dev,panel_body,body,1,Chinese_Crested_Dog,Chinese_Crested_Dog;Bichon_Frise;affenpinscher;German_shepherd;kelpie,American_Staffordshire_terrier,true,false,false
+UF076_body,UF076,dev,panel_body,body,1,English_springer,English_springer;cairn;Leonberg;Walker_hound;Shih_Tzu,,false,false,false
+UF077_body,UF077,dev,panel_body,body,1,English_springer,English_springer;Newfoundland;Leonberg;soft_coated_wheaten_terrier;Old_English_sheepdog,basset; golden_retriever,true,false,false
+UF092_body,UF092,dev,panel_body,body,1,wire_haired_fox_terrier,wire_haired_fox_terrier;silky_terrier;Chinese_Crested_Dog;Ibizan_hound;malamute,Border_collie,true,false,false
+UF097_body,UF097,dev,panel_body,body,1,giant_schnauzer,giant_schnauzer;Chesapeake_Bay_retriever;Mexican_hairless;Norwegian_elkhound;Maltese_dog,American_Staffordshire_terrier,true,false,false
+UF103_body,UF103,dev,panel_body,body,1,English_springer,English_springer;silky_terrier;Old_English_sheepdog;Great_Dane;Brittany_spaniel,Labrador_retriever; Tibetan_mastiff,true,false,false
+UF110_body,UF110,dev,panel_body,body,1,English_springer,English_springer;Ibizan_hound;Rhodesian_ridgeback;giant_schnauzer;kuvasz,Staffordshire_bullterrier,true,false,false
+UF002_body,UF002,hold,panel_body,body,1,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Saluki;giant_schnauzer;affenpinscher;Ibizan_hound,,false,false,false
+UF003_body,UF003,hold,panel_body,body,1,Norwegian_elkhound,Norwegian_elkhound;Saluki;Bichon_Frise;black_and_tan_coonhound;Irish_wolfhound,American_Staffordshire_terrier; Dandie_Dinmont; German_shepherd; Lhasa,true,false,false
+UF005_body,UF005,hold,panel_body,body,1,Great_Pyrenees,Great_Pyrenees;Lhasa;wire_haired_fox_terrier;Norwegian_elkhound;Rhodesian_ridgeback,Great_Pyrenees; miniature_pinscher,true,true,true
+UF006_body,UF006,hold,panel_body,body,1,cairn,cairn;silky_terrier;Great_Dane;German_short_haired_pointer;miniature_schnauzer,English_foxhound; Walker_hound; beagle,true,false,false
+UF007_body,UF007,hold,panel_body,body,1,affenpinscher,affenpinscher;Saluki;Norwegian_elkhound;Scotch_terrier;Chesapeake_Bay_retriever,Boston_bull; Irish_water_spaniel; Siberian_husky,true,false,false
+UF008_body,UF008,hold,panel_body,body,1,Great_Pyrenees,Great_Pyrenees;Chesapeake_Bay_retriever;Saluki;malinois;Norwegian_elkhound,boxer; malamute,true,false,false
+UF010_body,UF010,hold,panel_body,body,1,English_springer,English_springer;toy_poodle;cairn;Leonberg;vizsla,Japanese_Spitzes,true,false,false
+UF011_body,UF011,hold,panel_body,body,1,Shih_Tzu,Shih_Tzu;affenpinscher;Saluki;Ibizan_hound;black_and_tan_coonhound,American_Staffordshire_terrier,true,false,false
+UF012_body,UF012,hold,panel_body,body,1,English_springer,English_springer;cairn;Saluki;Chinese_Crested_Dog;Great_Dane,Labrador_retriever,true,false,false
+UF014_body,UF014,hold,panel_body,body,1,Lhasa,Lhasa;Shih_Tzu;Leonberg;Great_Pyrenees;wire_haired_fox_terrier,Australian_Shepherd; Japanese_Spitzes,true,false,false
+UF015_body,UF015,hold,panel_body,body,1,Leonberg,Leonberg;Norwegian_elkhound;giant_schnauzer;malamute;cairn,Siberian_husky,true,false,false
+UF017_body,UF017,hold,panel_body,body,1,wire_haired_fox_terrier,wire_haired_fox_terrier;Maltese_dog;malamute;Great_Dane;Ibizan_hound,Rottweiler,true,false,false
+UF020_body,UF020,hold,panel_body,body,1,Chinese_Crested_Dog,Chinese_Crested_Dog;Old_English_sheepdog;miniature_pinscher;Ibizan_hound;Bichon_Frise,Japanese_Spitzes,true,false,false
+UF022_body,UF022,hold,panel_body,body,1,Great_Pyrenees,Great_Pyrenees;black_and_tan_coonhound;Chinese_Crested_Dog;Scottish_deerhound;Cardigan,chow,true,false,false
+UF023_body,UF023,hold,panel_body,body,1,giant_schnauzer,giant_schnauzer;Bichon_Frise;Norwegian_elkhound;Chesapeake_Bay_retriever;wire_haired_fox_terrier,American_Staffordshire_terrier; boxer; soft_coated_wheaten_terrier,true,false,false
+UF024_body,UF024,hold,panel_body,body,1,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Saluki;toy_terrier;Scotch_terrier;kelpie,Chihuahua,true,false,false
+UF025_body,UF025,hold,panel_body,body,1,Great_Pyrenees,Great_Pyrenees;Ibizan_hound;Saluki;malamute;wire_haired_fox_terrier,Italian_greyhound,true,false,false
+UF026_body,UF026,hold,panel_body,body,1,toy_terrier,toy_terrier;collie;Scotch_terrier;Great_Pyrenees;black_and_tan_coonhound,German_shepherd,true,false,false
+UF028_body,UF028,hold,panel_body,body,1,wire_haired_fox_terrier,wire_haired_fox_terrier;Boston_bull;vizsla;Welsh_springer_spaniel;Newfoundland,boxer,true,false,false
+UF029_body,UF029,hold,panel_body,body,1,Chinese_Crested_Dog,Chinese_Crested_Dog;affenpinscher;Chesapeake_Bay_retriever;English_springer;Newfoundland,American_Staffordshire_terrier; Staffordshire_bullterrier; basset,true,false,false
+UF031_body,UF031,hold,panel_body,body,1,Australian_terrier,Australian_terrier;Shih_Tzu;beagle;Saluki;wire_haired_fox_terrier,Tibetan_mastiff,true,false,false
+UF033_body,UF033,hold,panel_body,body,1,affenpinscher,affenpinscher;Great_Pyrenees;Scotch_terrier;Saluki;German_shepherd,German_shepherd,true,false,true
+UF035_body,UF035,hold,panel_body,body,1,Shih_Tzu,Shih_Tzu;Australian_terrier;Old_English_sheepdog;Airedale;Boston_bull,chow,true,false,false
+UF036_body,UF036,hold,panel_body,body,1,giant_schnauzer,giant_schnauzer;affenpinscher;Scotch_terrier;standard_poodle;Old_English_sheepdog,Labrador_retriever; groenendael,true,false,false
+UF037_body,UF037,hold,panel_body,body,1,collie,collie;Bichon_Frise;Lhasa;Great_Pyrenees;malamute,bloodhound; boxer,true,false,false
+UF039_body,UF039,hold,panel_body,body,1,giant_schnauzer,giant_schnauzer;Norwegian_elkhound;Chesapeake_Bay_retriever;Brittany_spaniel;pug,English_foxhound; Walker_hound; bull_mastiff,true,false,false
+UF040_body,UF040,hold,panel_body,body,1,Ibizan_hound,Ibizan_hound;keeshond;wire_haired_fox_terrier;Fila Braziliero;silky_terrier,soft_coated_wheaten_terrier,true,false,false
+UF042_body,UF042,hold,panel_body,body,1,Black_sable,Black_sable;Great_Pyrenees;Norwegian_elkhound;malamute;keeshond,Staffordshire_bullterrier,true,false,false
+UF043_body,UF043,hold,panel_body,body,1,Saluki,Saluki;affenpinscher;Australian_terrier;German_short_haired_pointer;American_Staffordshire_terrier,Siberian_husky,true,false,false
+UF044_body,UF044,hold,panel_body,body,1,affenpinscher,affenpinscher;giant_schnauzer;soft_coated_wheaten_terrier;silky_terrier;Shih_Tzu,Labrador_retriever,true,false,false
+UF046_body,UF046,hold,panel_body,body,1,Great_Pyrenees,Great_Pyrenees;Chesapeake_Bay_retriever;malinois;affenpinscher;wire_haired_fox_terrier,miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF047_body,UF047,hold,panel_body,body,1,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;toy_terrier;German_short_haired_pointer;cairn;golden_retriever,,false,false,false
+UF048_body,UF048,hold,panel_body,body,1,Newfoundland,Newfoundland;Boston_bull;Australian_terrier;Shih_Tzu;English_springer,Pomeranian; Yorkshire_terrier,true,false,false
+UF049_body,UF049,hold,panel_body,body,1,English_springer,English_springer;cairn;malinois;Shih_Tzu;collie,Pembroke,true,false,false
+UF051_body,UF051,hold,panel_body,body,1,silky_terrier,silky_terrier;Ibizan_hound;Australian_Shepherd;Great_Pyrenees;Norwegian_elkhound,Irish_water_spaniel; wire_haired_fox_terrier,true,false,false
+UF052_body,UF052,hold,panel_body,body,1,Black_sable,Black_sable;beagle;Ibizan_hound;affenpinscher;silky_terrier,,false,false,false
+UF053_body,UF053,hold,panel_body,body,1,collie,collie;Sussex_spaniel;English_springer;Rhodesian_ridgeback;Great_Dane,Labrador_retriever; Weimaraner,true,false,false
+UF054_body,UF054,hold,panel_body,body,1,giant_schnauzer,giant_schnauzer;German_shepherd;Border_collie;kelpie;Brittany_spaniel,,false,false,false
+UF055_body,UF055,hold,panel_body,body,1,basenji,basenji;wire_haired_fox_terrier;Walker_hound;English_springer;Old_English_sheepdog,Great_Dane; schipperke,true,false,false
+UF057_body,UF057,hold,panel_body,body,1,silky_terrier,silky_terrier;Saluki;Norwegian_elkhound;Ibizan_hound;malamute,American_Staffordshire_terrier; Siberian_husky,true,false,false
+UF058_body,UF058,hold,panel_body,body,1,Ibizan_hound,Ibizan_hound;Black_sable;English_springer;malamute;Scotch_terrier,EntleBucher; boxer,true,false,false
+UF060_body,UF060,hold,panel_body,body,1,cairn,cairn;Old_English_sheepdog;Lhasa;malinois;German_short_haired_pointer,beagle,true,false,false
+UF062_body,UF062,hold,panel_body,body,1,English_foxhound,English_foxhound;affenpinscher;Chesapeake_Bay_retriever;Rottweiler;kelpie,American_Staffordshire_terrier; Siberian_husky; chow,true,false,false
+UF063_body,UF063,hold,panel_body,body,1,collie,collie;vizsla;English_springer;American_Staffordshire_terrier;silky_terrier,,false,false,false
+UF064_body,UF064,hold,panel_body,body,1,Newfoundland,Newfoundland;English_springer;Shih_Tzu;cairn;Walker_hound,,false,false,false
+UF065_body,UF065,hold,panel_body,body,1,Great_Pyrenees,Great_Pyrenees;collie;toy_terrier;silky_terrier;French_bulldog,redbone,true,false,false
+UF066_body,UF066,hold,panel_body,body,1,giant_schnauzer,giant_schnauzer;soft_coated_wheaten_terrier;wire_haired_fox_terrier;Ibizan_hound;Saluki,cocker_spaniel,true,false,false
+UF068_body,UF068,hold,panel_body,body,1,Walker_hound,Walker_hound;English_springer;vizsla;German_shepherd;silky_terrier,American_Staffordshire_terrier; English_foxhound; French_bulldog; Walker_hound,true,false,false
+UF071_body,UF071,hold,panel_body,body,1,Chinese_Crested_Dog,Chinese_Crested_Dog;Shiba_Dog;Scottish_deerhound;affenpinscher;Chesapeake_Bay_retriever,Brittany_spaniel; Chinese_Crested_Dog; miniature_pinscher,true,false,false
+UF072_body,UF072,hold,panel_body,body,1,English_springer,English_springer;Ibizan_hound;Great_Pyrenees;wire_haired_fox_terrier;German_shepherd,Saluki,true,false,false
+UF074_body,UF074,hold,panel_body,body,1,silky_terrier,silky_terrier;Ibizan_hound;giant_schnauzer;Maltese_dog;Australian_Shepherd,beagle; boxer; toy_terrier,true,false,false
+UF079_body,UF079,hold,panel_body,body,1,malamute,malamute;affenpinscher;German_shepherd;English_springer;Chinese_Crested_Dog,Doberman,true,false,false
+UF081_body,UF081,hold,panel_body,body,1,malinois,malinois;silky_terrier;Shih_Tzu;Chinese_Crested_Dog;Saluki,Chihuahua,true,false,false
+UF082_body,UF082,hold,panel_body,body,1,silky_terrier,silky_terrier;Saluki;wire_haired_fox_terrier;soft_coated_wheaten_terrier;affenpinscher,,false,false,false
+UF083_body,UF083,hold,panel_body,body,1,silky_terrier,silky_terrier;toy_terrier;English_springer;soft_coated_wheaten_terrier;Norwegian_elkhound,Italian_greyhound; boxer,true,false,false
+UF084_body,UF084,hold,panel_body,body,1,silky_terrier,silky_terrier;Saluki;giant_schnauzer;cairn;Chesapeake_Bay_retriever,Weimaraner,true,false,false
+UF085_body,UF085,hold,panel_body,body,1,pug,pug;Shih_Tzu;affenpinscher;Leonberg;wire_haired_fox_terrier,,false,false,false
+UF088_body,UF088,hold,panel_body,body,1,giant_schnauzer,giant_schnauzer;malamute;Chesapeake_Bay_retriever;silky_terrier;vizsla,Boston_bull,true,false,false
+UF089_body,UF089,hold,panel_body,body,1,giant_schnauzer,giant_schnauzer;silky_terrier;Chesapeake_Bay_retriever;soft_coated_wheaten_terrier;Brittany_spaniel,boxer,true,false,false
+UF093_body,UF093,hold,panel_body,body,1,wire_haired_fox_terrier,wire_haired_fox_terrier;soft_coated_wheaten_terrier;Maltese_dog;vizsla;Great_Pyrenees,Weimaraner,true,false,false
+UF094_body,UF094,hold,panel_body,body,1,English_springer,English_springer;German_shepherd;giant_schnauzer;wire_haired_fox_terrier;Bichon_Frise,golden_retriever; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF095_body,UF095,hold,panel_body,body,1,German_shepherd,German_shepherd;kelpie;Walker_hound;miniature_pinscher;affenpinscher,American_Staffordshire_terrier,true,false,false
+UF096_body,UF096,hold,panel_body,body,1,Norwegian_elkhound,Norwegian_elkhound;Scotch_terrier;keeshond;Saluki;malamute,American_Staffordshire_terrier,true,false,false
+UF098_body,UF098,hold,panel_body,body,1,vizsla,vizsla;black_and_tan_coonhound;English_springer;golden_retriever;silky_terrier,Norwegian_elkhound,true,false,false
+UF099_body,UF099,hold,panel_body,body,1,silky_terrier,silky_terrier;German_shepherd;Saluki;Great_Pyrenees;wire_haired_fox_terrier,American_Staffordshire_terrier; collie,true,false,false
+UF100_body,UF100,hold,panel_body,body,1,Saluki,Saluki;English_springer;Chinese_Crested_Dog;cairn;Doberman,Japanese_Spitzes; Rottweiler,true,false,false
+UF101_body,UF101,hold,panel_body,body,1,silky_terrier,silky_terrier;malinois;Newfoundland;soft_coated_wheaten_terrier;English_springer,curly_coated_retriever,true,false,false
+UF102_body,UF102,hold,panel_body,body,1,affenpinscher,affenpinscher;Lhasa;Saluki;wire_haired_fox_terrier;Ibizan_hound,golden_retriever,true,false,false
+UF104_body,UF104,hold,panel_body,body,1,cocker_spaniel,cocker_spaniel;Afghan_hound;wire_haired_fox_terrier;soft_coated_wheaten_terrier;Scotch_terrier,Labrador_retriever,true,false,false
+UF106_body,UF106,hold,panel_body,body,1,Newfoundland,Newfoundland;English_springer;Shih_Tzu;Kerry_blue_terrier;Saluki,Siberian_husky,true,false,false
+UF107_body,UF107,hold,panel_body,body,1,collie,collie;German_shepherd;Ibizan_hound;silky_terrier;Saluki,basset,true,false,false
+UF108_body,UF108,hold,panel_body,body,1,Ibizan_hound,Ibizan_hound;malamute;vizsla;Maltese_dog;cairn,American_Staffordshire_terrier; Shetland_sheepdog; Yorkshire_terrier,true,false,false
+UF109_body,UF109,hold,panel_body,body,1,Saluki,Saluki;collie;Sealyham_terrier;pug;silky_terrier,boxer,true,false,false
+UF111_body,UF111,hold,panel_body,body,1,Ibizan_hound,Ibizan_hound;Brabancon_griffo;redbone;English_foxhound;Rhodesian_ridgeback,American_Staffordshire_terrier; basset; chow; cocker_spaniel,true,false,false
+UF112_body,UF112,hold,panel_body,body,1,Ibizan_hound,Ibizan_hound;silky_terrier;English_springer;Irish_setter;German_shepherd,German_short_haired_pointer; Labrador_retriever,true,false,false
+UF114_body,UF114,hold,panel_body,body,1,Shih_Tzu,Shih_Tzu;English_springer;Saluki;cairn;Irish_setter,chow; miniature_schnauzer,true,false,false
+UF115_body,UF115,hold,panel_body,body,1,Leonberg,Leonberg;collie;English_springer;cairn;Bichon_Frise,English_foxhound; Shetland_sheepdog; Walker_hound; chow; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF116_body,UF116,hold,panel_body,body,1,Scotch_terrier,Scotch_terrier;English_springer;Shih_Tzu;Rhodesian_ridgeback;silky_terrier,Scotch_terrier; chow,true,true,true
+UF117_body,UF117,hold,panel_body,body,1,German_shepherd,German_shepherd;silky_terrier;Bichon_Frise;Brittany_spaniel;Boston_bull,,false,false,false
+UF119_body,UF119,hold,panel_body,body,1,Great_Dane,Great_Dane;Saluki;wire_haired_fox_terrier;Leonberg;Walker_hound,cocker_spaniel; groenendael,true,false,false
+UF001_face,UF001,dev,panel_face,face,2,kelpie,kelpie;wire_haired_fox_terrier;Saint_Bernard;Leonberg;Airedale,toy_terrier,true,false,false
+UF004_face,UF004,dev,panel_face,face,2,vizsla,vizsla;Cardigan;bluetick;Pembroke;Welsh_springer_spaniel,Border_collie,true,false,false
+UF009_face,UF009,dev,panel_face,face,2,Irish_wolfhound,Irish_wolfhound;vizsla;Irish_terrier;kelpie;bluetick,American_Staffordshire_terrier,true,false,false
+UF013_face,UF013,dev,panel_face,face,2,vizsla,vizsla;affenpinscher;briard;Ibizan_hound;toy_poodle,German_shepherd; Staffordshire_bullterrier,true,false,false
+UF016_face,UF016,dev,panel_face,face,2,American_Staffordshire_terrier,American_Staffordshire_terrier;Afghan_hound;Maltese_dog;Norwegian_elkhound;Irish_wolfhound,American_Staffordshire_terrier; Staffordshire_bullterrier,true,true,true
+UF018_face,UF018,dev,panel_face,face,2,Pembroke,Pembroke;Irish_wolfhound;briard;miniature_schnauzer;Walker_hound,Labrador_retriever,true,false,false
+UF030_face,UF030,dev,panel_face,face,2,American_Staffordshire_terrier,American_Staffordshire_terrier;Sussex_spaniel;Irish_wolfhound;Maltese_dog;cairn,American_Staffordshire_terrier; French_bulldog,true,true,true
+UF038_face,UF038,dev,panel_face,face,2,golden_retriever,golden_retriever;Brittany_spaniel;dingo;pug;Pembroke,cocker_spaniel,true,false,false
+UF041_face,UF041,dev,panel_face,face,2,Airedale,Airedale;miniature_poodle;briard;kelpie;Shetland_sheepdog,Cane_Carso; Labrador_retriever; chow; miniature_pinscher,true,false,false
+UF059_face,UF059,dev,panel_face,face,2,Scotch_terrier,Scotch_terrier;kelpie;EntleBucher;vizsla;Brittany_spaniel,American_Staffordshire_terrier,true,false,false
+UF061_face,UF061,dev,panel_face,face,2,EntleBucher,EntleBucher;Chesapeake_Bay_retriever;Rhodesian_ridgeback;soft_coated_wheaten_terrier;Norwegian_elkhound,Doberman,true,false,false
+UF067_face,UF067,dev,panel_face,face,2,EntleBucher,EntleBucher;kelpie;Irish_terrier;Old_English_sheepdog;miniature_poodle,Staffordshire_bullterrier,true,false,false
+UF069_face,UF069,dev,panel_face,face,2,affenpinscher,affenpinscher;Airedale;papillon;EntleBucher;Fila Braziliero,Labrador_retriever,true,false,false
+UF073_face,UF073,dev,panel_face,face,2,Sussex_spaniel,Sussex_spaniel;Scotch_terrier;Pembroke;German_shepherd;kelpie,American_Staffordshire_terrier,true,false,false
+UF076_face,UF076,dev,panel_face,face,2,cairn,cairn;Pembroke;soft_coated_wheaten_terrier;Dandie_Dinmont;Rhodesian_ridgeback,,false,false,false
+UF077_face,UF077,dev,panel_face,face,2,Leonberg,Leonberg;Airedale;Shetland_sheepdog;English_springer;briard,basset; golden_retriever,true,false,false
+UF092_face,UF092,dev,panel_face,face,2,American_Staffordshire_terrier,American_Staffordshire_terrier;Chinese_Crested_Dog;miniature_poodle;Pembroke;kelpie,Border_collie,true,false,false
+UF097_face,UF097,dev,panel_face,face,2,kelpie,kelpie;vizsla;EntleBucher;Scotch_terrier;Norwegian_elkhound,American_Staffordshire_terrier,true,false,false
+UF103_face,UF103,dev,panel_face,face,2,cairn,cairn;vizsla;Pembroke;briard;German_shepherd,Labrador_retriever; Tibetan_mastiff,true,false,false
+UF110_face,UF110,dev,panel_face,face,2,Sussex_spaniel,Sussex_spaniel;Pembroke;German_shepherd;Irish_terrier;Irish_wolfhound,Staffordshire_bullterrier,true,false,false
+UF002_face,UF002,hold,panel_face,face,2,affenpinscher,affenpinscher;Norwegian_elkhound;Airedale;Irish_wolfhound;German_short_haired_pointer,,false,false,false
+UF003_face,UF003,hold,panel_face,face,2,Irish_wolfhound,Irish_wolfhound;EntleBucher;English_springer;Norwegian_elkhound;Pembroke,American_Staffordshire_terrier; Dandie_Dinmont; German_shepherd; Lhasa,true,false,false
+UF005_face,UF005,hold,panel_face,face,2,Afghan_hound,Afghan_hound;Irish_wolfhound;Pomeranian;Australian_Shepherd;black_and_tan_coonhound,Great_Pyrenees; miniature_pinscher,true,false,false
+UF006_face,UF006,hold,panel_face,face,2,cairn,cairn;Pembroke;standard_poodle;Rhodesian_ridgeback;Shetland_sheepdog,English_foxhound; Walker_hound; beagle,true,false,false
+UF007_face,UF007,hold,panel_face,face,2,Scotch_terrier,Scotch_terrier;clumber;Gordon_setter;vizsla;kelpie,Boston_bull; Irish_water_spaniel; Siberian_husky,true,false,false
+UF008_face,UF008,hold,panel_face,face,2,Scotch_terrier,Scotch_terrier;Afghan_hound;Pembroke;briard;EntleBucher,boxer; malamute,true,false,false
+UF010_face,UF010,hold,panel_face,face,2,vizsla,vizsla;Australian_terrier;toy_poodle;malinois;Saint_Bernard,Japanese_Spitzes,true,false,false
+UF011_face,UF011,hold,panel_face,face,2,Newfoundland,Newfoundland;miniature_poodle;Ibizan_hound;soft_coated_wheaten_terrier;Shih_Tzu,American_Staffordshire_terrier,true,false,false
+UF012_face,UF012,hold,panel_face,face,2,Samoyed,Samoyed;Doberman;Sussex_spaniel;Irish_wolfhound;miniature_poodle,Labrador_retriever,true,false,false
+UF014_face,UF014,hold,panel_face,face,2,vizsla,vizsla;Maltese_dog;Australian_terrier;wire_haired_fox_terrier;Irish_wolfhound,Australian_Shepherd; Japanese_Spitzes,true,false,false
+UF015_face,UF015,hold,panel_face,face,2,Irish_wolfhound,Irish_wolfhound;cairn;pug;Shih_Tzu;clumber,Siberian_husky,true,false,false
+UF017_face,UF017,hold,panel_face,face,2,Saluki,Saluki;Pembroke;Irish_wolfhound;chow;kelpie,Rottweiler,true,false,false
+UF020_face,UF020,hold,panel_face,face,2,Irish_terrier,Irish_terrier;Fila Braziliero;Doberman;cairn;Ibizan_hound,Japanese_Spitzes,true,false,false
+UF022_face,UF022,hold,panel_face,face,2,Pembroke,Pembroke;miniature_pinscher;American_Staffordshire_terrier;Doberman;Norwegian_elkhound,chow,true,false,false
+UF023_face,UF023,hold,panel_face,face,2,vizsla,vizsla;Norwegian_elkhound;Maltese_dog;Gordon_setter;Sussex_spaniel,American_Staffordshire_terrier; boxer; soft_coated_wheaten_terrier,true,false,false
+UF024_face,UF024,hold,panel_face,face,2,Saluki,Saluki;Old_English_sheepdog;Chinese_Crested_Dog;briard;Irish_setter,Chihuahua,true,false,false
+UF025_face,UF025,hold,panel_face,face,2,Ibizan_hound,Ibizan_hound;Irish_wolfhound;Pembroke;briard;standard_poodle,Italian_greyhound,true,false,false
+UF026_face,UF026,hold,panel_face,face,2,English_springer,English_springer;Great_Pyrenees;Japanese_Spitzes;cairn;Yorkshire_terrier,German_shepherd,true,false,false
+UF028_face,UF028,hold,panel_face,face,2,Irish_terrier,Irish_terrier;American_Staffordshire_terrier;vizsla;English_springer;Afghan_hound,boxer,true,false,false
+UF029_face,UF029,hold,panel_face,face,2,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Irish_wolfhound;miniature_poodle;bluetick;Maltese_dog,American_Staffordshire_terrier; Staffordshire_bullterrier; basset,true,false,false
+UF031_face,UF031,hold,panel_face,face,2,Australian_terrier,Australian_terrier;Irish_terrier;briard;Walker_hound;dingo,Tibetan_mastiff,true,false,false
+UF033_face,UF033,hold,panel_face,face,2,papillon,papillon;toy_poodle;Maltese_dog;Scotch_terrier;cairn,German_shepherd,true,false,false
+UF035_face,UF035,hold,panel_face,face,2,cairn,cairn;kelpie;Walker_hound;Australian_terrier;Shih_Tzu,chow,true,false,false
+UF036_face,UF036,hold,panel_face,face,2,kelpie,kelpie;giant_schnauzer;Chesapeake_Bay_retriever;papillon;EntleBucher,Labrador_retriever; groenendael,true,false,false
+UF037_face,UF037,hold,panel_face,face,2,collie,collie;cairn;vizsla;Old_English_sheepdog;groenendael,bloodhound; boxer,true,false,false
+UF039_face,UF039,hold,panel_face,face,2,vizsla,vizsla;briard;cairn;miniature_pinscher;Ibizan_hound,English_foxhound; Walker_hound; bull_mastiff,true,false,false
+UF040_face,UF040,hold,panel_face,face,2,basenji,basenji;Old_English_sheepdog;Italian_greyhound;Chesapeake_Bay_retriever;Pembroke,soft_coated_wheaten_terrier,true,false,false
+UF042_face,UF042,hold,panel_face,face,2,American_Staffordshire_terrier,American_Staffordshire_terrier;Pembroke;Black_sable;Irish_terrier;Afghan_hound,Staffordshire_bullterrier,true,false,false
+UF043_face,UF043,hold,panel_face,face,2,Australian_terrier,Australian_terrier;beagle;Pembroke;kelpie;Doberman,Siberian_husky,true,false,false
+UF044_face,UF044,hold,panel_face,face,2,cairn,cairn;bloodhound;affenpinscher;Chesapeake_Bay_retriever;papillon,Labrador_retriever,true,false,false
+UF046_face,UF046,hold,panel_face,face,2,Afghan_hound,Afghan_hound;Pembroke;Chesapeake_Bay_retriever;Maltese_dog;EntleBucher,miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF047_face,UF047,hold,panel_face,face,2,Irish_terrier,Irish_terrier;Scotch_terrier;Gordon_setter;vizsla;briard,,false,false,false
+UF048_face,UF048,hold,panel_face,face,2,Newfoundland,Newfoundland;Australian_terrier;Boston_bull;affenpinscher;soft_coated_wheaten_terrier,Pomeranian; Yorkshire_terrier,true,false,false
+UF049_face,UF049,hold,panel_face,face,2,cairn,cairn;toy_poodle;vizsla;Shih_Tzu;collie,Pembroke,true,false,false
+UF051_face,UF051,hold,panel_face,face,2,American_Staffordshire_terrier,American_Staffordshire_terrier;Ibizan_hound;cairn;Brabancon_griffo;basenji,Irish_water_spaniel; wire_haired_fox_terrier,true,false,false
+UF052_face,UF052,hold,panel_face,face,2,Ibizan_hound,Ibizan_hound;Afghan_hound;Pembroke;Scotch_terrier;German_shepherd,,false,false,false
+UF053_face,UF053,hold,panel_face,face,2,cairn,cairn;Sussex_spaniel;Walker_hound;Shetland_sheepdog;Scotch_terrier,Labrador_retriever; Weimaraner,true,false,false
+UF054_face,UF054,hold,panel_face,face,2,kelpie,kelpie;pug;Samoyed;Rhodesian_ridgeback;vizsla,,false,false,false
+UF055_face,UF055,hold,panel_face,face,2,EntleBucher,EntleBucher;briard;Airedale;Gordon_setter;Norwegian_elkhound,Great_Dane; schipperke,true,false,false
+UF057_face,UF057,hold,panel_face,face,2,kelpie,kelpie;Airedale;Samoyed;briard;Irish_terrier,American_Staffordshire_terrier; Siberian_husky,true,false,false
+UF058_face,UF058,hold,panel_face,face,2,kelpie,kelpie;Scotch_terrier;Norwegian_elkhound;Sussex_spaniel;Border_collie,EntleBucher; boxer,true,false,false
+UF060_face,UF060,hold,panel_face,face,2,Australian_Shepherd,Australian_Shepherd;cairn;Rhodesian_ridgeback;Sussex_spaniel;American_Staffordshire_terrier,beagle,true,false,false
+UF062_face,UF062,hold,panel_face,face,2,golden_retriever,golden_retriever;kelpie;Shih_Tzu;Pembroke;affenpinscher,American_Staffordshire_terrier; Siberian_husky; chow,true,false,false
+UF063_face,UF063,hold,panel_face,face,2,Sussex_spaniel,Sussex_spaniel;Samoyed;Maltese_dog;American_Staffordshire_terrier;Pembroke,,false,false,false
+UF064_face,UF064,hold,panel_face,face,2,Shih_Tzu,Shih_Tzu;Sussex_spaniel;affenpinscher;Newfoundland;malinois,,false,false,false
+UF065_face,UF065,hold,panel_face,face,2,golden_retriever,golden_retriever;vizsla;miniature_poodle;whippet;Doberman,redbone,true,false,false
+UF066_face,UF066,hold,panel_face,face,2,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;Chesapeake_Bay_retriever;Rhodesian_ridgeback;French_bulldog;Scotch_terrier,cocker_spaniel,true,false,false
+UF068_face,UF068,hold,panel_face,face,2,Shetland_sheepdog,Shetland_sheepdog;vizsla;Irish_wolfhound;Pembroke;Walker_hound,American_Staffordshire_terrier; English_foxhound; French_bulldog; Walker_hound,true,false,false
+UF071_face,UF071,hold,panel_face,face,2,Newfoundland,Newfoundland;Cardigan;briard;Chesapeake_Bay_retriever;Irish_terrier,Brittany_spaniel; Chinese_Crested_Dog; miniature_pinscher,true,false,false
+UF072_face,UF072,hold,panel_face,face,2,German_shepherd,German_shepherd;Irish_terrier;briard;Pembroke;Sussex_spaniel,Saluki,true,false,false
+UF074_face,UF074,hold,panel_face,face,2,cairn,cairn;clumber;Ibizan_hound;miniature_schnauzer;Australian_Shepherd,beagle; boxer; toy_terrier,true,false,false
+UF079_face,UF079,hold,panel_face,face,2,American_Staffordshire_terrier,American_Staffordshire_terrier;Sussex_spaniel;Irish_terrier;Pembroke;cairn,Doberman,true,false,false
+UF081_face,UF081,hold,panel_face,face,2,Cardigan,Cardigan;miniature_pinscher;Scotch_terrier;American_Staffordshire_terrier;Chinese_Crested_Dog,Chihuahua,true,false,false
+UF082_face,UF082,hold,panel_face,face,2,Shih_Tzu,Shih_Tzu;Airedale;vizsla;affenpinscher;English_springer,,false,false,false
+UF083_face,UF083,hold,panel_face,face,2,whippet,whippet;Irish_terrier;Irish_wolfhound;German_short_haired_pointer;Pembroke,Italian_greyhound; boxer,true,false,false
+UF084_face,UF084,hold,panel_face,face,2,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;kelpie;Labrador_retriever;cairn;Dandie_Dinmont,Weimaraner,true,false,false
+UF085_face,UF085,hold,panel_face,face,2,Airedale,Airedale;Shih_Tzu;Leonberg;Irish_setter;English_springer,,false,false,false
+UF088_face,UF088,hold,panel_face,face,2,kelpie,kelpie;vizsla;Pembroke;Shetland_sheepdog;Irish_wolfhound,Boston_bull,true,false,false
+UF089_face,UF089,hold,panel_face,face,2,affenpinscher,affenpinscher;Brittany_spaniel;golden_retriever;vizsla;kelpie,boxer,true,false,false
+UF093_face,UF093,hold,panel_face,face,2,German_shepherd,German_shepherd;Rhodesian_ridgeback;soft_coated_wheaten_terrier;Irish_terrier;wire_haired_fox_terrier,Weimaraner,true,false,false
+UF094_face,UF094,hold,panel_face,face,2,Pembroke,Pembroke;Irish_terrier;briard;Shetland_sheepdog;Sussex_spaniel,golden_retriever; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF095_face,UF095,hold,panel_face,face,2,vizsla,vizsla;Irish_wolfhound;kelpie;Scotch_terrier;Pembroke,American_Staffordshire_terrier,true,false,false
+UF096_face,UF096,hold,panel_face,face,2,Irish_wolfhound,Irish_wolfhound;Pembroke;Airedale;briard;Norwegian_elkhound,American_Staffordshire_terrier,true,false,false
+UF098_face,UF098,hold,panel_face,face,2,Pembroke,Pembroke;golden_retriever;Doberman;Shetland_sheepdog;EntleBucher,Norwegian_elkhound,true,false,false
+UF099_face,UF099,hold,panel_face,face,2,briard,briard;Samoyed;American_Staffordshire_terrier;Pembroke;basenji,American_Staffordshire_terrier; collie,true,false,true
+UF100_face,UF100,hold,panel_face,face,2,cairn,cairn;Fila Braziliero;briard;miniature_poodle;Airedale,Japanese_Spitzes; Rottweiler,true,false,false
+UF101_face,UF101,hold,panel_face,face,2,cairn,cairn;Walker_hound;Doberman;vizsla;golden_retriever,curly_coated_retriever,true,false,false
+UF102_face,UF102,hold,panel_face,face,2,vizsla,vizsla;soft_coated_wheaten_terrier;wire_haired_fox_terrier;American_Staffordshire_terrier;Australian_terrier,golden_retriever,true,false,false
+UF104_face,UF104,hold,panel_face,face,2,Afghan_hound,Afghan_hound;German_shepherd;soft_coated_wheaten_terrier;Pembroke;Great_Dane,Labrador_retriever,true,false,false
+UF106_face,UF106,hold,panel_face,face,2,cairn,cairn;Leonberg;Newfoundland;briard;English_springer,Siberian_husky,true,false,false
+UF107_face,UF107,hold,panel_face,face,2,Samoyed,Samoyed;cairn;golden_retriever;Dandie_Dinmont;Pembroke,basset,true,false,false
+UF108_face,UF108,hold,panel_face,face,2,Irish_terrier,Irish_terrier;American_Staffordshire_terrier;kelpie;German_shepherd;Maltese_dog,American_Staffordshire_terrier; Shetland_sheepdog; Yorkshire_terrier,true,false,true
+UF109_face,UF109,hold,panel_face,face,2,miniature_poodle,miniature_poodle;Irish_terrier;Chinese_Crested_Dog;American_Staffordshire_terrier;Fila Braziliero,boxer,true,false,false
+UF111_face,UF111,hold,panel_face,face,2,kelpie,kelpie;Ibizan_hound;Samoyed;American_Staffordshire_terrier;miniature_poodle,American_Staffordshire_terrier; basset; chow; cocker_spaniel,true,false,true
+UF112_face,UF112,hold,panel_face,face,2,briard,briard;miniature_schnauzer;Dandie_Dinmont;Samoyed;Irish_setter,German_short_haired_pointer; Labrador_retriever,true,false,false
+UF114_face,UF114,hold,panel_face,face,2,Shih_Tzu,Shih_Tzu;vizsla;malinois;briard;Newfoundland,chow; miniature_schnauzer,true,false,false
+UF115_face,UF115,hold,panel_face,face,2,vizsla,vizsla;Doberman;cairn;Australian_Shepherd;Great_Pyrenees,English_foxhound; Shetland_sheepdog; Walker_hound; chow; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF116_face,UF116,hold,panel_face,face,2,miniature_poodle,miniature_poodle;English_springer;Gordon_setter;Scotch_terrier;Fila Braziliero,Scotch_terrier; chow,true,false,true
+UF117_face,UF117,hold,panel_face,face,2,Pembroke,Pembroke;kelpie;briard;Irish_wolfhound;German_shepherd,,false,false,false
+UF119_face,UF119,hold,panel_face,face,2,Saluki,Saluki;miniature_poodle;Great_Dane;Doberman;wire_haired_fox_terrier,cocker_spaniel; groenendael,true,false,false
+UF001_body,UF001,dev,panel_body,body,2,Leonberg,Leonberg;Lhasa;vizsla;English_foxhound;wire_haired_fox_terrier,toy_terrier,true,false,false
+UF004_body,UF004,dev,panel_body,body,2,American_Staffordshire_terrier,American_Staffordshire_terrier;Welsh_springer_spaniel;wire_haired_fox_terrier;Fila Braziliero;kuvasz,Border_collie,true,false,false
+UF009_body,UF009,dev,panel_body,body,2,vizsla,vizsla;Great_Pyrenees;Norwegian_elkhound;giant_schnauzer;malinois,American_Staffordshire_terrier,true,false,false
+UF013_body,UF013,dev,panel_body,body,2,Rottweiler,Rottweiler;groenendael;Chesapeake_Bay_retriever;Ibizan_hound;black_and_tan_coonhound,German_shepherd; Staffordshire_bullterrier,true,false,false
+UF016_body,UF016,dev,panel_body,body,2,Norwegian_elkhound,Norwegian_elkhound;malamute;Maltese_dog;Walker_hound;giant_schnauzer,American_Staffordshire_terrier; Staffordshire_bullterrier,true,false,false
+UF018_body,UF018,dev,panel_body,body,2,Italian_greyhound,Italian_greyhound;Walker_hound;Maltese_dog;Irish_wolfhound;Norwegian_elkhound,Labrador_retriever,true,false,false
+UF030_body,UF030,dev,panel_body,body,2,Walker_hound,Walker_hound;Chinese_Crested_Dog;giant_schnauzer;Sussex_spaniel;Bichon_Frise,American_Staffordshire_terrier; French_bulldog,true,false,false
+UF038_body,UF038,dev,panel_body,body,2,Old_English_sheepdog,Old_English_sheepdog;giant_schnauzer;Chesapeake_Bay_retriever;golden_retriever;Ibizan_hound,cocker_spaniel,true,false,false
+UF041_body,UF041,dev,panel_body,body,2,silky_terrier,silky_terrier;Norwegian_elkhound;Chesapeake_Bay_retriever;Saluki;Ibizan_hound,Cane_Carso; Labrador_retriever; chow; miniature_pinscher,true,false,false
+UF059_body,UF059,dev,panel_body,body,2,giant_schnauzer,giant_schnauzer;Great_Pyrenees;vizsla;Chesapeake_Bay_retriever;toy_terrier,American_Staffordshire_terrier,true,false,false
+UF061_body,UF061,dev,panel_body,body,2,Norwegian_elkhound,Norwegian_elkhound;silky_terrier;Chesapeake_Bay_retriever;Rottweiler;soft_coated_wheaten_terrier,Doberman,true,false,false
+UF067_body,UF067,dev,panel_body,body,2,French_bulldog,French_bulldog;whippet;vizsla;toy_terrier;chow,Staffordshire_bullterrier,true,false,false
+UF069_body,UF069,dev,panel_body,body,2,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;Chesapeake_Bay_retriever;silky_terrier;Saluki;Norwegian_elkhound,Labrador_retriever,true,false,false
+UF073_body,UF073,dev,panel_body,body,2,Chinese_Crested_Dog,Chinese_Crested_Dog;Bichon_Frise;affenpinscher;German_shepherd;kelpie,American_Staffordshire_terrier,true,false,false
+UF076_body,UF076,dev,panel_body,body,2,cairn,cairn;English_springer;Walker_hound;Rottweiler;Leonberg,,false,false,false
+UF077_body,UF077,dev,panel_body,body,2,English_springer,English_springer;Newfoundland;Irish_setter;Old_English_sheepdog;Cane_Carso,basset; golden_retriever,true,false,false
+UF092_body,UF092,dev,panel_body,body,2,Chinese_Crested_Dog,Chinese_Crested_Dog;wire_haired_fox_terrier;malamute;Ibizan_hound;silky_terrier,Border_collie,true,false,false
+UF097_body,UF097,dev,panel_body,body,2,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;giant_schnauzer;Norwegian_elkhound;EntleBucher;Mexican_hairless,American_Staffordshire_terrier,true,false,false
+UF103_body,UF103,dev,panel_body,body,2,Old_English_sheepdog,Old_English_sheepdog;silky_terrier;English_springer;Great_Dane;Brittany_spaniel,Labrador_retriever; Tibetan_mastiff,true,false,false
+UF110_body,UF110,dev,panel_body,body,2,giant_schnauzer,giant_schnauzer;Rhodesian_ridgeback;Ibizan_hound;English_springer;collie,Staffordshire_bullterrier,true,false,false
+UF002_body,UF002,hold,panel_body,body,2,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;giant_schnauzer;Saluki;affenpinscher;Bernese_mountain_dog,,false,false,false
+UF003_body,UF003,hold,panel_body,body,2,Norwegian_elkhound,Norwegian_elkhound;Saluki;Irish_wolfhound;Bichon_Frise;black_and_tan_coonhound,American_Staffordshire_terrier; Dandie_Dinmont; German_shepherd; Lhasa,true,false,false
+UF005_body,UF005,hold,panel_body,body,2,Lhasa,Lhasa;Great_Pyrenees;wire_haired_fox_terrier;Norwegian_elkhound;Afghan_hound,Great_Pyrenees; miniature_pinscher,true,false,true
+UF006_body,UF006,hold,panel_body,body,2,cairn,cairn;German_short_haired_pointer;miniature_schnauzer;Welsh_springer_spaniel;silky_terrier,English_foxhound; Walker_hound; beagle,true,false,false
+UF007_body,UF007,hold,panel_body,body,2,affenpinscher,affenpinscher;Saluki;Chesapeake_Bay_retriever;Norwegian_elkhound;Scotch_terrier,Boston_bull; Irish_water_spaniel; Siberian_husky,true,false,false
+UF008_body,UF008,hold,panel_body,body,2,Great_Pyrenees,Great_Pyrenees;Chesapeake_Bay_retriever;Norwegian_elkhound;malinois;toy_terrier,boxer; malamute,true,false,false
+UF010_body,UF010,hold,panel_body,body,2,English_springer,English_springer;toy_poodle;vizsla;cairn;Leonberg,Japanese_Spitzes,true,false,false
+UF011_body,UF011,hold,panel_body,body,2,Shih_Tzu,Shih_Tzu;affenpinscher;Saluki;black_and_tan_coonhound;Ibizan_hound,American_Staffordshire_terrier,true,false,false
+UF012_body,UF012,hold,panel_body,body,2,English_springer,English_springer;cairn;Great_Dane;Chinese_Crested_Dog;Saluki,Labrador_retriever,true,false,false
+UF014_body,UF014,hold,panel_body,body,2,Lhasa,Lhasa;Shih_Tzu;Leonberg;Great_Pyrenees;Norwegian_elkhound,Australian_Shepherd; Japanese_Spitzes,true,false,false
+UF015_body,UF015,hold,panel_body,body,2,Leonberg,Leonberg;Norwegian_elkhound;giant_schnauzer;cairn;malamute,Siberian_husky,true,false,false
+UF017_body,UF017,hold,panel_body,body,2,malamute,malamute;Great_Dane;Maltese_dog;wire_haired_fox_terrier;Norwegian_elkhound,Rottweiler,true,false,false
+UF020_body,UF020,hold,panel_body,body,2,Chinese_Crested_Dog,Chinese_Crested_Dog;Old_English_sheepdog;miniature_pinscher;Ibizan_hound;malinois,Japanese_Spitzes,true,false,false
+UF022_body,UF022,hold,panel_body,body,2,Great_Pyrenees,Great_Pyrenees;Chinese_Crested_Dog;black_and_tan_coonhound;Scottish_deerhound;American_Staffordshire_terrier,chow,true,false,false
+UF023_body,UF023,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;Norwegian_elkhound;Chesapeake_Bay_retriever;Bichon_Frise;collie,American_Staffordshire_terrier; boxer; soft_coated_wheaten_terrier,true,false,false
+UF024_body,UF024,hold,panel_body,body,2,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Saluki;toy_terrier;Scotch_terrier;French_bulldog,Chihuahua,true,false,false
+UF025_body,UF025,hold,panel_body,body,2,Great_Pyrenees,Great_Pyrenees;malamute;Ibizan_hound;Saluki;whippet,Italian_greyhound,true,false,false
+UF026_body,UF026,hold,panel_body,body,2,toy_terrier,toy_terrier;collie;Scotch_terrier;Great_Pyrenees;Saluki,German_shepherd,true,false,false
+UF028_body,UF028,hold,panel_body,body,2,wire_haired_fox_terrier,wire_haired_fox_terrier;Welsh_springer_spaniel;Newfoundland;Boston_bull;Sealyham_terrier,boxer,true,false,false
+UF029_body,UF029,hold,panel_body,body,2,affenpinscher,affenpinscher;Chinese_Crested_Dog;Chesapeake_Bay_retriever;miniature_pinscher;Newfoundland,American_Staffordshire_terrier; Staffordshire_bullterrier; basset,true,false,false
+UF031_body,UF031,hold,panel_body,body,2,Australian_terrier,Australian_terrier;Shih_Tzu;beagle;Saluki;wire_haired_fox_terrier,Tibetan_mastiff,true,false,false
+UF033_body,UF033,hold,panel_body,body,2,affenpinscher,affenpinscher;Great_Pyrenees;Scotch_terrier;Saluki;Chesapeake_Bay_retriever,German_shepherd,true,false,false
+UF035_body,UF035,hold,panel_body,body,2,Shih_Tzu,Shih_Tzu;Australian_terrier;Old_English_sheepdog;beagle;Airedale,chow,true,false,false
+UF036_body,UF036,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;standard_poodle;affenpinscher;Scotch_terrier;Old_English_sheepdog,Labrador_retriever; groenendael,true,false,false
+UF037_body,UF037,hold,panel_body,body,2,collie,collie;Bichon_Frise;Lhasa;Great_Pyrenees;malamute,bloodhound; boxer,true,false,false
+UF039_body,UF039,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;Norwegian_elkhound;Chesapeake_Bay_retriever;pug;Lhasa,English_foxhound; Walker_hound; bull_mastiff,true,false,false
+UF040_body,UF040,hold,panel_body,body,2,Ibizan_hound,Ibizan_hound;keeshond;Fila Braziliero;silky_terrier;wire_haired_fox_terrier,soft_coated_wheaten_terrier,true,false,false
+UF042_body,UF042,hold,panel_body,body,2,malamute,malamute;Great_Pyrenees;Norwegian_elkhound;Black_sable;giant_schnauzer,Staffordshire_bullterrier,true,false,false
+UF043_body,UF043,hold,panel_body,body,2,Saluki,Saluki;Australian_terrier;affenpinscher;American_Staffordshire_terrier;German_short_haired_pointer,Siberian_husky,true,false,false
+UF044_body,UF044,hold,panel_body,body,2,affenpinscher,affenpinscher;giant_schnauzer;soft_coated_wheaten_terrier;silky_terrier;Pomeranian,Labrador_retriever,true,false,false
+UF046_body,UF046,hold,panel_body,body,2,Great_Pyrenees,Great_Pyrenees;Chesapeake_Bay_retriever;malinois;affenpinscher;wire_haired_fox_terrier,miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF047_body,UF047,hold,panel_body,body,2,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;toy_terrier;cairn;English_springer;German_short_haired_pointer,,false,false,false
+UF048_body,UF048,hold,panel_body,body,2,Newfoundland,Newfoundland;Boston_bull;Australian_terrier;Shih_Tzu;English_springer,Pomeranian; Yorkshire_terrier,true,false,false
+UF049_body,UF049,hold,panel_body,body,2,English_springer,English_springer;cairn;malinois;Shih_Tzu;collie,Pembroke,true,false,false
+UF051_body,UF051,hold,panel_body,body,2,silky_terrier,silky_terrier;Ibizan_hound;Australian_Shepherd;pug;Norwegian_elkhound,Irish_water_spaniel; wire_haired_fox_terrier,true,false,false
+UF052_body,UF052,hold,panel_body,body,2,Black_sable,Black_sable;beagle;Ibizan_hound;keeshond;affenpinscher,,false,false,false
+UF053_body,UF053,hold,panel_body,body,2,collie,collie;Sussex_spaniel;Rhodesian_ridgeback;Black_sable;cairn,Labrador_retriever; Weimaraner,true,false,false
+UF054_body,UF054,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;German_shepherd;kelpie;Brittany_spaniel;Border_collie,,false,false,false
+UF055_body,UF055,hold,panel_body,body,2,Walker_hound,Walker_hound;wire_haired_fox_terrier;English_springer;kelpie;Old_English_sheepdog,Great_Dane; schipperke,true,false,false
+UF057_body,UF057,hold,panel_body,body,2,silky_terrier,silky_terrier;Saluki;Norwegian_elkhound;Ibizan_hound;Chesapeake_Bay_retriever,American_Staffordshire_terrier; Siberian_husky,true,false,false
+UF058_body,UF058,hold,panel_body,body,2,Ibizan_hound,Ibizan_hound;malamute;Black_sable;English_springer;Scotch_terrier,EntleBucher; boxer,true,false,false
+UF060_body,UF060,hold,panel_body,body,2,cairn,cairn;Old_English_sheepdog;malinois;Lhasa;German_short_haired_pointer,beagle,true,false,false
+UF062_body,UF062,hold,panel_body,body,2,English_foxhound,English_foxhound;Chesapeake_Bay_retriever;Rottweiler;affenpinscher;French_bulldog,American_Staffordshire_terrier; Siberian_husky; chow,true,false,false
+UF063_body,UF063,hold,panel_body,body,2,collie,collie;vizsla;English_springer;giant_schnauzer;American_Staffordshire_terrier,,false,false,false
+UF064_body,UF064,hold,panel_body,body,2,Newfoundland,Newfoundland;English_springer;Shih_Tzu;cairn;Old_English_sheepdog,,false,false,false
+UF065_body,UF065,hold,panel_body,body,2,toy_terrier,toy_terrier;Great_Pyrenees;collie;French_bulldog;golden_retriever,redbone,true,false,false
+UF066_body,UF066,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;Chesapeake_Bay_retriever;soft_coated_wheaten_terrier;wire_haired_fox_terrier;Ibizan_hound,cocker_spaniel,true,false,false
+UF068_body,UF068,hold,panel_body,body,2,Walker_hound,Walker_hound;English_springer;vizsla;German_shepherd;Rottweiler,American_Staffordshire_terrier; English_foxhound; French_bulldog; Walker_hound,true,false,false
+UF071_body,UF071,hold,panel_body,body,2,Chinese_Crested_Dog,Chinese_Crested_Dog;Shiba_Dog;Scottish_deerhound;Mexican_hairless;affenpinscher,Brittany_spaniel; Chinese_Crested_Dog; miniature_pinscher,true,false,false
+UF072_body,UF072,hold,panel_body,body,2,English_springer,English_springer;Ibizan_hound;Great_Pyrenees;Rhodesian_ridgeback;giant_schnauzer,Saluki,true,false,false
+UF074_body,UF074,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;silky_terrier;Ibizan_hound;malamute;Australian_Shepherd,beagle; boxer; toy_terrier,true,false,false
+UF079_body,UF079,hold,panel_body,body,2,malamute,malamute;affenpinscher;English_springer;German_shepherd;American_Staffordshire_terrier,Doberman,true,false,false
+UF081_body,UF081,hold,panel_body,body,2,malinois,malinois;silky_terrier;Shih_Tzu;giant_schnauzer;Saluki,Chihuahua,true,false,false
+UF082_body,UF082,hold,panel_body,body,2,Saluki,Saluki;wire_haired_fox_terrier;silky_terrier;soft_coated_wheaten_terrier;pug,,false,false,false
+UF083_body,UF083,hold,panel_body,body,2,toy_terrier,toy_terrier;Norwegian_elkhound;English_springer;silky_terrier;soft_coated_wheaten_terrier,Italian_greyhound; boxer,true,false,false
+UF084_body,UF084,hold,panel_body,body,2,Saluki,Saluki;silky_terrier;giant_schnauzer;cairn;Rottweiler,Weimaraner,true,false,false
+UF085_body,UF085,hold,panel_body,body,2,pug,pug;Shih_Tzu;affenpinscher;Leonberg;Australian_terrier,,false,false,false
+UF088_body,UF088,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;malamute;Chesapeake_Bay_retriever;vizsla;Norwegian_elkhound,Boston_bull,true,false,false
+UF089_body,UF089,hold,panel_body,body,2,giant_schnauzer,giant_schnauzer;Chesapeake_Bay_retriever;soft_coated_wheaten_terrier;French_bulldog;silky_terrier,boxer,true,false,false
+UF093_body,UF093,hold,panel_body,body,2,wire_haired_fox_terrier,wire_haired_fox_terrier;soft_coated_wheaten_terrier;vizsla;Sealyham_terrier;Afghan_hound,Weimaraner,true,false,false
+UF094_body,UF094,hold,panel_body,body,2,English_springer,English_springer;German_shepherd;giant_schnauzer;Bichon_Frise;Rottweiler,golden_retriever; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF095_body,UF095,hold,panel_body,body,2,German_shepherd,German_shepherd;Walker_hound;kelpie;miniature_pinscher;malamute,American_Staffordshire_terrier,true,false,false
+UF096_body,UF096,hold,panel_body,body,2,Norwegian_elkhound,Norwegian_elkhound;malamute;Scotch_terrier;keeshond;Saluki,American_Staffordshire_terrier,true,false,false
+UF098_body,UF098,hold,panel_body,body,2,vizsla,vizsla;English_springer;toy_terrier;black_and_tan_coonhound;Norwegian_elkhound,Norwegian_elkhound,true,false,true
+UF099_body,UF099,hold,panel_body,body,2,Saluki,Saluki;silky_terrier;German_shepherd;Great_Pyrenees;wire_haired_fox_terrier,American_Staffordshire_terrier; collie,true,false,false
+UF100_body,UF100,hold,panel_body,body,2,Saluki,Saluki;English_springer;Chinese_Crested_Dog;cairn;miniature_pinscher,Japanese_Spitzes; Rottweiler,true,false,false
+UF101_body,UF101,hold,panel_body,body,2,malinois,malinois;silky_terrier;Newfoundland;soft_coated_wheaten_terrier;collie,curly_coated_retriever,true,false,false
+UF102_body,UF102,hold,panel_body,body,2,affenpinscher,affenpinscher;Lhasa;Ibizan_hound;Saluki;wire_haired_fox_terrier,golden_retriever,true,false,false
+UF104_body,UF104,hold,panel_body,body,2,Afghan_hound,Afghan_hound;wire_haired_fox_terrier;soft_coated_wheaten_terrier;Scotch_terrier;cocker_spaniel,Labrador_retriever,true,false,false
+UF106_body,UF106,hold,panel_body,body,2,Newfoundland,Newfoundland;English_springer;Shih_Tzu;Australian_terrier;Saluki,Siberian_husky,true,false,false
+UF107_body,UF107,hold,panel_body,body,2,collie,collie;Ibizan_hound;German_shepherd;silky_terrier;Saluki,basset,true,false,false
+UF108_body,UF108,hold,panel_body,body,2,malamute,malamute;Ibizan_hound;vizsla;cairn;Maltese_dog,American_Staffordshire_terrier; Shetland_sheepdog; Yorkshire_terrier,true,false,false
+UF109_body,UF109,hold,panel_body,body,2,Saluki,Saluki;pug;collie;Sealyham_terrier;Tibetan_terrier,boxer,true,false,false
+UF111_body,UF111,hold,panel_body,body,2,Ibizan_hound,Ibizan_hound;Brabancon_griffo;English_foxhound;redbone;Rhodesian_ridgeback,American_Staffordshire_terrier; basset; chow; cocker_spaniel,true,false,false
+UF112_body,UF112,hold,panel_body,body,2,Ibizan_hound,Ibizan_hound;silky_terrier;English_springer;Irish_setter;giant_schnauzer,German_short_haired_pointer; Labrador_retriever,true,false,false
+UF114_body,UF114,hold,panel_body,body,2,English_springer,English_springer;Shih_Tzu;cairn;Saluki;briard,chow; miniature_schnauzer,true,false,false
+UF115_body,UF115,hold,panel_body,body,2,Leonberg,Leonberg;collie;English_springer;cairn;Bichon_Frise,English_foxhound; Shetland_sheepdog; Walker_hound; chow; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF116_body,UF116,hold,panel_body,body,2,Scotch_terrier,Scotch_terrier;English_springer;Rhodesian_ridgeback;Bichon_Frise;Shih_Tzu,Scotch_terrier; chow,true,true,true
+UF117_body,UF117,hold,panel_body,body,2,German_shepherd,German_shepherd;Bichon_Frise;Irish_wolfhound;silky_terrier;giant_schnauzer,,false,false,false
+UF119_body,UF119,hold,panel_body,body,2,Saluki,Saluki;Great_Dane;wire_haired_fox_terrier;Chinese_Crested_Dog;Walker_hound,cocker_spaniel; groenendael,true,false,false
+UF001_face,UF001,dev,panel_face,face,3,Leonberg,Leonberg;kelpie;wire_haired_fox_terrier;Airedale;English_foxhound,toy_terrier,true,false,false
+UF004_face,UF004,dev,panel_face,face,3,vizsla,vizsla;Cardigan;Pembroke;Welsh_springer_spaniel;Black_sable,Border_collie,true,false,false
+UF009_face,UF009,dev,panel_face,face,3,Irish_wolfhound,Irish_wolfhound;kelpie;Irish_terrier;vizsla;beagle,American_Staffordshire_terrier,true,false,false
+UF013_face,UF013,dev,panel_face,face,3,affenpinscher,affenpinscher;vizsla;briard;toy_poodle;miniature_pinscher,German_shepherd; Staffordshire_bullterrier,true,false,false
+UF016_face,UF016,dev,panel_face,face,3,American_Staffordshire_terrier,American_Staffordshire_terrier;Afghan_hound;Maltese_dog;Norwegian_elkhound;Irish_wolfhound,American_Staffordshire_terrier; Staffordshire_bullterrier,true,true,true
+UF018_face,UF018,dev,panel_face,face,3,Irish_wolfhound,Irish_wolfhound;Pembroke;black_and_tan_coonhound;briard;miniature_schnauzer,Labrador_retriever,true,false,false
+UF030_face,UF030,dev,panel_face,face,3,American_Staffordshire_terrier,American_Staffordshire_terrier;Sussex_spaniel;Irish_wolfhound;Maltese_dog;English_springer,American_Staffordshire_terrier; French_bulldog,true,true,true
+UF038_face,UF038,dev,panel_face,face,3,golden_retriever,golden_retriever;Brittany_spaniel;dingo;Pembroke;Shiba_Dog,cocker_spaniel,true,false,false
+UF041_face,UF041,dev,panel_face,face,3,miniature_poodle,miniature_poodle;briard;kelpie;Airedale;Shetland_sheepdog,Cane_Carso; Labrador_retriever; chow; miniature_pinscher,true,false,false
+UF059_face,UF059,dev,panel_face,face,3,Scotch_terrier,Scotch_terrier;EntleBucher;kelpie;Gordon_setter;vizsla,American_Staffordshire_terrier,true,false,false
+UF061_face,UF061,dev,panel_face,face,3,EntleBucher,EntleBucher;Norwegian_elkhound;Chesapeake_Bay_retriever;Rhodesian_ridgeback;affenpinscher,Doberman,true,false,false
+UF067_face,UF067,dev,panel_face,face,3,EntleBucher,EntleBucher;kelpie;Irish_terrier;Old_English_sheepdog;Blenheim_spaniel,Staffordshire_bullterrier,true,false,false
+UF069_face,UF069,dev,panel_face,face,3,affenpinscher,affenpinscher;Fila Braziliero;Airedale;golden_retriever;EntleBucher,Labrador_retriever,true,false,false
+UF073_face,UF073,dev,panel_face,face,3,Pembroke,Pembroke;Sussex_spaniel;kelpie;Scotch_terrier;German_shepherd,American_Staffordshire_terrier,true,false,false
+UF076_face,UF076,dev,panel_face,face,3,Pembroke,Pembroke;soft_coated_wheaten_terrier;cairn;English_springer;Dandie_Dinmont,,false,false,false
+UF077_face,UF077,dev,panel_face,face,3,Leonberg,Leonberg;Airedale;English_springer;Shetland_sheepdog;Walker_hound,basset; golden_retriever,true,false,false
+UF092_face,UF092,dev,panel_face,face,3,American_Staffordshire_terrier,American_Staffordshire_terrier;Chinese_Crested_Dog;kelpie;miniature_poodle;Pembroke,Border_collie,true,false,false
+UF097_face,UF097,dev,panel_face,face,3,kelpie,kelpie;EntleBucher;vizsla;Scotch_terrier;Norwegian_elkhound,American_Staffordshire_terrier,true,false,false
+UF103_face,UF103,dev,panel_face,face,3,cairn,cairn;Pembroke;vizsla;English_springer;Eskimo_dog,Labrador_retriever; Tibetan_mastiff,true,false,false
+UF110_face,UF110,dev,panel_face,face,3,Sussex_spaniel,Sussex_spaniel;Pembroke;Norwegian_elkhound;German_shepherd;Irish_terrier,Staffordshire_bullterrier,true,false,false
+UF002_face,UF002,hold,panel_face,face,3,affenpinscher,affenpinscher;Norwegian_elkhound;German_short_haired_pointer;Irish_wolfhound;Airedale,,false,false,false
+UF003_face,UF003,hold,panel_face,face,3,Irish_wolfhound,Irish_wolfhound;EntleBucher;Norwegian_elkhound;Afghan_hound;Pembroke,American_Staffordshire_terrier; Dandie_Dinmont; German_shepherd; Lhasa,true,false,false
+UF005_face,UF005,hold,panel_face,face,3,Afghan_hound,Afghan_hound;Irish_wolfhound;black_and_tan_coonhound;Pomeranian;Australian_Shepherd,Great_Pyrenees; miniature_pinscher,true,false,false
+UF006_face,UF006,hold,panel_face,face,3,cairn,cairn;Pembroke;standard_poodle;Shetland_sheepdog;miniature_schnauzer,English_foxhound; Walker_hound; beagle,true,false,false
+UF007_face,UF007,hold,panel_face,face,3,Scotch_terrier,Scotch_terrier;clumber;kelpie;Gordon_setter;affenpinscher,Boston_bull; Irish_water_spaniel; Siberian_husky,true,false,false
+UF008_face,UF008,hold,panel_face,face,3,Scotch_terrier,Scotch_terrier;Afghan_hound;EntleBucher;Pembroke;Maltese_dog,boxer; malamute,true,false,false
+UF010_face,UF010,hold,panel_face,face,3,vizsla,vizsla;Australian_terrier;toy_poodle;Shih_Tzu;beagle,Japanese_Spitzes,true,false,false
+UF011_face,UF011,hold,panel_face,face,3,Newfoundland,Newfoundland;miniature_poodle;soft_coated_wheaten_terrier;Ibizan_hound;vizsla,American_Staffordshire_terrier,true,false,false
+UF012_face,UF012,hold,panel_face,face,3,Doberman,Doberman;Samoyed;miniature_poodle;Pembroke;Shetland_sheepdog,Labrador_retriever,true,false,false
+UF014_face,UF014,hold,panel_face,face,3,vizsla,vizsla;Maltese_dog;Australian_terrier;wire_haired_fox_terrier;Irish_wolfhound,Australian_Shepherd; Japanese_Spitzes,true,false,false
+UF015_face,UF015,hold,panel_face,face,3,Irish_wolfhound,Irish_wolfhound;cairn;pug;Shih_Tzu;clumber,Siberian_husky,true,false,false
+UF017_face,UF017,hold,panel_face,face,3,Saluki,Saluki;Pembroke;Brabancon_griffo;chow;kelpie,Rottweiler,true,false,false
+UF020_face,UF020,hold,panel_face,face,3,Irish_terrier,Irish_terrier;Fila Braziliero;Doberman;Ibizan_hound;Irish_wolfhound,Japanese_Spitzes,true,false,false
+UF022_face,UF022,hold,panel_face,face,3,Pembroke,Pembroke;American_Staffordshire_terrier;Norwegian_elkhound;miniature_pinscher;Doberman,chow,true,false,false
+UF023_face,UF023,hold,panel_face,face,3,vizsla,vizsla;Norwegian_elkhound;Maltese_dog;Gordon_setter;clumber,American_Staffordshire_terrier; boxer; soft_coated_wheaten_terrier,true,false,false
+UF024_face,UF024,hold,panel_face,face,3,Saluki,Saluki;Old_English_sheepdog;Chinese_Crested_Dog;golden_retriever;toy_terrier,Chihuahua,true,false,false
+UF025_face,UF025,hold,panel_face,face,3,Irish_wolfhound,Irish_wolfhound;Ibizan_hound;Pembroke;standard_poodle;briard,Italian_greyhound,true,false,false
+UF026_face,UF026,hold,panel_face,face,3,English_springer,English_springer;Yorkshire_terrier;Afghan_hound;Great_Pyrenees;cairn,German_shepherd,true,false,false
+UF028_face,UF028,hold,panel_face,face,3,Irish_terrier,Irish_terrier;American_Staffordshire_terrier;English_springer;Chinese_Crested_Dog;Afghan_hound,boxer,true,false,false
+UF029_face,UF029,hold,panel_face,face,3,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Maltese_dog;Pembroke;Irish_wolfhound;bluetick,American_Staffordshire_terrier; Staffordshire_bullterrier; basset,true,false,false
+UF031_face,UF031,hold,panel_face,face,3,Australian_terrier,Australian_terrier;Irish_terrier;briard;dingo;Walker_hound,Tibetan_mastiff,true,false,false
+UF033_face,UF033,hold,panel_face,face,3,kelpie,kelpie;Maltese_dog;papillon;toy_poodle;Scotch_terrier,German_shepherd,true,false,false
+UF035_face,UF035,hold,panel_face,face,3,kelpie,kelpie;cairn;Walker_hound;Australian_terrier;Airedale,chow,true,false,false
+UF036_face,UF036,hold,panel_face,face,3,kelpie,kelpie;giant_schnauzer;Chesapeake_Bay_retriever;EntleBucher;papillon,Labrador_retriever; groenendael,true,false,false
+UF037_face,UF037,hold,panel_face,face,3,collie,collie;cairn;Old_English_sheepdog;vizsla;groenendael,bloodhound; boxer,true,false,false
+UF039_face,UF039,hold,panel_face,face,3,vizsla,vizsla;miniature_pinscher;redbone;briard;Afghan_hound,English_foxhound; Walker_hound; bull_mastiff,true,false,false
+UF040_face,UF040,hold,panel_face,face,3,Old_English_sheepdog,Old_English_sheepdog;basenji;Pembroke;Chesapeake_Bay_retriever;briard,soft_coated_wheaten_terrier,true,false,false
+UF042_face,UF042,hold,panel_face,face,3,American_Staffordshire_terrier,American_Staffordshire_terrier;Pembroke;Irish_terrier;Black_sable;Afghan_hound,Staffordshire_bullterrier,true,false,false
+UF043_face,UF043,hold,panel_face,face,3,Australian_terrier,Australian_terrier;beagle;Pembroke;kelpie;Newfoundland,Siberian_husky,true,false,false
+UF044_face,UF044,hold,panel_face,face,3,bloodhound,bloodhound;affenpinscher;papillon;Chesapeake_Bay_retriever;Norwegian_elkhound,Labrador_retriever,true,false,false
+UF046_face,UF046,hold,panel_face,face,3,Afghan_hound,Afghan_hound;Pembroke;Maltese_dog;soft_coated_wheaten_terrier;Chesapeake_Bay_retriever,miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF047_face,UF047,hold,panel_face,face,3,Irish_terrier,Irish_terrier;Scotch_terrier;Gordon_setter;EntleBucher;briard,,false,false,false
+UF048_face,UF048,hold,panel_face,face,3,Newfoundland,Newfoundland;Australian_terrier;Boston_bull;affenpinscher;Blenheim_spaniel,Pomeranian; Yorkshire_terrier,true,false,false
+UF049_face,UF049,hold,panel_face,face,3,cairn,cairn;toy_poodle;Shih_Tzu;collie;miniature_pinscher,Pembroke,true,false,false
+UF051_face,UF051,hold,panel_face,face,3,American_Staffordshire_terrier,American_Staffordshire_terrier;Ibizan_hound;Norwegian_elkhound;Australian_Shepherd;Brabancon_griffo,Irish_water_spaniel; wire_haired_fox_terrier,true,false,false
+UF052_face,UF052,hold,panel_face,face,3,Ibizan_hound,Ibizan_hound;Afghan_hound;Pembroke;Scotch_terrier;Black_sable,,false,false,false
+UF053_face,UF053,hold,panel_face,face,3,cairn,cairn;American_Staffordshire_terrier;Sussex_spaniel;Gordon_setter;Walker_hound,Labrador_retriever; Weimaraner,true,false,false
+UF054_face,UF054,hold,panel_face,face,3,kelpie,kelpie;pug;Samoyed;American_Staffordshire_terrier;German_shepherd,,false,false,false
+UF055_face,UF055,hold,panel_face,face,3,EntleBucher,EntleBucher;briard;Airedale;Gordon_setter;Old_English_sheepdog,Great_Dane; schipperke,true,false,false
+UF057_face,UF057,hold,panel_face,face,3,kelpie,kelpie;Airedale;Irish_terrier;briard;Samoyed,American_Staffordshire_terrier; Siberian_husky,true,false,false
+UF058_face,UF058,hold,panel_face,face,3,kelpie,kelpie;Scotch_terrier;Norwegian_elkhound;Ibizan_hound;Border_collie,EntleBucher; boxer,true,false,false
+UF060_face,UF060,hold,panel_face,face,3,Australian_Shepherd,Australian_Shepherd;American_Staffordshire_terrier;cairn;black_and_tan_coonhound;Pomeranian,beagle,true,false,false
+UF062_face,UF062,hold,panel_face,face,3,golden_retriever,golden_retriever;kelpie;affenpinscher;Pembroke;dingo,American_Staffordshire_terrier; Siberian_husky; chow,true,false,false
+UF063_face,UF063,hold,panel_face,face,3,American_Staffordshire_terrier,American_Staffordshire_terrier;Samoyed;Sussex_spaniel;miniature_pinscher;Maltese_dog,,false,false,false
+UF064_face,UF064,hold,panel_face,face,3,Shih_Tzu,Shih_Tzu;affenpinscher;Newfoundland;Sussex_spaniel;malinois,,false,false,false
+UF065_face,UF065,hold,panel_face,face,3,golden_retriever,golden_retriever;miniature_poodle;vizsla;Fila Braziliero;whippet,redbone,true,false,false
+UF066_face,UF066,hold,panel_face,face,3,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;Chesapeake_Bay_retriever;Scotch_terrier;golden_retriever;Rhodesian_ridgeback,cocker_spaniel,true,false,false
+UF068_face,UF068,hold,panel_face,face,3,Shetland_sheepdog,Shetland_sheepdog;vizsla;Irish_wolfhound;Australian_terrier;Pembroke,American_Staffordshire_terrier; English_foxhound; French_bulldog; Walker_hound,true,false,false
+UF071_face,UF071,hold,panel_face,face,3,Newfoundland,Newfoundland;Cardigan;Chesapeake_Bay_retriever;Shetland_sheepdog;Pembroke,Brittany_spaniel; Chinese_Crested_Dog; miniature_pinscher,true,false,false
+UF072_face,UF072,hold,panel_face,face,3,German_shepherd,German_shepherd;Pembroke;briard;Irish_terrier;American_Staffordshire_terrier,Saluki,true,false,false
+UF074_face,UF074,hold,panel_face,face,3,cairn,cairn;clumber;Australian_Shepherd;Ibizan_hound;miniature_schnauzer,beagle; boxer; toy_terrier,true,false,false
+UF079_face,UF079,hold,panel_face,face,3,American_Staffordshire_terrier,American_Staffordshire_terrier;Irish_terrier;Sussex_spaniel;Pembroke;Samoyed,Doberman,true,false,false
+UF081_face,UF081,hold,panel_face,face,3,Cardigan,Cardigan;miniature_pinscher;American_Staffordshire_terrier;Chinese_Crested_Dog;Afghan_hound,Chihuahua,true,false,false
+UF082_face,UF082,hold,panel_face,face,3,Shih_Tzu,Shih_Tzu;Airedale;affenpinscher;vizsla;English_springer,,false,false,false
+UF083_face,UF083,hold,panel_face,face,3,whippet,whippet;German_short_haired_pointer;Pembroke;Irish_wolfhound;Irish_terrier,Italian_greyhound; boxer,true,false,false
+UF084_face,UF084,hold,panel_face,face,3,kelpie,kelpie;Chesapeake_Bay_retriever;Labrador_retriever;EntleBucher;pug,Weimaraner,true,false,false
+UF085_face,UF085,hold,panel_face,face,3,Airedale,Airedale;Leonberg;Shih_Tzu;Irish_setter;affenpinscher,,false,false,false
+UF088_face,UF088,hold,panel_face,face,3,kelpie,kelpie;Pembroke;vizsla;Irish_wolfhound;Shetland_sheepdog,Boston_bull,true,false,false
+UF089_face,UF089,hold,panel_face,face,3,affenpinscher,affenpinscher;Brittany_spaniel;kelpie;golden_retriever;vizsla,boxer,true,false,false
+UF093_face,UF093,hold,panel_face,face,3,German_shepherd,German_shepherd;soft_coated_wheaten_terrier;Rhodesian_ridgeback;Irish_terrier;wire_haired_fox_terrier,Weimaraner,true,false,false
+UF094_face,UF094,hold,panel_face,face,3,Pembroke,Pembroke;Irish_terrier;Shetland_sheepdog;briard;American_Staffordshire_terrier,golden_retriever; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF095_face,UF095,hold,panel_face,face,3,kelpie,kelpie;vizsla;Pembroke;Irish_wolfhound;Scotch_terrier,American_Staffordshire_terrier,true,false,false
+UF096_face,UF096,hold,panel_face,face,3,Pembroke,Pembroke;Irish_wolfhound;briard;Airedale;Norwegian_elkhound,American_Staffordshire_terrier,true,false,false
+UF098_face,UF098,hold,panel_face,face,3,Pembroke,Pembroke;golden_retriever;Old_English_sheepdog;Shetland_sheepdog;German_short_haired_pointer,Norwegian_elkhound,true,false,false
+UF099_face,UF099,hold,panel_face,face,3,briard,briard;American_Staffordshire_terrier;Samoyed;Pembroke;kelpie,American_Staffordshire_terrier; collie,true,false,true
+UF100_face,UF100,hold,panel_face,face,3,Fila Braziliero,Fila Braziliero;cairn;miniature_poodle;Airedale;briard,Japanese_Spitzes; Rottweiler,true,false,false
+UF101_face,UF101,hold,panel_face,face,3,cairn,cairn;golden_retriever;Walker_hound;Doberman;vizsla,curly_coated_retriever,true,false,false
+UF102_face,UF102,hold,panel_face,face,3,vizsla,vizsla;soft_coated_wheaten_terrier;American_Staffordshire_terrier;wire_haired_fox_terrier;Pembroke,golden_retriever,true,false,false
+UF104_face,UF104,hold,panel_face,face,3,Afghan_hound,Afghan_hound;soft_coated_wheaten_terrier;Pembroke;German_shepherd;Great_Dane,Labrador_retriever,true,false,false
+UF106_face,UF106,hold,panel_face,face,3,cairn,cairn;Leonberg;Newfoundland;Chinese_Crested_Dog;briard,Siberian_husky,true,false,false
+UF107_face,UF107,hold,panel_face,face,3,golden_retriever,golden_retriever;Samoyed;Pembroke;cairn;Rhodesian_ridgeback,basset,true,false,false
+UF108_face,UF108,hold,panel_face,face,3,Irish_terrier,Irish_terrier;American_Staffordshire_terrier;kelpie;German_shepherd;Maltese_dog,American_Staffordshire_terrier; Shetland_sheepdog; Yorkshire_terrier,true,false,true
+UF109_face,UF109,hold,panel_face,face,3,miniature_poodle,miniature_poodle;Irish_terrier;Chinese_Crested_Dog;American_Staffordshire_terrier;malinois,boxer,true,false,false
+UF111_face,UF111,hold,panel_face,face,3,kelpie,kelpie;American_Staffordshire_terrier;Fila Braziliero;beagle;miniature_poodle,American_Staffordshire_terrier; basset; chow; cocker_spaniel,true,false,true
+UF112_face,UF112,hold,panel_face,face,3,briard,briard;miniature_schnauzer;Australian_Shepherd;Irish_setter;clumber,German_short_haired_pointer; Labrador_retriever,true,false,false
+UF114_face,UF114,hold,panel_face,face,3,Shih_Tzu,Shih_Tzu;vizsla;malinois;briard;Newfoundland,chow; miniature_schnauzer,true,false,false
+UF115_face,UF115,hold,panel_face,face,3,vizsla,vizsla;Doberman;Australian_Shepherd;black_and_tan_coonhound;Fila Braziliero,English_foxhound; Shetland_sheepdog; Walker_hound; chow; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF116_face,UF116,hold,panel_face,face,3,miniature_poodle,miniature_poodle;English_springer;Gordon_setter;Pembroke;Fila Braziliero,Scotch_terrier; chow,true,false,false
+UF117_face,UF117,hold,panel_face,face,3,kelpie,kelpie;Pembroke;briard;Irish_wolfhound;German_shepherd,,false,false,false
+UF119_face,UF119,hold,panel_face,face,3,miniature_poodle,miniature_poodle;Saluki;Doberman;Great_Dane;Newfoundland,cocker_spaniel; groenendael,true,false,false
+UF001_body,UF001,dev,panel_body,body,3,Leonberg,Leonberg;Lhasa;English_springer;English_foxhound;vizsla,toy_terrier,true,false,false
+UF004_body,UF004,dev,panel_body,body,3,American_Staffordshire_terrier,American_Staffordshire_terrier;wire_haired_fox_terrier;Welsh_springer_spaniel;Fila Braziliero;black_and_tan_coonhound,Border_collie,true,false,false
+UF009_body,UF009,dev,panel_body,body,3,vizsla,vizsla;Great_Pyrenees;Norwegian_elkhound;American_Staffordshire_terrier;malamute,American_Staffordshire_terrier,true,false,true
+UF013_body,UF013,dev,panel_body,body,3,groenendael,groenendael;Rottweiler;Ibizan_hound;black_and_tan_coonhound;affenpinscher,German_shepherd; Staffordshire_bullterrier,true,false,false
+UF016_body,UF016,dev,panel_body,body,3,Norwegian_elkhound,Norwegian_elkhound;malamute;Maltese_dog;American_Staffordshire_terrier;Afghan_hound,American_Staffordshire_terrier; Staffordshire_bullterrier,true,false,true
+UF018_body,UF018,dev,panel_body,body,3,Italian_greyhound,Italian_greyhound;Maltese_dog;Walker_hound;Norwegian_elkhound;whippet,Labrador_retriever,true,false,false
+UF030_body,UF030,dev,panel_body,body,3,Chinese_Crested_Dog,Chinese_Crested_Dog;American_Staffordshire_terrier;Walker_hound;Sussex_spaniel;Bichon_Frise,American_Staffordshire_terrier; French_bulldog,true,false,true
+UF038_body,UF038,dev,panel_body,body,3,Old_English_sheepdog,Old_English_sheepdog;giant_schnauzer;Chesapeake_Bay_retriever;golden_retriever;Ibizan_hound,cocker_spaniel,true,false,false
+UF041_body,UF041,dev,panel_body,body,3,silky_terrier,silky_terrier;Norwegian_elkhound;Chesapeake_Bay_retriever;Saluki;Ibizan_hound,Cane_Carso; Labrador_retriever; chow; miniature_pinscher,true,false,false
+UF059_body,UF059,dev,panel_body,body,3,Great_Pyrenees,Great_Pyrenees;giant_schnauzer;vizsla;Norwegian_elkhound;toy_terrier,American_Staffordshire_terrier,true,false,false
+UF061_body,UF061,dev,panel_body,body,3,silky_terrier,silky_terrier;Norwegian_elkhound;Chesapeake_Bay_retriever;Rottweiler;Great_Pyrenees,Doberman,true,false,false
+UF067_body,UF067,dev,panel_body,body,3,whippet,whippet;vizsla;Norwegian_elkhound;French_bulldog;affenpinscher,Staffordshire_bullterrier,true,false,false
+UF069_body,UF069,dev,panel_body,body,3,silky_terrier,silky_terrier;soft_coated_wheaten_terrier;Chesapeake_Bay_retriever;Saluki;Norwegian_elkhound,Labrador_retriever,true,false,false
+UF073_body,UF073,dev,panel_body,body,3,Chinese_Crested_Dog,Chinese_Crested_Dog;Bichon_Frise;affenpinscher;miniature_pinscher;German_shepherd,American_Staffordshire_terrier,true,false,false
+UF076_body,UF076,dev,panel_body,body,3,English_springer,English_springer;Walker_hound;Leonberg;cairn;Rottweiler,,false,false,false
+UF077_body,UF077,dev,panel_body,body,3,English_springer,English_springer;Newfoundland;Cane_Carso;Airedale;Leonberg,basset; golden_retriever,true,false,false
+UF092_body,UF092,dev,panel_body,body,3,Chinese_Crested_Dog,Chinese_Crested_Dog;wire_haired_fox_terrier;malamute;silky_terrier;Maltese_dog,Border_collie,true,false,false
+UF097_body,UF097,dev,panel_body,body,3,giant_schnauzer,giant_schnauzer;Norwegian_elkhound;Chesapeake_Bay_retriever;EntleBucher;kelpie,American_Staffordshire_terrier,true,false,false
+UF103_body,UF103,dev,panel_body,body,3,silky_terrier,silky_terrier;Old_English_sheepdog;Great_Dane;English_springer;Brittany_spaniel,Labrador_retriever; Tibetan_mastiff,true,false,false
+UF110_body,UF110,dev,panel_body,body,3,Rhodesian_ridgeback,Rhodesian_ridgeback;collie;giant_schnauzer;Ibizan_hound;Fila Braziliero,Staffordshire_bullterrier,true,false,false
+UF002_body,UF002,hold,panel_body,body,3,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;giant_schnauzer;Saluki;affenpinscher;Bernese_mountain_dog,,false,false,false
+UF003_body,UF003,hold,panel_body,body,3,Norwegian_elkhound,Norwegian_elkhound;Saluki;Irish_wolfhound;black_and_tan_coonhound;Bichon_Frise,American_Staffordshire_terrier; Dandie_Dinmont; German_shepherd; Lhasa,true,false,false
+UF005_body,UF005,hold,panel_body,body,3,Great_Pyrenees,Great_Pyrenees;Lhasa;wire_haired_fox_terrier;Afghan_hound;Rhodesian_ridgeback,Great_Pyrenees; miniature_pinscher,true,true,true
+UF006_body,UF006,hold,panel_body,body,3,German_short_haired_pointer,German_short_haired_pointer;cairn;silky_terrier;miniature_schnauzer;standard_poodle,English_foxhound; Walker_hound; beagle,true,false,false
+UF007_body,UF007,hold,panel_body,body,3,affenpinscher,affenpinscher;Saluki;Chesapeake_Bay_retriever;Norwegian_elkhound;Scotch_terrier,Boston_bull; Irish_water_spaniel; Siberian_husky,true,false,false
+UF008_body,UF008,hold,panel_body,body,3,Great_Pyrenees,Great_Pyrenees;Norwegian_elkhound;Saluki;Chesapeake_Bay_retriever;malinois,boxer; malamute,true,false,false
+UF010_body,UF010,hold,panel_body,body,3,English_springer,English_springer;toy_poodle;Shih_Tzu;cairn;vizsla,Japanese_Spitzes,true,false,false
+UF011_body,UF011,hold,panel_body,body,3,Shih_Tzu,Shih_Tzu;affenpinscher;Saluki;Ibizan_hound;black_and_tan_coonhound,American_Staffordshire_terrier,true,false,false
+UF012_body,UF012,hold,panel_body,body,3,English_springer,English_springer;Great_Dane;Chinese_Crested_Dog;Walker_hound;Saluki,Labrador_retriever,true,false,false
+UF014_body,UF014,hold,panel_body,body,3,Lhasa,Lhasa;Shih_Tzu;Leonberg;Great_Pyrenees;wire_haired_fox_terrier,Australian_Shepherd; Japanese_Spitzes,true,false,false
+UF015_body,UF015,hold,panel_body,body,3,Leonberg,Leonberg;Norwegian_elkhound;giant_schnauzer;malamute;cairn,Siberian_husky,true,false,false
+UF017_body,UF017,hold,panel_body,body,3,malamute,malamute;Maltese_dog;Norwegian_elkhound;Great_Dane;wire_haired_fox_terrier,Rottweiler,true,false,false
+UF020_body,UF020,hold,panel_body,body,3,Chinese_Crested_Dog,Chinese_Crested_Dog;Old_English_sheepdog;miniature_pinscher;Ibizan_hound;Bichon_Frise,Japanese_Spitzes,true,false,false
+UF022_body,UF022,hold,panel_body,body,3,Great_Pyrenees,Great_Pyrenees;black_and_tan_coonhound;Chinese_Crested_Dog;American_Staffordshire_terrier;Cardigan,chow,true,false,false
+UF023_body,UF023,hold,panel_body,body,3,giant_schnauzer,giant_schnauzer;Norwegian_elkhound;Chesapeake_Bay_retriever;collie;Bichon_Frise,American_Staffordshire_terrier; boxer; soft_coated_wheaten_terrier,true,false,false
+UF024_body,UF024,hold,panel_body,body,3,Chesapeake_Bay_retriever,Chesapeake_Bay_retriever;Saluki;toy_terrier;kelpie;Scotch_terrier,Chihuahua,true,false,false
+UF025_body,UF025,hold,panel_body,body,3,Great_Pyrenees,Great_Pyrenees;Ibizan_hound;malamute;Saluki;wire_haired_fox_terrier,Italian_greyhound,true,false,false
+UF026_body,UF026,hold,panel_body,body,3,toy_terrier,toy_terrier;collie;Great_Pyrenees;Saluki;black_and_tan_coonhound,German_shepherd,true,false,false
+UF028_body,UF028,hold,panel_body,body,3,wire_haired_fox_terrier,wire_haired_fox_terrier;Welsh_springer_spaniel;Boston_bull;Sealyham_terrier;Newfoundland,boxer,true,false,false
+UF029_body,UF029,hold,panel_body,body,3,Chinese_Crested_Dog,Chinese_Crested_Dog;Newfoundland;affenpinscher;English_springer;Chesapeake_Bay_retriever,American_Staffordshire_terrier; Staffordshire_bullterrier; basset,true,false,false
+UF031_body,UF031,hold,panel_body,body,3,Australian_terrier,Australian_terrier;Shih_Tzu;beagle;Saluki;wire_haired_fox_terrier,Tibetan_mastiff,true,false,false
+UF033_body,UF033,hold,panel_body,body,3,affenpinscher,affenpinscher;Great_Pyrenees;Scotch_terrier;Saluki;German_shepherd,German_shepherd,true,false,true
+UF035_body,UF035,hold,panel_body,body,3,Shih_Tzu,Shih_Tzu;Australian_terrier;Old_English_sheepdog;Boston_bull;Airedale,chow,true,false,false
+UF036_body,UF036,hold,panel_body,body,3,giant_schnauzer,giant_schnauzer;Scotch_terrier;affenpinscher;standard_poodle;Old_English_sheepdog,Labrador_retriever; groenendael,true,false,false
+UF037_body,UF037,hold,panel_body,body,3,collie,collie;Lhasa;Bichon_Frise;Great_Pyrenees;malamute,bloodhound; boxer,true,false,false
+UF039_body,UF039,hold,panel_body,body,3,Norwegian_elkhound,Norwegian_elkhound;giant_schnauzer;Chesapeake_Bay_retriever;Cardigan;Lhasa,English_foxhound; Walker_hound; bull_mastiff,true,false,false
+UF040_body,UF040,hold,panel_body,body,3,Ibizan_hound,Ibizan_hound;keeshond;Fila Braziliero;silky_terrier;wire_haired_fox_terrier,soft_coated_wheaten_terrier,true,false,false
+UF042_body,UF042,hold,panel_body,body,3,Great_Pyrenees,Great_Pyrenees;Norwegian_elkhound;malamute;Black_sable;keeshond,Staffordshire_bullterrier,true,false,false
+UF043_body,UF043,hold,panel_body,body,3,Saluki,Saluki;affenpinscher;American_Staffordshire_terrier;Australian_terrier;German_short_haired_pointer,Siberian_husky,true,false,false
+UF044_body,UF044,hold,panel_body,body,3,affenpinscher,affenpinscher;giant_schnauzer;silky_terrier;soft_coated_wheaten_terrier;Pomeranian,Labrador_retriever,true,false,false
+UF046_body,UF046,hold,panel_body,body,3,Great_Pyrenees,Great_Pyrenees;Chesapeake_Bay_retriever;affenpinscher;malinois;Maltese_dog,miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF047_body,UF047,hold,panel_body,body,3,soft_coated_wheaten_terrier,soft_coated_wheaten_terrier;toy_terrier;English_springer;German_short_haired_pointer;golden_retriever,,false,false,false
+UF048_body,UF048,hold,panel_body,body,3,Boston_bull,Boston_bull;Newfoundland;Australian_terrier;English_springer;Shih_Tzu,Pomeranian; Yorkshire_terrier,true,false,false
+UF049_body,UF049,hold,panel_body,body,3,English_springer,English_springer;cairn;malinois;Shih_Tzu;collie,Pembroke,true,false,false
+UF051_body,UF051,hold,panel_body,body,3,silky_terrier,silky_terrier;Australian_Shepherd;Norwegian_elkhound;Ibizan_hound;Great_Pyrenees,Irish_water_spaniel; wire_haired_fox_terrier,true,false,false
+UF052_body,UF052,hold,panel_body,body,3,Black_sable,Black_sable;beagle;silky_terrier;affenpinscher;keeshond,,false,false,false
+UF053_body,UF053,hold,panel_body,body,3,collie,collie;Sussex_spaniel;Rhodesian_ridgeback;Great_Dane;Pomeranian,Labrador_retriever; Weimaraner,true,false,false
+UF054_body,UF054,hold,panel_body,body,3,giant_schnauzer,giant_schnauzer;German_shepherd;Brittany_spaniel;kelpie;Sussex_spaniel,,false,false,false
+UF055_body,UF055,hold,panel_body,body,3,Walker_hound,Walker_hound;English_springer;kelpie;basenji;wire_haired_fox_terrier,Great_Dane; schipperke,true,false,false
+UF057_body,UF057,hold,panel_body,body,3,silky_terrier,silky_terrier;Saluki;Norwegian_elkhound;malamute;Bernese_mountain_dog,American_Staffordshire_terrier; Siberian_husky,true,false,false
+UF058_body,UF058,hold,panel_body,body,3,Ibizan_hound,Ibizan_hound;malamute;Black_sable;English_springer;silky_terrier,EntleBucher; boxer,true,false,false
+UF060_body,UF060,hold,panel_body,body,3,cairn,cairn;Old_English_sheepdog;Lhasa;malinois;German_short_haired_pointer,beagle,true,false,false
+UF062_body,UF062,hold,panel_body,body,3,English_foxhound,English_foxhound;affenpinscher;Boston_bull;Rottweiler;kelpie,American_Staffordshire_terrier; Siberian_husky; chow,true,false,false
+UF063_body,UF063,hold,panel_body,body,3,collie,collie;vizsla;silky_terrier;American_Staffordshire_terrier;English_springer,,false,false,false
+UF064_body,UF064,hold,panel_body,body,3,Newfoundland,Newfoundland;English_springer;Shih_Tzu;Saint_Bernard;Walker_hound,,false,false,false
+UF065_body,UF065,hold,panel_body,body,3,toy_terrier,toy_terrier;collie;Great_Pyrenees;French_bulldog;vizsla,redbone,true,false,false
+UF066_body,UF066,hold,panel_body,body,3,giant_schnauzer,giant_schnauzer;soft_coated_wheaten_terrier;Ibizan_hound;wire_haired_fox_terrier;Chesapeake_Bay_retriever,cocker_spaniel,true,false,false
+UF068_body,UF068,hold,panel_body,body,3,Walker_hound,Walker_hound;English_springer;vizsla;German_shepherd;Rottweiler,American_Staffordshire_terrier; English_foxhound; French_bulldog; Walker_hound,true,false,false
+UF071_body,UF071,hold,panel_body,body,3,Chinese_Crested_Dog,Chinese_Crested_Dog;Shiba_Dog;Mexican_hairless;Scottish_deerhound;affenpinscher,Brittany_spaniel; Chinese_Crested_Dog; miniature_pinscher,true,false,false
+UF072_body,UF072,hold,panel_body,body,3,English_springer,English_springer;Ibizan_hound;Great_Pyrenees;Rhodesian_ridgeback;German_shepherd,Saluki,true,false,false
+UF074_body,UF074,hold,panel_body,body,3,silky_terrier,silky_terrier;giant_schnauzer;Ibizan_hound;Maltese_dog;Australian_Shepherd,beagle; boxer; toy_terrier,true,false,false
+UF079_body,UF079,hold,panel_body,body,3,malamute,malamute;affenpinscher;American_Staffordshire_terrier;Sealyham_terrier;English_springer,Doberman,true,false,false
+UF081_body,UF081,hold,panel_body,body,3,malinois,malinois;silky_terrier;Saluki;Shih_Tzu;Chinese_Crested_Dog,Chihuahua,true,false,false
+UF082_body,UF082,hold,panel_body,body,3,silky_terrier,silky_terrier;Saluki;wire_haired_fox_terrier;soft_coated_wheaten_terrier;affenpinscher,,false,false,false
+UF083_body,UF083,hold,panel_body,body,3,toy_terrier,toy_terrier;Norwegian_elkhound;English_springer;silky_terrier;soft_coated_wheaten_terrier,Italian_greyhound; boxer,true,false,false
+UF084_body,UF084,hold,panel_body,body,3,silky_terrier,silky_terrier;Saluki;giant_schnauzer;Rottweiler;kuvasz,Weimaraner,true,false,false
+UF085_body,UF085,hold,panel_body,body,3,pug,pug;Shih_Tzu;affenpinscher;Leonberg;Australian_terrier,,false,false,false
+UF088_body,UF088,hold,panel_body,body,3,malamute,malamute;giant_schnauzer;Norwegian_elkhound;silky_terrier;Chesapeake_Bay_retriever,Boston_bull,true,false,false
+UF089_body,UF089,hold,panel_body,body,3,giant_schnauzer,giant_schnauzer;Chesapeake_Bay_retriever;silky_terrier;soft_coated_wheaten_terrier;French_bulldog,boxer,true,false,false
+UF093_body,UF093,hold,panel_body,body,3,wire_haired_fox_terrier,wire_haired_fox_terrier;soft_coated_wheaten_terrier;Maltese_dog;Afghan_hound;vizsla,Weimaraner,true,false,false
+UF094_body,UF094,hold,panel_body,body,3,English_springer,English_springer;German_shepherd;giant_schnauzer;Bichon_Frise;Brittany_spaniel,golden_retriever; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF095_body,UF095,hold,panel_body,body,3,German_shepherd,German_shepherd;Walker_hound;kelpie;miniature_pinscher;malamute,American_Staffordshire_terrier,true,false,false
+UF096_body,UF096,hold,panel_body,body,3,Norwegian_elkhound,Norwegian_elkhound;malamute;Scotch_terrier;Saluki;silky_terrier,American_Staffordshire_terrier,true,false,false
+UF098_body,UF098,hold,panel_body,body,3,vizsla,vizsla;English_springer;toy_terrier;black_and_tan_coonhound;Norwegian_elkhound,Norwegian_elkhound,true,false,true
+UF099_body,UF099,hold,panel_body,body,3,silky_terrier,silky_terrier;Saluki;German_shepherd;Great_Pyrenees;Great_Dane,American_Staffordshire_terrier; collie,true,false,false
+UF100_body,UF100,hold,panel_body,body,3,Saluki,Saluki;English_springer;Chinese_Crested_Dog;miniature_pinscher;Doberman,Japanese_Spitzes; Rottweiler,true,false,false
+UF101_body,UF101,hold,panel_body,body,3,silky_terrier,silky_terrier;Newfoundland;malinois;soft_coated_wheaten_terrier;Cane_Carso,curly_coated_retriever,true,false,false
+UF102_body,UF102,hold,panel_body,body,3,affenpinscher,affenpinscher;Lhasa;Ibizan_hound;Saluki;wire_haired_fox_terrier,golden_retriever,true,false,false
+UF104_body,UF104,hold,panel_body,body,3,Afghan_hound,Afghan_hound;cocker_spaniel;soft_coated_wheaten_terrier;wire_haired_fox_terrier;Scotch_terrier,Labrador_retriever,true,false,false
+UF106_body,UF106,hold,panel_body,body,3,Newfoundland,Newfoundland;English_springer;Shih_Tzu;Saluki;Boston_bull,Siberian_husky,true,false,false
+UF107_body,UF107,hold,panel_body,body,3,collie,collie;silky_terrier;Ibizan_hound;German_shepherd;Saluki,basset,true,false,false
+UF108_body,UF108,hold,panel_body,body,3,malamute,malamute;Ibizan_hound;vizsla;Maltese_dog;Norwegian_elkhound,American_Staffordshire_terrier; Shetland_sheepdog; Yorkshire_terrier,true,false,false
+UF109_body,UF109,hold,panel_body,body,3,Sealyham_terrier,Sealyham_terrier;Saluki;collie;Great_Pyrenees;silky_terrier,boxer,true,false,false
+UF111_body,UF111,hold,panel_body,body,3,Brabancon_griffo,Brabancon_griffo;Ibizan_hound;redbone;English_foxhound;Australian_Shepherd,American_Staffordshire_terrier; basset; chow; cocker_spaniel,true,false,false
+UF112_body,UF112,hold,panel_body,body,3,Ibizan_hound,Ibizan_hound;silky_terrier;English_springer;Irish_setter;German_shepherd,German_short_haired_pointer; Labrador_retriever,true,false,false
+UF114_body,UF114,hold,panel_body,body,3,English_springer,English_springer;Shih_Tzu;cairn;Saluki;malinois,chow; miniature_schnauzer,true,false,false
+UF115_body,UF115,hold,panel_body,body,3,Leonberg,Leonberg;collie;English_springer;cairn;silky_terrier,English_foxhound; Shetland_sheepdog; Walker_hound; chow; miniature_poodle; standard_poodle; teddy; toy_poodle,true,false,false
+UF116_body,UF116,hold,panel_body,body,3,Scotch_terrier,Scotch_terrier;Rhodesian_ridgeback;silky_terrier;English_springer;Bichon_Frise,Scotch_terrier; chow,true,true,true
+UF117_body,UF117,hold,panel_body,body,3,German_shepherd,German_shepherd;silky_terrier;Bichon_Frise;Brittany_spaniel;Irish_wolfhound,,false,false,false
+UF119_body,UF119,hold,panel_body,body,3,Great_Dane,Great_Dane;Saluki;wire_haired_fox_terrier;Chinese_Crested_Dog;Leonberg,cocker_spaniel; groenendael,true,false,false

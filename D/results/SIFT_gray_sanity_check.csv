@@ -1,0 +1,2 @@
+check,split,feature_rows,dev_dogs,orig_gray_feature_l2_mean,orig_gray_feature_max_abs,status,note
+SIFT orig-gray feature identity,dev,240,20,0.0,0.0,pass,C 파일에는 원본/blur1~4/gray가 있고 area 변형 및 matched controls는 없음; raw_drop만 계산

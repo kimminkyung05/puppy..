@@ -1,0 +1,5 @@
+breed_group,working_definition,mixdog_rule,status
+long_feathered_provisional,"장모·실키·feathering이 외관의 주된 특징인 품종군","dominant_pct가 가장 큰 주 품종을 먼저 매핑; 동률이면 미분류","provisional"
+short_smooth_provisional,"단모·직모·매끈한 털이 주된 품종군","dominant_pct가 가장 큰 주 품종을 먼저 매핑; 동률이면 미분류","provisional"
+wire_curly_provisional,"와이어·곱슬·거친 털이 주된 품종군","dominant_pct가 가장 큰 주 품종을 먼저 매핑; 동률이면 미분류","provisional"
+unassigned,"위 세 유형으로 안정적으로 분류하기 어려운 경우","혼합 비율이 같거나 털 유형이 충돌하면 이 그룹으로 보류","recommended"

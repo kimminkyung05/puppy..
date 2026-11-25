@@ -1,0 +1,5 @@
+﻿extractor,raw_variants,matched_control_extra_drop,scope_status,evidence
+clip,orig/gray/blur1/blur3/blur6/blur12/panel_face/panel_body,complete,complete,CLIP_DINOv2_CONTROL_VERIFICATION.json and CLIP_DINOv2_extra_drop_*
+dinov2,orig/gray/blur1/blur3/blur6/blur12/panel_face/panel_body,complete,complete,CLIP_DINOv2_CONTROL_VERIFICATION.json and CLIP_DINOv2_extra_drop_*
+dinov3,orig/gray/blur1/blur3/blur6/blur12/panel_face/panel_body,complete,complete,D_DINOv3_* and CONTROL_RERUN_VERIFICATION.json
+sift,orig/gray/blur1/blur3/blur6/blur12,complete for gray+blur controls,complete,SIFT_CONTROL_VERIFICATION.json and SIFT_extra_drop_*

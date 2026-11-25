@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "extractors": [
+    "clip",
+    "dinov2"
+  ],
+  "dogs": 20,
+  "conditions": [
+    "gray",
+    "blur_01",
+    "blur_03",
+    "blur_06",
+    "blur_12",
+    "panel_face",
+    "panel_body"
+  ],
+  "control_conditions": [
+    "control_gray",
+    "control_blur_01",
+    "control_blur_03",
+    "control_blur_06",
+    "control_blur_12",
+    "control_panel_face",
+    "control_panel_body"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "manifest_rows": 300,
+  "raw_score_rows": 1800,
+  "extra_drop_detail_rows": 840,
+  "extra_drop_summary_rows": 42,
+  "excluded": [
+    "background-only",
+    "selection experiments"
+  ],
+  "source": "same DINOv3 matched-control images and A classifiers"
+}

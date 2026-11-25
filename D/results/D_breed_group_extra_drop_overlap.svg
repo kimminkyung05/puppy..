@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920">
+<rect width="100%" height="100%" fill="white"/>
+<text x="55" y="60" font-family="Arial" font-size="20" font-weight="bold">clip · overlap extra-drop</text>
+<line x1="115" y1="380" x2="665" y2="380" stroke="#222"/><line x1="115" y1="90" x2="115" y2="380" stroke="#222"/>
+<text x="115" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 115 402)">blur_01</text>
+<text x="206.66666666666669" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 206.66666666666669 402)">blur_03</text>
+<text x="298.33333333333337" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 298.33333333333337 402)">blur_06</text>
+<text x="390" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 390 402)">blur_12</text>
+<text x="481.6666666666667" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 481.6666666666667 402)">gray</text>
+<text x="573.3333333333333" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 573.3333333333333 402)">panel_body</text>
+<text x="665" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 665 402)">panel_face</text>
+<polyline points="115,235 206.66666666666669,235 298.33333333333337,235 390,235 481.6666666666667,235 573.3333333333333,235 665,235" fill="none" stroke="#2563eb" stroke-width="2"/><text x="515" y="106" font-family="Arial" font-size="12" fill="#2563eb">long_feathered_provisional</text>
+<polyline points="115,237.21378141659366 206.66666666666669,239.7049207352505 298.33333333333337,249.7975366059601 390,243.99179521825153 481.6666666666667,232.58262129625913 573.3333333333333,240.21042821476587 665,225.61921576534957" fill="none" stroke="#dc2626" stroke-width="2"/><text x="515" y="122" font-family="Arial" font-size="12" fill="#dc2626">short_smooth_provisional</text>
+<polyline points="115,235 206.66666666666669,235 298.33333333333337,235 390,235 481.6666666666667,235 573.3333333333333,235 665,235" fill="none" stroke="#059669" stroke-width="2"/><text x="515" y="138" font-family="Arial" font-size="12" fill="#059669">wire_curly_provisional</text>
+<text x="75" y="98" font-family="Arial" font-size="11">+0.013</text><text x="90" y="239" font-family="Arial" font-size="11">0</text><text x="75" y="380" font-family="Arial" font-size="11">-0.013</text>
+<text x="705" y="60" font-family="Arial" font-size="20" font-weight="bold">dinov2 · overlap extra-drop</text>
+<line x1="765" y1="380" x2="1315" y2="380" stroke="#222"/><line x1="765" y1="90" x2="765" y2="380" stroke="#222"/>
+<text x="765" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 765 402)">blur_01</text>
+<text x="856.6666666666666" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 856.6666666666666 402)">blur_03</text>
+<text x="948.3333333333334" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 948.3333333333334 402)">blur_06</text>
+<text x="1040" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 1040 402)">blur_12</text>
+<text x="1131.6666666666667" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 1131.6666666666667 402)">gray</text>
+<text x="1223.3333333333333" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 1223.3333333333333 402)">panel_body</text>
+<text x="1315" y="402" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 1315 402)">panel_face</text>
+<polyline points="765,235 856.6666666666666,235 948.3333333333334,235 1040,235 1131.6666666666667,235 1223.3333333333333,235 1315,235" fill="none" stroke="#2563eb" stroke-width="2"/><text x="1165" y="106" font-family="Arial" font-size="12" fill="#2563eb">long_feathered_provisional</text>
+<polyline points="765,236.31983257513184 856.6666666666666,241.86876940838587 948.3333333333334,244.04715679747392 1040,246.5298094683908 1131.6666666666667,235.88163765307138 1223.3333333333333,232.12041212946966 1315,222.20554553265742" fill="none" stroke="#dc2626" stroke-width="2"/><text x="1165" y="122" font-family="Arial" font-size="12" fill="#dc2626">short_smooth_provisional</text>
+<polyline points="765,235 856.6666666666666,235 948.3333333333334,235 1040,235 1131.6666666666667,235 1223.3333333333333,235 1315,235" fill="none" stroke="#059669" stroke-width="2"/><text x="1165" y="138" font-family="Arial" font-size="12" fill="#059669">wire_curly_provisional</text>
+<text x="725" y="98" font-family="Arial" font-size="11">+0.013</text><text x="740" y="239" font-family="Arial" font-size="11">0</text><text x="725" y="380" font-family="Arial" font-size="11">-0.013</text>
+<text x="55" y="450" font-family="Arial" font-size="20" font-weight="bold">dinov3 · overlap extra-drop</text>
+<line x1="115" y1="770" x2="665" y2="770" stroke="#222"/><line x1="115" y1="480" x2="115" y2="770" stroke="#222"/>
+<text x="115" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 115 792)">blur_01</text>
+<text x="206.66666666666669" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 206.66666666666669 792)">blur_03</text>
+<text x="298.33333333333337" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 298.33333333333337 792)">blur_06</text>
+<text x="390" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 390 792)">blur_12</text>
+<text x="481.6666666666667" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 481.6666666666667 792)">gray</text>
+<text x="573.3333333333333" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 573.3333333333333 792)">panel_body</text>
+<text x="665" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 665 792)">panel_face</text>
+<polyline points="115,625.2493189747896 206.66666666666669,640.4441936572139 298.33333333333337,509 390,647.1783313790747 481.6666666666667,675.4821296983602 573.3333333333333,640.1052756706009 665,675.5636798906248" fill="none" stroke="#2563eb" stroke-width="2"/><text x="515" y="496" font-family="Arial" font-size="12" fill="#2563eb">long_feathered_provisional</text>
+<polyline points="115,561.1810788400103 206.66666666666669,539.305598774789 298.33333333333337,548.7170306203592 390,616.6634541572098 481.6666666666667,686.0506478944666 573.3333333333333,512.3883400054426 665,648.8521164038166" fill="none" stroke="#dc2626" stroke-width="2"/><text x="515" y="512" font-family="Arial" font-size="12" fill="#dc2626">short_smooth_provisional</text>
+<polyline points="115,644.0544400740749 206.66666666666669,651.5606283826115 298.33333333333337,524.0698625224491 390,518.7183721536736 481.6666666666667,612.0600747834047 573.3333333333333,651.9796043922663 665,716.7227318850744" fill="none" stroke="#059669" stroke-width="2"/><text x="515" y="528" font-family="Arial" font-size="12" fill="#059669">wire_curly_provisional</text>
+<text x="75" y="488" font-family="Arial" font-size="11">+0.210</text><text x="90" y="629" font-family="Arial" font-size="11">0</text><text x="75" y="770" font-family="Arial" font-size="11">-0.210</text>
+<text x="705" y="450" font-family="Arial" font-size="20" font-weight="bold">sift · overlap extra-drop</text>
+<line x1="765" y1="770" x2="1315" y2="770" stroke="#222"/><line x1="765" y1="480" x2="765" y2="770" stroke="#222"/>
+<text x="765" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 765 792)">blur_012</text>
+<text x="902.5" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 902.5 792)">blur_01</text>
+<text x="1040" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 1040 792)">blur_03</text>
+<text x="1177.5" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 1177.5 792)">blur_06</text>
+<text x="1315" y="792" text-anchor="middle" font-family="Arial" font-size="12" transform="rotate(25 1315 792)">gray</text>
+<polyline points="765,509 902.5,587.2896296101085 1040,576.3849935377067 1177.5,586.6780875907525 1315,610.7180522709041" fill="none" stroke="#2563eb" stroke-width="2"/><text x="1165" y="496" font-family="Arial" font-size="12" fill="#2563eb">long_feathered_provisional</text>
+<polyline points="765,539.2051710038137 902.5,562.2002721657179 1040,578.6947614532813 1177.5,543.4243373545698 1315,583.7197270468155" fill="none" stroke="#dc2626" stroke-width="2"/><text x="1165" y="512" font-family="Arial" font-size="12" fill="#dc2626">short_smooth_provisional</text>
+<polyline points="765,624.9855691042517 902.5,625.0041854056192 1040,625.0111868082276 1177.5,624.9828293306601 1315,624.9937801137688" fill="none" stroke="#059669" stroke-width="2"/><text x="1165" y="528" font-family="Arial" font-size="12" fill="#059669">wire_curly_provisional</text>
+<text x="725" y="488" font-family="Arial" font-size="11">+0.059</text><text x="740" y="629" font-family="Arial" font-size="11">0</text><text x="725" y="770" font-family="Arial" font-size="11">-0.059</text>
+</svg>
