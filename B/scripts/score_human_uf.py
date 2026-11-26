@@ -91,12 +91,14 @@ def picks(h: pd.DataFrame, mode: str) -> dict[str, list[str]]:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--uf-dir", default="../data/evalset_uf")
-    ap.add_argument("--out", default="results/dev_human_baseline.csv")
+    ap.add_argument("--split", default="dev", choices=["dev", "hold"], help="hold 는 최종 채점 때 한 번만")
+    ap.add_argument("--out", default=None, help="기본 results/{split}_human_baseline.csv")
     args = ap.parse_args()
+    args.out = args.out or f"results/{args.split}_human_baseline.csv"
     uf = Path(args.uf_dir)
 
     idx = pd.read_csv(uf / "eval_index_UF.csv")
-    dev = sorted(set(idx.loc[idx["split"] == "dev", "dog_id"]))            # hold 는 읽지도 않는다
+    dev = sorted(set(idx.loc[idx["split"] == args.split, "dog_id"]))       # 기본 dev 에서는 hold 를 읽지도 않는다
     human = pd.read_csv(uf / "human_UF.csv", encoding="utf-8-sig")
     human = human[human["dog_id"].isin(dev)]
     dna = pd.read_csv(uf / "dna_UF.csv", encoding="utf-8-sig")
@@ -112,7 +114,7 @@ def main():
                            ccfg.get("exclude", []), ccfg.get("exclude_dingo", False))
     classes = class_list(train)
     freq = pd.Series([it.class_name for it in train]).value_counts(normalize=True).reindex(classes).fillna(0)
-    print(f"찍기 기준: 학습셋 {len(train)}장, {len(classes)}클래스 | dev {len(dev)}마리 (hold 는 쓰지 않음)")
+    print(f"찍기 기준: 학습셋 {len(train)}장, {len(classes)}클래스 | {args.split} {len(dev)}마리")
 
     unknown = sorted({r for r in human.loc[human["kind"] != NOT_BREED_KIND, "response_raw"]
                       if not dna_names(r, all_dna_lower)})

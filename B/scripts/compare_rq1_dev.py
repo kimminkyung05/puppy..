@@ -1,4 +1,4 @@
-"""RQ1 dev 비교: A 분류기 · B 평균점 섞기 · C 섞기 학습을 같은 예측 폴더 · 같은 채점 코드로 비교한다 (집계값만 저장).
+"""RQ1 비교 (기본 dev, 최종 때 --split hold 한 번): A 분류기 · B 평균점 섞기 · C 섞기 학습을 같은 예측 폴더 · 같은 채점 코드로 비교한다 (집계값만 저장).
 
 입력
   {preds}/dev/pred_RQ1-{bb}-{clf|proto|mix}-{s|r}{n}.csv   scripts/collect_rq1_preds.py 가 모은 공용 형식 예측 (dev 행만)
@@ -51,7 +51,7 @@ METHODS = [("A", "clf", "s", "A_classifier", "#2a78d6"),
 HUMAN_COLOR = "#7a3fb0"
 
 
-def load_runs(pred_dir: Path):
+def load_runs(pred_dir: Path, split: str = "dev"):
     """(방법 키, 추출기) → [반복별 확률 표 (개 × 클래스)]."""
     runs = {}
     for key, tag, rep, _, _ in METHODS:
@@ -61,7 +61,7 @@ def load_runs(pred_dir: Path):
                 f = pred_dir / f"pred_RQ1-{bb}-{tag}-{rep}{n}.csv"
                 if f.exists():
                     d = pd.read_csv(f)
-                    frames.append(d[d["split"] == "dev"].set_index("dog_id").drop(columns="split"))
+                    frames.append(d[d["split"] == split].set_index("dog_id").drop(columns="split"))
             if frames:
                 if len(frames) != 3:
                     raise SystemExit(f"{key} {bb}: 반복 파일이 {len(frames)}개뿐 (3개 필요)")
@@ -150,9 +150,14 @@ def main():
     ap.add_argument("--val-split", type=Path, default=None)
     ap.add_argument("--b-val-dir", type=Path, default=None,
                     help="B 순종 예측(pred_RQ1-val-*-proto-r*.csv) 폴더. model_summary.csv 에 없는 추출기만 여기서 센다")
+    ap.add_argument("--split", default="dev", choices=["dev", "hold"],
+                    help="hold 는 최종 채점 때 한 번만 (collect_rq1_preds.py --split hold 를 먼저)")
     args = ap.parse_args()
+    sp = args.split
 
-    runs = load_runs(args.preds / "dev")
+    runs = load_runs(args.preds / sp, sp)
+    if not runs:
+        raise SystemExit(f"{args.preds / sp} 에 예측이 없음")
     first = next(iter(runs.values()))[0]
     classes = list(first.columns)
     for k, fs in runs.items():
@@ -180,7 +185,7 @@ def main():
                              top1_n=s["n"], coverage=s["n"] / len(sc.dogs), captured_orig_rep_min=min(reps),
                              captured_orig_rep_max=max(reps), vs_chance_diff=d, vs_chance_2se=se2,
                              vs_chance={"앞쪽이 높음": "찍기보다 높음", "뒤쪽이 높음": "찍기보다 낮음"}.get(v, v)))
-    hum = pd.read_csv(ROOT / "results" / "dev_human_baseline.csv", encoding="utf-8-sig")
+    hum = pd.read_csv(ROOT / "results" / f"{sp}_human_baseline.csv", encoding="utf-8-sig")
     hm = hum[(hum["space"] == "model") & (hum["mapping"] == "exact")]
     h = lambda metric, truth: float(hm[(hm["metric"] == metric) & (hm["truth"] == truth)
                                        & hm["picks"].isin(["breeds", "first_breed"])]["human"].iloc[0])
@@ -193,7 +198,7 @@ def main():
     rows.append(dict(method="ceiling", backbone="-", captured_orig=P.ceiling(sc.orig, sc.dogs).mean(),
                      captured_norm=P.ceiling(sc.norm, sc.use_norm).mean(), overlap_norm=1.0, note="정확 매핑"))
     res = pd.DataFrame(rows)
-    res.round(4).to_csv(ROOT / "results" / "dev_rq1_comparison.csv", index=False, encoding="utf-8-sig")
+    res.round(4).to_csv(ROOT / "results" / f"{sp}_rq1_comparison.csv", index=False, encoding="utf-8-sig")
     print(res[["method", "backbone", "captured_orig", "captured_norm", "overlap_norm", "top1_hits", "top1_n",
                "vs_chance"]].round(3).to_string(index=False))
 
@@ -212,7 +217,7 @@ def main():
                              top1_only_second=len(b["hits"] - a["hits"]),
                              same_top1_class=float((a["top"] == b["top"]).mean())))
     paired = pd.DataFrame(prow)
-    paired.round(4).to_csv(ROOT / "results" / "dev_rq1_paired.csv", index=False, encoding="utf-8-sig")
+    paired.round(4).to_csv(ROOT / "results" / f"{sp}_rq1_paired.csv", index=False, encoding="utf-8-sig")
     print("\n[방법 짝 비교: 포착@3 원래, 개 단위 짝 차이 ± 2SE]")
     print(paired.round(3).to_string(index=False))
     have = [k for k in S if k[1] in DEEP]
@@ -236,19 +241,22 @@ def main():
             add(f"{k} 딥 3종 평균", ms)
     add("전부 (방법 × 딥 3종)", [ens[k] for k in have])
     eq = pd.DataFrame(erow)
-    eq.round(4).to_csv(ROOT / "results" / "dev_rq1_equal_weight.csv", index=False, encoding="utf-8-sig")
+    eq.round(4).to_csv(ROOT / "results" / f"{sp}_rq1_equal_weight.csv", index=False, encoding="utf-8-sig")
     print("\n[같은 가중치 결합 참고값 (가중치를 고르지 않음, 설정 선택에 쓰지 않음)]")
     print(eq.round(3).to_string(index=False))
 
+    if sp != "dev":   # 순종 보조 평가는 val dev 절반이라 hold 와 무관하다
+        fig_dev(res, sp)
+        return
     pure = purebred(args.a_dir, args.val_split, args.b_val_dir)
     pure.round(4).to_csv(ROOT / "results" / "purebred_top1_same_set.csv", index=False, encoding="utf-8-sig")
     print("\n[순종 Top-1, val dev 절반 2,540장]")
     print(pure.pivot(index="method", columns="backbone", values="top1").reindex(columns=BACKBONES).round(3).to_string())
 
-    fig_dev(res)
+    fig_dev(res, sp)
 
 
-def fig_dev(res: pd.DataFrame):
+def fig_dev(res: pd.DataFrame, sp: str = "dev"):
     fig, axes = plt.subplots(1, 4, figsize=(20, 4.8), facecolor=SURFACE)
     x = np.arange(len(BACKBONES))
     w = 0.27
@@ -284,15 +292,15 @@ def fig_dev(res: pd.DataFrame):
         ax.set_title(title, color=INK, fontsize=11)
     hd, lab = axes[0].get_legend_handles_labels()
     fig.legend(hd, lab, frameon=False, loc="upper center", bbox_to_anchor=(0.5, 0.93), ncol=3, fontsize=9.5)
-    fig.suptitle("RQ1 on UF dev (20 dogs): classifier vs prototype mixing vs mix training vs human survey",
+    fig.suptitle(f"RQ1 on UF {sp} ({20 if sp == 'dev' else 77} dogs): classifier vs prototype mixing vs mix training vs human survey",
                  color=INK, fontsize=13)
-    fig.text(0.5, 0.01, "Provisional dev scoring, exact mapping only (METRICS_FINAL). Seeds/repeats 1-3 probabilities "
+    fig.text(0.5, 0.01, f"{sp} scoring, exact mapping only (METRICS_FINAL). Seeds/repeats 1-3 probabilities "
              "averaged before scoring. Top-1 bars show Wilson 95% CI.",
              ha="center", color=INK2, fontsize=8.5)
     fig.tight_layout(rect=(0, 0.04, 1, 0.88))
-    out_png = ROOT / "figures" / "dev_rq1_with_human.png"
+    out_png = ROOT / "figures" / f"{sp}_rq1_with_human.png"
     fig.savefig(out_png, dpi=200, facecolor=SURFACE)
-    print(f"\n저장 → results/dev_rq1_*.csv, results/purebred_top1_same_set.csv, {out_png}")
+    print(f"\n저장 → results/{sp}_rq1_*.csv, {out_png}")
 
 
 if __name__ == "__main__":

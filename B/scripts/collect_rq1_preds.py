@@ -1,4 +1,4 @@
-"""A · B · C 의 믹스견 예측을 공용 형식 한 폴더로 모은다 (dev 행만). 원본 파일은 바꾸지 않는다.
+"""A · B · C 의 믹스견 예측을 공용 형식 한 폴더로 모은다 (--split 의 행만, 기본 dev). 원본 파일은 바꾸지 않는다.
 
 세 담당의 파일 내용(dog_id, split, 127클래스 · 공용 클래스 순서 · 행 합 1)은 같고 이름과 폴더만 다르다.
 이 스크립트는 이름을 공용 인터페이스(CLAUDE.md)의 실행 이름 규칙으로 맞춰 복사한다.
@@ -8,7 +8,8 @@
   C  {c_dir}/pred_eval_uf-{bb}-mix-v2-s{n}.csv                       → pred_RQ1-{bb}-mix-s{n}.csv
      {c_dir}/pred_eval_uf_v2-sift-mix-s{n}.csv  (C 의 SIFT 이름)
 
-출력: {out}/dev/pred_RQ1-{bb}-{clf|proto|mix}-{s|r}{n}.csv  (dev 행만. hold 행은 복사하지 않는다)
+출력: {out}/{split}/pred_RQ1-{bb}-{clf|proto|mix}-{s|r}{n}.csv  (그 split 행만. 기본 dev 에서는 hold 행을 복사하지 않는다)
+      --split hold 는 최종 채점 때 한 번만 쓴다 (B 의 hold 예측은 prototype_fcls --split all 의 preds/all/ 에 있다)
       out 은 git 밖(루트 outputs/)에 둔다. UF 개체별 예측이라 저장소에 올리지 않는다.
 
 점검: 열 이름 · 순서가 모든 파일에서 같은지, 행 합이 1인지, 개 목록이 같은지. 다르면 멈춘다.
@@ -52,9 +53,10 @@ def main():
     ap.add_argument("--b-dir", type=Path, nargs="+", required=True, help="여러 개면 앞 폴더부터 찾는다")
     ap.add_argument("--c-dir", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--split", default="dev", choices=["dev", "hold"], help="hold 는 최종 채점 때 한 번만")
     args = ap.parse_args()
 
-    out_dir = args.out / "dev"
+    out_dir = args.out / args.split
     out_dir.mkdir(parents=True, exist_ok=True)
     ref_cols, ref_dogs, done, missing = None, None, [], []
     for run, src in sources(args.a_dir, args.b_dir, args.c_dir):
@@ -69,12 +71,14 @@ def main():
             ref_cols = cols
         elif cols != ref_cols:
             raise SystemExit(f"{src}: 열 이름이나 클래스 순서가 다른 파일과 다름")
-        dev = df[df["split"] == "dev"].sort_values("dog_id").reset_index(drop=True)
+        dev = df[df["split"] == args.split].sort_values("dog_id").reset_index(drop=True)
         dogs = dev["dog_id"].tolist()
         if ref_dogs is None:
             ref_dogs = dogs
         elif dogs != ref_dogs:
-            raise SystemExit(f"{src}: dev 개 목록이 다른 파일과 다름")
+            raise SystemExit(f"{src}: {args.split} 개 목록이 다른 파일과 다름")
+        if not dogs:
+            raise SystemExit(f"{src}: {args.split} 행이 없음")
         if not np.allclose(dev[cols[2:]].sum(axis=1), 1, atol=1e-4):
             raise SystemExit(f"{src}: 행 합이 1 이 아님")
         tmp = out_dir / f"pred_{run}.csv.tmp"
@@ -82,9 +86,9 @@ def main():
         tmp.replace(out_dir / f"pred_{run}.csv")
         done.append((run, len(df) - len(dev)))
 
-    print(f"모음 → {out_dir}  (dev {len(ref_dogs or [])}마리, 클래스 {len(ref_cols or []) - 2}개)")
+    print(f"모음 → {out_dir}  ({args.split} {len(ref_dogs or [])}마리, 클래스 {len(ref_cols or []) - 2}개)")
     for run, dropped in done:
-        print(f"  pred_{run}.csv" + (f"  (dev 아닌 {dropped}행 뺌)" if dropped else ""))
+        print(f"  pred_{run}.csv" + (f"  ({args.split} 아닌 {dropped}행 뺌)" if dropped else ""))
     if missing:
         print("없음:")
         for m in missing:
