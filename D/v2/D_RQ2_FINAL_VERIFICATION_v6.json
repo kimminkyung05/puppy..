@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "updated": "2026-11-26",
+  "scope": {
+    "background_only": "excluded",
+    "selection_experiments": "excluded",
+    "sift_panel_face_body": "excluded"
+  },
+  "clip_dinov2_dev": {
+    "feature_bundle": "to_D_20261126",
+    "extractors": ["clip", "dinov2"],
+    "feature_shapes": {"clip": [500, 512], "dinov2": [500, 768]},
+    "conditions": 15,
+    "seeds": [1, 2, 3],
+    "raw_score_rows": 1800,
+    "extra_drop_detail_rows": 840,
+    "extra_drop_summary_rows": 42,
+    "feature_index_order": "PASS",
+    "classifier_class_order": "PASS",
+    "raw_logit_reproduction": "PASS"
+  },
+  "test_integration": {
+    "prediction_rows": 909,
+    "summary_rows": 18,
+    "canonical_dogs": 100,
+    "scorable_per_extractor_seed": 90,
+    "uf089_2_match_recheck": "matched=True"
+  },
+  "breed_groups": {
+    "rule": "rule_D_strict: primary breed coat type; ties/conflicts=unassigned",
+    "detail_rows": 4680,
+    "summary_rows": 234,
+    "groups": ["long_feathered_provisional", "short_smooth_provisional", "unassigned"]
+  },
+  "sam3": {
+    "test_images": 101,
+    "manual_head_box_images": 1,
+    "manual_head_box_id": "UF023"
+  }
+}
