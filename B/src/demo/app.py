@@ -1,6 +1,6 @@
 """[B] 가계도형 Gradio 데모: 같은 사진에 A 분류기 · B 평균점 섞기 · C 섞기 학습을 나란히 보여 준다.
 
-화면: 증조부모 8칸(12.5% 단위) × 3 (A · B · C) · 판단 보류 · '이렇게 판단했어요'(RQ2, 준비 중) · '족보가 아닌 비율의 표현' 안내
+화면: 증조부모 8칸(12.5% 단위) × 3 (A · B · C) · 판단 보류 · '이렇게 판단했어요'(RQ2, 보고서 안내) · '족보가 아닌 비율의 표현' 안내
 설정은 하나만 쓴다: dinov2 · CLS (dev 20마리로 고른 데모용 선택).
 
   A: A 담당이 넘긴 선형 분류기 가중치(seed 1~3). 특징을 L2 정규화 → softmax → seed 평균. 온도 보정 전.
@@ -382,8 +382,10 @@ def build_ui(demo: Demo, deco: list[str] | None = None):
                     trees.append(gr.HTML())
                     tables.append(gr.Dataframe(headers=["품종", "비율"], label=f"{name[0]} 상위 5",
                                                interactive=False))
-        with gr.Accordion("이렇게 판단했어요 (RQ2, 준비 중)", open=False):
-            gr.Markdown("어떤 시각 단서(영역 · 질감 · 색)에 기댔는지는 D의 RQ2 결과가 나오면 여기에 붙입니다.")
+        with gr.Accordion("이렇게 판단했어요 (RQ2)", open=False):
+            gr.Markdown("어떤 시각 단서(영역 · 질감 · 색)에 기대어 판단하는지는 사진 한 장이 아니라 "
+                        "평가셋 전체에 흑백 · 흐림 · 얼굴/몸통만 남기기 변형을 적용해 분석했습니다. "
+                        "결과는 보고서의 RQ2 절을 참고해 주세요.")
         gr.Markdown(NOTICE)
         outs = trees + tables + [status]
         btn.click(demo.run, inputs=img, outputs=outs)
