@@ -153,6 +153,12 @@ def nice(name: str) -> str:
     return name.replace("_", " ")
 
 
+def wrap(name: str, pct: float, width: int = 24) -> str:
+    """왼쪽 설명 칸이 넓어지지 않게 긴 품종 이름은 두 줄로 나눈다."""
+    import textwrap
+    return "\n   ".join(textwrap.wrap(f"{name} {pct:g}%", width))
+
+
 def setup_fonts(plt):
     from matplotlib import font_manager
     nanum = Path("/usr/share/fonts/truetype/nanum/NanumGothic.ttf")     # Colab: apt-get install fonts-nanum
@@ -218,10 +224,10 @@ def draw(args, dogs, cells, png: Path):
 
     n, m = len(dogs), len(args.backbones)
     ymax = 1.08 * max(max(np.percentile(np.r_[c["dA"], c["dB"]], 99), c["dp"].max()) for c in cells.values())
-    LEFT = 2.75                                            # 왼쪽 개 설명 칸 + 세로축 제목 (인치)
-    W, H = LEFT + 3.1 * m + 0.2, 2.0 + 2.15 * n
+    LEFT = 2.2                                             # 왼쪽 개 설명 칸 + 눈금 (인치)
+    W, H = LEFT + 3.1 * m + 0.2, 1.85 + 2.15 * n
     fig, axes = plt.subplots(n, m, figsize=(W, H), sharex=True, sharey=True, squeeze=False)
-    fig.subplots_adjust(left=LEFT / W, right=1 - 0.2 / W, top=1 - 1.75 / H, bottom=0.62 / H,
+    fig.subplots_adjust(left=LEFT / W, right=1 - 0.2 / W, top=1 - 1.6 / H, bottom=0.62 / H,
                         wspace=0.08, hspace=0.18)
     mk = {"face": "^", "body": "v"}
     for j, b in enumerate(args.backbones):
@@ -245,6 +251,8 @@ def draw(args, dogs, cells, png: Path):
                 ax.scatter(c["tp"][k], c["dp"][k], marker=mk.get(pnl, "o"), s=26, facecolor="white",
                            edgecolor=INK, lw=1.0, zorder=6)
             ax.scatter(c["tm"], c["dm"], marker="D", s=40, c=INK, edgecolor="white", lw=1.2, zorder=7)
+            ax.plot([c["tm"], c["tm"]], [0, c["dm"]], color=INK, lw=0.6, alpha=0.35, zorder=2)
+            ax.scatter(c["tm"], 0, marker=10, s=38, c=INK, clip_on=False, zorder=5)   # 선 위로 내린 위치 (밑변이 선에 닿음)
             if c["share"] is not None:
                 ax.text(0.985, 0.04, f"B가 두 부모에 준 몫 {c['share']:.2f}", transform=ax.transAxes,
                         ha="right", va="bottom", fontsize=7, color=INK2,
@@ -254,20 +262,20 @@ def draw(args, dogs, cells, png: Path):
                 yc = pos.y0 + pos.height * 0.62
                 fig.text(0.2 / W, yc, r.dog_id, ha="left", va="bottom", fontsize=10.5, fontweight="bold", color=INK)
                 fig.text(0.2 / W, yc - 0.06 / H,
-                         f"{nice(r.major)} {r.p_major:g}%\n+ {nice(r.minor)} {r.p_minor:g}%\n기타 품종 최대 {r.p_third:g}%",
+                         f"{wrap(nice(r.major), r.p_major)}\n+ {wrap(nice(r.minor), r.p_minor)}\n기타 품종 최대 {r.p_third:g}%",
                          ha="left", va="top", fontsize=8, color=INK2, linespacing=1.4)
+                ax.set_ylabel("선에서 거리", fontsize=8, color=INK2, labelpad=4)
     ax0 = axes[0, 0]
     ax0.set_xlim(-0.45, 1.45)
     ax0.set_ylim(0, ymax)
     ax0.set_xticks([0, 0.5, 1])
     fig.supxlabel("두 부모 평균점을 잇는 선 위의 위치   (0 = 주 부모 평균점, 1 = 부 부모 평균점)",
                   fontsize=9, color=INK2, y=0.12 / H)
-    fig.text((LEFT - 0.5) / W, (0.62 / H + 1 - 1.75 / H) / 2, "선에서 떨어진 거리   (두 평균점 사이 거리 = 1)", rotation=90,
-             ha="center", va="center", fontsize=9, color=INK2)
     fig.text(0.2 / W, 1 - 0.22 / H, "믹스견 특징은 두 부모 품종 평균점 사이 어디에 놓이나",
              fontsize=13, fontweight="bold", color=INK, va="top")
-    fig.text(0.2 / W, 1 - 0.58 / H,
-             f"dev {n}마리 (DNA 상위 두 품종이 정확 매핑, 합 ≥ {args.min_top2:g}%) · {args.pool} 특징\n"
+    fig.text(0.2 / W, 1 - 0.52 / H,
+             f"dev {n}마리 (DNA 상위 두 품종이 정확 매핑, 합 ≥ {args.min_top2:g}%) · {args.pool} 특징 · "
+             f"세로축은 두 평균점을 잇는 선에서 떨어진 거리 (두 평균점 사이 거리 = 1)\n"
              f"평균점은 학습셋({args.train_subset})의 해당 품종 전체로 계산 · 순종 점은 품종당 최대 {args.max_points}장만 표시",
              fontsize=8.5, color=INK2, va="top", linespacing=1.5)
     # 범례는 열 우선으로 채워진다: 1행 = 순종 두 종류 + 기준선 두 개, 2행 = 믹스견 표시 세 개
@@ -275,12 +283,13 @@ def draw(args, dogs, cells, png: Path):
         Line2D([], [], ls="", marker="o", ms=5, mfc=C_MAJOR, mec="none", alpha=0.6, label="주 부모 순종 사진"),
         Line2D([], [], ls="", marker="D", ms=6, mfc=INK, mec="white", label="믹스견 (두 사진 평균)"),
         Line2D([], [], ls="", marker="o", ms=5, mfc=C_MINOR, mec="none", alpha=0.6, label="부 부모 순종 사진"),
-        Line2D([], [], ls="", marker="^", ms=6, mfc="white", mec=INK, label="얼굴 사진"),
+        Line2D([], [], ls="", marker=10, ms=6, mfc=INK, mec=INK, label="믹스견을 선 위로 내린 위치"),
         Line2D([], [], color=INK2, ls=(0, (4, 3)), lw=1.0, label="DNA 비율 위치 (두 부모만)"),
-        Line2D([], [], ls="", marker="v", ms=6, mfc="white", mec=INK, label="몸 사진"),
+        Line2D([], [], ls="", marker="^", ms=6, mfc="white", mec=INK, label="얼굴 사진"),
         Line2D([], [], color=C_PRED, ls=(0, (1, 2)), lw=1.6, label="B 예측 위치 (두 부모 몫만)"),
+        Line2D([], [], ls="", marker="v", ms=6, mfc="white", mec=INK, label="몸 사진"),
     ]
-    fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.2 / W - 0.006, 1 - 1.08 / H), ncol=4,
+    fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.2 / W - 0.006, 1 - 0.95 / H), ncol=4,
                fontsize=8, frameon=False, handletextpad=0.4, columnspacing=1.3)
     fig.savefig(png, dpi=200, facecolor="white")
     plt.close(fig)
